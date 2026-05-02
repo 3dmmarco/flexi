@@ -20,7 +20,6 @@
     --ink: #1a1510;
     --ink-muted: #5a4e3a;
     --ink-faint: #a09070;
-	  --text-pictures: #605643;
   }
 
   html { scroll-behavior: smooth; }
@@ -80,7 +79,6 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 0 1.5rem 4rem;
-    overflow: hidden;
   }
   .hero-bg {
     position: absolute;
@@ -235,13 +233,13 @@
   .position-section {
     padding: 6rem 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    gap: 5rem;
+    grid-template-columns: calc((100% + 1.5rem) / 3) 1fr;
+    gap: 1.5rem;
     align-items: start;
   }
   .section-heading {
     font-family: 'Azeret Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     font-weight: 300;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -300,7 +298,7 @@
 
   img.img-placeholder {
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: scale(1.0);
+    transform: scale(1.04);
   }
   img.img-placeholder.visible {
     transform: scale(1);
@@ -308,10 +306,10 @@
 
   .img-caption {
     font-family: 'Azeret Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.72rem;
     font-weight: 300;
     letter-spacing: 0.1em;
-    color: var(--text-pictures);
+    color: var(--ink-faint);
     margin-top: 0.75rem;
     line-height: 1.5;
   }
@@ -340,7 +338,7 @@
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 5rem;
-    align-items: center;
+    align-items: start;
   }
   .split-section.reverse { grid-template-columns: 1fr 1.4fr; }
   .split-section.reverse .split-text { order: -1; }
@@ -361,8 +359,8 @@
   }
   .process-intro {
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    gap: 5rem;
+    grid-template-columns: calc((100% + 1.5rem) / 3) 1fr;
+    gap: 1.5rem;
     margin-bottom: 5rem;
   }
   .process-images-6 {
@@ -378,10 +376,13 @@
     background: var(--cream-1);
   }
   .pullquote {
-    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
     font-weight: 300;
-    font-style: italic;
-    line-height: 1.4;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.5;
     color: var(--ink);
     max-width: 960px;
     padding-left: 1.5rem;
@@ -551,7 +552,7 @@
 
 <!-- HERO -->
 <section class="hero">
-<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(5%) translateY(-5%);">
+<img src="images/top.png" class="hero-bg" style="position: absolute; top: -5%; left: 30%; height: auto; width: auto; max-height: none; object-fit: none;">
   <p class="hero-label">Project</p>
   <h1>FLEXI<br><em>SEXY</em></h1>
   <span class="hero-scroll-hint">Scroll</span>
@@ -569,8 +570,7 @@
 <div class="meta-section reveal">
   <div class="meta-item">
     <span class="meta-label">Research Team</span>
-    <p class="meta-value">Herberth, Liliane</p>
-	     <p class="meta-value">Mayer, Marco.</p>
+    <p class="meta-value">Herberth, Liliane. Mayer, Marco.</p>
   </div>
   <div class="meta-item">
     <span class="meta-label">Year</span>
@@ -578,7 +578,7 @@
   </div>
   <div class="meta-item">
     <span class="meta-label">Location</span>
-    <p class="meta-value">264/2, Vienna, Austria</p>
+    <p class="meta-value">264-2. 2026. Vienna, Austria</p>
   </div>
   <div class="meta-item">
     <span class="meta-label">Topics</span>
@@ -626,7 +626,7 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
 </div>
 	
 <!-- FULL-WIDTH IMAGE 1 -->
-<div style="padding: 3rem 0;">
+<div style="padding: 2rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
@@ -634,7 +634,7 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
 
 <!-- STAT CALLOUT 2 -->
 <div class="stat-callout reveal" style="background:#ffffff;">
-  <span class="stat-number">6 (+1) MATERIALSs</span>
+  <span class="stat-number">6 (+1) Materials</span>
   <p class="stat-label">all disposable. distributed as a material matrix changing properties where it is needed</p>
 </div>
 
@@ -762,8 +762,10 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
 </div>
 
 <!-- FULL-WIDTH IMAGE 1 -->
+<div style="padding: 1rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/f.jpeg" style="width:100%; display:block; object-fit:cover;">
+</div>
 </div>
 	
 <!-- IMAGE GRID 2+2 -->
@@ -774,7 +776,9 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
       <p class="img-caption">flexible mold</p>
     </div>
     <div>
-      <img src="images/5.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <video class="img-placeholder landscape" style="object-fit: cover;" autoplay muted loop playsinline>
+        <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
+      </video>
       <p class="img-caption">assembly</p>
     </div>
   </div>
@@ -852,8 +856,10 @@ Living in a material world
 </div>
 
 <!-- FULL-WIDTH IMAGE 2 -->
+<div style="padding: 1rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
+</div>
 </div>
 <div class="section">
 	    <p class="body-text">
@@ -947,8 +953,10 @@ Standing within the arc of a living gesture, a body learning to lift itself from
 </section>
 
 <!-- FULL-WIDTH IMAGE 1 -->
+<div style="padding: 1rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
+</div>
 </div>
 
 <!-- FOOTER -->
