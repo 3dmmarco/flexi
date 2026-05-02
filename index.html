@@ -41,7 +41,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 1.5rem;
     mix-blend-mode: multiply;
   }
   nav .nav-logo {
@@ -78,7 +78,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 3rem 4rem;
+    padding: 0 1.5rem 4rem;
     overflow: hidden;
   }
   .hero-bg {
@@ -161,11 +161,17 @@
 }
 
 .video-caption {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding-top: 20px;
+  position: absolute;
+  z-index: 2;
+  color: rgba(255,255,255,0.7);
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-family: 'Azeret Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0;
 }
 
 /* Optional overlay for readability */
@@ -187,12 +193,12 @@
 }
 
   /* SECTION WRAPPER */
-  .section { padding: 3rem 3rem; }
+  .section { padding: 1.5rem 1.5rem; }
   .section-wide { max-width: 1400px; margin: 0 auto; }
 
   /* META BLOCK */
   .meta-section {
-    padding: 5rem 3rem;
+    padding: 5rem 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
@@ -226,7 +232,7 @@
 
   /* POSITION TEXT */
   .position-section {
-    padding: 6rem 3rem;
+    padding: 6rem 1.5rem;
     display: grid;
     grid-template-columns: 1fr 2.5fr;
     gap: 5rem;
@@ -252,7 +258,7 @@
 
 .stat-callout {
   position: relative;
-  padding: 3rem 3rem 1rem;
+  padding: 1.5rem 1.5rem 1rem;
   background: var(--cream-1);
   display: flex;
   align-items: baseline;
@@ -320,8 +326,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    max-width: 100%;
-    margin: 0 auto;
   }
   .img-grid-3 {
     display: grid;
@@ -331,14 +335,12 @@
 
   /* SECTION WITH IMAGE + TEXT SIDE */
   .split-section {
-    padding: 5rem 3rem;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 5rem;
-    align-items: center;
+    padding: 1.5rem 1.5rem;
+    display: block;
   }
-  .split-section.reverse { grid-template-columns: 1fr 1.4fr; }
-  .split-section.reverse .split-text { order: -1; }
+  .split-section > div { margin-bottom: 0; }
+  .split-section .split-text { margin-top: 0.75rem; }
+  .split-section.reverse {}
 
   .split-text {}
   .split-subhead {
@@ -352,7 +354,7 @@
 
   /* PROCESS SECTION */
   .process-section {
-    padding: 6rem 3rem;
+    padding: 6rem 1.5rem;
   }
   .process-intro {
     display: grid;
@@ -369,7 +371,7 @@
 
   /* PULLQUOTE */
   .pullquote-section {
-    padding: 5rem 3rem;
+    padding: 5rem 1.5rem;
     background: var(--cream-1);
   }
   .pullquote {
@@ -379,12 +381,12 @@
     line-height: 1.4;
     color: var(--ink);
     max-width: 960px;
-    padding-left: 3rem;
+    padding-left: 1.5rem;
   }
 
   /* FOOTER */
   footer {
-    padding: 3rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -419,10 +421,12 @@
   /* ─── ACCORDION / DROPDOWN ─── */
   .accordion-section {
     background: #ffffff;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
+    border-top: 1px solid var(--cream-3);
   }
 
   .accordion-item {
+    border-bottom: 1px solid var(--cream-3);
   }
   .accordion-trigger {
     width: 100%;
@@ -481,7 +485,7 @@
     max-height: 2000px;
   }
   .accordion-inner {
-    padding: 1.5rem 0 3rem 4rem;
+    padding: 1.5rem 0 1.5rem 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -505,9 +509,9 @@
     .accordion-section { padding: 0 1.5rem; }
     nav { padding: 1.25rem 1.5rem; }
     nav .nav-links { display: none; }
-    .hero { padding: 0 1.5rem 3rem; }
+    .hero { padding: 0 1.5rem 1.5rem; }
     .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
-    .meta-section { grid-template-columns: 1fr 1fr; padding: 3rem 1.5rem; gap: 2rem; }
+    .meta-section { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.5rem; gap: 2rem; }
     .position-section, .split-section, .split-section.reverse, .process-intro {
       grid-template-columns: 1fr;
       gap: 2.5rem;
@@ -515,7 +519,7 @@
     }
     .split-section.reverse .split-text { order: 0; }
     .section { padding: 4rem 1.5rem; }
-    .stat-callout { padding: 3rem 1.5rem; flex-direction: column; gap: 1rem; }
+    .stat-callout { padding: 1.5rem 1.5rem; flex-direction: column; gap: 1rem; }
     .img-grid-3 { grid-template-columns: 1fr 1fr; }
     .process-images-6 { grid-template-columns: 1fr 1fr; }
     .process-section { padding: 4rem 1.5rem; }
@@ -544,7 +548,7 @@
 
 <!-- HERO -->
 <section class="hero">
-<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(15%);">
+<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(10%);">
   <p class="hero-label">Project</p>
   <h1>FLEXI<br><em>SEXY</em></h1>
   <span class="hero-scroll-hint">Scroll</span>
