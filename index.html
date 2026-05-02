@@ -11,6 +11,14 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+	img.img-placeholder {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.04);
+}
+img.img-placeholder.visible {
+  transform: scale(1);
+}
+
   :root {
     --cream-0: #faf7f0;
     --cream-1: #f5f0e4;
@@ -628,7 +636,7 @@ Living in a material world
 <div class="section section-wide">
   <div class="img-grid-3 reveal">
     <div>
-      <img src="images/27.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/27.png" class="img-placeholder landscape reveal" style="object-fit: cover;">
       <p class="img-caption">material matrix 3.4</p>
     </div>
     <div>
