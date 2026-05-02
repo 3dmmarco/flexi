@@ -258,16 +258,24 @@
   }
   .body-text + .body-text { margin-top: 0.75em; }
 
-  /* STAT CALLOUT */
-  .stat-callout {
-    padding: 4rem 3rem;
-    background: var(--cream-1);
-    border-top: 1px solid var(--cream-3);
-    border-bottom: 1px solid var(--cream-3);
-    display: flex;
-    align-items: baseline;
-    gap: 2.5rem;
-  }
+.stat-callout {
+  position: relative;
+  padding: 3rem;
+  background: var(--cream-1);
+  display: flex;
+  align-items: baseline;
+  gap: 2.5rem;
+}
+
+.stat-callout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  right: 3rem;
+  height: 1px;
+  background: var(--cream-3);
+}
   .stat-number {
     font-size: clamp(3.5rem, 7vw, 6rem);
     font-weight: 100;
