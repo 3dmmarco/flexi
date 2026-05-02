@@ -24,21 +24,14 @@
     --ink: #1a1510;
     --ink-muted: #5a4e3a;
     --ink-faint: #a09070;
-	--white: #000000;
+	--white: #ffffff;
   }
 
-
-  /* SECTION DIVIDERS */
-  .divider {
-    border: none;
-    border-top: 1px solid var(--cream-3);
-    margin: 0 3rem;
-  }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--ink);
-    color: var(--ink);
+    background: var(--white);
+    color: var(--white);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     line-height: 1.6;
@@ -135,7 +128,7 @@
     color: var(--ink-faint);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
   .hero-scroll-hint::before {
     content: '';
@@ -155,7 +148,7 @@
   }
   .video-placeholder {
     width: 100%;
-    aspect-ratio: 16/6.3;
+    aspect-ratio: 16/5;
     background: var(--cream-8);
     display: flex;
     align-items: center;
@@ -192,11 +185,13 @@
 
   /* SECTION WRAPPER */
   .section { padding: 6rem 3rem; }
+  .section-narrow { max-width: 800px; }
   .section-wide { max-width: 1400px; margin: 0 auto; }
 
   /* META BLOCK */
   .meta-section {
     padding: 5rem 3rem;
+    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
@@ -233,6 +228,7 @@
   /* POSITION TEXT */
   .position-section {
     padding: 6rem 3rem;
+    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: 1fr 2.5fr;
     gap: 5rem;
@@ -259,6 +255,8 @@
   .stat-callout {
     padding: 4rem 3rem;
     background: var(--cream-1);
+    border-top: 1px solid var(--cream-3);
+    border-bottom: 1px solid var(--cream-3);
     display: flex;
     align-items: baseline;
     gap: 2.5rem;
@@ -287,12 +285,19 @@
     position: relative;
   }
   .img-placeholder.tall { aspect-ratio: 3/4; }
+  .img-placeholder.wide { aspect-ratio: 16/9; }
+  .img-placeholder.square { aspect-ratio: 1/1; }
   .img-placeholder.landscape { aspect-ratio: 4/3; }
+  .img-placeholder.panorama { aspect-ratio: 21/9; }
 
   /* subtle texture variation per image */
   .img-placeholder.v1 { background: var(--cream-3); }
   .img-placeholder.v2 { background: var(--cream-2); }
-  .img-placeholder.v3 { background: var(--cream-4); }
+  .img-placeholder.v3 { background: var(--cream-1); }
+  .img-placeholder.v4 { background: #d4c89a; }
+  .img-placeholder.v5 { background: #c8ba88; }
+  .img-placeholder.v6 { background: #e2d9bd; }
+  .img-placeholder.v7 { background: #bfad84; }
 
   img.img-placeholder {
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -303,7 +308,6 @@
   }
 
   .img-caption {
-    display: block;
     font-family: 'Azeret Mono', monospace;
     font-size: 0.6rem;
     font-weight: 300;
@@ -323,8 +327,8 @@
   .img-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 80%;
+    gap: 1.5rem;
+    max-width: 100%;
     margin: 0 auto;
   }
   .img-grid-3 {
@@ -336,6 +340,7 @@
   /* SECTION WITH IMAGE + TEXT SIDE */
   .split-section {
     padding: 5rem 3rem;
+    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 5rem;
@@ -357,6 +362,7 @@
   /* PROCESS SECTION */
   .process-section {
     padding: 6rem 3rem;
+    border-top: 1px solid var(--cream-3);
   }
   .process-intro {
     display: grid;
@@ -374,6 +380,7 @@
   /* PULLQUOTE */
   .pullquote-section {
     padding: 5rem 3rem;
+    border-top: 1px solid var(--cream-3);
     border-bottom: 1px solid var(--cream-3);
     background: var(--cream-1);
   }
@@ -391,6 +398,7 @@
   /* FOOTER */
   footer {
     padding: 3rem;
+    border-top: 1px solid var(--cream-3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -428,6 +436,7 @@
     padding: 0 3rem;
   }
   .accordion-section-border-top {
+    border-top: 1px solid var(--cream-3);
   }
   .accordion-item {
     border-bottom: 1px solid var(--cream-3);
@@ -495,6 +504,7 @@
     gap: 3rem;
     align-items: start;
   }
+  .accordion-side-label { display: none; }
   .accordion-img-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
@@ -542,10 +552,11 @@
 <nav>
   <a href="#" class="nav-logo">Flexi Studio</a>
   <ul class="nav-links">
-    <li><a href="#about">origin</a></li>
+    <li><a href="#origin">origin</a></li>
     <li><a href="#material">Material</a></li>
     <li><a href="#production">Production</a></li>
-    <li><a href="#about">About</a></li>
+	<li><a href="#about">about</a></li>
+    <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
 
@@ -565,7 +576,6 @@
   <p class="video-caption">Flexi flexi — flexi flexi flexi I</p>
 </div>
 
-<hr class="divider">
 <!-- META BLOCK -->
 <div class="meta-section reveal">
   <div class="meta-item">
@@ -589,43 +599,49 @@
   </div>
 </div>
 
-<hr class="divider">
 <!-- POSITION TEXT -->
 <section class="position-section reveal" id="position">
   <div>
-    <p class="section-heading">the nature of a thing</p>
+    <p class="section-heading">project describtion</p>
   </div>
   <div>
     <p class="body-text">
-As if the ground itself has begun to stretch, a spine leans into the air transforming into a wing.
-    </p>
-    <p class="body-text">
-     It feels like the peak of a movement, a muscle contracting, a weave like muscle fibers drawn close together, holding tension just before release. 
-    </p>
-    <p class="body-text">
-Closer to the ground the forms surrender to gravity, soft as a limb at rest.
-    </p>
-    <p class="body-text">
-The wing wraps around, not enclosing, simply leaning close. 
-    </p>
-    <p class="body-text">
-Standing within the arc of a living gesture, a body learning to lift itself from the earth.
+project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi flexi flexi flexi flexi
     </p>
   </div>
 </section>
 
-<hr class="divider">
 <!-- STAT CALLOUT 1 -->
 <div class="stat-callout reveal" style="background:#ffffff;">
   <span class="stat-number">314PANELS</span>
   <p class="stat-label">same same but all different</p>
 </div>
 
+<!-- IMAGE GRID 3-col -->
+<div class="section section-wide">
+  <div class="img-grid-3 reveal">
+    <div>
+      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">panelis</p>
+    </div>
+    <div>
+      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">panelu</p>
+    </div>
+    <div>
+      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">panelat</p>
+    </div>
+  </div>
+</div>
+	
 <!-- FULL-WIDTH IMAGE 1 -->
 <div class="full-img-wrap reveal">
-  <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
+  <div class="img-placeholder wide v3" style="aspect-ratio: 16/7;"></div>
 </div>
-
+<div class="section">
+  <p class="img-caption">Flexi flexi: flexi flexi flexi flexi flexi flexi flexi for flexi flexi flexi flexi flexi flexi</p>
+</div>
 
 <!-- STAT CALLOUT 2 -->
 <div class="stat-callout reveal" style="background:#ffffff;">
@@ -738,7 +754,6 @@ Standing within the arc of a living gesture, a body learning to lift itself from
 </div>
 <!-- ─── END ACCORDION ─── -->
 
-<hr class="divider">
 <!-- IMAGE GRID 2+2 -->
 <div class="section section-wide">
   <div class="img-grid-2 reveal">
@@ -753,7 +768,6 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   </div>
 </div>
 
-<hr class="divider">
 <!-- TEXT CALLOUT SPLIT: image left, text right -->
 <div class="split-section reveal">
   <div>
@@ -761,14 +775,13 @@ Standing within the arc of a living gesture, a body learning to lift itself from
     <p class="img-caption">Flexi-flexi derived flexi</p>
   </div>
   <div class="split-text">
-    <h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
+ 	<h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
     <p class="body-text">FLEXI</p>
     <p class="body-text">panels M 1:2</p>
     <p class="body-text">construction mockup M 1:2</p>
   </div>
 </div>
 
-<hr class="divider">
 <!-- TEXT CALLOUT SPLIT: text left, image right (reversed) -->
 <div class="split-section reverse reveal">
   <div class="split-text">
@@ -783,7 +796,6 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   </div>
 </div>
 
-<hr class="divider">
 <!-- PULLQUOTE -->
 <div class="pullquote-section reveal">
   <blockquote class="pullquote">
@@ -791,9 +803,8 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   </blockquote>
 </div>
 
-<hr class="divider">
 <!-- POSITION BODY CONTINUED -->
-<section class="position-section reveal" style="padding-bottom: 3rem;">
+<section class="position-section reveal">
   <div>
     <p class="section-heading">&nbsp;</p>
   </div>
@@ -813,20 +824,19 @@ Living in a material world
   </div>
 </section>
 
-<hr class="divider">
 <!-- IMAGE GRID 3-col -->
-<div class="section section-wide" style="padding-top: 3rem;">
+<div class="section section-wide">
   <div class="img-grid-3 reveal">
     <div>
-      <img src="images/27.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/h.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">material matrix 3.4</p>
     </div>
     <div>
-      <img src="images/19.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/i.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">material matrix 3.2</p>
     </div>
     <div>
-      <img src="images/20.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/j.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">material matrix 2.4</p>
     </div>
   </div>
@@ -834,13 +844,26 @@ Living in a material world
 
 <!-- FULL-WIDTH IMAGE 2 -->
 <div class="full-img-wrap reveal">
-  <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
+  <div class="img-placeholder v3" style="aspect-ratio: 21/8;"></div>
 </div>
 <div class="section">
-  <p class="img-caption">Flexi flexi flexi flexi flexi, a flexi-flexi flexi</p>
+	    <p class="body-text">
+As if the ground itself has begun to stretch, a spine leans into the air transforming into a wing.
+    </p>
+	    <p class="body-text">
+     It feels like the peak of a movement, a muscle contracting, a weave like muscle fibers drawn close together, holding tension just before release. 
+    </p>
+    <p class="body-text">
+Closer to the ground the forms surrender to gravity, soft as a limb at rest.
+    </p>
+    <p class="body-text">
+The wing wraps around, not enclosing, simply leaning close. 
+    </p>
+    <p class="body-text">
+Standing within the arc of a living gesture, a body learning to lift itself from the earth.
+    </p>
 </div>
 
-<hr class="divider">
 <!-- PROCESS -->
 <section class="process-section" id="process">
   <div class="process-intro reveal">
@@ -874,11 +897,11 @@ Living in a material world
       <p class="img-caption">Flexi flexi of flexi flexi is controlled by flexi flexi and flexi</p>
     </div>
     <div>
-      <div class="img-placeholder landscape v2"></div>
+      <div class="img-placeholder landscape v5"></div>
       <p class="img-caption">A flexi flexi-flexi-flexi flexi flexi</p>
     </div>
     <div>
-      <div class="img-placeholder landscape v3"></div>
+      <div class="img-placeholder landscape v6"></div>
       <p class="img-caption">Detail of a flexi flexi (cm)</p>
     </div>
     <div>
@@ -886,13 +909,12 @@ Living in a material world
       <p class="img-caption">Detail of a flexi flexi (mm)</p>
     </div>
     <div>
-      <div class="img-placeholder landscape v1"></div>
+      <div class="img-placeholder landscape v4"></div>
       <p class="img-caption">Flexi flexi flexi flexi flexi</p>
     </div>
   </div>
 </section>
 
-<hr class="divider">
 <!-- PULLQUOTE 2 -->
 <div class="pullquote-section reveal">
   <blockquote class="pullquote">
@@ -900,36 +922,30 @@ Living in a material world
   </blockquote>
 </div>
 
-<hr class="divider">
 <!-- CLOSING SECTION -->
-<section class="position-section reveal" id="about">
+<section class="position-section reveal" id="contact">
   <div>
-    <p class="section-heading">About</p>
+    <p class="section-heading">contact</p>
   </div>
   <div>
     <p class="body-text">
-      Flexi flexi flexi flexi a flexi where we flexi the flexi flexi of flexi and flexi through
-      the use of flexi flexi flexi. Through flexi flexi we flexi the flexi to flexi flexi flexi
-      from flexi flexi, to flexi them in flexi flexi, and to flexi flexi flexi back into the
-      flexi for flexi of flexi new flexi.
+      get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch
     </p>
     <p class="body-text">
-      By flexi flexi flexi and flexi with flexi, we aim to flexi flexi that flexi the flexi
-      and flexi of flexi while also flexi flexi with a new flexi of flexi and flexi.
+     touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it
     </p>
   </div>
 </section>
 
-<!-- FINAL WIDE IMAGE -->
+<!-- FULL-WIDTH IMAGE 1 -->
 <div class="full-img-wrap reveal">
-  <img src="images/e.jpeg" style="width:100%; display:block; object-fit:cover;">
+  <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
 
 <!-- FOOTER -->
-<hr class="divider">
 <footer>
   <span class="footer-logo">Flexi Studio</span>
-  <span class="footer-copy">© 2024 Flexi — All rights reserved</span>
+  <span class="footer-copy">© 2026 — All rights reserved</span>
 </footer>
 
 <script>
