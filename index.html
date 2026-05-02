@@ -644,10 +644,7 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
 	
 <!-- FULL-WIDTH IMAGE 1 -->
 <div class="full-img-wrap reveal">
-  <div class="img-placeholder wide v3" style="aspect-ratio: 16/7;"></div>
-</div>
-<div class="section">
-  <p class="img-caption">Flexi flexi: flexi flexi flexi flexi flexi flexi flexi for flexi flexi flexi flexi flexi flexi</p>
+  <img src="images/d.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
 
 <!-- STAT CALLOUT 2 -->
@@ -909,15 +906,15 @@ Standing within the arc of a living gesture, a body learning to lift itself from
       </p>
     </div>
   </div>
-
+	
   <!-- PROCESS IMAGES 6-grid -->
   <div class="process-images-6 reveal">
     <div>
-      <div class="img-placeholder landscape v1"></div>
+      <img src="images/a.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">Flexi flexi of flexi flexi informing the flexi flexi such as flexi flexi and flexi</p>
     </div>
     <div>
-      <div class="img-placeholder landscape v3"></div>
+      <img src="images/b.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">Flexi flexi of flexi flexi is controlled by flexi flexi and flexi</p>
     </div>
     <div>
@@ -933,7 +930,7 @@ Standing within the arc of a living gesture, a body learning to lift itself from
       <p class="img-caption">Detail of a flexi flexi (mm)</p>
     </div>
     <div>
-      <div class="img-placeholder landscape v4"></div>
+      <img src="images/g.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">Flexi flexi flexi flexi flexi</p>
     </div>
   </div>
@@ -1001,6 +998,32 @@ Standing within the arc of a living gesture, a body learning to lift itself from
     // open clicked if it was closed
     if (!isOpen) item.classList.add('open');
   }
+</script>
+
+	<script>
+const sections = document.querySelectorAll('.video-section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target.querySelector('video');
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      if (video) {
+        video.play().catch(() => {});
+      }
+    } else {
+      if (video) {
+        video.pause();
+      }
+    }
+  });
+}, {
+  threshold: 0.4
+});
+
+sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
