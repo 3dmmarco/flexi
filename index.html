@@ -6,32 +6,27 @@
 <title>Project Flexi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@300;400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --cream-0: #faf7f0;
     --cream-1: #f5f0e4;
     --cream-2: #ede4cf;
     --cream-3: #ddd0b0;
     --cream-4: #c9b98e;
-    --cream-5: #b09870;
-    --cream-6: #8c7651;
     --cream-7: #6a5636;
-    --cream-8: #3d2f18;
     --ink: #1a1510;
     --ink-muted: #5a4e3a;
     --ink-faint: #a09070;
-	--white: #ffffff;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--white);
-    color: var(--white);
+    background: #ffffff;
+    color: var(--ink);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     line-height: 1.6;
@@ -84,6 +79,7 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 0 3rem 4rem;
+    overflow: hidden;
   }
   .hero-bg {
     position: absolute;
@@ -192,13 +188,11 @@
 
   /* SECTION WRAPPER */
   .section { padding: 3rem 3rem; }
-  .section-narrow { max-width: 800px; }
   .section-wide { max-width: 1400px; margin: 0 auto; }
 
   /* META BLOCK */
   .meta-section {
     padding: 5rem 3rem;
-    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
@@ -228,14 +222,11 @@
     font-style: italic;
     color: var(--ink);
     line-height: 1.6;
-    border-left: 1px solid var(--cream-4);
-    padding-left: 2rem;
   }
 
   /* POSITION TEXT */
   .position-section {
     padding: 6rem 3rem;
-    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: 1fr 2.5fr;
     gap: 5rem;
@@ -251,6 +242,7 @@
     padding-top: 0.35rem;
   }
   .body-text {
+    font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
     font-weight: 300;
     line-height: 1.8;
@@ -267,15 +259,7 @@
   gap: 2.5rem;
 }
 
-.stat-callout::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 3rem;
-  right: 3rem;
-  height: 1px;
-  background: var(--cream-3);
-}
+
   .stat-number {
     font-size: clamp(3.5rem, 7vw, 6rem);
     font-weight: 100;
@@ -300,19 +284,12 @@
     position: relative;
   }
   .img-placeholder.tall { aspect-ratio: 3/4; }
-  .img-placeholder.wide { aspect-ratio: 16/9; }
-  .img-placeholder.square { aspect-ratio: 1/1; }
   .img-placeholder.landscape { aspect-ratio: 4/3; }
-  .img-placeholder.panorama { aspect-ratio: 21/9; }
 
   /* subtle texture variation per image */
   .img-placeholder.v1 { background: var(--cream-3); }
   .img-placeholder.v2 { background: var(--cream-2); }
   .img-placeholder.v3 { background: var(--cream-1); }
-  .img-placeholder.v4 { background: #d4c89a; }
-  .img-placeholder.v5 { background: #c8ba88; }
-  .img-placeholder.v6 { background: #e2d9bd; }
-  .img-placeholder.v7 { background: #bfad84; }
 
   img.img-placeholder {
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -355,7 +332,6 @@
   /* SECTION WITH IMAGE + TEXT SIDE */
   .split-section {
     padding: 5rem 3rem;
-    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 5rem;
@@ -377,7 +353,6 @@
   /* PROCESS SECTION */
   .process-section {
     padding: 6rem 3rem;
-    border-top: 1px solid var(--cream-3);
   }
   .process-intro {
     display: grid;
@@ -395,8 +370,6 @@
   /* PULLQUOTE */
   .pullquote-section {
     padding: 5rem 3rem;
-    border-top: 1px solid var(--cream-3);
-    border-bottom: 1px solid var(--cream-3);
     background: var(--cream-1);
   }
   .pullquote {
@@ -407,13 +380,11 @@
     color: var(--ink);
     max-width: 960px;
     padding-left: 3rem;
-    border-left: 2px solid var(--cream-5);
   }
 
   /* FOOTER */
   footer {
     padding: 3rem;
-    border-top: 1px solid var(--cream-3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -450,11 +421,8 @@
     background: #ffffff;
     padding: 0 3rem;
   }
-  .accordion-section-border-top {
-    border-top: 1px solid var(--cream-3);
-  }
+
   .accordion-item {
-    border-bottom: 1px solid var(--cream-3);
   }
   .accordion-trigger {
     width: 100%;
@@ -519,14 +487,13 @@
     gap: 3rem;
     align-items: start;
   }
-  .accordion-side-label { display: none; }
   .accordion-img-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
     background: var(--cream-3);
   }
   .accordion-lorem {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Hanken Grotesk', sans-serif;
     font-size: 0.9rem;
     font-weight: 300;
     line-height: 1.9;
@@ -577,7 +544,7 @@
 
 <!-- HERO -->
 <section class="hero">
-<img src="images/top.png" class="hero-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 90% center;">
+<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(15%);">
   <p class="hero-label">Project</p>
   <h1>FLEXI<br><em>SEXY</em></h1>
   <span class="hero-scroll-hint">Scroll</span>
@@ -585,7 +552,7 @@
 
 <!-- VIDEO SECTION -->
 <div class="video-section reveal">
-  <video class="bg-video" muted loop playsinline preload="none">
+  <video class="bg-video" muted loop playsinline preload="auto">
     <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
   </video>
   <p class="video-caption">Flexi flexi — flexi flexi flexi I</p>
@@ -609,7 +576,7 @@
     <span class="meta-label">Topics</span>
     <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Research</p>
   </div>
-  <div class="meta-item" style="grid-column: 1 / -1; border-left: none; padding-top: 2rem; border-top: 1px solid var(--cream-3);">
+  <div class="meta-item" style="grid-column: 1 / -1; padding-top: 2rem; padding-left: 0;">
     <p class="meta-desc" style="border-left: none; padding-left: 0;">Flexi flexi flexi flexi, flexi flexi flexi flexi flexi flexi flexi flexi.</p>
   </div>
 </div>
@@ -662,7 +629,7 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
 </div>
 
 <!-- ─── ACCORDION / MATERIAL DROPDOWNS ─── -->
-<div class="accordion-section accordion-section-border-top reveal">
+<div class="accordion-section reveal">
 
   <!-- I. Water -->
   <div class="accordion-item" id="acc-water">
@@ -995,6 +962,20 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
+  // Video: play/pause on scroll
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target.querySelector('video');
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (video) video.play().catch(() => {});
+      } else {
+        if (video) video.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.video-section').forEach(s => videoObserver.observe(s));
+
   // Stagger children in grids
   document.querySelectorAll('.img-grid-2, .img-grid-3, .process-images-6').forEach(grid => {
     Array.from(grid.children).forEach((child, i) => {
@@ -1013,31 +994,7 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   }
 </script>
 
-	<script>
-const sections = document.querySelectorAll('.video-section');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const video = entry.target.querySelector('video');
-
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-
-      if (video) {
-        video.play().catch(() => {});
-      }
-    } else {
-      if (video) {
-        video.pause();
-      }
-    }
-  });
-}, {
-  threshold: 0.4
-});
-
-sections.forEach(section => observer.observe(section));
-</script>
 
 </body>
 </html>
