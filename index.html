@@ -139,49 +139,56 @@
   }
 
   /* VIDEO EMBED PLACEHOLDER */
+.video-section {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.video-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-caption {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Optional overlay for readability */
+.video-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 0;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
   .video-section {
-    width: 100%;
-    padding: 0;
-    background: var(--cream-8);
-    position: relative;
-    overflow: hidden;
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
-  .video-placeholder {
-    width: 100%;
-    aspect-ratio: 16/5;
-    background: var(--cream-8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .video-placeholder::after {
-    content: '';
-    position: absolute;
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    border: 1px solid rgba(250,247,240,0.3);
-  }
-  .video-placeholder .play-icon {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 14px 0 14px 26px;
-    border-color: transparent transparent transparent rgba(250,247,240,0.5);
-    margin-left: 5px;
-    position: relative;
-    z-index: 1;
-  }
-  .video-caption {
-    padding: 0.75rem 3rem;
-    background: var(--cream-8);
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(250,247,240,0.4);
-  }
+}
 
   /* SECTION WRAPPER */
   .section { padding: 6rem 3rem; }
@@ -570,9 +577,9 @@
 
 <!-- VIDEO SECTION -->
 <div class="video-section reveal">
-  <div class="video-placeholder">
-    <div class="play-icon"></div>
-  </div>
+  <video class="bg-video" muted loop playsinline preload="none">
+    <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
+  </video>
   <p class="video-caption">Flexi flexi — flexi flexi flexi I</p>
 </div>
 
