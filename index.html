@@ -6,7 +6,7 @@
 <title>Project Flexi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@300;400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@300;400&family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -194,7 +194,7 @@
 
   /* SECTION WRAPPER */
   .section { padding: 1.5rem 1.5rem; }
-  .section-wide { max-width: 1400px; margin: 0 auto; }
+  .section-wide { width: 100%; }
 
   /* META BLOCK */
   .meta-section {
@@ -250,7 +250,7 @@
   .body-text {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.8;
     color: var(--ink-muted);
   }
@@ -336,11 +336,13 @@
   /* SECTION WITH IMAGE + TEXT SIDE */
   .split-section {
     padding: 1.5rem 1.5rem;
-    display: block;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+    align-items: start;
   }
-  .split-section > div { margin-bottom: 0; }
-  .split-section .split-text { margin-top: 0.75rem; }
-  .split-section.reverse {}
+  .split-section.reverse { grid-template-columns: 1fr 1.4fr; }
+  .split-section.reverse .split-text { order: -1; }
 
   .split-text {}
   .split-subhead {
@@ -499,7 +501,7 @@
   .accordion-lorem {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.9;
     color: var(--ink-muted);
     padding-top: 0.2rem;
@@ -548,7 +550,7 @@
 
 <!-- HERO -->
 <section class="hero">
-<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(10%);">
+<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(5%) translateY(-5%);">
   <p class="hero-label">Project</p>
   <h1>FLEXI<br><em>SEXY</em></h1>
   <span class="hero-scroll-hint">Scroll</span>
@@ -622,8 +624,10 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
 </div>
 	
 <!-- FULL-WIDTH IMAGE 1 -->
+<div style="padding: 2rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
+</div>
 </div>
 
 <!-- STAT CALLOUT 2 -->
@@ -778,7 +782,6 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
 <div class="split-section reveal">
   <div>
    <img src="images/ssfsf.png" class="img-placeholder tall" style="object-fit: cover;">
-    <p class="img-caption">Flexi-flexi derived flexi</p>
   </div>
   <div class="split-text">
  	<h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
@@ -797,7 +800,6 @@ project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi 
   </div>
   <div>
     <img src="images/3.png" class="img-placeholder tall" style="object-fit: cover;">
-    <p class="img-caption">Flexi flexi derived from flexi</p>
   </div>
 </div>
 
