@@ -6,28 +6,31 @@
 <title>Project Flexi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@300;400&family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
+    --cream-0: #faf7f0;
     --cream-1: #f5f0e4;
     --cream-2: #ede4cf;
     --cream-3: #ddd0b0;
     --cream-4: #c9b98e;
+    --cream-6: #8c7651;
     --cream-7: #6a5636;
+    --cream-8: #3d2f18;
     --ink: #1a1510;
     --ink-muted: #5a4e3a;
     --ink-faint: #a09070;
-	  --text-pictures: #605643;
+	--white: #ffffff;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background: #ffffff;
-    color: var(--ink);
+    background: var(--white);
+    color: var(--white);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     line-height: 1.6;
@@ -42,7 +45,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 1.5rem;
+    padding: 2.5rem 3rem;
     mix-blend-mode: multiply;
   }
   nav .nav-logo {
@@ -79,8 +82,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 1.5rem 4rem;
-    overflow: hidden;
+    padding: 1.0rem 1.5rem 5.0rem;
   }
   .hero-bg {
     position: absolute;
@@ -140,6 +142,7 @@
   position: relative;
   overflow: hidden;
   height: 500px;
+  margin: 1rem 0;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 1s ease, transform 1s ease;
@@ -162,17 +165,11 @@
 }
 
 .video-caption {
-  position: absolute;
-  z-index: 2;
-  color: rgba(255,255,255,0.7);
-  bottom: 1.5rem;
-  left: 1.5rem;
-  font-family: 'Azeret Mono', monospace;
-  font-size: 0.6rem;
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
 }
 
 /* Optional overlay for readability */
@@ -194,12 +191,14 @@
 }
 
   /* SECTION WRAPPER */
-  .section { padding: 1.5rem 1.5rem; }
-  .section-wide { width: 100%; }
+  .section { padding: 4.0rem 3rem; }
+  .section-narrow { max-width: 800px; }
+  .section-wide { max-width: 1400px; margin: 0 auto; }
 
   /* META BLOCK */
   .meta-section {
-    padding: 5rem 1.5rem;
+    padding: 6.0rem 3rem;
+    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
@@ -229,19 +228,22 @@
     font-style: italic;
     color: var(--ink);
     line-height: 1.6;
+    border-left: 1px solid var(--cream-4);
+    padding-left: 2rem;
   }
 
   /* POSITION TEXT */
   .position-section {
-    padding: 6rem 1.5rem;
+    padding: 7.0rem 3rem;
+    border-top: 1px solid var(--cream-3);
     display: grid;
-  grid-template-columns: left: calc((100% - 6rem) / 3 + 3rem); 1fr;
+    grid-template-columns: calc((100% + 1.5rem) / 3) 1fr;
     gap: 1.5rem;
     align-items: start;
   }
   .section-heading {
     font-family: 'Azeret Mono', monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 300;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -249,25 +251,37 @@
     padding-top: 0.35rem;
   }
   .body-text {
-    font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.8;
     color: var(--ink-muted);
-	  text-align: justify; 
   }
   .body-text + .body-text { margin-top: 0.75em; }
+  .body-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
 
 .stat-callout {
   position: relative;
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 4.0rem 3rem 2.0rem;
   background: var(--cream-1);
   display: flex;
   align-items: baseline;
   gap: 2.5rem;
 }
 
-
+.stat-callout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  right: 3rem;
+  height: 1px;
+  background: var(--cream-3);
+}
   .stat-number {
     font-size: clamp(3.5rem, 7vw, 6rem);
     font-weight: 100;
@@ -292,16 +306,23 @@
     position: relative;
   }
   .img-placeholder.tall { aspect-ratio: 3/4; }
+  .img-placeholder.wide { aspect-ratio: 16/9; }
+  .img-placeholder.square { aspect-ratio: 1/1; }
   .img-placeholder.landscape { aspect-ratio: 4/3; }
+  .img-placeholder.panorama { aspect-ratio: 21/9; }
 
   /* subtle texture variation per image */
   .img-placeholder.v1 { background: var(--cream-3); }
   .img-placeholder.v2 { background: var(--cream-2); }
   .img-placeholder.v3 { background: var(--cream-1); }
+  .img-placeholder.v4 { background: #d4c89a; }
+  .img-placeholder.v5 { background: #c8ba88; }
+  .img-placeholder.v6 { background: #e2d9bd; }
+  .img-placeholder.v7 { background: #bfad84; }
 
   img.img-placeholder {
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: scale(1.0);
+    transform: scale(1.04);
   }
   img.img-placeholder.visible {
     transform: scale(1);
@@ -309,10 +330,10 @@
 
   .img-caption {
     font-family: 'Azeret Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 300;
     letter-spacing: 0.1em;
-    color: var(--text-pictures);
+    color: var(--ink-faint);
     margin-top: 0.75rem;
     line-height: 1.5;
   }
@@ -321,7 +342,7 @@
   .full-img-wrap {
     width: 100%;
     overflow: hidden;
-	   padding: 0 0 5rem;
+    margin: 1rem 0;
   }
 
   /* IMAGE GRID */
@@ -329,24 +350,26 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
   }
   .img-grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
-	   padding: 3 0 3rem;
   }
 
   /* SECTION WITH IMAGE + TEXT SIDE */
   .split-section {
-    padding: 1.5rem 1.5rem;
+    padding: 6.0rem 3rem;
+    border-top: 1px solid var(--cream-3);
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 5rem;
     align-items: center;
   }
   .split-section.reverse { grid-template-columns: 1fr 1.4fr; }
-  .split-section.reverse .split-text { order: -1; }
+  .split-section.reverse .split-text { order: -1; text-align: right; }
 
   .split-text {}
   .split-subhead {
@@ -360,12 +383,13 @@
 
   /* PROCESS SECTION */
   .process-section {
-    padding: 6rem 1.5rem;
+    padding: 7.0rem 3rem;
+    border-top: 1px solid var(--cream-3);
   }
   .process-intro {
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    gap: 5rem;
+    grid-template-columns: calc((100% + 1.5rem) / 3) 1fr;
+    gap: 1.5rem;
     margin-bottom: 5rem;
   }
   .process-images-6 {
@@ -374,26 +398,34 @@
     gap: 1.5rem;
     margin-top: 3rem;
   }
+  .process-images-6 img, .process-images-6 .img-placeholder {
+    opacity: 0.15;
+  }
 
   /* PULLQUOTE */
   .pullquote-section {
-    padding: 5rem 1.5rem;
-    background: var(--cream-1);
+    padding: 6.0rem 3rem;
+            background: #ffffff;
   }
   .pullquote {
-    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
     font-weight: 300;
     font-style: normal;
-    line-height: 1.4;
+    line-height: 1.5;
     color: var(--ink);
     max-width: 960px;
-    padding-left: 1.5rem;
-	  text-transform: uppercase;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   /* FOOTER */
   footer {
-    padding: 1.5rem;
+    padding: 4.0rem 3rem;
+    border-top: 1px solid var(--cream-3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -428,10 +460,11 @@
   /* ─── ACCORDION / DROPDOWN ─── */
   .accordion-section {
     background: #ffffff;
-    padding: 0 1.5rem;
+    padding: 1.0rem 3rem;
+  }
+  .accordion-section-border-top {
     border-top: 1px solid var(--cream-3);
   }
-
   .accordion-item {
     border-bottom: 1px solid var(--cream-3);
   }
@@ -440,7 +473,7 @@
     background: #ffffff;
     border: none;
     cursor: pointer;
-    padding: 1rem 0;
+    padding: 2.0rem 0;
     display: grid;
     grid-template-columns: 4rem 1fr 2.5rem;
     align-items: center;
@@ -454,7 +487,6 @@
     color: var(--ink-faint);
     text-transform: uppercase;
     text-align: left;
-	  
   }
   .accordion-title {
     font-family: 'Azeret Mono', monospace;
@@ -493,51 +525,51 @@
     max-height: 2000px;
   }
   .accordion-inner {
-    padding: 1.5rem 0 1.5rem 4rem;
+    padding: 2.5rem 0 4.0rem 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
   }
+  .accordion-side-label { display: none; }
   .accordion-img-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
     background: var(--cream-3);
   }
   .accordion-lorem {
-    font-family: 'Hanken Grotesk', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.9;
     color: var(--ink-muted);
     padding-top: 0.2rem;
-	  text-align: justify;
   }
 
   @media (max-width: 900px) {
-    .accordion-section { padding: 0 1.5rem; }
-    nav { padding: 1.25rem 1.5rem; }
+    .accordion-section { padding: 1.0rem 1.5rem; }
+    nav { padding: 2.25rem 1.5rem; }
     nav .nav-links { display: none; }
-    .hero { padding: 0 1.5rem 1.5rem; }
+    .hero { padding: 1.0rem 1.5rem 4.0rem; }
     .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
-    .meta-section { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.5rem; gap: 2rem; }
+    .meta-section { grid-template-columns: 1fr 1fr; padding: 4.0rem 1.5rem; gap: 2rem; }
     .position-section, .split-section, .split-section.reverse, .process-intro {
       grid-template-columns: 1fr;
       gap: 2.5rem;
-      padding: 4rem 1.5rem;
+      padding: 5.0rem 1.5rem;
     }
     .split-section.reverse .split-text { order: 0; }
-    .section { padding: 4rem 1.5rem; }
-    .stat-callout { padding: 1.5rem 1.5rem; flex-direction: column; gap: 1rem; }
+    .section { padding: 5.0rem 1.5rem; }
+    .stat-callout { padding: 4.0rem 1.5rem; flex-direction: column; gap: 1rem; }
     .img-grid-3 { grid-template-columns: 1fr 1fr; }
     .process-images-6 { grid-template-columns: 1fr 1fr; }
-    .process-section { padding: 4rem 1.5rem; }
-    .pullquote-section { padding: 4rem 1.5rem; }
+    .process-section { padding: 5.0rem 1.5rem; }
+    .pullquote-section { padding: 5.0rem 1.5rem; }
     .pullquote { padding-left: 1.5rem; }
-    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
-    .video-caption { padding: 0.75rem 1.5rem; }
-    .accordion-trigger { padding: 1rem 0; }
-    .accordion-inner { padding: 1rem 1.5rem 2.5rem 1.5rem; }
+    footer { padding: 3.0rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+    .video-caption { padding: 1.75rem 1.5rem; }
+    .accordion-trigger { padding: 2.0rem 0; }
+    .accordion-inner { padding: 2.0rem 1.5rem 3.5rem 1.5rem; }
   }
 </style>
 </head>
@@ -557,7 +589,7 @@
 
 <!-- HERO -->
 <section class="hero">
-<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(5%) translateY(0%);">
+<img src="images/top.png" class="hero-bg" style="position: absolute; top: -5%; left: 30%; height: auto; width: auto; object-fit: none;">
   <p class="hero-label">Project</p>
   <h1>FLEXI<br><em>SEXY</em></h1>
   <span class="hero-scroll-hint">Scroll</span>
@@ -565,7 +597,7 @@
 
 <!-- VIDEO SECTION -->
 <div class="video-section reveal">
-  <video class="bg-video" muted loop playsinline preload="auto">
+  <video class="bg-video" muted loop playsinline preload="none">
     <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
   </video>
   <p class="video-caption">Flexi flexi — flexi flexi flexi I</p>
@@ -575,8 +607,7 @@
 <div class="meta-section reveal">
   <div class="meta-item">
     <span class="meta-label">Research Team</span>
-    <p class="meta-value">Herberth, Liliane</p>
-	     <p class="meta-value">Mayer, Marco</p>
+    <p class="meta-value">Herberth, Liliane. Mayer, Marco.</p>
   </div>
   <div class="meta-item">
     <span class="meta-label">Year</span>
@@ -584,13 +615,13 @@
   </div>
   <div class="meta-item">
     <span class="meta-label">Location</span>
-    <p class="meta-value">Room 264/2, Vienna, Austria</p>
+    <p class="meta-value">264-2. 2026. Vienna, Austria</p>
   </div>
   <div class="meta-item">
     <span class="meta-label">Topics</span>
     <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Life Cycle</p>
   </div>
-  <div class="meta-item" style="grid-column: 1 / -1; padding-top: 2rem; padding-left: 0;">
+  <div class="meta-item" style="grid-column: 1 / -1; border-left: none; padding-top: 2rem; border-top: 1px solid var(--cream-3);">
     <p class="meta-desc" style="border-left: none; padding-left: 0;">contributions of x and y and z and a and b and c while using 1 and 2 and 3 within xy and ab and 12.</p>
   </div>
 </div>
@@ -602,10 +633,7 @@
   </div>
   <div>
     <p class="body-text">
-project flexi aims to show that it shows that however u twist and turn it, flexi is shown by projecting a show to aim that flexi is indeed showing a project 
-		that is showing that project flexi aims to show that it shows that however u twist and turn it, flexi is shown by projecting a show to aim that flexi is 
-		indeed showing a project that is showing that project flexi aims to show that it shows that however u twist and turn it, flexi is shown by projecting a show 
-		to aim that flexi is indeed showing a project that is showing that yes.
+project flexi aims to show that flexi flexi flexi flexi flexi flexi flexi flexi flexi flexi flexi flexi
     </p>
   </div>
 </section>
@@ -635,20 +663,18 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
 </div>
 	
 <!-- FULL-WIDTH IMAGE 1 -->
-<div style="padding: 3rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
-</div>
 </div>
 
 <!-- STAT CALLOUT 2 -->
 <div class="stat-callout reveal" style="background:#ffffff;">
-  <span class="stat-number">6 (+1) MATERIALS</span>
+  <span class="stat-number">6 (+1) Materials</span>
   <p class="stat-label">all disposable. distributed as a material matrix changing properties where needed</p>
 </div>
 
 <!-- ─── ACCORDION / MATERIAL DROPDOWNS ─── -->
-<div class="accordion-section reveal">
+<div class="accordion-section accordion-section-border-top reveal">
 
   <!-- I. Water -->
   <div class="accordion-item" id="acc-water">
@@ -771,8 +797,10 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
 </div>
 
 <!-- FULL-WIDTH IMAGE 1 -->
+<div style="padding: 1rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/f.jpeg" style="width:100%; display:block; object-fit:cover;">
+</div>
 </div>
 	
 <!-- IMAGE GRID 2+2 -->
@@ -783,7 +811,9 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
       <p class="img-caption">flexible mold</p>
     </div>
     <div>
-      <img src="images/5.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <video class="img-placeholder landscape" style="object-fit: cover;" autoplay muted loop playsinline>
+        <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
+      </video>
       <p class="img-caption">assembly</p>
     </div>
   </div>
@@ -793,6 +823,7 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
 <div class="split-section reveal">
   <div>
    <img src="images/ssfsf.png" class="img-placeholder tall" style="object-fit: cover;">
+    <p class="img-caption">Flexi-flexi derived flexi</p>
   </div>
   <div class="split-text">
  	<h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
@@ -811,6 +842,7 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
   </div>
   <div>
     <img src="images/3.png" class="img-placeholder tall" style="object-fit: cover;">
+    <p class="img-caption">Flexi flexi derived from flexi</p>
   </div>
 </div>
 
@@ -826,7 +858,7 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
   <div>
     <p class="section-heading">&nbsp;</p>
   </div>
-  <div>
+  <div class="body-cols">
     <p class="body-text">
    Living in a material world
 And I am a material girl
@@ -861,41 +893,35 @@ Living in a material world
 </div>
 
 <!-- FULL-WIDTH IMAGE 2 -->
+<div style="padding: 1rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
 </div>
+</div>
 <div class="section">
-	    <p class="body-text">
-As if the ground itself has begun to stretch, a spine leans into the air transforming into a wing.
-    </p>
-	    <p class="body-text">
-     It feels like the peak of a movement, a muscle contracting, a weave like muscle fibers drawn close together, holding tension just before release. 
+  <div class="body-cols">
+    <p class="body-text">
+As if the ground itself has begun to stretch, a spine leans into the air transforming into a wing. It feels like the peak of a movement, a muscle contracting, a weave like muscle fibers drawn close together, holding tension just before release.
     </p>
     <p class="body-text">
-Closer to the ground the forms surrender to gravity, soft as a limb at rest.
+Closer to the ground the forms surrender to gravity, soft as a limb at rest. The wing wraps around, not enclosing, simply leaning close. Standing within the arc of a living gesture, a body learning to lift itself from the earth.
     </p>
-    <p class="body-text">
-The wing wraps around, not enclosing, simply leaning close. 
-    </p>
-    <p class="body-text">
-Standing within the arc of a living gesture, a body learning to lift itself from the earth.
-    </p>
+  </div>
 </div>
 
 <!-- PROCESS -->
 <section class="process-section" id="process">
   <div class="process-intro reveal">
     <p class="section-heading">Process</p>
-    <div>
+    <div class="body-cols">
       <p class="body-text">
         In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that
         flexi and flexi flexi can be directly informed by flexi flexi (flexi and flexi), flexi flexi
         (flexi, flexi, and flexi flexi), and flexi flexi (flexi-of-flexi, flexi flexi, and flexi
         flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi
-        and flexi within the final flexi are flexi flexi and flexi flexi in high flexi. This enables
-        flexi over specific flexi flexi and flexi flexi to changing flexi flexi.
+        and flexi within the final flexi are flexi flexi and flexi flexi in high flexi.
       </p>
-      <p class="body-text" style="margin-top: 1.5em;">
+      <p class="body-text">
         In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over
         their flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi,
         and flexi. Such flexi-based flexi is utilized as a flexi flexi, one that is able to flexi,
@@ -923,7 +949,7 @@ Standing within the arc of a living gesture, a body learning to lift itself from
       <p class="img-caption">Detail of a flexi flexi (cm)</p>
     </div>
     <div>
-      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <div class="img-placeholder landscape v2"></div>
       <p class="img-caption">Detail of a flexi flexi (mm)</p>
     </div>
     <div>
@@ -945,7 +971,7 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   <div>
     <p class="section-heading">contact</p>
   </div>
-  <div>
+  <div class="body-cols">
     <p class="body-text">
       get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch
     </p>
@@ -956,8 +982,10 @@ Standing within the arc of a living gesture, a body learning to lift itself from
 </section>
 
 <!-- FULL-WIDTH IMAGE 1 -->
+<div style="padding: 1rem 0;">
 <div class="full-img-wrap reveal">
   <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
+</div>
 </div>
 
 <!-- FOOTER -->
@@ -979,20 +1007,6 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // Video: play/pause on scroll
-  const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const video = entry.target.querySelector('video');
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        if (video) video.play().catch(() => {});
-      } else {
-        if (video) video.pause();
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.video-section').forEach(s => videoObserver.observe(s));
-
   // Stagger children in grids
   document.querySelectorAll('.img-grid-2, .img-grid-3, .process-images-6').forEach(grid => {
     Array.from(grid.children).forEach((child, i) => {
@@ -1011,7 +1025,31 @@ Standing within the arc of a living gesture, a body learning to lift itself from
   }
 </script>
 
+	<script>
+const sections = document.querySelectorAll('.video-section');
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target.querySelector('video');
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      if (video) {
+        video.play().catch(() => {});
+      }
+    } else {
+      if (video) {
+        video.pause();
+      }
+    }
+  });
+}, {
+  threshold: 0.4
+});
+
+sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
