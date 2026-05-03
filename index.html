@@ -235,7 +235,7 @@
   .position-section {
     padding: 6rem 1.5rem;
     display: grid;
-  grid-template-columns: calc((100% - 6rem) / 3) 1fr;
+  grid-template-columns: left: calc((100% - 6rem) / 3 + 3rem); 1fr;
     gap: 1.5rem;
     align-items: start;
   }
@@ -454,6 +454,7 @@
     color: var(--ink-faint);
     text-transform: uppercase;
     text-align: left;
+	  
   }
   .accordion-title {
     font-family: 'Azeret Mono', monospace;
@@ -510,6 +511,7 @@
     line-height: 1.9;
     color: var(--ink-muted);
     padding-top: 0.2rem;
+	  text-align: justify;
   }
 
   @media (max-width: 900px) {
@@ -641,8 +643,8 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
 
 <!-- STAT CALLOUT 2 -->
 <div class="stat-callout reveal" style="background:#ffffff;">
-  <span class="stat-number">6 (+1) MATERIALSs</span>
-  <p class="stat-label">all disposable. distributed as a material matrix changing properties where it is needed</p>
+  <span class="stat-number">6 (+1) MATERIALS</span>
+  <p class="stat-label">all disposable. distributed as a material matrix changing properties where needed</p>
 </div>
 
 <!-- ─── ACCORDION / MATERIAL DROPDOWNS ─── -->
