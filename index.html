@@ -419,6 +419,28 @@
     color: var(--ink-faint);
   }
 
+
+  /* SCROLL-DRIVEN ANIMATION SECTION */
+  .scroll-anim-section {
+    position: relative;
+    width: 100%;
+    padding: 5rem 1.5rem;
+    overflow: hidden;
+  }
+  .scroll-anim-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .scroll-anim-content {
+    position: relative;
+    z-index: 1;
+  }
   /* FADE-IN ANIMATIONS */
   .reveal {
     opacity: 0;
@@ -869,22 +891,18 @@ Living in a material world
 <div class="full-img-wrap reveal">
   <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
 </div>
-<div class="section">
-	    <p class="body-text">
-As if the ground itself has begun to stretch, a spine leans into the air transforming into a wing.
-    </p>
-	    <p class="body-text">
-     It feels like the peak of a movement, a muscle contracting, a weave like muscle fibers drawn close together, holding tension just before release. 
-    </p>
-    <p class="body-text">
-Closer to the ground the forms surrender to gravity, soft as a limb at rest.
-    </p>
-    <p class="body-text">
-The wing wraps around, not enclosing, simply leaning close. 
-    </p>
-    <p class="body-text">
-Standing within the arc of a living gesture, a body learning to lift itself from the earth.
-    </p>
+<div class="scroll-anim-section">
+  <video id="scrollAnim" class="scroll-anim-bg" muted playsinline preload="auto" src="images/animate.mp4"></video>
+  <div class="scroll-anim-content">
+    <div class="body-cols">
+      <p class="body-text">
+As if the ground itself has begun to stretch, a spine leans into the air transforming into a wing. It feels like the peak of a movement, a muscle contracting, a weave like muscle fibers drawn close together, holding tension just before release.
+      </p>
+      <p class="body-text">
+Closer to the ground the forms surrender to gravity, soft as a limb at rest. The wing wraps around, not enclosing, simply leaning close. Standing within the arc of a living gesture, a body learning to lift itself from the earth.
+      </p>
+    </div>
+  </div>
 </div>
 
 <!-- PROCESS -->
@@ -1014,6 +1032,37 @@ Standing within the arc of a living gesture, a body learning to lift itself from
     // open clicked if it was closed
     if (!isOpen) item.classList.add('open');
   }
+
+  // Scroll-driven video animation
+  (function() {
+    const section = document.querySelector('.scroll-anim-section');
+    const video = document.getElementById('scrollAnim');
+    if (!section || !video) return;
+
+    video.pause();
+
+    let ticking = false;
+
+    function updateVideo() {
+      if (!video.duration) { ticking = false; return; }
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // progress: 0 when section top enters bottom of viewport, 1 when section bottom leaves top
+      const progress = Math.max(0, Math.min(1,
+        (vh - rect.top) / (vh + rect.height)
+      ));
+      video.currentTime = progress * video.duration;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateVideo);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+
 </script>
 
 
