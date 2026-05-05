@@ -112,6 +112,10 @@
   .hero h1 em {
     font-style: italic;
     color: var(--cream-7);
+    background: linear-gradient(to right, var(--cream-7) 0%, transparent 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .hero-scroll-hint {
     position: absolute;
@@ -428,24 +432,30 @@
   }
 
 
-  /* SCROLL-DRIVEN ANIMATION SECTION */
-  .scroll-anim-section {
+  /* VIDEO DECAY BACKGROUND */
+  .video-decay-background {
     position: relative;
     width: 100%;
-    padding: 5rem 1.5rem;
-    overflow: hidden;
+    padding: 20rem 1.5rem;
+    overflow: visible;
+    z-index: 1;
   }
-  .scroll-anim-bg {
-    position: absolute;
-    inset: 0;
+  .video-decay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
+    transition: opacity 0.6s ease;
   }
-  .scroll-anim-content {
+  .video-decay-bg.active {
+    opacity: 0.7;
+  }
+  .video-decay-content {
     position: relative;
     z-index: 1;
   }
@@ -581,10 +591,10 @@
 <nav>
   <a href="#" class="nav-logo">Flexi Studio</a>
   <ul class="nav-links">
-    <li><a href="#origin">origin</a></li>
-    <li><a href="#material">Material</a></li>
-    <li><a href="#production">Production</a></li>
-	<li><a href="#about">about</a></li>
+    <li><a href="#video-silk">origin</a></li>
+    <li><a href="#project">project</a></li>
+    <li><a href="#material">material</a></li>
+    <li><a href="#process">process</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
@@ -597,16 +607,16 @@
   <span class="hero-scroll-hint">Scroll</span>
 </section>
 
-<!-- VIDEO SECTION -->
-<div class="video-section reveal">
+<!-- VIDEO SECTION: full-width background video silk road -->
+<div class="video-section reveal" id="video-silk">
   <video class="bg-video" muted loop playsinline preload="auto">
     <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
   </video>
   <p class="video-caption">Flexi flexi — flexi flexi flexi I</p>
 </div>
 
-<!-- META BLOCK -->
-<div class="meta-section reveal">
+<!-- META BLOCK: research team, year, location, topics -->
+<div class="meta-section reveal" id="meta-info">
   <div class="meta-item">
     <span class="meta-label">Research Team</span>
     <p class="meta-value">Herberth, Liliane</p>
@@ -629,8 +639,8 @@
   </div>
 </div>
 
-<!-- POSITION TEXT -->
-<section class="position-section reveal" id="position">
+<!-- POSITION TEXT: project describtion -->
+<section class="position-section reveal" id="project">
   <div>
     <p class="section-heading">project describtion</p>
   </div>
@@ -668,9 +678,9 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
   </div>
 </div>
 	
-<!-- FULL-WIDTH IMAGE 1 -->
+<!-- FULL-WIDTH IMAGE: l.jpeg -->
 <div style="padding: 3rem 0;">
-<div class="full-img-wrap reveal">
+<div class="full-img-wrap reveal" id="fullwidth-l">
   <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
 </div>
@@ -681,8 +691,8 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
   <p class="stat-label">all disposable. distributed as a material matrix changing properties where needed</p>
 </div>
 
-<!-- ─── ACCORDION / MATERIAL DROPDOWNS ─── -->
-<div class="accordion-section reveal">
+<!-- ACCORDION: material dropdowns water gelatine xanthan CaCO3 wood glycerol textiles -->
+<div class="accordion-section reveal" id="material">
 
   <!-- I. Water -->
   <div class="accordion-item" id="acc-water">
@@ -804,8 +814,8 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
   </div>
 </div>
 
-<!-- FULL-WIDTH IMAGE 1 -->
-<div class="full-img-wrap reveal">
+<!-- FULL-WIDTH IMAGE: f.jpeg -->
+<div class="full-img-wrap reveal" id="fullwidth-f">
   <img src="images/f.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
 	
@@ -823,7 +833,7 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
   </div>
 </div>
 
-<!-- TEXT CALLOUT SPLIT: image left, text right -->
+<!-- SPLIT SECTION: image ssfsf.png left, text PROTOTYPE 1.0 right -->
 <div class="split-section reveal">
   <div>
    <img src="images/ssfsf.png" class="img-placeholder tall" style="object-fit: cover;">
@@ -835,7 +845,7 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
   </div>
 </div>
 
-<!-- TEXT CALLOUT SPLIT: text left, image right (reversed) -->
+<!-- SPLIT SECTION: text SPINE left reversed, image 3.png right -->
 <div class="split-section reverse reveal">
   <div class="split-text">
     <h2 class="split-subhead"><em>SPINE</em></h2>
@@ -894,13 +904,14 @@ Living in a material world
   </div>
 </div>
 
-<!-- FULL-WIDTH IMAGE 2 -->
-<div class="full-img-wrap reveal">
+<!-- FULL-WIDTH IMAGE: c.jpeg -->
+<div class="full-img-wrap reveal" id="fullwidth-c">
   <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
 </div>
-<div class="scroll-anim-section">
-  <video id="scrollAnim" class="scroll-anim-bg" muted playsinline preload="auto" src="images/grow.mp4"></video>
-  <div class="scroll-anim-content">
+<!-- VIDEO DECAY BACKGROUND: grow.mp4 fixed fullscreen, fade in/out on scroll -->
+<div class="video-decay-background" id="video-decay">
+  <video id="scrollAnim" class="video-decay-bg scroll-anim-bg" muted playsinline preload="auto" src="images/grow.mp4"></video>
+  <div class="video-decay-content">
     <div class="body-cols">
       <p class="body-text">
 As if the ground itself has begun to stretch, 
@@ -953,8 +964,6 @@ As if the ground itself has begun to stretch,
     </div>
   </div>
 </div>
-
-<!-- PROCESS -->
 <section class="process-section" id="process">
   <div class="process-intro reveal">
     <p class="section-heading">Process</p>
@@ -1027,8 +1036,8 @@ As if the ground itself has begun to stretch,
   </div>
 </section>
 
-<!-- FULL-WIDTH IMAGE 1 -->
-<div class="full-img-wrap reveal">
+<!-- FULL-WIDTH IMAGE: n.jpeg -->
+<div class="full-img-wrap reveal" id="fullwidth-n">
   <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
 
@@ -1082,34 +1091,44 @@ As if the ground itself has begun to stretch,
     if (!isOpen) item.classList.add('open');
   }
 
-  // Scroll-driven video animation
+  // Video Decay Background: fixed fullscreen, fade in when section visible, out when not
   (function() {
-    const section = document.querySelector('.scroll-anim-section');
+    const section = document.querySelector('.video-decay-background');
     const video = document.getElementById('scrollAnim');
     if (!section || !video) return;
 
     video.pause();
 
-    let ticking = false;
-
-    function updateVideo() {
-      if (!video.duration) { ticking = false; return; }
+    function updateVideoDecay() {
       const rect = section.getBoundingClientRect();
       const vh = window.innerHeight;
-      // progress: 0 when section top enters bottom of viewport, 1 when section bottom leaves top
-      const progress = Math.max(0, Math.min(1,
-        (vh - rect.top) / (vh + rect.height)
-      ));
-      video.currentTime = progress * video.duration;
-      ticking = false;
+
+      // Section is on screen if its top < vh and its bottom > 0
+      const isVisible = rect.top < vh && rect.bottom > 0;
+
+      if (isVisible) {
+        video.classList.add('active');
+        if (video.paused) video.play().catch(() => {});
+
+        // Scroll-drive playback within section
+        if (video.duration) {
+          const progress = Math.max(0, Math.min(1,
+            (vh - rect.top) / (vh + rect.height)
+          ));
+          video.currentTime = progress * video.duration;
+        }
+      } else {
+        video.classList.remove('active');
+        if (!video.paused) video.pause();
+      }
     }
 
     window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateVideo);
-        ticking = true;
-      }
+      requestAnimationFrame(updateVideoDecay);
     }, { passive: true });
+
+    // Initial check
+    updateVideoDecay();
   })();
 
 </script>
