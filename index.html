@@ -239,8 +239,8 @@
   .position-section {
     padding: 6rem 1.5rem;
     display: grid;
-  grid-template-columns: left: calc((100% - 6rem) / 3 + 3rem); 1fr;
-    gap: 1.5rem;
+grid-template-columns: 1fr 1fr;
+    gap: 0rem;
     align-items: start;
   }
   .section-heading {
@@ -259,6 +259,7 @@
     line-height: 1.8;
     color: var(--ink-muted);
 	  text-align: justify; 
+	  
   }
 	  .body-text-right {
     font-family: 'Hanken Grotesk', sans-serif;
@@ -376,8 +377,8 @@
   }
   .process-intro {
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem;
     margin-bottom: 5rem;
   }
   .process-images-6 {
@@ -436,7 +437,7 @@
   .video-decay-background {
     position: relative;
     width: 100%;
-    padding: 20rem 1.5rem;
+    padding: 50rem 1.5rem;
     overflow: visible;
     z-index: 1;
   }
@@ -565,8 +566,8 @@
     .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
     .meta-section { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.5rem; gap: 2rem; }
     .position-section, .split-section, .split-section.reverse, .process-intro {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 0rem;
       padding: 4rem 1.5rem;
     }
     .split-section.reverse .split-text { order: 0; }
@@ -702,7 +703,7 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+        <img src="images/water.jpg" class="accordion-img-placeholder" style="object-fit:cover;">
         <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
@@ -782,6 +783,20 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
     <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
       <span class="accordion-index">VII.</span>
       <span class="accordion-title muted">Textiles</span>
+      <span class="accordion-arrow">+</span>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+	  <!-- VIII. Boneglue -->
+  <div class="accordion-item" id="acc-textiles">
+    <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
+      <span class="accordion-index">VIII.</span>
+      <span class="accordion-title muted">Boneglue</span>
       <span class="accordion-arrow">+</span>
     </button>
     <div class="accordion-body">
