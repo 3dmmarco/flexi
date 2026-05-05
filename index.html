@@ -450,7 +450,6 @@
     opacity: 0;
     pointer-events: none;
     z-index: -1;
-    transition: opacity 0.6s ease;
   }
   .video-decay-bg.active {
     opacity: 0.7;
@@ -1091,43 +1090,66 @@ As if the ground itself has begun to stretch,
     if (!isOpen) item.classList.add('open');
   }
 
-  // Video Decay Background: fixed fullscreen, fade in when section visible, out when not
+  // Video Decay Background: scroll-driven frames (static, no autoplay), fixed fullscreen, smooth fade
   (function() {
     const section = document.querySelector('.video-decay-background');
     const video = document.getElementById('scrollAnim');
     if (!section || !video) return;
 
+    // Keep video paused always — only scrub currentTime
     video.pause();
+    video.addEventListener('play', () => video.pause());
 
     function updateVideoDecay() {
       const rect = section.getBoundingClientRect();
       const vh = window.innerHeight;
 
-      // Section is on screen if its top < vh and its bottom > 0
-      const isVisible = rect.top < vh && rect.bottom > 0;
+      // Fade zone: start fading in when section top is 30% from bottom, fully in at 15%
+      // Start fading out when section bottom is 20% from top, fully out at 5%
+      const fadeInStart  = vh * 0.85;  // section.top crosses this → begin fade in
+      const fadeInEnd    = vh * 0.5;   // section.top crosses this → fully visible
+      const fadeOutStart = vh * 0.25;  // section.bottom crosses this → begin fade out
+      const fadeOutEnd   = vh * 0.05;  // section.bottom crosses this → fully gone
 
-      if (isVisible) {
-        video.classList.add('active');
-        if (video.paused) video.play().catch(() => {});
+      let opacity = 0;
 
-        // Scroll-drive playback within section
-        if (video.duration) {
-          const progress = Math.max(0, Math.min(1,
-            (vh - rect.top) / (vh + rect.height)
-          ));
-          video.currentTime = progress * video.duration;
-        }
-      } else {
-        video.classList.remove('active');
-        if (!video.paused) video.pause();
+      if (rect.top <= fadeInEnd && rect.bottom >= fadeOutStart) {
+        // Fully visible zone
+        opacity = 1;
+      } else if (rect.top > fadeInEnd && rect.top <= fadeInStart) {
+        // Fading in: top moving from fadeInStart down to fadeInEnd
+        opacity = 1 - (rect.top - fadeInEnd) / (fadeInStart - fadeInEnd);
+      } else if (rect.bottom < fadeOutStart && rect.bottom >= fadeOutEnd) {
+        // Fading out: bottom moving from fadeOutStart down to fadeOutEnd
+        opacity = (rect.bottom - fadeOutEnd) / (fadeOutStart - fadeOutEnd);
+      }
+
+      opacity = Math.max(0, Math.min(1, opacity));
+      video.style.opacity = opacity * 0.7; // max opacity 0.7
+
+      // Scroll-scrub: progress 0 at section top entering viewport, 1 at section bottom leaving
+      if (video.duration && opacity > 0) {
+        const progress = Math.max(0, Math.min(1,
+          (vh - rect.top) / (vh + rect.height)
+        ));
+        video.currentTime = progress * video.duration;
       }
     }
+
+    // Remove CSS transition opacity so JS controls it directly and smoothly
+    video.style.transition = 'none';
+
+    // Load metadata so duration is available immediately
+    video.load();
+    video.addEventListener('loadedmetadata', () => {
+      video.currentTime = 0;
+      updateVideoDecay();
+    });
 
     window.addEventListener('scroll', () => {
       requestAnimationFrame(updateVideoDecay);
     }, { passive: true });
 
-    // Initial check
     updateVideoDecay();
   })();
 
