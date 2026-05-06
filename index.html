@@ -21,6 +21,7 @@
     --ink-muted: #5a4e3a;
     --ink-faint: #a09070;
 	  --text-pictures: #605643;
+    --black: #000000;
   }
 
   html { scroll-behavior: smooth; }
@@ -156,6 +157,7 @@
 
 .bg-video {
   position: absolute;
+  padding: 5rem, 0rem;
   top: 50%;
   left: 50%;
   min-width: 100%;
@@ -203,7 +205,7 @@
 
   /* META BLOCK */
   .meta-section {
-    padding: 5rem 1.5rem;
+    padding: 0rem 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
@@ -217,47 +219,41 @@
     font-weight: 300;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--black);
     display: block;
     margin-bottom: 0.6rem;
   }
   .meta-value {
     font-size: 0.9rem;
     font-weight: 300;
-    color: var(--ink-muted);
+    color: var(--ink-faint);
     line-height: 1.5;
-  }
-  .meta-desc {
-    font-size: 1.2rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--ink);
-    line-height: 1.6;
+
   }
 
   /* POSITION TEXT */
   .position-section {
-    padding: 6rem 1.5rem;
+    padding: 1.5rem 1.5rem;
     display: grid;
 grid-template-columns: 1fr 1fr;
     gap: 0rem;
     align-items: start;
   }
   .section-heading {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.9rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0em;
     text-transform: uppercase;
-    color: var(--ink-faint);
+    color: var(--black);
     padding-top: 0.35rem;
   }
   .body-text {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.8;
-    color: var(--ink-muted);
+    color: var(--black);
 	  text-align: justify; 
 	  
   }
@@ -273,28 +269,29 @@ grid-template-columns: 1fr 1fr;
 
 .stat-callout {
   position: relative;
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 10rem 1.5rem 3.5rem;
   background: var(--cream-1);
-  display: flex;
   align-items: baseline;
   gap: 2.5rem;
 }
 
 
   .stat-number {
-    font-size: clamp(3.5rem, 7vw, 6rem);
-    font-weight: 100;
+  font-family: 'Hanken Grotesk', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 400;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.03em;
+    letter-spacing: 0.0em;
     color: var(--ink);
-    line-height: 1;
+    line-height: 1.25;
   }
   .stat-label {
-    font-size: 1rem;
+  font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.5rem;
     font-weight: 300;
-    color: var(--ink-muted);
-    max-width: 600px;
-    line-height: 1.5;
+    color: var(--ink);
+    line-height: 1.25;
+    text-align: right;
   }
 
   /* IMAGE PLACEHOLDERS */
@@ -334,7 +331,7 @@ grid-template-columns: 1fr 1fr;
   .full-img-wrap {
     width: 100%;
     overflow: hidden;
-	   padding: 0 0 5rem;
+	   padding: 0 0 0rem;
   }
 
   /* IMAGE GRID */
@@ -477,7 +474,7 @@ grid-template-columns: 1fr 1fr;
   }
 
   .accordion-item {
-    border-top: 1px solid var(--cream-3);
+    border-top: 1.5px solid var(--black);
   }
   .accordion-trigger {
     width: 100%;
@@ -492,21 +489,21 @@ grid-template-columns: 1fr 1fr;
   }
   .accordion-index {
     font-family: 'Azeret Mono', monospace;
-    font-size: 0.95rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
     letter-spacing: 0.2em;
-    color: var(--ink-faint);
+    color: var(--black);
     text-transform: uppercase;
     text-align: left;
 	  
   }
   .accordion-title {
     font-family: 'Azeret Mono', monospace;
-    font-size: 0.95rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: var(--black);
     text-align: center;
     transition: color 0.2s;
   }
@@ -537,10 +534,10 @@ grid-template-columns: 1fr 1fr;
     max-height: 2000px;
   }
   .accordion-inner {
-    padding: 1.5rem 0 1.5rem 4rem;
+    padding: 1.5rem 0 1.5rem 0rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 1.5rem;
     align-items: start;
   }
   .accordion-img-placeholder {
@@ -550,11 +547,11 @@ grid-template-columns: 1fr 1fr;
   }
   .accordion-lorem {
     font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     line-height: 1.9;
     color: var(--ink-muted);
-    padding-top: 0.2rem;
+    padding-top: 0rem;
 	  text-align: justify;
   }
 
@@ -601,19 +598,15 @@ grid-template-columns: 1fr 1fr;
 
 <!-- HERO -->
 <section class="hero">
-<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: cover; object-position: left center; transform: translateX(5%) translateY(0%);">
+<img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; 
+left: 0; height: 100%; width: 130%; object-fit: scale-down; 
+object-position: left center; transform: translateX(20%) translateY(0%);">
   <p class="hero-label">Project</p>
   <h1>FLEXI<br><em>FADE</em></h1>
   <span class="hero-scroll-hint">Scroll</span>
 </section>
 
-<!-- VIDEO SECTION: full-width background video silk road -->
-<div class="video-section reveal" id="video-silk">
-  <video class="bg-video" muted loop playsinline preload="auto">
-    <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
-  </video>
-  <p class="video-caption">installation — production</p>
-</div>
+
 
 <!-- META BLOCK: research team, year, location, topics -->
 <div class="meta-section reveal" id="meta-info">
@@ -633,12 +626,16 @@ grid-template-columns: 1fr 1fr;
   <div class="meta-item">
     <span class="meta-label">Topics</span>
     <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Life Cycle</p>
+
   </div>
-  <div class="meta-item" style="grid-column: 1fr 1fr; padding-top: 5rem; padding-left: 0;">
-    <p class="meta-desc" style="border-left: none; padding-left: 0;">tu wien and kaust and florian and anna and all the others and mom and dad 
-		and everybody else. funding by this and that and everething else. contributions of x and y and z 
-		and a and b and c while using 1 and 2 and 3 within xy and ab and 12.</p>
-  </div>
+</div>
+
+<!-- VIDEO SECTION: full-width background video silk road -->
+<div class="video-section reveal" id="video-silk">
+  <video class="bg-video" muted loop playsinline preload="auto">
+    <source src="images/458079_Silk_Road_Uzbekistan_1920x1080.mp4" type="video/mp4">
+  </video>
+  <p class="video-caption">PANEL PRODUCTION — PROTOTYPE 4</p>
 </div>
 
 <!-- POSITION TEXT: project describtion -->
@@ -658,8 +655,8 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
 
 <!-- STAT CALLOUT 1 -->
 <div class="stat-callout reveal" style="background:#ffffff;">
-  <span class="stat-number">314 PANELS</span>
-  <p class="stat-label">ONE CONNECTING SPINE</p>
+  <span class="stat-number">314 Panels</span>
+  <p class="stat-label">one connecting spine</p>
 </div>
 
 <!-- IMAGE GRID 3-col -->
@@ -689,8 +686,8 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
 
 <!-- STAT CALLOUT 2 -->
 <div class="stat-callout reveal" style="background:#ffffff;">
-  <span class="stat-number">6 (+1) MATERIALS</span>
-  <p class="stat-label">all disposable. distributed as a material matrix changing properties where needed</p>
+  <span class="stat-number">6 (+1) Materials</span>
+  <p class="stat-label">all disposable – distributed in a targeted manner</p>
 </div>
 
 <!-- ACCORDION: material dropdowns water gelatine xanthan CaCO3 wood glycerol textiles -->
@@ -762,7 +759,9 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="accordion-lorem">sawdust and woodchips that originated as a wasteproduct 
+        during building frames for panel-production was reused as a filler material, providing
+         additional reinforcement and serving as a natural pigment.</p>
       </div>
     </div>
   </div>
@@ -776,7 +775,12 @@ project flexi aims to show that it shows that however u twist and turn it, flexi
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="accordion-lorem">glycerol serves as a plasticiser, making the 
+        material more resistant to breaking and providing the possibility to 
+        adjust flexibility of the material.
+        lower parts are very flexible due to more share of glycerol within the 
+        material matrix, parts further up are stiff with only a minimal ammount 
+        to prevent breaking and deformation during the drying process.</p>
       </div>
     </div>
   </div>
@@ -982,7 +986,7 @@ As if the ground itself has begun to stretch,
 </div>
 <section class="process-section" id="process">
   <div class="process-intro reveal">
-    <p class="section-heading">Process</p>
+    <p class="section-heading">Production Process</p>
     <div>
       <p class="body-text">
         In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that
@@ -1048,6 +1052,20 @@ As if the ground itself has begun to stretch,
     </p>
     <p class="body-text">
      touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it
+    </p>
+  </div>
+</section>
+
+<!-- POSITION TEXT: acknowledgements -->
+<section class="position-section reveal" id="project">
+  <div>
+    <p class="section-heading">acknowledgements</p>
+  </div>
+  <div>
+    <p class="body-text">
+tu wien and kaust and florian and anna and all the others and mom and dad 
+    and everybody else. funding by this and that and everething else. contributions of x and y and z 
+    and a and b and c while using 1 and 2 and 3 within xy and ab and 12.
     </p>
   </div>
 </section>
