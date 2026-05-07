@@ -6,7 +6,7 @@
 <title>Project Flexi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@300;400&family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@100;200;300;400&family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -187,6 +187,7 @@
   .section { padding: 0rem 1.5rem; }
   .section-wide { width: 100%; }
 
+
   /* META BLOCK */
   .meta-section {
     padding: 0.33rem 1.5rem;
@@ -214,8 +215,8 @@
   }
 
   /* POSITION TEXT */
-  .position-section {
-    padding: 0.33rem 1.5rem;
+  .title-text {
+    padding: 1rem 1.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0rem;
@@ -223,8 +224,8 @@
   }
   .section-heading {
     font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 500;
     letter-spacing: 0em;
     text-transform: uppercase;
     color: var(--black);
@@ -245,12 +246,28 @@
     line-height: 1.8;
     color: var(--black);
     text-align: right;
+     }
+  .body-text-poem-right {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 100;
+    line-height: 1.8;
+    color: var(--dark);
+    text-align: right;
+         }
+  .body-text-poem-left {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 100;
+    line-height: 1.8;
+    color: var(--dark);
+    text-align: left;
   }
   .body-text + .body-text { margin-top: 0.75em; }
   .body-cols {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 37.5rem;
     align-items: start;
   }
 
@@ -311,8 +328,8 @@ font-family: 'Hanken Grotesk', sans-serif;
     background: var(--light);
     position: relative;
   }
+  .img-production { aspect-ratio: 2/1; }
   .img-placeholder.tall { aspect-ratio: 3/4; }
-	img-process { aspect-ratio: 16/9; }
   .img-placeholder.landscape { aspect-ratio: 4/3; }
   .img-placeholder.v1 { background: var(--light); }
   .img-placeholder.v2 { background: var(--light); }
@@ -333,7 +350,6 @@ font-family: 'Hanken Grotesk', sans-serif;
     line-height: 1.5;
     text-transform: uppercase;
     text-align: right;
-   
   }
 
   /* FULL-WIDTH IMAGE */
@@ -348,12 +364,13 @@ font-family: 'Hanken Grotesk', sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    padding: 15rem 1.5rem;
+    padding: 15rem 0 0rem;
   }
   .img-grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
+    
   }
    .img-grid-1 {
     display: grid;
@@ -389,14 +406,14 @@ font-family: 'Hanken Grotesk', sans-serif;
     grid-template-columns: 1fr 1fr;
     gap: 0rem;
     margin-bottom: 5rem;
-    padding: 0.33rem 0;
+    padding: 15rem 0 0;
   }
   .process-images-6 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
-    opacity: 0.8;
+    padding: 0rem 1.5rem 15rem;
   }
 
   /* PULLQUOTE */
@@ -407,7 +424,7 @@ font-family: 'Hanken Grotesk', sans-serif;
   .pullquote {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-    font-weight: 300;
+    font-weight: 200;
     font-style: normal;
     line-height: 1.5;
     color: var(--black);
@@ -453,7 +470,7 @@ font-family: 'Hanken Grotesk', sans-serif;
   /* ACCORDION */
   .accordion-section {
     background: #ffffff;
-    padding: 0.33rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
   .accordion-item {
     border-top: 1.5px solid var(--black);
@@ -465,18 +482,19 @@ font-family: 'Hanken Grotesk', sans-serif;
     cursor: pointer;
     padding: 0.2rem 0;
     display: grid;
-    grid-template-columns: 4rem 1fr 2.5rem;
+    grid-template-columns: 50% 6.5% 43.5%;
     align-items: center;
     text-align: left;
   }
   .accordion-index {
     font-family: 'Azeret Mono', monospace;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 100;
     letter-spacing: 0.2em;
-    color: var(--light);
+    padding: 0 1rem 0;
+    color: var(--medium);
     text-transform: uppercase;
-    text-align: left;
+    text-align: right;
   }
   .accordion-title {
     font-family: 'Azeret Mono', monospace;
@@ -485,7 +503,7 @@ font-family: 'Hanken Grotesk', sans-serif;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--black);
-    text-align: center;
+    text-align: left;
     transition: color 0.2s;
   }
   
@@ -498,7 +516,13 @@ font-family: 'Hanken Grotesk', sans-serif;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     text-align: right;
   }
-  .accordion-item.open .accordion-arrow { transform: rotate(180deg); } 
+
+  .accordion-arrow::after {
+  content: '+';
+}
+  
+  .accordion-item.open .accordion-arrow { transform: translateX(-95%); } 
+  .accordion-item.open .accordion-arrow::after { content: '−'; }
   .accordion-item.open .accordion-title { color: var(--light); }
   .accordion-body {
     max-height: 0;
@@ -509,8 +533,8 @@ font-family: 'Hanken Grotesk', sans-serif;
   .accordion-inner {
     padding: 1.5rem 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1.5rem 50%;
+    gap: 0rem;
     align-items: start;
   }
   .accordion-img-placeholder {
@@ -521,7 +545,7 @@ font-family: 'Hanken Grotesk', sans-serif;
   .accordion-lorem {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.9;
     color: var(--black);
     text-align: justify;
@@ -556,7 +580,7 @@ font-family: 'Hanken Grotesk', sans-serif;
     .hero { padding: 0 1.5rem 1.5rem; }
     .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
     .meta-section { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.5rem; gap: 2rem; }
-    .position-section, .split-section, .split-section.reverse, .process-intro {
+    .title-text, .split-section, .split-section.reverse, .process-intro {
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
       padding: 1.5rem;
@@ -596,11 +620,11 @@ font-family: 'Hanken Grotesk', sans-serif;
   </ul>
 </nav>
 
-<!-- HERO: top.png background, FLEXI FADE title -->
+<!-- HERO: top.png background, FLEXI NAME title -->
 <section class="hero">
   <img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: scale-down; object-position: left center; transform: translateX(20%) translateY(0%);">
   <p class="hero-label">Project</p>
-  <h1>FLEXI<br><em>FADE</em></h1>
+  <h1>FLEXI<br><em>NAME</em></h1>
   <span class="hero-scroll-hint">Scroll</span>
 </section>
 
@@ -634,7 +658,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 </div>
 
 <!-- PROJECT: introduction -->
-<section class="position-section reveal" id="project">
+<section class="title-text reveal" id="project">
   <div>
     <p class="section-heading">introduction</p>
   </div>
@@ -644,7 +668,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 		formfinding. through iterative physical model studies, interweaving properties of soft wool-based fabrics 
 		with bio-plastic based material matrixes serving as hardening agents. learning from these experiments a 
 		structural logic was formed and applied to construct FLEXI with the help of digital production methods 
-		through panelization and adaptie molds.</p>
+		through panelization and adaptive molds.</p>
   </div>
 </section>
 
@@ -683,26 +707,26 @@ font-family: 'Hanken Grotesk', sans-serif;
   <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="images/grow.mp4"></video>
   <div class="video-decay-content">
     <div class="body-cols">
-      <p class="body-text"> As if the ground itself has begun to stretch,  </p>
-      <p class="body-text"> a spine leans into the air transforming into a wing.  </p>
-      <p class="body-text"> It feels like the peak of a movement,  </p>
-      <p class="body-text"> a muscle contracting,  </p>
-      <p class="body-text"> a weave like muscle fibers drawn close together,  </p>
-      <p class="body-text"> holding tension just before release. </p>
-      <p class="body-text"> Closer to the ground the forms surrender to gravity, </p>
-      <p class="body-text"> soft as a limb at rest. </p>
-      <p class="body-text"> The wing wraps around, </p>
-      <p class="body-text"> not enclosing, </p>
-      <p class="body-text"> simply leaning close. </p>
-      <p class="body-text"> Standing within the arc of a living gesture, </p>
-      <p class="body-text"> a body learning to lift itself from the earth. </p>
+      <p class="body-text-poem-right"> As if the ground itself has begun to stretch,  </p>
+      <p class="body-text-poem-left"> a spine leans into the air transforming into a wing.  </p>
+      <p class="body-text-poem-right"> It feels like the peak of a movement,  </p>
+      <p class="body-text-poem-left"> a muscle contracting,  </p>
+      <p class="body-text-poem-right"> a weave like muscle fibers drawn close together,  </p>
+      <p class="body-text-poem-left"> holding tension just before release. </p>
+      <p class="body-text-poem-right"> Closer to the ground the forms surrender to gravity, </p>
+      <p class="body-text-poem-left"> soft as a limb at rest. </p>
+      <p class="body-text-poem-right"> The wing wraps around, </p>
+      <p class="body-text-poem-left"> not enclosing, </p>
+      <p class="body-text-poem-right"> simply leaning close. </p>
+      <p class="body-text-poem-left"> Standing within the arc of a living gesture, </p>
+      <p class="body-text-poem-right"> a body learning to lift itself from the earth. </p>
     </div>
   </div>
 </div>
 
 
 <!-- MATERIALIZATION -->
-<section class="position-section reveal" id="project">
+<section class="title-text reveal" id="project">
   <div>
     <p class="section-heading">MATERIALIZATION</p>
   </div>
@@ -719,20 +743,43 @@ font-family: 'Hanken Grotesk', sans-serif;
   <span class="stat-number2">7 (+1) degradable Materials</span>
 </div>
 
-<!-- ACCORDION: water gelatine xanthan caco3 wood glycerol wool boneglue -->
+<!-- ACCORDION materials -->
 <div class="accordion-section reveal" id="material">
+
+    <!-- VII. Wools -->
+  <div class="accordion-item" id="acc-textiles">
+    <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
+      <span class="accordion-index"></span>
+      <span class="accordion-title muted">Wool</span>
+      <span class="accordion-arrow"></span>
+    </button>
+    <div class="accordion-body">
+      <div class="accordion-inner">
+        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+        <p </p>
+                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- I. Water -->
   <div class="accordion-item" id="acc-water">
     <button class="accordion-trigger" onclick="toggleAccordion('acc-water')">
-      <span class="accordion-index">I</span>
+      <span class="accordion-index">panel</span>
       <span class="accordion-title">Water</span>
-      <span class="accordion-arrow">+</span>
+      <span class="accordion-arrow"></span>
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/water.jpg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p </p>
+                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -740,14 +787,21 @@ font-family: 'Hanken Grotesk', sans-serif;
   <!-- II. Gelatine -->
   <div class="accordion-item" id="acc-gelatine">
     <button class="accordion-trigger" onclick="toggleAccordion('acc-gelatine')">
-      <span class="accordion-index">❱</span>
+      <span class="accordion-index">panel</span>
       <span class="accordion-title">Gelatine</span>
-      <span class="accordion-arrow">+</span>
+      <span class="accordion-arrow"></span>
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p </p>
+                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing 
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -757,12 +811,16 @@ font-family: 'Hanken Grotesk', sans-serif;
     <button class="accordion-trigger" onclick="toggleAccordion('acc-xanthan')">
       <span class="accordion-index">panel</span>
       <span class="accordion-title">Xanthan</span>
-      <span class="accordion-arrow">+</span>
+      <span class="accordion-arrow"></span>
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p </p>
+                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>ccordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -772,12 +830,16 @@ font-family: 'Hanken Grotesk', sans-serif;
     <button class="accordion-trigger" onclick="toggleAccordion('acc-caco3')">
       <span class="accordion-index">panel</span>
       <span class="accordion-title">CaCO3</span>
-      <span class="accordion-arrow">+</span>
+      <span class="accordion-arrow"></span>
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p </p>
+                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>ordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -787,12 +849,14 @@ font-family: 'Hanken Grotesk', sans-serif;
     <button class="accordion-trigger" onclick="toggleAccordion('acc-wood')">
       <span class="accordion-index">panel</span>
       <span class="accordion-title">Wood</span>
-      <span class="accordion-arrow">+</span>
+      <span class="accordion-arrow"></span>
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">sawdust and woodchips that originated as a wasteproduct during building frames for panel-production was reused as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
+        <p </p>
+        <p class="accordion-lorem">sawdust and woodchips that originated as a wasteproduct during building frames for panel-production was reused 
+          as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
       </div>
     </div>
   </div>
@@ -800,29 +864,17 @@ font-family: 'Hanken Grotesk', sans-serif;
   <!-- VI. Glycerol -->
   <div class="accordion-item" id="acc-glycerol">
     <button class="accordion-trigger" onclick="toggleAccordion('acc-glycerol')">
-      <span class="accordion-index">●</span>
+      <span class="accordion-index">panel</span>
       <span class="accordion-title">glycerol</span>
-      <span class="accordion-arrow">+</span>
+      <span class="accordion-arrow"></span>
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">glycerol serves as a plasticiser, making the material more resistant to breaking and providing the possibility to adjust flexibility of the material. lower parts are very flexible due to more share of glycerol within the material matrix, parts further up are stiff with only a minimal ammount to prevent breaking and deformation during the drying process.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- VII. Wools -->
-  <div class="accordion-item" id="acc-textiles">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
-      <span class="accordion-index">↘</span>
-      <span class="accordion-title muted">Wool</span>
-      <span class="accordion-arrow">+</span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p </p>
+        <p class="accordion-lorem">glycerol serves as a plasticiser, making the material more resistant to breaking and providing the 
+          possibility to adjust flexibility of the material. lower parts are very flexible due to more share of glycerol within the material 
+          matrix, parts further up are stiff with only a minimal ammount to prevent breaking and deformation during the drying process.</p>
       </div>
     </div>
   </div>
@@ -832,11 +884,12 @@ font-family: 'Hanken Grotesk', sans-serif;
     <button class="accordion-trigger" onclick="toggleAccordion('acc-boneglue')">
       <span class="accordion-index">beam</span>
       <span class="accordion-title muted">Boneglue</span>
-      <span class="accordion-arrow">+</span>
+      <span class="accordion-arrow"></span>
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+        <p </p>
         <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
@@ -850,6 +903,19 @@ font-family: 'Hanken Grotesk', sans-serif;
   <video class="bg-video" muted loop playsinline preload="auto">
     <source src="videos/cooking.mp4" type="video/mp4">
   </video>
+  
+  <style>
+.fade-video {
+    /* Verlauf von oben (rgba 0,0,0,1 = sichtbar) 
+       nach unten (rgba 0,0,0,0 = transparent) */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    
+    /* Optional: Sicherstellen, dass das Video das Layout nicht zerschießt */
+    width: 100%;
+    height: auto;
+}
+</style>
   <p class="video-caption">material preparation</p>
 </div>
 
@@ -886,7 +952,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 </div>
 
 <!-- CONSTRUCTION -->
-<section class="position-section reveal" id="project">
+<section class="title-text reveal" id="project">
   <div>
     <p class="section-heading">CONSTRUCTION</p>
   </div>
@@ -896,6 +962,27 @@ font-family: 'Hanken Grotesk', sans-serif;
     implement targeted properties withing our proposal. </p>
   </div>
 </section>
+
+
+	<!-- GRID-H: h.jpeg i.jpeg j.jpeg material matrix -->
+<div class="section section-wide">
+  <div class="img-grid-3 reveal">
+    <div>
+      <img src="images/h.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">material matrix 3.4</p>
+    </div>
+    <div>
+      <img src="images/i.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">material matrix 3.2</p>
+    </div>
+    <div>
+      <img src="images/j.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">material matrix 2.4</p>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- GRID-19: 19.png 20.png 27.png material matrix -->
 <div class="section section-wide">
@@ -920,7 +1007,7 @@ font-family: 'Hanken Grotesk', sans-serif;
   <div class="img-grid-1 reveal">
     <div>
       <img src="images/layup.jpg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panel MAD DIAGRAM</p>
+      <p class="img-caption">panel construction fibre layup</p>
     </div>
   </div>
 </div>
@@ -930,23 +1017,6 @@ font-family: 'Hanken Grotesk', sans-serif;
   <img src="images/f.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
 
-	<!-- GRID-H: h.jpeg i.jpeg j.jpeg material matrix -->
-<div class="section section-wide">
-  <div class="img-grid-3 reveal">
-    <div>
-      <img src="images/h.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">material matrix 3.4</p>
-    </div>
-    <div>
-      <img src="images/i.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">material matrix 3.2</p>
-    </div>
-    <div>
-      <img src="images/j.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">material matrix 2.4</p>
-    </div>
-  </div>
-</div>
 
 	<!-- FULLWIDTH: l.jpeg -->
 <div style="padding: 10rem 0;">
@@ -1002,7 +1072,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 </div>
 
 <!-- LIVING: Living in a material world -->
-<section class="position-section reveal">
+<section class="title-text reveal">
   <div>
     <p class="section-heading">&nbsp;</p>
   </div>
@@ -1025,52 +1095,60 @@ Living in a material world</p>
 </div>
 
 
-<!-- PROCESS: production process images -->
-<section class="process-section" id="process">
-  <div class="process-intro reveal">
-    <p class="section-heading">Production Process</p>
-    <div>
-      <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that flexi and flexi flexi can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and flexi flexi (flexi-of-flexi, flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi and flexi within the final flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi flexi to changing flexi flexi.</p>
-      <p class="body-text" style="margin-top: 1.5em;">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based flexi is utilized as a flexi flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
-    </div>
-  </div>
-
-	<!-- production text right, picture 16.9 left -->
-<div class="split-section reverse reveal">
-  <div class="split-text">
-    <h2 class="split-subhead"><em>weaving</em></h2>
-    <p class="body-text-right">underlying structure for panels got produced by x.</p>
+<!-- PROJECT: production process -->
+<section class="title-text reveal" id="project">
+  <div>
+    <p class="section-heading">production process</p>
   </div>
   <div>
-    <img src="images/3.png" class="img-process" style="object-fit: cover;">
+    <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that flexi and flexi flexi 
+        can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and flexi flexi (flexi-of-flexi, 
+        flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi and flexi within the final 
+        flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi flexi to changing flexi flexi.</p>
+      <p class="body-text" style="margin-top: 1.5em;">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their 
+        flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based flexi is utilized as a flexi 
+        flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
   </div>
-</div>
+</section>
+
 
   <!-- PROCESS-IMAGES: a b d e k g -->
   <div class="process-images-6 reveal">
     <div>
       <img src="images/a.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">Flexi flexi of flexi flexi informing the flexi flexi such as flexi flexi and flexi</p>
+      <p class="img-caption">panel formwork</p>
     </div>
     <div>
       <img src="images/b.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">Flexi flexi of flexi flexi is controlled by flexi flexi and flexi</p>
+      <p class="img-caption">textile base</p>
     </div>
     <div>
       <img src="images/d.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">A flexi flexi-flexi-flexi flexi flexi</p>
+      <p class="img-caption">material cooking</p>
     </div>
     <div>
       <img src="images/e.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">Detail of a flexi flexi (cm)</p>
+      <p class="img-caption">controlled drying</p>
     </div>
     <div>
       <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">Detail of a flexi flexi (mm)</p>
+      <p class="img-caption">assembly (panels))</p>
     </div>
     <div>
       <img src="images/g.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">Flexi flexi flexi flexi flexi</p>
+      <p class="img-caption">beam preproduction</p>
+    </div>
+        <div>
+      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">adaptive forming beam</p>
+    </div>
+       <div>
+      <img src="images/d.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">installation</p>
+    </div>
+       <div>
+      <img src="images/e.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">decay</p>
     </div>
   </div>
 </section>
@@ -1083,7 +1161,7 @@ Living in a material world</p>
 </div>
 
 <!-- CONTACT: get in touch -->
-<section class="position-section reveal" id="contact">
+<section class="title-text" id="contact">
   <div>
     <p class="section-heading">contact</p>
   </div>
@@ -1094,7 +1172,7 @@ Living in a material world</p>
 </section>
 
 <!-- ACKNOWLEDGEMENTS: tu wien and kaust -->
-<section class="position-section reveal" id="acknowledgements">
+<section class="title-text" id="acknowledgements">
   <div>
     <p class="section-heading">acknowledgements</p>
   </div>
