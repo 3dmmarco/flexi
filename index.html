@@ -75,13 +75,13 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0.33rem 1.5rem calc(4rem + 0.33rem);
+    padding: 0.5rem 1.5rem calc(4rem + 0.33rem);
     overflow: hidden;
   }
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: #ffffff;
+    background: var(--white);
     z-index: 0;
   }
   .hero-label {
@@ -140,7 +140,7 @@
     position: relative;
     overflow: hidden;
     height: 500px;
-    margin: 0.33rem 0;
+    margin: 0.5rem 0;
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease, transform 1s ease;
@@ -190,7 +190,7 @@
 
   /* META BLOCK */
   .meta-section {
-    padding: 0.33rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
@@ -222,6 +222,15 @@
     gap: 0rem;
     align-items: start;
   }
+
+  /* POSITION TEXT 2*/
+  .title-text2 {
+    padding: 35rem 1.5rem 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
   .section-heading {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 2rem;
@@ -229,13 +238,23 @@
     letter-spacing: 0em;
     text-transform: uppercase;
     color: var(--black);
-    padding-top: 0.35rem;
+    padding-top: 0rem;
+  }
+     .section-heading2 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    color: var(--black);
+    padding-top: 0rem;
+    text-align: right;
   }
   .body-text {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
     font-weight: 400;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--black);
     text-align: justify;
   }
@@ -243,7 +262,7 @@
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
     font-weight: 500;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--black);
     text-align: right;
      }
@@ -251,7 +270,7 @@
     font-family: 'Azeret Mono', monospace;
     font-size: 1.6rem;
     font-weight: 100;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--dark);
     text-align: right;
          }
@@ -259,7 +278,7 @@
     font-family: 'Azeret Mono', monospace;
     font-size: 1.6rem;
     font-weight: 100;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--dark);
     text-align: left;
   }
@@ -267,7 +286,7 @@
   .body-cols {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 37.5rem;
+    gap: 20rem;
     align-items: start;
   }
 
@@ -356,7 +375,7 @@ font-family: 'Hanken Grotesk', sans-serif;
   .full-img-wrap {
     width: 100%;
     overflow: hidden;
-    margin: 0.33rem 0;
+    margin: 3rem 0 0;
   }
 
   /* IMAGE GRIDS */
@@ -364,7 +383,7 @@ font-family: 'Hanken Grotesk', sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    padding: 15rem 0 0rem;
+    padding: 20rem 0 20rem;
   }
   .img-grid-3 {
     display: grid;
@@ -372,21 +391,27 @@ font-family: 'Hanken Grotesk', sans-serif;
     gap: 1.5rem;
     
   }
-   .img-grid-1 {
+   .img-grid-panels {
     display: grid;
     grid-template-columns: 1fr;
     padding: 2rem 0rem 2rem;
     }
 
+   .img-grid-beam {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 15rem 0rem 2rem;
+    }
+
   /* SPLIT SECTION */
   .split-section {
-    padding: 0.33rem 1.5rem;
+    padding: 10rem 1.5rem;
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.5rem;
     align-items: center;
   }
-  .split-section.reverse { grid-template-columns: 1fr 1.4fr; }
+  .split-section.reverse { grid-template-columns: 1fr 1.6fr; }
   .split-section.reverse .split-text { order: -1; text-align: right; }
   .split-subhead {
     font-size: 1.7rem;
@@ -397,9 +422,27 @@ font-family: 'Hanken Grotesk', sans-serif;
   }
   .split-subhead em { font-style: italic; color: var(--medium); }
 
+
+ /* IMAGE GRIDS */
+  .img-grid-life {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 20rem 0 20rem;
+    }
+
+    /* before after */
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10rem 1.5rem 0;
+    gap: 1.5rem;
+    padding: 20rem 0 20rem;
+  }
+
   /* PROCESS SECTION */
   .process-section {
-    padding: 0.33rem 1.5rem 6rem;
+    padding: 0.5rem 1.5rem 6rem;
   }
   .process-intro {
     display: grid;
@@ -415,15 +458,29 @@ font-family: 'Hanken Grotesk', sans-serif;
     margin-top: 3rem;
     padding: 0rem 1.5rem 15rem;
   }
+.process-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.5rem 1.5rem 0;
+  gap: 1.5rem;
+  align-items: start;
+
+}
+.process-line img {
+  width: 100%;
+  aspect-ratio: 16/6;
+  object-fit: cover;
+  display: block;
+}
 
   /* PULLQUOTE */
   .pullquote-section {
-    padding: 0.33rem 1.5rem;
-    background: #ffffff;
+    padding: 0.5rem 1.5rem;
+    background: var(--white);
   }
   .pullquote {
     font-family: 'Hanken Grotesk', sans-serif;
-    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-size: 1.5rem;
     font-weight: 200;
     font-style: normal;
     line-height: 1.5;
@@ -469,7 +526,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 
   /* ACCORDION */
   .accordion-section {
-    background: #ffffff;
+    background: var(--white);
     padding: 1.5rem 1.5rem;
   }
   .accordion-item {
@@ -477,7 +534,7 @@ font-family: 'Hanken Grotesk', sans-serif;
   }
   .accordion-trigger {
     width: 100%;
-    background: #ffffff;
+    background: var(--white);
     border: none;
     cursor: pointer;
     padding: 0.2rem 0;
@@ -553,7 +610,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 
   /* FOOTER */
   footer {
-    padding: 0.33rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -673,7 +730,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 </section>
 
 <!-- STAT 2: evolution -->
-<div class="stat-callout reveal2" style="background:#ffffff;">
+<div class="stat-callout reveal2" style="background: var(--white);">
   <span class="stat-number2">evolution</span>
 </div>
 
@@ -739,7 +796,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 
 
 <!-- MATERIALS -->
-<div class="stat-callout reveal2" style="background:#ffffff;">
+<div class="stat-callout reveal2" style="background: var(--white);">
   <span class="stat-number2">7 (+1) degradable Materials</span>
 </div>
 
@@ -779,7 +836,7 @@ font-family: 'Hanken Grotesk', sans-serif;
                 <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
           dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -798,10 +855,7 @@ font-family: 'Hanken Grotesk', sans-serif;
                 <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
           dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing 
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -820,7 +874,7 @@ font-family: 'Hanken Grotesk', sans-serif;
                 <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
           dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>ccordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -834,12 +888,12 @@ font-family: 'Hanken Grotesk', sans-serif;
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+        <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
         <p </p>
-                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+                 <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
           dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>ordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
       </div>
     </div>
   </div>
@@ -853,7 +907,7 @@ font-family: 'Hanken Grotesk', sans-serif;
     </button>
     <div class="accordion-body">
       <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+        <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
         <p </p>
         <p class="accordion-lorem">sawdust and woodchips that originated as a wasteproduct during building frames for panel-production was reused 
           as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
@@ -890,7 +944,10 @@ font-family: 'Hanken Grotesk', sans-serif;
       <div class="accordion-inner">
         <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
         <p </p>
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
     </div>
   </div>
@@ -901,21 +958,8 @@ font-family: 'Hanken Grotesk', sans-serif;
 <!-- VIDEO cooking: cooking.mp4 -->
 <div class="video-section reveal" id="video-silk">
   <video class="bg-video" muted loop playsinline preload="auto">
-    <source src="videos/cooking2.mp4" type="video/mp4">
+    <source src="videos/cooking.mp4" type="video/mp4">
   </video>
-  
-  <style>
-.fade-video {
-    /* Verlauf von oben (rgba 0,0,0,1 = sichtbar) 
-       nach unten (rgba 0,0,0,0 = transparent) */
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-    
-    /* Optional: Sicherstellen, dass das Video das Layout nicht zerschießt */
-    width: 100%;
-    height: auto;
-}
-</style>
   <p class="video-caption">material preparation</p>
 </div>
 
@@ -935,7 +979,7 @@ font-family: 'Hanken Grotesk', sans-serif;
 
 <!-- GRID panels full and detail -->
 <div class="section section-wide">
-  <div class="img-grid-1 reveal">
+  <div class="img-grid-panels reveal">
     <div>
       <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">panel MAD DIAGRAM</p>
@@ -952,14 +996,20 @@ font-family: 'Hanken Grotesk', sans-serif;
 </div>
 
 <!-- CONSTRUCTION -->
-<section class="title-text reveal" id="project">
+<section class="title-text2 reveal" id="project">
   <div>
-    <p class="section-heading">CONSTRUCTION</p>
+    <p class="body-text"> </p>
   </div>
   <div>
-    <p class="body-text">our core values are driven by this and that. to achieve this and that we investigated 
+    <p class="section-heading2">CONSTRUCTION</p>
+  </div>
+
+  <div>
+    <p class="body-text">in order to achieve this that and this and yes and no and all the other things got done for it 
+      to be as it is now and not as it has been before so that it can be this and that and everything somewhere somehow.
+    our core values are driven by this and that. to achieve this and that we investigated 
     the fundamental properties of several bio-based materials, leading to a gradual material matrix that allows us to 
-    implement targeted properties withing our proposal. </p>
+    implement targeted properties withing our proposal.</p>
   </div>
 </section>
 
@@ -983,136 +1033,60 @@ font-family: 'Hanken Grotesk', sans-serif;
 </div>
 
 
+<!-- BEAM LAYUP -->
+<div class="section section-wide">
+  <div class="img-grid-beam reveal">
+    <div>
+      <img src="images/layup.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <p class="img-caption">beam structural fibre layup</p>
+    </div>
+  </div>
+</div>
+
 
 <!-- GRID-19: 19.png 20.png 27.png material matrix -->
 <div class="section section-wide">
   <div class="img-grid-3 reveal">
     <div>
       <img src="images/19.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panelis</p>
+      <p class="img-caption">beam baselayer</p>
     </div>
     <div>
       <img src="images/20.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panelu</p>
+      <p class="img-caption">beam coating</p>
     </div>
     <div>
       <img src="images/27.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panelat</p>
+      <p class="img-caption">dipping video</p>
     </div>
   </div>
 </div>
 
-<!-- GRID panels full and detail -->
-<div class="section section-wide">
-  <div class="img-grid-1 reveal">
-    <div>
-      <img src="images/layup.jpg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panel construction fibre layup</p>
-    </div>
-  </div>
+<!-- FULLWIDTH: BEAM -->
+<div class="full-img-wrap reveal" id="fullwidth-n">
+  <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
 </div>
 
-<!-- FULLWIDTH: f.jpeg -->
-<div class="full-img-wrap reveal" id="fullwidth-f">
-  <img src="images/f.jpeg" style="width:100%; display:block; object-fit:cover;">
-</div>
-
-
-	<!-- FULLWIDTH: l.jpeg -->
-<div style="padding: 10rem 0;">
-  <div class="full-img-wrap reveal" id="fullwidth-l">
-    <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
-  </div>
-</div>
-
-<!-- GRID-10: 10.png flexiganz.png mold assembly -->
-<div class="section section-wide">
-  <div class="img-grid-2 reveal">
-    <div>
-      <img src="images/10.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">flexible mold</p>
-    </div>
-    <div>
-      <img src="images/5.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">assembly</p>
-    </div>
-  </div>
-</div>
-
-<!-- SPLIT-PROTOTYPE: ssfsf.png left, PROTOTYPE 1.0 right -->
-<div class="split-section reveal">
+<!-- PRODUCTION -->
+<section class="title-text2 reveal" id="project">
   <div>
-    <img src="images/ssfsf.png" class="img-placeholder tall" style="object-fit: cover;">
-  </div>
-  <div class="split-text">
-    <h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
-    <p class="body-text">panels M 1:2</p>
-    <p class="body-text">construction mockup M 1:2</p>
-  </div>
-</div>
-
-<!-- SPLIT-SPINE: SPINE text right, 3.png left -->
-<div class="split-section reverse reveal">
-  <div class="split-text">
-    <h2 class="split-subhead"><em>SPINE</em></h2>
-    <p class="body-text-right">on structure.</p>
-    <p class="body-text-right">on from.</p>
-    <p class="body-text-right">structure to form.</p>
-  </div>
-  <div>
-    <img src="images/3.png" class="img-placeholder tall" style="object-fit: cover;">
-  </div>
-</div>
-
-<!-- PULLQUOTE-SUSTAINABILITY: sustainability degradability -->
-<div class="pullquote-section reveal">
-  <blockquote class="pullquote">
-    sustainabiliy & degradability. an outlook and a timeline. moving. lingering. short stays and long visits. for a while but moving on.
-  </blockquote>
-</div>
-
-<!-- LIVING: Living in a material world -->
-<section class="title-text reveal">
-  <div>
-    <p class="section-heading">&nbsp;</p>
-  </div>
-  <div>
-    <p class="body-text">Living in a material world
-And I am a material girl
-You know that we are living in a material world
-And I am a material girl</p>
-    <p class="body-text">Living in a material world (material)
-Living in a material world (ah-ah)
-Living in a material world (material)
-Living in a material world</p>
-  </div>
-</section>
-
-
-<!-- FULLWIDTH: c.jpeg -->
-<div class="full-img-wrap reveal" id="fullwidth-c">
-  <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
-</div>
-
-
-<!-- PROJECT: production process -->
-<section class="title-text reveal" id="project">
-  <div>
-    <p class="section-heading">production process</p>
+    <p class="section-heading2">PRODUCTION</p>
   </div>
   <div>
     <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that flexi and flexi flexi 
         can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and flexi flexi (flexi-of-flexi, 
         flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi and flexi within the final 
         flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi flexi to changing flexi flexi.</p>
-      <p class="body-text" style="margin-top: 1.5em;">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their 
+  </div>
+
+  <div>
+    <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their 
         flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based flexi is utilized as a flexi 
         flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
   </div>
 </section>
 
-
-  <!-- PROCESS-IMAGES: a b d e k g -->
+  <!-- production process pictures -->
   <div class="process-images-6 reveal">
     <div>
       <img src="images/a.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
@@ -1123,7 +1097,7 @@ Living in a material world</p>
       <p class="img-caption">textile base</p>
     </div>
     <div>
-      <img src="images/d.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/10.png" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">material cooking</p>
     </div>
     <div>
@@ -1153,12 +1127,112 @@ Living in a material world</p>
   </div>
 </section>
 
+<div class="process-line">
+  <img src="images/a.jpeg">
+  <div>
+    <p class="section-heading">panel formwork</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/b.jpeg">
+  <div>
+    <p class="section-heading">textile base</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/d.jpeg">
+  <div>
+    <p class="section-heading">material cooking</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/e.jpeg">
+  <div>
+    <p class="section-heading">controlled drying</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/k.jpeg">
+  <div>
+    <p class="section-heading">assembly (panels)</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/g.jpeg">
+  <div>
+    <p class="section-heading">beam preproduction</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/k.jpeg">
+  <div>
+    <p class="section-heading">adaptive forming beam</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/d.jpeg">
+  <div>
+    <p class="section-heading">installation</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+<div class="process-line">
+  <img src="images/e.jpeg">
+  <div>
+    <p class="section-heading">decay</p>
+    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
+</div>
+
+<!-- SPLIT-PROTOTYPE: ssfsf.png left, PROTOTYPE 1.0 right -->
+<div class="split-section reverse reveal">
+  <div>
+    <img src="images/ssfsf.png" class="img-placeholder tall" style="object-fit: cover;">
+  </div>
+  <div class="split-text">
+    <h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
+    <p class="body-text-right">panels M 1:2</p>
+    <p class="body-text-right">construction mockup M 1:2</p>
+  </div>
+</div>
+
+
+<!-- GRID before after -->
+<div class="section section-wide">
+  <div class="img-grid-2 reveal">
+    <div>
+      <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
+      <p class="img-caption">birth</p>
+    </div>
+    <div>
+      <img src="images/3.png" class="img-placeholder tall" style="object-fit: cover;">
+      <p class="img-caption">old</p>
+    </div>
+  </div>
+</div>
+
+<!-- PULLQUOTE-SUSTAINABILITY: sustainability degradability -->
+<div class="pullquote-section reveal">
+  <blockquote class="pullquote">
+    outlook / timeline / degradable / life cycle
+  </blockquote>
+</div>
+
+
 <!-- PULLQUOTE-ORGANIC: Flexi flexi organic -->
 <div class="pullquote-section reveal">
   <blockquote class="pullquote">
     Flexi flexi organic flexi, flexi by flexi, and flexi-flexi by flexi.
   </blockquote>
 </div>
+
 
 <!-- CONTACT: get in touch -->
 <section class="title-text" id="contact">
@@ -1182,9 +1256,11 @@ Living in a material world</p>
   </div>
 </section>
 
-<!-- FULLWIDTH: n.jpeg -->
-<div class="full-img-wrap reveal" id="fullwidth-n">
-  <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
+	<!-- FULLWIDTH: l.jpeg -->
+<div style="padding: 10rem 0 0;">
+  <div class="full-img-wrap reveal" id="fullwidth-l">
+    <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
+  </div>
 </div>
 
 <!-- FOOTER -->
