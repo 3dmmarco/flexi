@@ -187,7 +187,6 @@
   .section { padding: 0rem 1.5rem; }
   .section-wide { width: 100%; }
 
-
   /* META BLOCK */
   .meta-section {
     padding: 0.5rem 1.5rem;
@@ -222,7 +221,14 @@
     gap: 0rem;
     align-items: start;
   }
-
+   .title-text-proposal {
+    padding: 15rem 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem;
+    align-items: start;
+    gap: 1.5rem;
+  }
   /* POSITION TEXT 2*/
   .title-text2 {
     padding: 35rem 1.5rem 10rem;
@@ -250,6 +256,25 @@
     padding-top: 0rem;
     text-align: right;
   }
+  .section-heading3 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    color: var(--black);
+   padding: 2rem 0rem 0rem;
+    }
+     .section-heading4 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    color: var(--black);
+   padding: 2rem 0rem 0rem;
+   text-align: right;
+    }
   .body-text {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
@@ -261,7 +286,7 @@
   .body-text-right {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.6;
     color: var(--black);
     text-align: right;
@@ -385,6 +410,12 @@ font-family: 'Hanken Grotesk', sans-serif;
     gap: 1.5rem;
     padding: 20rem 0 20rem;
   }
+   .img-grid-proposal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0 20rem;
+  }
   .img-grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -462,9 +493,8 @@ font-family: 'Hanken Grotesk', sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 1.5rem 1.5rem 0;
-  gap: 1.5rem;
-  align-items: start;
-
+  gap: 4.5rem;
+  align-items: end;
 }
 .process-line img {
   width: 100%;
@@ -669,10 +699,10 @@ font-family: 'Hanken Grotesk', sans-serif;
 <nav>
   <a href="#" class="nav-logo">Flexi Studio</a>
   <ul class="nav-links">
-    <li><a href="#video-silk">origin</a></li>
-    <li><a href="#project">project</a></li>
+    <li><a href="#video-silk">intro</a></li>
     <li><a href="#material">material</a></li>
-    <li><a href="#process">process</a></li>
+    <li><a href="#production">production</a></li>
+    <li><a href="#proposal">proposal</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
@@ -1086,107 +1116,66 @@ font-family: 'Hanken Grotesk', sans-serif;
   </div>
 </section>
 
-  <!-- production process pictures -->
-  <div class="process-images-6 reveal">
-    <div>
-      <img src="images/a.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panel formwork</p>
-    </div>
-    <div>
-      <img src="images/b.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">textile base</p>
-    </div>
-    <div>
-      <img src="images/10.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">material cooking</p>
-    </div>
-    <div>
-      <img src="images/e.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">controlled drying</p>
-    </div>
-    <div>
-      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">assembly (panels))</p>
-    </div>
-    <div>
-      <img src="images/g.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">beam preproduction</p>
-    </div>
-        <div>
-      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">adaptive forming beam</p>
-    </div>
-       <div>
-      <img src="images/d.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">installation</p>
-    </div>
-       <div>
-      <img src="images/e.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">decay</p>
-    </div>
-  </div>
-</section>
 
 <div class="process-line">
   <img src="images/a.jpeg">
   <div>
-    <p class="section-heading">panel formwork</p>
+    <p class="section-heading3">panel formwork</p>
     <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
   </div>
 </div>
 <div class="process-line">
+  <div>
+      <p class="section-heading4">textile base</p>
+    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
   <img src="images/b.jpeg">
-  <div>
-    <p class="section-heading">textile base</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
 </div>
 <div class="process-line">
   <img src="images/d.jpeg">
   <div>
-    <p class="section-heading">material cooking</p>
+    <p class="section-heading3">material cooking</p>
     <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
   </div>
 </div>
 <div class="process-line">
-  <img src="images/e.jpeg">
   <div>
-    <p class="section-heading">controlled drying</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <p class="section-heading4">controlled drying</p>
+    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
   </div>
+  <img src="images/e.jpeg">
 </div>
 <div class="process-line">
   <img src="images/k.jpeg">
   <div>
-    <p class="section-heading">assembly (panels)</p>
+    <p class="section-heading3">assembly (panels)</p>
     <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
   </div>
 </div>
 <div class="process-line">
+  <div>
+    <p class="section-heading4">beam preproduction</p>
+    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  </div>
   <img src="images/g.jpeg">
-  <div>
-    <p class="section-heading">beam preproduction</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
 </div>
 <div class="process-line">
   <img src="images/k.jpeg">
   <div>
-    <p class="section-heading">adaptive forming beam</p>
+    <p class="section-heading3">adaptive forming beam</p>
     <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
   </div>
 </div>
 <div class="process-line">
-  <img src="images/d.jpeg">
   <div>
-    <p class="section-heading">installation</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <p class="section-heading4">installation</p>
+    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
   </div>
 </div>
 <div class="process-line">
   <img src="images/e.jpeg">
   <div>
-    <p class="section-heading">decay</p>
+    <p class="section-heading3">decay</p>
     <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
   </div>
 </div>
@@ -1203,10 +1192,26 @@ font-family: 'Hanken Grotesk', sans-serif;
   </div>
 </div>
 
+<!-- PROPOSAL -->
+<section class="title-text-proposal reveal" id="project">
+  <div>
+    <p class="section-heading">PROPOSAL</p>
+  </div>
+  <div>
+    <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that flexi and flexi flexi 
+        can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and flexi flexi (flexi-of-flexi, 
+        flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi and flexi within the final 
+        flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi flexi to changing flexi flexi.</p>
+
+    <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their 
+        flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based flexi is utilized as a flexi 
+        flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
+  </div>
+</section>
 
 <!-- GRID before after -->
 <div class="section section-wide">
-  <div class="img-grid-2 reveal">
+  <div class="img-grid-proposal reveal">
     <div>
       <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
       <p class="img-caption">birth</p>
@@ -1218,21 +1223,6 @@ font-family: 'Hanken Grotesk', sans-serif;
   </div>
 </div>
 
-<!-- PULLQUOTE-SUSTAINABILITY: sustainability degradability -->
-<div class="pullquote-section reveal">
-  <blockquote class="pullquote">
-    outlook / timeline / degradable / life cycle
-  </blockquote>
-</div>
-
-
-<!-- PULLQUOTE-ORGANIC: Flexi flexi organic -->
-<div class="pullquote-section reveal">
-  <blockquote class="pullquote">
-    Flexi flexi organic flexi, flexi by flexi, and flexi-flexi by flexi.
-  </blockquote>
-</div>
-
 
 <!-- CONTACT: get in touch -->
 <section class="title-text" id="contact">
@@ -1240,24 +1230,27 @@ font-family: 'Hanken Grotesk', sans-serif;
     <p class="section-heading">contact</p>
   </div>
   <div>
-    <p class="body-text">get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch get in touch</p>
-    <p class="body-text">touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it touch it</p>
+    <p class="body-text">get in touch get in touch get in touch get in touch get in touch get in 
+    touch get in touch get in touch get in touch get in touch get in touch get in touch</p>
+    <p class="body-text">touch it touch it touch it touch it touch it touch it touch it touch it 
+    touch it touch it touch it touch it touch it touch it</p>
   </div>
 </section>
 
 <!-- ACKNOWLEDGEMENTS: tu wien and kaust -->
+<div style="padding: 5rem 0 0;">
 <section class="title-text" id="acknowledgements">
   <div>
     <p class="section-heading">acknowledgements</p>
   </div>
-  <div class="body-cols">
+  <div class="body-text">
     <p class="body-text">tu wien and kaust and florian and anna and all the others and mom and dad and everybody else.</p>
-    <p class="body-text">funding by this and that and everething else. contributions of x and y and z and a and b and c while using 1 and 2 and 3 within xy and ab and 12.</p>
+    <p class="body-text">funding by this and that and everething else. contributions of x and y and z 
+    and a and b and c while using 1 and 2 and 3 within xy and ab and 12.</p>
   </div>
 </section>
 
 	<!-- FULLWIDTH: l.jpeg -->
-<div style="padding: 10rem 0 0;">
   <div class="full-img-wrap reveal" id="fullwidth-l">
     <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
   </div>
