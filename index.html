@@ -1,691 +1,893 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Flexi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@100;200;300;400&family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Flexi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Azeret+Mono:wght@100;200;300;400&family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --black: #000000;
-    --white: #ffffff;
-    --dark: rgb(90, 85, 80);
-    --medium: rgb(183, 163, 146);
-    --light: rgb(234, 219, 192);
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--white);
-    color: var(--black);
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-weight: 100;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 1.5rem;
-    mix-blend-mode: multiply;
-  }
-  nav .nav-logo {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--medium);
-    text-decoration: none;
-  }
-  nav .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-  nav .nav-links a {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--medium);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  nav .nav-links a:hover { color: var(--black); }
-
-  /* HERO */
-  .hero {
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0.5rem 1.5rem calc(4rem + 0.33rem);
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--white);
-    z-index: 0;
-  }
-  .hero-label {
-    position: relative;
-    z-index: 1;
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.975rem;
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--medium);
-    margin-bottom: 1.5rem;
-  }
-  .hero h1 {
-    position: relative;
-    z-index: 1;
-    font-size: clamp(4rem, 10vw, 9rem);
-    font-weight: 100;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    color: var(--black);
-    margin-bottom: 0.5rem;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--light);
-    background: linear-gradient(to right, var(--light) 0%, transparent 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .hero-scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    right: 3rem;
-    z-index: 1;
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--medium);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .hero-scroll-hint::before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--medium);
-  }
-
-  /* VIDEO SECTION */
-  .video-section {
-    position: relative;
-    overflow: hidden;
-    height: 500px;
-    margin: 0.5rem 0;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  .video-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 0;
-  }
-  .video-caption {
-    position: absolute;
-    z-index: 2;
-    color: rgba(255,255,255,0.7);
-    bottom: 1.5rem;
-    left: 1.5rem;
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0;
-  }
-  .video-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
-    z-index: 1;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .video-section { transition: none; opacity: 1; transform: none; }
-  }
-
-  /* SECTION WRAPPER */
-  .section { padding: 0rem 1.5rem; }
-  .section-wide { width: 100%; }
-
-  /* META BLOCK */
-  .meta-section {
-    padding: 0.5rem 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    align-items: start;
-  }
-  .meta-label {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--black);
-    display: block;
-    margin-bottom: 0.6rem;
-  }
-  .meta-value {
-    font-family: 'Hanken Grotesk' sans-serif;
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: var(--medium);
-    line-height: 1.5;
-  }
-
-  /* POSITION TEXT */
-  .title-text {
-    padding: 1rem 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0rem;
-    align-items: start;
-  }
-   .title-text-proposal {
-    padding: 15rem 1.5rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0rem;
-    align-items: start;
-    gap: 1.5rem;
-  }
-  /* POSITION TEXT 2*/
-  .title-text2 {
-    padding: 35rem 1.5rem 10rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
-    align-items: start;
-  }
-  .section-heading {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 2rem;
-    font-weight: 500;
-    letter-spacing: 0em;
-    text-transform: uppercase;
-    color: var(--black);
-    padding-top: 0rem;
-  }
-     .section-heading2 {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 3rem;
-    font-weight: 500;
-    letter-spacing: 0em;
-    text-transform: uppercase;
-    color: var(--black);
-    padding-top: 0rem;
-    text-align: right;
-  }
-  .section-heading3 {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0em;
-    text-transform: uppercase;
-    color: var(--black);
-   padding: 2rem 0rem 0rem;
-    }
-     .section-heading4 {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0em;
-    text-transform: uppercase;
-    color: var(--black);
-   padding: 2rem 0rem 0rem;
-   text-align: right;
-    }
-  .body-text {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--black);
-    text-align: justify;
-  }
-  .body-text-right {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--black);
-    text-align: right;
-     }
-  .body-text-poem-right {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 1.6rem;
-    font-weight: 100;
-    line-height: 1.6;
-    color: var(--dark);
-    text-align: right;
-         }
-  .body-text-poem-left {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 1.6rem;
-    font-weight: 100;
-    line-height: 1.6;
-    color: var(--dark);
-    text-align: left;
-  }
-  .body-text + .body-text { margin-top: 0.75em; }
-  .body-cols {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20rem;
-    align-items: start;
-  }
-
-  /* STAT CALLOUT */
-  .stat-callout {
-    position: relative;
-    padding: 20rem 1.5rem 0rem;
-    align-items: baseline;
-    gap: 2.5rem;
-  }
-  .stat-number {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
-    font-weight: 400;
-    font-variant-numeric: tabular-nums;
-    color: var(--black);
-    line-height: 1.25;
-  }
-  .stat-label {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--black);
-    line-height: 1.25;
-    text-align: right;
-  }
-
-	  /* STAT CALLOUT 2*/
-  .stat-callout2 {
-    position: relative;
-    padding: 30rem 1.5rem 3.5rem;
-    align-items: baseline;
-    gap: 2.5rem;
-  }
-  .stat-number2 {
-font-family: 'Hanken Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: 0em;
-  text-transform: uppercase;
-  color: var(--black);
-  padding-top: 0.35rem;
-	  
-  }
-  .stat-label2 {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--black);
-    line-height: 1.25;
-    text-align: right;
-  }
-
-  /* IMAGE PLACEHOLDERS */
-  .img-placeholder {
-    width: 100%;
-    display: block;
-    background: var(--light);
-    position: relative;
-  }
-  .img-production { aspect-ratio: 2/1; }
-  .img-placeholder.tall { aspect-ratio: 3/4; }
-  .img-placeholder.landscape { aspect-ratio: 4/3; }
-  .img-placeholder.v1 { background: var(--light); }
-  .img-placeholder.v2 { background: var(--light); }
-  .img-placeholder.v3 { background: var(--light); }
-  img.img-placeholder {
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: scale(1.0);
-  }
-  img.img-placeholder.visible { transform: scale(1); }
-
-  .img-caption {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    color: var(--medium);
-    margin-top: 0.75rem;
-    line-height: 1.5;
-    text-transform: uppercase;
-    text-align: right;
-  }
-
-  /* FULL-WIDTH IMAGE */
-  .full-img-wrap {
-    width: 100%;
-    overflow: hidden;
-    margin: 3rem 0 0;
-  }
-
-  /* IMAGE GRIDS */
-  .img-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    padding: 20rem 0 20rem;
-  }
-   .img-grid-proposal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    padding: 2rem 0 20rem;
-  }
-  .img-grid-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
-    
-  }
-   .img-grid-panels {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 2rem 0rem 2rem;
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-   .img-grid-beam {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 15rem 0rem 2rem;
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --dark: rgb(90, 85, 80);
+      --medium: rgb(183, 163, 146);
+      --light: rgb(234, 219, 192);
     }
 
-  /* SPLIT SECTION */
-  .split-section {
-    padding: 10rem 1.5rem;
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  .split-section.reverse { grid-template-columns: 1fr 1.6fr; }
-  .split-section.reverse .split-text { order: -1; text-align: right; }
-  .split-subhead {
-    font-size: 1.7rem;
-    font-weight: 300;
-    line-height: 1.3;
-    color: var(--black);
-    margin-bottom: 1.5rem;
-  }
-  .split-subhead em { font-style: italic; color: var(--medium); }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 100;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 1.5rem;
+      mix-blend-mode: multiply;
+    }
+
+    nav .nav-logo {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-decoration: none;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--black);
+    }
+
+    /* HERO */
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0.5rem 1.5rem calc(4rem + 0.33rem);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--white);
+      z-index: 0;
+    }
+
+    .hero-label {
+      position: relative;
+      z-index: 1;
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.975rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--medium);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(4rem, 10vw, 9rem);
+      font-weight: 100;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--light);
+      background: linear-gradient(to right, var(--light) 0%, transparent 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      right: 3rem;
+      z-index: 1;
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--medium);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-scroll-hint::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--medium);
+    }
+
+    /* VIDEO SECTION */
+    .video-section {
+      position: relative;
+      overflow: hidden;
+      height: 500px;
+      margin: 0.5rem 0;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .video-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .video-caption {
+      position: absolute;
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.7);
+      bottom: 1.5rem;
+      left: 1.5rem;
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0;
+    }
+
+    .video-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .video-section {
+        transition: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* SECTION WRAPPER */
+    .section {
+      padding: 0rem 1.5rem;
+    }
+
+    .section-wide {
+      width: 100%;
+    }
+
+    /* META BLOCK */
+    .meta-section {
+      padding: 0.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .meta-label {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .meta-value {
+      font-family: 'Hanken Grotesk' sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--medium);
+      line-height: 1.5;
+    }
+
+    /* POSITION TEXT */
+    .title-text {
+      padding: 1rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0rem;
+      align-items: start;
+    }
+
+    .title-text-proposal {
+      padding: 15rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0rem;
+      align-items: start;
+      gap: 1.5rem;
+    }
+
+    /* POSITION TEXT 2*/
+    .title-text2 {
+      padding: 35rem 1.5rem 10rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .title-text-material {
+      padding: 15rem 1.5rem 0rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0rem;
+      align-items: start;
+    }
+
+    .section-heading {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: var(--black);
+      padding-top: 0rem;
+    }
+
+    .section-heading2 {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: var(--black);
+      padding-top: 0rem;
+      text-align: right;
+    }
+
+    .section-heading3 {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: var(--black);
+      padding: 2rem 0rem 0rem;
+    }
+
+    .section-heading4 {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: var(--black);
+      padding: 2rem 0rem 0rem;
+      text-align: right;
+    }
+
+    .body-text {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--black);
+      text-align: justify;
+    }
+
+    .body-text-right {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--black);
+      text-align: right;
+    }
+
+    .body-text-poem-right {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 100;
+      line-height: 1.6;
+      color: var(--dark);
+      text-align: right;
+    }
+
+    .body-text-poem-left {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 100;
+      line-height: 1.6;
+      color: var(--dark);
+      text-align: left;
+    }
+
+    .body-text+.body-text {
+      margin-top: 0.75em;
+    }
+
+    .body-cols {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20rem;
+      align-items: start;
+    }
+
+    /* STAT CALLOUT */
+    .stat-callout {
+      position: relative;
+      padding: 20rem 1.5rem 0rem;
+      align-items: baseline;
+      gap: 2.5rem;
+    }
+
+    .stat-number {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      color: var(--black);
+      line-height: 1.25;
+    }
+
+    .stat-label {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--black);
+      line-height: 1.25;
+      text-align: right;
+    }
+
+    .stat-callout2 {
+      position: relative;
+      padding: 30rem 1.5rem 3.5rem;
+      align-items: baseline;
+      gap: 2.5rem;
+    }
+
+    .stat-number2 {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: var(--black);
+      padding-top: 0.35rem;
+    }
+
+    .stat-number3 {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: var(--black);
+      padding-top: 0.35rem;
+    }
+
+    .stat-label2 {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--black);
+      line-height: 1.25;
+      text-align: right;
+    }
+
+    /* IMAGE PLACEHOLDERS */
+    .img-placeholder {
+      width: 100%;
+      display: block;
+      background: var(--light);
+      position: relative;
+    }
+
+    .img-production {
+      aspect-ratio: 2/1;
+    }
+
+    .img-placeholder.tall {
+      aspect-ratio: 3/4;
+    }
+
+    .img-placeholder.landscape {
+      aspect-ratio: 4/3;
+    }
+
+    .img-placeholder.v1 {
+      background: var(--light);
+    }
+
+    .img-placeholder.v2 {
+      background: var(--light);
+    }
+
+    .img-placeholder.v3 {
+      background: var(--light);
+    }
+
+    img.img-placeholder {
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(1.0);
+    }
+
+    img.img-placeholder.visible {
+      transform: scale(1);
+    }
+
+    .img-caption {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--medium);
+      margin-top: 0.75rem;
+      line-height: 1.5;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    /* FULL-WIDTH IMAGE */
+    .full-img-wrap {
+      width: 100%;
+      overflow: hidden;
+      margin: 3rem 0 0;
+    }
+
+    /* IMAGE GRIDS */
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 20rem 0 20rem;
+    }
+
+    .img-grid-proposal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0 20rem;
+    }
+
+    .img-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+
+    }
+
+    .img-grid-panels {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 2rem 0rem 2rem;
+    }
+
+    .img-grid-beam {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 15rem 0rem 2rem;
+    }
+
+    /* SPLIT SECTION */
+    .split-section {
+      padding: 10rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .split-section.reverse {
+      grid-template-columns: 1fr 1.6fr;
+    }
+
+    .split-section.reverse .split-text {
+      order: -1;
+      text-align: right;
+    }
+
+    .split-subhead {
+      font-size: 1.7rem;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .split-subhead em {
+      font-style: italic;
+      color: var(--medium);
+    }
 
 
- /* IMAGE GRIDS */
-  .img-grid-life {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    padding: 20rem 0 20rem;
+    /* IMAGE GRIDS */
+    .img-grid-life {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 20rem 0 20rem;
     }
 
     /* before after */
-  .before-after {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 10rem 1.5rem 0;
-    gap: 1.5rem;
-    padding: 20rem 0 20rem;
-  }
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 10rem 1.5rem 0;
+      gap: 1.5rem;
+      padding: 20rem 0 20rem;
+    }
 
-  /* PROCESS SECTION */
-  .process-section {
-    padding: 0.5rem 1.5rem 6rem;
-  }
-  .process-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0rem;
-    margin-bottom: 5rem;
-    padding: 15rem 0 0;
-  }
-  .process-images-6 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-    padding: 0rem 1.5rem 15rem;
-  }
-.process-line {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1.5rem 1.5rem 0;
-  gap: 4.5rem;
-  align-items: end;
-}
-.process-line img {
-  width: 100%;
-  aspect-ratio: 16/6;
-  object-fit: cover;
-  display: block;
-}
+    /* PROCESS SECTION */
+    .process-section {
+      padding: 0.5rem 1.5rem 6rem;
+    }
 
-  /* PULLQUOTE */
-  .pullquote-section {
-    padding: 0.5rem 1.5rem;
-    background: var(--white);
-  }
-  .pullquote {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 200;
-    font-style: normal;
-    line-height: 1.5;
-    color: var(--black);
-    max-width: 960px;
-    margin-left: auto;
-    padding-right: 1.5rem;
-    text-align: right;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  /* VIDEO DECAY BACKGROUND */
-  .video-decay-background {
-    position: relative;
-    width: 100%;
-    padding: 50rem 1.5rem;
-    overflow: visible;
-    z-index: 1;
-  }
-  .video-decay-bg {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    pointer-events: none;
-    z-index: -1;
-  }
-  .video-decay-content {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* FADE-IN ANIMATIONS */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal.visible { opacity: 1; transform: none; }
-
-  /* ACCORDION */
-  .accordion-section {
-    background: var(--white);
-    padding: 1.5rem 1.5rem;
-  }
-  .accordion-item {
-    border-top: 1.5px solid var(--black);
-  }
-  .accordion-trigger {
-    width: 100%;
-    background: var(--white);
-    border: none;
-    cursor: pointer;
-    padding: 0.2rem 0;
-    display: grid;
-    grid-template-columns: 50% 6.5% 43.5%;
-    align-items: center;
-    text-align: left;
-  }
-  .accordion-index {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 1rem;
-    font-weight: 100;
-    letter-spacing: 0.2em;
-    padding: 0 1rem 0;
-    color: var(--medium);
-    text-transform: uppercase;
-    text-align: right;
-  }
-  .accordion-title {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--black);
-    text-align: left;
-    transition: color 0.2s;
-  }
-  
-  .accordion-arrow {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 2.4rem;
-    font-weight: 100;
-    line-height: 1;
-    color: var(--black);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    text-align: right;
-  }
-
-  .accordion-arrow::after {
-  content: '+';
-}
-  
-  .accordion-item.open .accordion-arrow { transform: translateX(-95%); } 
-  .accordion-item.open .accordion-arrow::after { content: '−'; }
-  .accordion-item.open .accordion-title { color: var(--light); }
-  .accordion-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .accordion-item.open .accordion-body { max-height: 2000px; }
-  .accordion-inner {
-    padding: 1.5rem 0;
-    display: grid;
-    grid-template-columns: 1fr 1.5rem 50%;
-    gap: 0rem;
-    align-items: start;
-  }
-  .accordion-img-placeholder {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: var(--light);
-  }
-  .accordion-lorem {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--black);
-    text-align: justify;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 0.5rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-logo {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--medium);
-  }
-  .footer-copy {
-    font-family: 'Azeret Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    color: var(--medium);
-  }
-
-  @media (max-width: 900px) {
-    nav { padding: 1.25rem 1.5rem; }
-    nav .nav-links { display: none; }
-    .hero { padding: 0 1.5rem 1.5rem; }
-    .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
-    .meta-section { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.5rem; gap: 2rem; }
-    .title-text, .split-section, .split-section.reverse, .process-intro {
+    .process-intro {
+      display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
-      padding: 1.5rem;
+      margin-bottom: 5rem;
+      padding: 15rem 0 0;
     }
-    .split-section.reverse .split-text { order: 0; }
-    .section { padding: 1.5rem; }
-    .stat-callout { padding: 1.5rem; }
-    .img-grid-3 { grid-template-columns: 1fr 1fr; }
-    .process-images-6 { grid-template-columns: 1fr 1fr; }
-    .pullquote { padding-left: 1.5rem; }
-    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
-    .video-caption { padding: 0.75rem 1.5rem; }
-    .accordion-trigger { padding: 1rem 0; }
-    .accordion-inner { padding: 1rem 0 2.5rem; }
-    .body-cols { grid-template-columns: 1fr; }
-  }
-</style>
+
+    .process-images-6 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding: 0rem 1.5rem 15rem;
+    }
+
+    .process-line {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 1.5rem 1.5rem 0;
+      gap: 4.5rem;
+      align-items: end;
+    }
+
+    .process-line img {
+      width: 100%;
+      aspect-ratio: 16/6;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* PULLQUOTE */
+    .pullquote-section {
+      padding: 0.5rem 1.5rem;
+      background: var(--white);
+    }
+
+    .pullquote {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 200;
+      font-style: normal;
+      line-height: 1.5;
+      color: var(--black);
+      max-width: 960px;
+      margin-left: auto;
+      padding-right: 1.5rem;
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* VIDEO DECAY BACKGROUND */
+    .video-decay-background {
+      position: relative;
+      width: 100%;
+      padding: 50rem 1.5rem;
+      overflow: visible;
+      z-index: 1;
+    }
+
+    .video-decay-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .video-decay-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FADE-IN ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ACCORDION */
+    .accordion-section {
+      background: var(--white);
+      padding: 0.5rem 1.5rem;
+    }
+
+    .accordion-item {
+      border-top: 1.5px solid var(--black);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      background: var(--white);
+      border: none;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      display: grid;
+      grid-template-columns: 50% 6.5% 43.5%;
+      align-items: center;
+      text-align: left;
+    }
+
+    .accordion-index {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 1rem;
+      font-weight: 100;
+      letter-spacing: 0.2em;
+      padding: 0 1rem 0;
+      color: var(--medium);
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .accordion-title {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-align: left;
+      transition: color 0.2s;
+    }
+
+    .accordion-arrow {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 2.4rem;
+      font-weight: 100;
+      line-height: 1;
+      color: var(--black);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: right;
+    }
+
+    .accordion-arrow::after {
+      content: '+';
+    }
+
+    .accordion-item.open .accordion-arrow {
+      transform: translateX(-1.5rem);
+    }
+
+    .accordion-item.open .accordion-arrow::after {
+      content: '−';
+    }
+
+    .accordion-item.open .accordion-title {
+      color: var(--black);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .accordion-item.open .accordion-body {
+      max-height: 2000px;
+    }
+
+    .accordion-inner {
+      padding: 1.5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1.5rem 50%;
+      gap: 0rem;
+      align-items: start;
+    }
+
+    .accordion-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--light);
+    }
+
+    .accordion-lorem {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--black);
+      text-align: justify;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--medium);
+    }
+
+    .footer-copy {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--medium);
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 1.25rem 1.5rem;
+      }
+
+      nav .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 0 1.5rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 12vw, 5rem);
+      }
+
+      .meta-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 1.5rem 1.5rem;
+        gap: 2rem;
+      }
+
+      .title-text,
+      .split-section,
+      .split-section.reverse,
+      .process-intro {
+        grid-template-columns: 1fr 1fr;
+        gap: 0rem;
+        padding: 1.5rem;
+      }
+
+      .split-section.reverse .split-text {
+        order: 0;
+      }
+
+      .section {
+        padding: 1.5rem;
+      }
+
+      .stat-callout {
+        padding: 1.5rem;
+      }
+
+      .img-grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-images-6 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pullquote {
+        padding-left: 1.5rem;
+      }
+
+      footer {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .video-caption {
+        padding: 0.75rem 1.5rem;
+      }
+
+      .accordion-trigger {
+        padding: 1rem 0;
+      }
+
+      .accordion-inner {
+        padding: 1rem 0 2.5rem;
+      }
+
+      .body-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 
@@ -695,654 +897,725 @@ font-family: 'Hanken Grotesk', sans-serif;
 
 
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Flexi Studio</a>
-  <ul class="nav-links">
-    <li><a href="#video-silk">intro</a></li>
-    <li><a href="#material">material</a></li>
-    <li><a href="#production">production</a></li>
-    <li><a href="#proposal">proposal</a></li>
-    <li><a href="#contact">contact</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Flexi Studio</a>
+    <ul class="nav-links">
+      <li><a href="#video-silk">intro</a></li>
+      <li><a href="#material">material</a></li>
+      <li><a href="#production">production</a></li>
+      <li><a href="#proposal">proposal</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO: top.png background, FLEXI NAME title -->
-<section class="hero">
-  <img src="images/top.png" class="hero-bg" style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: scale-down; object-position: left center; transform: translateX(20%) translateY(0%);">
-  <p class="hero-label">Project</p>
-  <h1>FLEXI<br><em>NAME</em></h1>
-  <span class="hero-scroll-hint">Scroll</span>
-</section>
+  <!-- HERO: top.png background, FLEXI NAME title -->
+  <section class="hero">
+    <img src="images/top.png" class="hero-bg"
+      style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: scale-down; object-position: left center; transform: translateX(20%) translateY(0%);">
+    <p class="hero-label">Project</p>
+    <h1>FLEXI<br><em>NAME</em></h1>
+    <span class="hero-scroll-hint">Scroll</span>
+  </section>
 
-<!-- META: research team, year, location, topics -->
-<div class="meta-section reveal" id="meta-info">
-  <div class="meta-item">
-    <span class="meta-label">Research Team</span>
-    <p class="meta-value">Herberth, Liliane</p>
-    <p class="meta-value">Mayer, Marco</p>
+  <!-- META: research team, year, location, topics -->
+  <div class="meta-section reveal" id="meta-info">
+    <div class="meta-item">
+      <span class="meta-label">Research Team</span>
+      <p class="meta-value">Herberth, Liliane</p>
+      <p class="meta-value">Mayer, Marco</p>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Year</span>
+      <p class="meta-value">2025 – ongoing</p>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Location</span>
+      <p class="meta-value">Room 264/2, Vienna, Austria</p>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Topics</span>
+      <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Life
+        Cycle</p>
+    </div>
   </div>
-  <div class="meta-item">
-    <span class="meta-label">Year</span>
-    <p class="meta-value">2025 – ongoing</p>
-  </div>
-  <div class="meta-item">
-    <span class="meta-label">Location</span>
-    <p class="meta-value">Room 264/2, Vienna, Austria</p>
-  </div>
-  <div class="meta-item">
-    <span class="meta-label">Topics</span>
-    <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Life Cycle</p>
-  </div>
-</div>
 
-<!-- VIDEO trailer: skateboard.mp4 -->
-<div class="video-section reveal" id="video-silk">
-  <video class="bg-video" muted loop playsinline preload="auto">
-    <source src="videos/skateboard.mp4" type="video/mp4">
-  </video>
-  <p class="video-caption">PROJECT TRAILER - crochet, cook, dip, assemble</p>
-</div>
-
-<!-- PROJECT: introduction -->
-<section class="title-text reveal" id="project">
-  <div>
-    <p class="section-heading">introduction</p>
+  <!-- VIDEO trailer: skateboard.mp4 -->
+  <div class="video-section reveal" id="video-silk">
+    <video class="bg-video" muted loop playsinline preload="auto">
+      <source src="videos/skateboard.mp4" type="video/mp4">
+    </video>
+    <p class="video-caption">PROJECT TRAILER - crochet, cook, dip, assemble</p>
   </div>
-  <div>
-    <p class="body-text">having its origin rooted in a design course at TU Wien, faculty of architecture, 
-		this project investigated topics like bio-based materials, digital production processes and experimental 
-		formfinding. through iterative physical model studies, interweaving properties of soft wool-based fabrics 
-		with bio-plastic based material matrixes serving as hardening agents. learning from these experiments a 
-		structural logic was formed and applied to construct FLEXI with the help of digital production methods 
-		through panelization and adaptive molds.</p>
-  </div>
-</section>
 
-<!-- STAT 2: evolution -->
-<div class="stat-callout reveal2" style="background: var(--white);">
-  <span class="stat-number2">evolution</span>
-</div>
-
-<!-- GRID-SKI: skizze1 skizze2 3cov -->
-<div class="section section-wide">
-  <div class="img-grid-3 reveal">
+  <!-- PROJECT: introduction -->
+  <section class="title-text reveal" id="project">
     <div>
-      <img src="images/2.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">formfinding</p>
+      <p class="section-heading">introduction</p>
     </div>
     <div>
-      <img src="images/skizze2.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">analysis</p>
+      <p class="body-text">Our proposal aims to explore biodegradable architectural shell structures through 
+      digital fabrication, skeletal construction, and differentiated material systems. Using parametric 
+      form-finding methods, the project combines natural fibers, bone glue, mycelium, bio-resins, and other 
+      compostable materials to create lightweight, self-supporting forms that gradually transform over time. </p>
+      
+      <p class="body-text">Material density and composition are strategically distributed according to structural and environmental 
+      requirements, producing a responsive material matrix rather than a uniform construction. By embracing 
+      weathering, deformation, and decay as part of the design process, the project questions permanence in 
+      architecture and investigates how digitally fabricated structures can exist as temporary, ecologically 
+      integrated systems.</p>
+    </div>
+  </section>
+
+  <!-- STAT 2: evolution -->
+  <div class="stat-callout reveal2" style="background: var(--white);">
+    <span class="stat-number2">evolution</span>
+  </div>
+
+  <!-- GRID-SKI: skizze1 skizze2 3cov -->
+  <div class="section section-wide">
+    <div class="img-grid-3 reveal">
+      <div>
+        <img src="images/2.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">formfinding</p>
+      </div>
+      <div>
+        <img src="images/skizze2.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">analysis</p>
+      </div>
+      <div>
+        <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">implementation</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULLWIDTH: flexiganz.png -->
+  <div style="padding: 10rem 0;">
+    <div class="full-img-wrap reveal" id="fullwidth-flexiganz">
+      <img src="images/flexiganz.png" style="width:100%; display:block; object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- VIDEO-DECAY: grow.mp4 As if the ground -->
+  <div class="video-decay-background" id="video-decay">
+    <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="images/grow.mp4"></video>
+    <div class="video-decay-content">
+      <div class="body-cols">
+        <p class="body-text-poem-right"> As if the ground itself has begun to stretch, </p>
+        <p class="body-text-poem-left"> a spine leans into the air transforming into a wing. </p>
+        <p class="body-text-poem-right"> It feels like the peak of a movement, </p>
+        <p class="body-text-poem-left"> a muscle contracting, </p>
+        <p class="body-text-poem-right"> a weave like muscle fibers drawn close together, </p>
+        <p class="body-text-poem-left"> holding tension just before release. </p>
+        <p class="body-text-poem-right"> Closer to the ground the forms surrender to gravity, </p>
+        <p class="body-text-poem-left"> soft as a limb at rest. </p>
+        <p class="body-text-poem-right"> The wing wraps around, </p>
+        <p class="body-text-poem-left"> not enclosing, </p>
+        <p class="body-text-poem-right"> simply leaning close. </p>
+        <p class="body-text-poem-left"> Standing within the arc of a living gesture, </p>
+        <p class="body-text-poem-right"> a body learning to lift itself from the earth. </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MATERIALIZATION -->
+  <section class="title-text reveal" id="project">
+    <div>
+      <p class="section-heading">MATERIALIZATION</p>
     </div>
     <div>
-      <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">implementation</p>
+      <p class="body-text">Our proposal aims to explore materialization through the development of 
+      fully biodegradable, bio-based materials and differentiated material matrixes within an architectural 
+      hell structure. Using digital design and fabrication methods, the project investigates how varying 
+      densities, thicknesses, and composite mixtures can be strategically distributed according to structural, 
+      spatial, and environmental requirements. </p>
+
+      <p class="body-text">Combining materials such as natural fibers, bio-resins, starch-based composites, and organic binders, 
+      the structure becomes a gradient system rather than a uniform construction. The proposal emphasizes 
+      localized material performance, reducing waste while allowing the pavilion to remain fully compostable 
+      at the end of its lifecycle. In doing so, the project examines how digital fabrication can support 
+      adaptive, ecologically responsive forms of material organization. </p>
     </div>
+  </section>
+
+
+  <!-- MATERIALS -->
+  <div class="title-text-material" style="background: var(--white);">
+    <span class="stat-number3">7 (+1)</span>
+    <span class="stat-number3">fully biodegradable Materials</span>
   </div>
-</div>
 
-<!-- FULLWIDTH: flexiganz.png -->
-<div style="padding: 10rem 0;">
-  <div class="full-img-wrap reveal" id="fullwidth-flexiganz">
-    <img src="images/flexiganz.png" style="width:100%; display:block; object-fit:cover;">
-  </div>
-</div>
-
-<!-- VIDEO-DECAY: grow.mp4 As if the ground -->
-<div class="video-decay-background" id="video-decay">
-  <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="images/grow.mp4"></video>
-  <div class="video-decay-content">
-    <div class="body-cols">
-      <p class="body-text-poem-right"> As if the ground itself has begun to stretch,  </p>
-      <p class="body-text-poem-left"> a spine leans into the air transforming into a wing.  </p>
-      <p class="body-text-poem-right"> It feels like the peak of a movement,  </p>
-      <p class="body-text-poem-left"> a muscle contracting,  </p>
-      <p class="body-text-poem-right"> a weave like muscle fibers drawn close together,  </p>
-      <p class="body-text-poem-left"> holding tension just before release. </p>
-      <p class="body-text-poem-right"> Closer to the ground the forms surrender to gravity, </p>
-      <p class="body-text-poem-left"> soft as a limb at rest. </p>
-      <p class="body-text-poem-right"> The wing wraps around, </p>
-      <p class="body-text-poem-left"> not enclosing, </p>
-      <p class="body-text-poem-right"> simply leaning close. </p>
-      <p class="body-text-poem-left"> Standing within the arc of a living gesture, </p>
-      <p class="body-text-poem-right"> a body learning to lift itself from the earth. </p>
-    </div>
-  </div>
-</div>
-
-
-<!-- MATERIALIZATION -->
-<section class="title-text reveal" id="project">
-  <div>
-    <p class="section-heading">MATERIALIZATION</p>
-  </div>
-  <div>
-    <p class="body-text">our core values are driven by this and that. to achieve this and that we investigated 
-    the fundamental properties of several bio-based materials, leading to a gradual material matrix that allows us to 
-    implement targeted properties withing our proposal. </p>
-  </div>
-</section>
-
-
-<!-- MATERIALS -->
-<div class="stat-callout reveal2" style="background: var(--white);">
-  <span class="stat-number2">7 (+1) degradable Materials</span>
-</div>
-
-<!-- ACCORDION materials -->
-<div class="accordion-section reveal" id="material">
+  <!-- ACCORDION materials -->
+  <div class="accordion-section reveal" id="material">
 
     <!-- VII. Wools -->
-  <div class="accordion-item" id="acc-textiles">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
-      <span class="accordion-index"></span>
-      <span class="accordion-title muted">Wool</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="accordion-item" id="acc-textiles">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
+        <span class="accordion-index"></span>
+        <span class="accordion-title muted">Wool</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- I. Water -->
+    <div class="accordion-item" id="acc-water">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-water')">
+        <span class="accordion-index">panel</span>
+        <span class="accordion-title">Water</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/water.jpg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- II. Gelatine -->
+    <div class="accordion-item" id="acc-gelatine">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-gelatine')">
+        <span class="accordion-index">panel</span>
+        <span class="accordion-title">Gelatine</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- III. Xanthan -->
+    <div class="accordion-item" id="acc-xanthan">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-xanthan')">
+        <span class="accordion-index">panel</span>
+        <span class="accordion-title">Xanthan</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IV. CaCO3 -->
+    <div class="accordion-item" id="acc-caco3">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-caco3')">
+        <span class="accordion-index">panel</span>
+        <span class="accordion-title">CaCO3</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- V. Wood -->
+    <div class="accordion-item" id="acc-wood">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-wood')">
+        <span class="accordion-index">panel</span>
+        <span class="accordion-title">Wood</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">sawdust and woodchips that originated as a wasteproduct during building frames for
+            panel-production was reused
+            as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI. Glycerol -->
+    <div class="accordion-item" id="acc-glycerol">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-glycerol')">
+        <span class="accordion-index">panel</span>
+        <span class="accordion-title">glycerol</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">glycerol serves as a plasticiser, making the material more resistant to breaking
+            and providing the
+            possibility to adjust flexibility of the material. lower parts are very flexible due to more share of
+            glycerol within the material
+            matrix, parts further up are stiff with only a minimal ammount to prevent breaking and deformation during
+            the drying process.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIII. Boneglue -->
+    <div class="accordion-item" id="acc-boneglue">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-boneglue')">
+        <span class="accordion-index">beam</span>
+        <span class="accordion-title muted">Boneglue</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <p </p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END ACCORDION -->
+
+  <!-- VIDEO cooking: cooking.mp4 -->
+  <div class="video-section reveal" id="video-silk">
+    <video class="bg-video" muted loop playsinline preload="auto">
+      <source src="videos/cooking.mp4" type="video/mp4">
+    </video>
+    <p class="video-caption">material preparation</p>
+  </div>
+
+  <!-- GRID panels full and detail -->
+  <div class="section section-wide">
+    <div class="img-grid-2 reveal">
+      <div>
+        <img src="images/5.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">panel 450x300mm</p>
+      </div>
+      <div>
+        <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">PANEL closeup 80x60mm</p>
       </div>
     </div>
   </div>
 
-  <!-- I. Water -->
-  <div class="accordion-item" id="acc-water">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-water')">
-      <span class="accordion-index">panel</span>
-      <span class="accordion-title">Water</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/water.jpg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <!-- GRID panels full and detail -->
+  <div class="section section-wide">
+    <div class="img-grid-panels reveal">
+      <div>
+        <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">panel MAD DIAGRAM</p>
       </div>
     </div>
   </div>
 
-  <!-- II. Gelatine -->
-  <div class="accordion-item" id="acc-gelatine">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-gelatine')">
-      <span class="accordion-index">panel</span>
-      <span class="accordion-title">Gelatine</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <!-- VIDEO pressing: pressing.mp4 -->
+  <div class="video-section reveal" id="video-silk">
+    <video class="bg-video" muted loop playsinline preload="auto">
+      <source src="videos/pressing.mp4" type="video/mp4">
+    </video>
+    <p class="video-caption">differentiated properties</p>
+  </div>
+
+  <!-- CONSTRUCTION -->
+  <section class="title-text2 reveal" id="project">
+    <div>
+      <p class="body-text"> </p>
+    </div>
+    <div>
+      <p class="section-heading2">CONSTRUCTION</p>
+    </div>
+
+    <div>
+      <p class="body-text">Our proposal aims to investigate skeletal construction methods through 
+      a lightweight shell-like structure made from wool and bone glue. Using digitally informed 
+      form-finding processes, the project explores how natural fibers and biodegradable binders 
+      can create self-supporting architectural forms with minimal material use. The wool is shaped 
+      and stiffened through layers of bone glue, producing a semi-rigid membrane that adapts into 
+      a curved, load-bearing shell structure. </p>
+
+       <p class="body-text">Inspired by biological growth and anatomical frameworks, 
+      the pavilion emphasizes material efficiency, fragility, and tactility. Over time, the organic 
+      materials respond to humidity, tension, and environmental conditions, allowing the structure to 
+      subtly deform and evolve while questioning conventional distinctions between textile, sculpture, 
+      and architecture.</p>
+    </div>
+  </section>
+
+
+  <!-- GRID-H: h.jpeg i.jpeg j.jpeg material matrix -->
+  <div class="section section-wide">
+    <div class="img-grid-3 reveal">
+      <div>
+        <img src="images/h.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">material matrix 3.4</p>
+      </div>
+      <div>
+        <img src="images/i.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">material matrix 3.2</p>
+      </div>
+      <div>
+        <img src="images/j.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">material matrix 2.4</p>
       </div>
     </div>
   </div>
 
-  <!-- III. Xanthan -->
-  <div class="accordion-item" id="acc-xanthan">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-xanthan')">
-      <span class="accordion-index">panel</span>
-      <span class="accordion-title">Xanthan</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-                <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  <!-- BEAM LAYUP -->
+  <div class="section section-wide">
+    <div class="img-grid-beam reveal">
+      <div>
+        <img src="images/layup.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">beam structural fibre layup</p>
       </div>
     </div>
   </div>
 
-  <!-- IV. CaCO3 -->
-  <div class="accordion-item" id="acc-caco3">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-caco3')">
-      <span class="accordion-index">panel</span>
-      <span class="accordion-title">CaCO3</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-                 <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
+
+  <!-- GRID-19: 19.png 20.png 27.png material matrix -->
+  <div class="section section-wide">
+    <div class="img-grid-3 reveal">
+      <div>
+        <img src="images/19.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">beam baselayer</p>
+      </div>
+      <div>
+        <img src="images/20.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">beam coating</p>
+      </div>
+      <div>
+        <img src="images/27.png" class="img-placeholder landscape" style="object-fit: cover;">
+        <p class="img-caption">dipping video</p>
       </div>
     </div>
   </div>
 
-  <!-- V. Wood -->
-  <div class="accordion-item" id="acc-wood">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-wood')">
-      <span class="accordion-index">panel</span>
-      <span class="accordion-title">Wood</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-        <p class="accordion-lorem">sawdust and woodchips that originated as a wasteproduct during building frames for panel-production was reused 
-          as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
-      </div>
-    </div>
+  <!-- FULLWIDTH: BEAM -->
+  <div class="full-img-wrap reveal" id="fullwidth-n">
+    <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
   </div>
 
-  <!-- VI. Glycerol -->
-  <div class="accordion-item" id="acc-glycerol">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-glycerol')">
-      <span class="accordion-index">panel</span>
-      <span class="accordion-title">glycerol</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-        <p class="accordion-lorem">glycerol serves as a plasticiser, making the material more resistant to breaking and providing the 
-          possibility to adjust flexibility of the material. lower parts are very flexible due to more share of glycerol within the material 
-          matrix, parts further up are stiff with only a minimal ammount to prevent breaking and deformation during the drying process.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- VIII. Boneglue -->
-  <div class="accordion-item" id="acc-boneglue">
-    <button class="accordion-trigger" onclick="toggleAccordion('acc-boneglue')">
-      <span class="accordion-index">beam</span>
-      <span class="accordion-title muted">Boneglue</span>
-      <span class="accordion-arrow"></span>
-    </button>
-    <div class="accordion-body">
-      <div class="accordion-inner">
-        <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
-        <p </p>
-        <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-<!-- END ACCORDION -->
-
-<!-- VIDEO cooking: cooking.mp4 -->
-<div class="video-section reveal" id="video-silk">
-  <video class="bg-video" muted loop playsinline preload="auto">
-    <source src="videos/cooking.mp4" type="video/mp4">
-  </video>
-  <p class="video-caption">material preparation</p>
-</div>
-
-<!-- GRID panels full and detail -->
-<div class="section section-wide">
-  <div class="img-grid-2 reveal">
+  <!-- PRODUCTION -->
+  <section class="title-text2 reveal" id="project">
     <div>
-      <img src="images/5.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panel 450x300mm</p>
+      <p class="section-heading2">PRODUCTION</p>
     </div>
     <div>
-      <img src="images/k.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">PANEL closeup 80x60mm</p>
+      <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that
+        flexi and flexi flexi
+        can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and
+        flexi flexi (flexi-of-flexi,
+        flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi
+        and flexi within the final
+        flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi
+        flexi to changing flexi flexi.</p>
     </div>
-  </div>
-</div>
 
-<!-- GRID panels full and detail -->
-<div class="section section-wide">
-  <div class="img-grid-panels reveal">
     <div>
-      <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">panel MAD DIAGRAM</p>
-    </div>
-  </div>
-</div>
-
-<!-- VIDEO pressing: pressing.mp4 -->
-<div class="video-section reveal" id="video-silk">
-  <video class="bg-video" muted loop playsinline preload="auto">
-    <source src="videos/pressing.mp4" type="video/mp4">
-  </video>
-  <p class="video-caption">differentiated properties</p>
-</div>
-
-<!-- CONSTRUCTION -->
-<section class="title-text2 reveal" id="project">
-  <div>
-    <p class="body-text"> </p>
-  </div>
-  <div>
-    <p class="section-heading2">CONSTRUCTION</p>
-  </div>
-
-  <div>
-    <p class="body-text">in order to achieve this that and this and yes and no and all the other things got done for it 
-      to be as it is now and not as it has been before so that it can be this and that and everything somewhere somehow.
-    our core values are driven by this and that. to achieve this and that we investigated 
-    the fundamental properties of several bio-based materials, leading to a gradual material matrix that allows us to 
-    implement targeted properties withing our proposal.</p>
-  </div>
-</section>
-
-
-	<!-- GRID-H: h.jpeg i.jpeg j.jpeg material matrix -->
-<div class="section section-wide">
-  <div class="img-grid-3 reveal">
-    <div>
-      <img src="images/h.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">material matrix 3.4</p>
-    </div>
-    <div>
-      <img src="images/i.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">material matrix 3.2</p>
-    </div>
-    <div>
-      <img src="images/j.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">material matrix 2.4</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- BEAM LAYUP -->
-<div class="section section-wide">
-  <div class="img-grid-beam reveal">
-    <div>
-      <img src="images/layup.jpg" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">beam structural fibre layup</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- GRID-19: 19.png 20.png 27.png material matrix -->
-<div class="section section-wide">
-  <div class="img-grid-3 reveal">
-    <div>
-      <img src="images/19.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">beam baselayer</p>
-    </div>
-    <div>
-      <img src="images/20.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">beam coating</p>
-    </div>
-    <div>
-      <img src="images/27.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">dipping video</p>
-    </div>
-  </div>
-</div>
-
-<!-- FULLWIDTH: BEAM -->
-<div class="full-img-wrap reveal" id="fullwidth-n">
-  <img src="images/n.jpeg" style="width:100%; display:block; object-fit:cover;">
-</div>
-
-<!-- PRODUCTION -->
-<section class="title-text2 reveal" id="project">
-  <div>
-    <p class="section-heading2">PRODUCTION</p>
-  </div>
-  <div>
-    <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that flexi and flexi flexi 
-        can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and flexi flexi (flexi-of-flexi, 
-        flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi and flexi within the final 
-        flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi flexi to changing flexi flexi.</p>
-  </div>
-
-  <div>
-    <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their 
-        flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based flexi is utilized as a flexi 
+      <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over
+        their
+        flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based
+        flexi is utilized as a flexi
         flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
-  </div>
-</section>
+    </div>
+  </section>
 
 
-<div class="process-line">
-  <img src="images/a.jpeg">
-  <div>
-    <p class="section-heading3">panel formwork</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  <div class="process-line">
+    <img src="images/a.jpeg">
+    <div>
+      <p class="section-heading3">panel formwork</p>
+      <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore.</p>
+    </div>
   </div>
-</div>
-<div class="process-line">
-  <div>
+  <div class="process-line">
+    <div>
       <p class="section-heading4">textile base</p>
-    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-  <img src="images/b.jpeg">
-</div>
-<div class="process-line">
-  <img src="images/d.jpeg">
-  <div>
-    <p class="section-heading3">material cooking</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-</div>
-<div class="process-line">
-  <div>
-    <p class="section-heading4">controlled drying</p>
-    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-  <img src="images/e.jpeg">
-</div>
-<div class="process-line">
-  <img src="images/k.jpeg">
-  <div>
-    <p class="section-heading3">assembly (panels)</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-</div>
-<div class="process-line">
-  <div>
-    <p class="section-heading4">beam preproduction</p>
-    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-  <img src="images/g.jpeg">
-</div>
-<div class="process-line">
-  <img src="images/k.jpeg">
-  <div>
-    <p class="section-heading3">adaptive forming beam</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-</div>
-<div class="process-line">
-  <div>
-    <p class="section-heading4">installation</p>
-    <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-</div>
-<div class="process-line">
-  <img src="images/e.jpeg">
-  <div>
-    <p class="section-heading3">decay</p>
-    <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-  </div>
-</div>
-
-<!-- SPLIT-PROTOTYPE: ssfsf.png left, PROTOTYPE 1.0 right -->
-<div class="split-section reverse reveal">
-  <div>
-    <img src="images/ssfsf.png" class="img-placeholder tall" style="object-fit: cover;">
-  </div>
-  <div class="split-text">
-    <h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
-    <p class="body-text-right">panels M 1:2</p>
-    <p class="body-text-right">construction mockup M 1:2</p>
-  </div>
-</div>
-
-<!-- PROPOSAL -->
-<section class="title-text-proposal reveal" id="project">
-  <div>
-    <p class="section-heading">PROPOSAL</p>
-  </div>
-  <div>
-    <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that flexi and flexi flexi 
-        can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and flexi flexi (flexi-of-flexi, 
-        flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi and flexi within the final 
-        flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi flexi to changing flexi flexi.</p>
-
-    <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their 
-        flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based flexi is utilized as a flexi 
-        flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
-  </div>
-</section>
-
-<!-- GRID before after -->
-<div class="section section-wide">
-  <div class="img-grid-proposal reveal">
-    <div>
-      <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
-      <p class="img-caption">birth</p>
+      <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore.</p>
     </div>
+    <img src="images/b.jpeg">
+  </div>
+  <div class="process-line">
+    <img src="images/d.jpeg">
     <div>
-      <img src="images/3.png" class="img-placeholder tall" style="object-fit: cover;">
-      <p class="img-caption">old</p>
+      <p class="section-heading3">material cooking</p>
+      <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore.</p>
     </div>
   </div>
-</div>
-
-
-<!-- CONTACT: get in touch -->
-<section class="title-text" id="contact">
-  <div>
-    <p class="section-heading">contact</p>
+  <div class="process-line">
+    <div>
+      <p class="section-heading4">controlled drying</p>
+      <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore.</p>
+    </div>
+    <img src="images/e.jpeg">
   </div>
-  <div>
-    <p class="body-text">get in touch get in touch get in touch get in touch get in touch get in 
-    touch get in touch get in touch get in touch get in touch get in touch get in touch</p>
-    <p class="body-text">touch it touch it touch it touch it touch it touch it touch it touch it 
-    touch it touch it touch it touch it touch it touch it</p>
+  <div class="process-line">
+    <img src="images/k.jpeg">
+    <div>
+      <p class="section-heading3">assembly (panels)</p>
+      <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore.</p>
+    </div>
   </div>
-</section>
-
-<!-- ACKNOWLEDGEMENTS: tu wien and kaust -->
-<div style="padding: 5rem 0 0;">
-<section class="title-text" id="acknowledgements">
-  <div>
-    <p class="section-heading">acknowledgements</p>
+  <div class="process-line">
+    <div>
+      <p class="section-heading4">beam preproduction</p>
+      <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore.</p>
+    </div>
+    <img src="images/g.jpeg">
   </div>
-  <div class="body-text">
-    <p class="body-text">tu wien and kaust and florian and anna and all the others and mom and dad and everybody else.</p>
-    <p class="body-text">funding by this and that and everething else. contributions of x and y and z 
-    and a and b and c while using 1 and 2 and 3 within xy and ab and 12.</p>
+  <div class="process-line">
+    <img src="images/l.jpeg">
+    <div>
+      <p class="section-heading3">adaptive forming beam</p>
+      <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore.</p>
+    </div>
   </div>
-</section>
-
-	<!-- FULLWIDTH: l.jpeg -->
-  <div class="full-img-wrap reveal" id="fullwidth-l">
-    <img src="images/l.jpeg" style="width:100%; display:block; object-fit:cover;">
+  <div class="process-line">
+    <div>
+      <p class="section-heading4">installation</p>
+      <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore.</p>
+    </div>
+    <img src="images/k.jpeg">
   </div>
-</div>
+  <div class="process-line">
+    <img src="images/e.jpeg">
+    <div>
+      <p class="section-heading3">decay</p>
+      <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore.</p>
+    </div>
+  </div>
 
-<!-- FOOTER -->
-<footer>
-  <span class="footer-logo">Flexi Studio</span>
-  <span class="footer-copy">© 2026 — All rights reserved</span>
-</footer>
+  <!-- SPLIT-PROTOTYPE: ssfsf.png left, PROTOTYPE 1.0 right -->
+  <div class="split-section reverse reveal">
+    <div>
+      <img src="images/ssfsf.png" class="img-placeholder tall" style="object-fit: cover;">
+    </div>
+    <div class="split-text">
+      <h2 class="split-subhead"><em>PROTOTYPE 1.0</em></h2>
+      <p class="body-text-right">panels M 1:2</p>
+      <p class="body-text-right">construction mockup M 1:2</p>
+    </div>
+  </div>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  <!-- PROPOSAL -->
+  <section class="title-text-proposal reveal" id="project">
+    <div>
+      <p class="section-heading">PROPOSAL</p>
+    </div>
+    <div>
+      <p class="body-text">Our proposal aims to explore the relationship between digital fabrication,
+        biodegradability, and temporal transformation through a sculptural architectural pavilion. Using
+        parametric design methods and biodegradable materials such as mycelium, hemp fiber, bioplastics,
+        and untreated wood, the structure is designed to gradually wither and decompose through exposure
+        to weather and biological processes. </p>
+
+      <p class="body-text">Rather than resisting decay, the project embraces deterioration
+        as an active part of the work, allowing the pavilion to evolve over time. Initially appearing as a
+        precise digitally fabricated form, it slowly transforms into an organic and unstable structure,
+        questioning conventional ideas of permanence, material value, and sustainability in contemporary
+        architecture and sculpture.</p>
+    </div>
+  </section>
+
+  <!-- GRID before after -->
+  <div class="section section-wide">
+    <div class="img-grid-proposal reveal">
+      <div>
+        <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
+        <p class="img-caption">birth</p>
+      </div>
+      <div>
+        <img src="images/3.png" class="img-placeholder tall" style="object-fit: cover;">
+        <p class="img-caption">old</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT-->
+  <section class="title-text" id="contact">
+    <div>
+      <p class="section-heading">contact</p>
+    </div>
+    <div>
+      <p class="body-text">send us a <a href="mailto:flexi@sexy.at">mail</a> to get more
+        information about upcoming projects, possible collaborations and all questions you might have
+        encounter during your visit. and get in touch get in touch get in touch get in touch get in touch
+        get in touch get in touch get in touch get in touch get in touch get in touch</p>
+      <p class="body-text">you can touch it <a href="https://www.tuwien.at/">here</a>, visit it <a
+          href="https://www.tuwien.at/">there</a> and touch it touch it touch it touch it touch it touch it touch it
+        touch it touch it touch it touch it touch it touch it</p>
+      <p class="body-text">if you want to learn more about the ongoing research project flexible mold, <a
+          href="https://kunst2.tuwien.ac.at/flexible-mold">visit here</a>. there you can
+        find more info on this and that and yes.</p>
+    </div>
+  </section>
+
+  <!-- ACKNOWLEDGEMENTS-->
+  <div style="padding: 5rem 0 0;">
+    <section class="title-text" id="acknowledgements">
+      <div>
+        <p class="section-heading">acknowledgements</p>
+      </div>
+      <div class="body-text">
+        <p class="body-text">tu wien and kaust and anna and florian and florian and anna and all the others
+          and mom and dad and everybody else and all the others.</p>
+        <p class="body-text">funding by this and that and everething else. contributions of x and y and z
+          and a and b and c while using 1 and 2 and 3 within xy and ab and 12.</p>
+        <p class="body-text">help by this and that and funding by those and these and goose and geese.</p>
+      </div>
+    </section>
+
+    <!-- OUTRO -->
+    <div class="full-img-wrap reveal" id="fullwidth-l">
+      <img src="images/outro.png" style="width:100%; display:block; object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Flexi Studio</span>
+    <span class="footer-copy">© 2026 — All rights reserved</span>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Video: play/pause on scroll
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target.querySelector('video');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (video) video.play().catch(() => { });
+        } else {
+          if (video) video.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.video-section').forEach(s => videoObserver.observe(s));
+
+    // Stagger children in grids
+    document.querySelectorAll('.img-grid-2, .img-grid-3, .process-images-6').forEach(grid => {
+      Array.from(grid.children).forEach((child, i) => {
+        child.style.transitionDelay = `${i * 0.08}s`;
+      });
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
 
-  // Video: play/pause on scroll
-  const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const video = entry.target.querySelector('video');
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        if (video) video.play().catch(() => {});
-      } else {
-        if (video) video.pause();
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.video-section').forEach(s => videoObserver.observe(s));
-
-  // Stagger children in grids
-  document.querySelectorAll('.img-grid-2, .img-grid-3, .process-images-6').forEach(grid => {
-    Array.from(grid.children).forEach((child, i) => {
-      child.style.transitionDelay = `${i * 0.08}s`;
-    });
-  });
-
-  // Accordion
-  function toggleAccordion(id) {
-    const item = document.getElementById(id);
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  // Video Decay Background: scroll-driven frame scrubbing, smooth fade
-  (function() {
-    const section = document.querySelector('.video-decay-background');
-    const video = document.getElementById('scrollAnim');
-    if (!section || !video) return;
-
-    video.pause();
-    video.addEventListener('play', () => video.pause());
-
-    function updateVideoDecay() {
-      const rect = section.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const fadeInStart  = vh * 0.85;
-      const fadeInEnd    = vh * 0.5;
-      const fadeOutStart = vh * 0.25;
-      const fadeOutEnd   = vh * 0.05;
-      let opacity = 0;
-      if (rect.top <= fadeInEnd && rect.bottom >= fadeOutStart) {
-        opacity = 1;
-      } else if (rect.top > fadeInEnd && rect.top <= fadeInStart) {
-        opacity = 1 - (rect.top - fadeInEnd) / (fadeInStart - fadeInEnd);
-      } else if (rect.bottom < fadeOutStart && rect.bottom >= fadeOutEnd) {
-        opacity = (rect.bottom - fadeOutEnd) / (fadeOutStart - fadeOutEnd);
-      }
-      opacity = Math.max(0, Math.min(1, opacity));
-      video.style.opacity = opacity * 0.75;
-      if (video.duration && opacity > 0) {
-        const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
-        video.currentTime = progress * video.duration;
-      }
+    // Accordion
+    function toggleAccordion(id) {
+      const item = document.getElementById(id);
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
     }
 
-    video.style.transition = 'none';
-    video.load();
-    video.addEventListener('loadedmetadata', () => { video.currentTime = 0; updateVideoDecay(); });
-    window.addEventListener('scroll', () => { requestAnimationFrame(updateVideoDecay); }, { passive: true });
-    updateVideoDecay();
-  })();
-</script>
+    // Video Decay Background: scroll-driven frame scrubbing, smooth fade
+    (function () {
+      const section = document.querySelector('.video-decay-background');
+      const video = document.getElementById('scrollAnim');
+      if (!section || !video) return;
+
+      video.pause();
+      video.addEventListener('play', () => video.pause());
+
+      function updateVideoDecay() {
+        const rect = section.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const fadeInStart = vh * 0.85;
+        const fadeInEnd = vh * 0.5;
+        const fadeOutStart = vh * 0.25;
+        const fadeOutEnd = vh * 0.05;
+        let opacity = 0;
+        if (rect.top <= fadeInEnd && rect.bottom >= fadeOutStart) {
+          opacity = 1;
+        } else if (rect.top > fadeInEnd && rect.top <= fadeInStart) {
+          opacity = 1 - (rect.top - fadeInEnd) / (fadeInStart - fadeInEnd);
+        } else if (rect.bottom < fadeOutStart && rect.bottom >= fadeOutEnd) {
+          opacity = (rect.bottom - fadeOutEnd) / (fadeOutStart - fadeOutEnd);
+        }
+        opacity = Math.max(0, Math.min(1, opacity));
+        video.style.opacity = opacity * 0.75;
+        if (video.duration && opacity > 0) {
+          const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
+          video.currentTime = progress * video.duration;
+        }
+      }
+
+      video.style.transition = 'none';
+      video.load();
+      video.addEventListener('loadedmetadata', () => { video.currentTime = 0; updateVideoDecay(); });
+      window.addEventListener('scroll', () => { requestAnimationFrame(updateVideoDecay); }, { passive: true });
+      updateVideoDecay();
+    })();
+  </script>
 
 </body>
+
 </html>
