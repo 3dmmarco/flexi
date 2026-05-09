@@ -285,6 +285,7 @@
       width: 100%;
       overflow: hidden;
       margin: 3rem 0 0;
+      padding: 0 0 20rem;
     }
 
     /* VIDEO DECAY BACKGROUND */
@@ -315,7 +316,7 @@
 
     /* MATERIALIZATION */
     .materialization-section {
-      padding: 1rem 1.5rem;
+      padding: 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
@@ -459,14 +460,14 @@
 
     /* BEAM GRID */
     .beam-grid {
-      padding: 15rem 1.5rem 2rem;
+      padding: 15rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr;
     }
 
     /* PRODUCTION */
     .production-section {
-      padding: 35rem 1.5rem 10rem;
+      padding: 1.5rem 1.5rem 10rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
@@ -478,17 +479,30 @@
       position: relative;
     }
 
-    .process-lines-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('images/line.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: local;
-      opacity: 0.75;
-      z-index: 0;
-      pointer-events: none;
-    }
+   .process-lines-inner::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: var(--line-top, 0px);
+  height: var(--line-height, 0px);
+  transform: translateX(-50%);
+  width: 1px;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+    .process-line::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--black);
+  z-index: 2;
+}
 
     .process-lines-inner {
       position: relative;
@@ -496,11 +510,12 @@
     }
 
     .process-line {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding: 1.5rem 1.5rem 0;
-      gap: 4.5rem;
-      align-items: end;
+      gap: 3rem;
+      align-items: center;
     }
 
     .process-line img {
@@ -512,7 +527,7 @@
 
     /* PROTOTYPE SPLIT */
     .prototype-section {
-      padding: 15rem 1.5rem 10rem;
+      padding: 15rem 1.5rem 20rem;
       display: grid;
       grid-template-columns: 1fr 1.6fr;
       gap: 1.5rem;
@@ -525,7 +540,7 @@
 
     /* PROPOSAL */
     .proposal-section {
-      padding: 15rem 1.5rem 1.5rem;
+      padding: 1.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
@@ -1210,7 +1225,6 @@
 
   <!-- PROCESS LINES with line.jpg background -->
   <div class="process-lines-wrapper">
-    <div class="process-lines-bg"></div>
     <div class="process-lines-inner">
       <div class="process-line">
         <img src="images/a.jpeg">
@@ -1461,6 +1475,26 @@
       window.addEventListener('scroll', () => { requestAnimationFrame(updateVideoDecay); }, { passive: true });
       updateVideoDecay();
     })();
+
+    // Process line: von Mitte erstem bis Mitte letztem process-line
+function updateProcessLine() {
+  const inner = document.querySelector('.process-lines-inner');
+  const lines = document.querySelectorAll('.process-line');
+  if (!inner || lines.length === 0) return;
+
+  const parentRect = inner.getBoundingClientRect();
+  const firstRect = lines[0].getBoundingClientRect();
+  const lastRect = lines[lines.length - 1].getBoundingClientRect();
+
+  const top = firstRect.top - parentRect.top + firstRect.height / 2;
+  const bottom = lastRect.top - parentRect.top + lastRect.height / 2;
+
+  inner.style.setProperty('--line-top', top + 'px');
+  inner.style.setProperty('--line-height', (bottom - top) + 'px');
+}
+
+window.addEventListener('load', updateProcessLine);
+window.addEventListener('resize', updateProcessLine);
   </script>
 
 </body>
