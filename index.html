@@ -23,11 +23,6 @@
       padding: 0;
     }
 
-    @keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
     a {
   color: var(--medium);
   font-style: italic;
@@ -925,18 +920,8 @@
       <p class="img-caption">analysis</p>
     </div>
   <div>
-  <div style="overflow: hidden; width: 100%; aspect-ratio: 4/3; position: relative;">
-    <img src="images/ansicht.png" style="
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform-origin: center center;
-      animation: spin 12s linear infinite;
-      scale: 1.42;
-    ">
-  </div>
+<div>
+  <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
   <p class="img-caption">implementation</p>
 </div>
   </div>
