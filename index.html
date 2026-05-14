@@ -20,6 +20,11 @@
       padding: 0;
     }
 
+    @keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
     a {
   color: var(--medium);
   font-style: italic;
@@ -916,10 +921,21 @@
       <img src="images/skizze2.png" class="img-placeholder landscape" style="object-fit: cover;">
       <p class="img-caption">analysis</p>
     </div>
-    <div>
-      <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
-      <p class="img-caption">implementation</p>
-    </div>
+  <div>
+  <div style="overflow: hidden; width: 100%; aspect-ratio: 4/3; position: relative;">
+    <img src="images/ansicht.png" style="
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: center center;
+      animation: spin 12s linear infinite;
+      scale: 1.42;
+    ">
+  </div>
+  <p class="img-caption">implementation</p>
+</div>
   </div>
 
   <!-- FULLWIDTH: flexiganz -->
@@ -989,10 +1005,9 @@
         <div class="accordion-inner">
           <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
           <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="accordion-lorem">untreated merino wool has been used as an underlying structure for both construction
+          and panels. it serves as a base to absorb hardening material such as boneglue for construction and a 
+          gelatine-based materialmix for panels, as well as adding reinforcement to absorb tension.</p>
         </div>
       </div>
     </div>
