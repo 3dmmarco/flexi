@@ -11,7 +11,6 @@
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-<!—Standard favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
   
   <style>
@@ -281,6 +280,62 @@
       gap: 2.5rem;
     }
 
+    /* EVOLUTION COMPARISON GRID */
+    .evolution-grid {
+      padding: 2rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .evolution-grid + .evolution-grid {
+      padding-top: 0;
+    }
+
+    .evolution-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+
+    .evolution-arrow-line {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .evolution-arrow-line::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--medium);
+    }
+
+    .evolution-arrow-line::after {
+      content: '›';
+      font-family: 'Azeret Mono', monospace;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--medium);
+      line-height: 1;
+      margin-top: -1px;
+    }
+
+    .evolution-arrow-label {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.55rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-align: center;
+      white-space: nowrap;
+    }
+
     /* IMAGE GRIDS */
     .img-grid-3 {
       padding: 0 1.5rem;
@@ -429,9 +484,12 @@
       align-items: start;
     }
 
-    .accordion-img-placeholder {
+    /* Accordion images: 21:9 */
+    .accordion-img {
       width: 100%;
-      aspect-ratio: 16/9;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
       background: var(--light);
     }
 
@@ -457,17 +515,39 @@
       display: grid;
       grid-template-columns: 1fr;
     }
-      .cook-grid-1 {
+
+    .cook-grid-1 {
       padding: 2rem 1.5rem 2rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       gap: 0.5rem;
     }
-      .bubbub-grid-1 {
+
+    .bubbub-grid-1 {
       padding: 2rem 1.5rem 2rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       gap: 0.5rem;
+    }
+
+    /* LAYERED IMAGE WRAPPER */
+    .img-layered {
+      position: relative;
+      width: 100%;
+    }
+
+    .img-layered img:first-child {
+      display: block;
+      width: 100%;
+    }
+
+    .img-layered img.overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
     }
 
     /* CONSTRUCTION */
@@ -495,7 +575,7 @@
       align-items: start;
     }
 
-    /* PROCESS LINES — with line.jpg background */
+    /* PROCESS LINES */
     .process-lines-wrapper {
       position: relative;
     }
@@ -734,24 +814,25 @@
       align-items: start;
     }
 
-    .img-placeholder {
+    .img-block {
       width: 100%;
       display: block;
       background: var(--light);
     }
 
-    .img-placeholder.landscape {
+    .img-block.landscape {
       aspect-ratio: 4/3;
     }
 
-    .img-placeholder.diagram {
+    .img-block.diagram {
       aspect-ratio: 6/3;
     }
-    .img-placeholder.gradient {
+
+    .img-block.gradient {
       aspect-ratio: 9/3;
     }
 
-    .img-placeholder.tall {
+    .img-block.tall {
       aspect-ratio: 3/4;
     }
 
@@ -765,6 +846,7 @@
       line-height: 1.5;
       text-align: right;
     }
+
     .img-caption-sub {
       font-family: 'Hanken Grotesk', sans-serif;
       font-size: 0.75rem;
@@ -845,6 +927,12 @@
         grid-template-columns: 1fr;
         padding: 1.5rem;
       }
+      .evolution-grid {
+        grid-template-columns: 1fr;
+      }
+      .evolution-arrow {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -857,6 +945,7 @@
     <ul class="nav-links">
       <li><a href="#intro">intro</a></li>
       <li><a href="#material">material</a></li>
+      <li><a href="#construction">construction</a></li>
       <li><a href="#production">production</a></li>
       <li><a href="#proposal">proposal</a></li>
       <li><a href="#contact">contact</a></li>
@@ -924,18 +1013,64 @@
     <span class="stat-number3">evolution</span>
   </div>
 
+  <!-- EVOLUTION COMPARISON ROWS -->
+  <div class="evolution-grid reveal">
+    <div>
+      <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+      <p class="img-caption">initial state</p>
+    </div>
+    <div class="evolution-arrow">
+      <div class="evolution-arrow-line"></div>
+      <span class="evolution-arrow-label">transformation</span>
+    </div>
+    <div>
+      <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
+      <p class="img-caption">evolved state</p>
+    </div>
+  </div>
+
+  <div class="evolution-grid reveal">
+    <div>
+      <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+      <p class="img-caption">initial state</p>
+    </div>
+    <div class="evolution-arrow">
+      <div class="evolution-arrow-line"></div>
+      <span class="evolution-arrow-label">transformation</span>
+    </div>
+    <div>
+      <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
+      <p class="img-caption">evolved state</p>
+    </div>
+  </div>
+
+  <div class="evolution-grid reveal">
+    <div>
+      <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
+      <p class="img-caption">initial state</p>
+    </div>
+    <div class="evolution-arrow">
+      <div class="evolution-arrow-line"></div>
+      <span class="evolution-arrow-label">transformation</span>
+    </div>
+    <div>
+      <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+      <p class="img-caption">evolved state</p>
+    </div>
+  </div>
+
   <!-- GRID: formfinding / analysis / implementation -->
   <div class="img-grid-3 reveal">
     <div>
-      <img src="images/wing.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">formfinding</p>
     </div>
     <div>
-      <img src="images/skizze2.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">analysis</p>
     </div>
     <div>
-      <img src="images/ansicht.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">implementation</p>
     </div>
   </div>
@@ -1005,7 +1140,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/wool.png" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/wool.png" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -1023,7 +1158,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/water.jpg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/water.jpg" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -1041,7 +1176,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/m.jpeg" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -1059,7 +1194,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/m.jpeg" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -1077,7 +1212,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/f.jpeg" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -1095,7 +1230,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/f.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/f.jpeg" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Sawdust and woodchips that originated as a wasteproduct during building frames for
             panel-production was reused as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
@@ -1111,7 +1246,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/m.jpeg" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Glycerol serves as a plasticiser, making the material more resistant to breaking
             and providing the possibility to adjust flexibility of the material. Lower parts are very flexible due to more share of
@@ -1129,7 +1264,7 @@
       </button>
       <div class="accordion-body">
         <div class="accordion-inner">
-          <img src="images/m.jpeg" class="accordion-img-placeholder" style="object-fit:cover;">
+          <img src="images/m.jpeg" class="accordion-img" style="object-fit:cover;">
           <p></p>
           <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -1152,31 +1287,31 @@
   <!-- cooking GRID  -->
   <div class="cook-grid-1 reveal">
     <div>
-      <img src="images/cook1.jpg" class="img-placeholder tall" style="object-fit: cover;">
+      <img src="images/cook1.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">step</p>
     </div>
-  <div>
-      <img src="images/cook2.jpg" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/cook2.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">step</p>
     </div>
-      <div>
-      <img src="images/cook3.jpg" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/cook3.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">step</p>
     </div>
-      <div>
-      <img src="images/cook4.jpg" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/cook4.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">step</p>
     </div>
-      <div>
-      <img src="cook5.jpg" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="cook5.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">step</p>
     </div>
-      <div>
-      <img src="cook6.jpg" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="cook6.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">step</p>
     </div>
-      <div>
-      <img src="cook7.jpg" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="cook7.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">step</p>
     </div>
   </div>
@@ -1184,29 +1319,32 @@
   <!-- PANELS GRID: panel full + closeup -->
   <div class="panels-grid-2 reveal">
     <div>
-      <img src="images/panelfull.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/panelfull.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">panel 450x300mm</p>
     </div>
     <div>
-      <img src="images/panelcloseup.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/panelcloseup.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">PANEL closeup 80x60mm</p>
     </div>
   </div>
 
- <!-- PANELS GRID: mad diagram -->
+  <!-- PANELS GRID: differentiated material matrix diagram -->
   <div class="panels-grid-1 reveal">
     <div>
-      <img src="images/gradient.png" class="img-placeholder gradient" style="object-fit: cover;">
+      <img src="images/gradient.png" class="img-block gradient" style="object-fit: cover;">
       <p class="img-caption">differentiated material matrix</p>
       <p class="img-caption-sub">varying densities, thicknesses, and composite mixtures can be strategically 
       distributed according to structural, spatial, and environmental requirements</p>
     </div>
   </div>
 
-  <!-- PANELS GRID: mad diagram -->
+  <!-- PANELS GRID: panel MAD DIAGRAM with gradient.png overlay at 0.5 opacity -->
   <div class="panels-grid-1 reveal">
     <div>
-      <img src="images/ansicht.png" class="img-placeholder diagram" style="object-fit: cover;">
+      <div class="img-layered">
+        <img src="images/ansicht.png" class="img-block diagram" style="object-fit: cover;">
+        <img src="images/gradient.png" class="overlay" alt="">
+      </div>
       <p class="img-caption">panel MAD DIAGRAM</p>
       <p class="img-caption-sub">diagram on top shows that x and y and z and so on and 
       diagram on top shows that x and y and z and so on and diagram on top shows that x and y and z and so on</p>
@@ -1221,45 +1359,39 @@
     <p class="video-caption">differentiated properties</p>
   </div>
 
- <!-- bubbub GRID  -->
+  <!-- bubbub GRID  -->
   <div class="bubbub-grid-1 reveal">
     <div>
-      <img src="images/bub1.png" class="img-placeholder tall" style="object-fit: cover;">
+      <img src="images/bub1.png" class="img-block tall" style="object-fit: cover;">
     </div>
-  <div>
-      <img src="images/bub2.png" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/bub2.png" class="img-block tall" style="object-fit: cover;">
     </div>
-      <div>
-      <img src="images/bub3.png" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/bub3.png" class="img-block tall" style="object-fit: cover;">
     </div>
-      <div>
-      <img src="images/bub4.png" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/bub4.png" class="img-block tall" style="object-fit: cover;">
     </div>
-      <div>
-      <img src="images/bub5.png" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/bub5.png" class="img-block tall" style="object-fit: cover;">
     </div>
   </div>
   
   <!-- PANELS GRID: panel full + closeup -->
   <div class="panels-grid-2 reveal">
     <div>
-      <img src="images/panelfull.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/panelfull.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">panel 450x300mm</p>
     </div>
     <div>
-      <img src="images/panelcloseup.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/panelcloseup.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">PANEL closeup 80x60mm</p>
     </div>
   </div>
 
-
-
-
-
-
-
   <!-- CONSTRUCTION -->
-  <section class="construction-section reveal">
+  <section class="construction-section reveal" id="construction">
     <div>
       <p class="body-text"> </p>
     </div>
@@ -1284,48 +1416,48 @@
   <!-- GRID: beam far / close / dipping video -->
   <div class="img-grid-3 reveal">
     <div>
-      <img src="images/bonegluepetrilarge.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/bonegluepetrilarge.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">boneglue granules</p>
     </div>
     <div>
-      <img src="images/boneglue3.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/boneglue3.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">cross-laminated layering process</p>
     </div>
-  <div>
-      <img src="images/boneglue4.jpg" class="img-placeholder landscape" style="object-fit: cover;">
+    <div>
+      <img src="images/boneglue4.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">thickened beam</p>
     </div>
   </div>
 
-   <!-- GRID: beam far / close / dipping video -->
+  <!-- GRID: beam far / close / dipping video -->
   <div class="img-grid-3 reveal">
     <div>
-      <img src="images/i.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/i.jpeg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">boneglue application</p>
     </div>
     <div>
-      <img src="images/j.jpeg" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/j.jpeg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">pre-hardened structure</p>
     </div>
-   <div>
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-    style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; opacity:0.75"
-  >
-    <source src="videos/honey.mp4" type="video/mp4">
-  </video>
-  <p class="img-caption">boneglue cook-up</p>
-</div>
+    <div>
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; opacity:0.75"
+      >
+        <source src="videos/honey.mp4" type="video/mp4">
+      </video>
+      <p class="img-caption">boneglue cook-up</p>
+    </div>
   </div>
 
   <!-- BEAM DIAGRAM -->
   <div class="beam-grid reveal">
     <div>
-      <img src="images/beamlayer.jpg" class="img-placeholder diagram" style="object-fit: cover;">
+      <img src="images/beamlayer.jpg" class="img-block diagram" style="object-fit: cover;">
       <p class="img-caption">beam structural fibre layup</p>
     </div>
   </div>
@@ -1333,15 +1465,15 @@
   <!-- GRID: beam baselayer / coating / dipping -->
   <div class="img-grid-3 reveal">
     <div>
-      <img src="images/19.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/19.png" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">beam baselayer</p>
     </div>
     <div>
-      <img src="images/20.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/20.png" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">beam coating</p>
     </div>
     <div>
-      <img src="images/27.png" class="img-placeholder landscape" style="object-fit: cover;">
+      <img src="images/27.png" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">dipping video</p>
     </div>
   </div>
@@ -1366,7 +1498,7 @@
     </div>
   </section>
 
-  <!-- PROCESS LINES with line.jpg background -->
+  <!-- PROCESS LINES -->
   <div class="process-lines-wrapper">
     <div class="process-lines-inner">
       <div class="process-line">
@@ -1437,7 +1569,6 @@
 
   <!-- PROTOTYPE 1.0 -->
   <div class="prototype-section reveal">
-    
     <div class="prototype-text">
       <h2 class="section-heading"><em>PROTOTYPE 1.0</em></h2>
       <p class="body-text">panels M 1:2, substitute construction (gypsum)</p>
@@ -1445,10 +1576,9 @@
       has been produced to verify intended properties of the final material mix and to verify assembly logic. </p>
     </div>
     <div>
-      
     </div>
-     <div>
-      <img src="images/prototype.png" class="img-placeholder tall" style="object-fit: cover;">
+    <div>
+      <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
     </div>
   </div>
 
@@ -1474,11 +1604,11 @@
   <!-- PROPOSAL GRID: birth / old -->
   <div class="proposal-grid reveal">
     <div>
-      <img src="images/c.jpeg" class="img-placeholder tall" style="object-fit: cover;">
+      <img src="images/c.jpeg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">birth</p>
     </div>
     <div>
-      <img src="images/3.png" class="img-placeholder tall" style="object-fit: cover;">
+      <img src="images/3.png" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">old</p>
     </div>
   </div>
@@ -1509,7 +1639,7 @@
         <p class="section-heading">acknowledgements</p>
       </div>
       <div>
-          <p class="body-text">all photos if not declared otherwise paul paul paul paul page link?</p>
+        <p class="body-text">all photos if not declared otherwise paul paul paul paul page link?</p>
         <p class="body-text">tu wien and kaust and anna and florian and florian and anna and all the others
           and mom and dad and everybody else and all the others.</p>
         <p class="body-text">funding by this and that and everething else. contributions of x and y and z
@@ -1626,24 +1756,24 @@
     })();
 
     // Process line: von Mitte erstem bis Mitte letztem process-line
-function updateProcessLine() {
-  const inner = document.querySelector('.process-lines-inner');
-  const lines = document.querySelectorAll('.process-line');
-  if (!inner || lines.length === 0) return;
+    function updateProcessLine() {
+      const inner = document.querySelector('.process-lines-inner');
+      const lines = document.querySelectorAll('.process-line');
+      if (!inner || lines.length === 0) return;
 
-  const parentRect = inner.getBoundingClientRect();
-  const firstRect = lines[0].getBoundingClientRect();
-  const lastRect = lines[lines.length - 1].getBoundingClientRect();
+      const parentRect = inner.getBoundingClientRect();
+      const firstRect = lines[0].getBoundingClientRect();
+      const lastRect = lines[lines.length - 1].getBoundingClientRect();
 
-  const top = firstRect.top - parentRect.top + firstRect.height / 2;
-  const bottom = lastRect.top - parentRect.top + lastRect.height / 2;
+      const top = firstRect.top - parentRect.top + firstRect.height / 2;
+      const bottom = lastRect.top - parentRect.top + lastRect.height / 2;
 
-  inner.style.setProperty('--line-top', top + 'px');
-  inner.style.setProperty('--line-height', (bottom - top) + 'px');
-}
+      inner.style.setProperty('--line-top', top + 'px');
+      inner.style.setProperty('--line-height', (bottom - top) + 'px');
+    }
 
-window.addEventListener('load', updateProcessLine);
-window.addEventListener('resize', updateProcessLine);
+    window.addEventListener('load', updateProcessLine);
+    window.addEventListener('resize', updateProcessLine);
   </script>
 
 </body>
