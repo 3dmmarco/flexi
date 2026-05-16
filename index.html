@@ -178,6 +178,65 @@
       background: var(--medium);
     }
 
+    .evolution-grid-v {
+  padding: 2rem 10rem;
+}
+
+.evolution-v-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.evolution-v-arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.evolution-arrow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.evolution-arrow-v-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.evolution-arrow-v-line::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--medium);
+}
+
+.evolution-arrow-v-line::after {
+  content: '∨';
+  font-family: 'Azeret Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--medium);
+  line-height: 1;
+  margin-top: -2px;
+}
+
+.evolution-arrow-label {
+  font-family: 'Azeret Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--medium);
+  text-align: center;
+  white-space: nowrap;
+}
+
     /* VIDEO SECTION */
     .video-section {
       position: relative;
@@ -282,7 +341,7 @@
 
     /* EVOLUTION COMPARISON GRID */
     .evolution-grid {
-      padding: 2rem 1.5rem;
+      padding: 2rem 10rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       gap: 1.5rem;
@@ -509,6 +568,12 @@
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
+     .prototype-grid-2 {
+      padding: 0rem 1.5rem 20rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
 
     .panels-grid-1 {
       padding: 2rem 1.5rem 2rem;
@@ -628,7 +693,7 @@
 
     /* PROTOTYPE SPLIT */
     .prototype-section {
-      padding: 15rem 1.5rem 20rem;
+      padding: 15rem 1.5rem 10rem;
       display: grid;
       grid-template-columns: 1.6fr 1fr 1.6fr;
       gap: 1.5rem;
@@ -1014,14 +1079,64 @@
   </div>
 
   <!-- EVOLUTION COMPARISON ROWS -->
-  <div class="evolution-grid reveal">
+  
+
+  <!-- EVOLUTION COMPARISON GRID: vertical (3 top → 3 bottom) -->
+<div class="evolution-grid-v reveal">
+  <div class="evolution-v-row">
+    <div>
+      <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+      
+    </div>
+    <div>
+      <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+      
+    </div>
+    <div>
+      <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
+      
+    </div>
+  </div>
+
+  <div class="evolution-v-arrows">
+    <div class="evolution-arrow-v">
+      <div class="evolution-arrow-v-line"></div>
+      <span class="evolution-arrow-label">structural logic</span>
+    </div>
+    <div class="evolution-arrow-v">
+      <div class="evolution-arrow-v-line"></div>
+      <span class="evolution-arrow-label">panelization</span>
+    </div>
+    <div class="evolution-arrow-v">
+      <div class="evolution-arrow-v-line"></div>
+      <span class="evolution-arrow-label">form</span>
+    </div>
+  </div>
+
+  <div class="evolution-v-row">
+    <div>
+      <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
+      
+    </div>
+    <div>
+      <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+      
+    </div>
+    <div>
+      <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+      
+    </div>
+  </div>
+</div>
+
+<div class="evolution-grid reveal">
     <div>
       <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">initial state</p>
     </div>
     <div class="evolution-arrow">
       <div class="evolution-arrow-line"></div>
-      <span class="evolution-arrow-label">transformation</span>
+      <span class="evolution-arrow-label">structural logic</span>
     </div>
     <div>
       <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
@@ -1032,15 +1147,16 @@
   <div class="evolution-grid reveal">
     <div>
       <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
-      <p class="img-caption">initial state</p>
+      
     </div>
     <div class="evolution-arrow">
       <div class="evolution-arrow-line"></div>
-      <span class="evolution-arrow-label">transformation</span>
+      
     </div>
     <div>
       <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
-      <p class="img-caption">evolved state</p>
+      <p class="img-caption">the structual of the textile was translated into an architectural element, keeping
+      the logic dies das</p>
     </div>
   </div>
 
@@ -1288,31 +1404,31 @@
   <div class="cook-grid-1 reveal">
     <div>
       <img src="images/cook1.jpg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">step</p>
+      <p class="img-caption">heating up water - 65°</p>
     </div>
     <div>
       <img src="images/cook2.jpg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">step</p>
+      <p class="img-caption">adding gelatine</p>
     </div>
     <div>
       <img src="images/cook3.jpg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">step</p>
+      <p class="img-caption">adding xanthan</p>
     </div>
     <div>
       <img src="images/cook4.jpg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">step</p>
+      <p class="img-caption">adding filler a - caco3</p>
     </div>
     <div>
       <img src="cook5.jpg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">step</p>
+      <p class="img-caption">adding filler b - wood</p>
     </div>
     <div>
       <img src="cook6.jpg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">step</p>
+      <p class="img-caption">optional: adding glycerol</p>
     </div>
     <div>
       <img src="cook7.jpg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">step</p>
+      <p class="img-caption">dipping</p>
     </div>
   </div>
   
@@ -1579,6 +1695,19 @@
     </div>
     <div>
       <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
+    </div>
+  </div>
+
+   <!-- prototype grid: panel full + closeup -->
+  <div class="prototype-grid-2 reveal">
+    <div>
+      <img src="images/sidehand.png" class="img-block tall" style="object-fit: cover;">
+      
+    </div>
+    <div>
+      <img src="images/scar.png" class="img-block landscape" style="object-fit: cover;">
+      <p class="img-caption">top: panel closeup</p>
+      <p class="img-caption">left: full panel</p>
     </div>
   </div>
 
