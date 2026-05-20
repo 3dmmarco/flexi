@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
   
   <style>
     *,
@@ -21,10 +20,10 @@
     }
 
     a {
-  color: var(--medium);
-  font-style: italic;
-  text-decoration: none;
-}
+      color: var(--medium);
+      font-style: italic;
+      text-decoration: none;
+    }
 
     :root {
       --black: #000000;
@@ -78,7 +77,7 @@
     }
 
     nav .nav-logo:hover {
-  color: var(--black);
+      color: var(--black);
     }
 
     nav .nav-links {
@@ -176,64 +175,65 @@
       background: var(--medium);
     }
 
+    /* EVOLUTION VERTICAL GRID */
     .evolution-grid-v {
-  padding: 2rem 10rem 10rem;
-}
+      padding: 0.5rem 10rem 10rem;
+    }
 
-.evolution-v-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
-}
+    .evolution-v-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
 
-.evolution-v-arrows {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
-  padding: 0.75rem 0;
-}
+    .evolution-v-arrows {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      padding: 0.75rem 0;
+    }
 
-.evolution-arrow-v {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-}
+    .evolution-arrow-v {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
 
-.evolution-arrow-v-line {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .evolution-arrow-v-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.evolution-arrow-v-line::before {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 40px;
-  background: var(--medium);
-}
+    .evolution-arrow-v-line::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: var(--medium);
+    }
 
-.evolution-arrow-v-line::after {
-  content: '∨';
-  font-family: 'Azeret Mono', monospace;
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: var(--medium);
-  line-height: 1;
-  margin-top: -2px;
-}
+    .evolution-arrow-v-line::after {
+      content: '∨';
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--medium);
+      line-height: 1;
+      margin-top: -2px;
+    }
 
-.evolution-arrow-label {
-  font-family: 'Azeret Mono', monospace;
-  font-size: 0.55rem;
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--medium);
-  text-align: center;
-  white-space: nowrap;
-}
+    .evolution-arrow-label {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.55rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-align: center;
+      white-space: nowrap;
+    }
 
     /* VIDEO SECTION */
     .video-section {
@@ -294,7 +294,7 @@
 
     /* META BLOCK */
     .meta-section {
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 3rem;
@@ -322,91 +322,16 @@
 
     /* INTRODUCTION */
     .intro-section {
-      padding: 1rem 1.5rem 1rem;
+      padding: 0.5rem 1.5rem 1rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
       align-items: start;
     }
 
-    /* EVOLUTION */
-    .evolution {
-      position: relative;
-      padding: 10rem 1.5rem 0rem;
-      align-items: baseline;
-      gap: 2.5rem;
-    }
-
-    /* EVOLUTION COMPARISON GRID */
-    .evolution-grid {
-      padding: 2rem 1.5rem 10rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .evolution-grid + .evolution-grid {
-      padding-top: 0;
-    }
-
-    .evolution-arrow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0 1rem;
-    }
-
-    .evolution-arrow-line {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
-
-    .evolution-arrow-line::before {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 1px;
-      background: var(--medium);
-    }
-
-    .evolution-arrow-line::after {
-      content: '›';
-      font-family: 'Azeret Mono', monospace;
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: var(--medium);
-      line-height: 1;
-      margin-top: -1px;
-    }
-
-    .evolution-arrow-label {
-      font-family: 'Azeret Mono', monospace;
-      font-size: 0.55rem;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--medium);
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    /* IMAGE GRIDS */
-    .img-grid-3 {
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    /* FULLWIDTH */
-    .full-img-wrap {
-      width: 100%;
-      overflow: hidden;
-      margin: 3rem 0 0;
-      padding: 0 0 20rem;
+    /* EVOLUTION HEADING */
+    .evolution-heading {
+      padding: 0.5rem 1.5rem 0;
     }
 
     /* VIDEO DECAY BACKGROUND */
@@ -437,7 +362,7 @@
 
     /* MATERIALIZATION */
     .materialization-section {
-      padding: 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
@@ -446,7 +371,7 @@
 
     /* MATERIALS STAT */
     .materials-stat {
-      padding: 10rem 1.5rem 0rem;
+      padding: 0.5rem 1.5rem 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
@@ -456,7 +381,7 @@
     /* ACCORDION */
     .accordion-section {
       background: var(--white);
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 10rem;
     }
 
     .accordion-item {
@@ -541,7 +466,6 @@
       align-items: start;
     }
 
-    /* Accordion images: 21:9 */
     .accordion-img {
       width: 100%;
       aspect-ratio: 21/9;
@@ -559,44 +483,12 @@
       text-align: justify;
     }
 
-    /* PANELS GRID */
-    .panels-grid-2 {
-      padding: 10rem 1.5rem 10rem;
+    /* IMAGE GRIDS */
+    .img-grid-3 {
+      padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
-    }
-     .fullwidth-half-1 {
-      padding: 10rem 1.5rem 10rem;
-      display: grid;
-      grid-template-columns: 1fr 50% 1fr;
-      gap: 1.5rem;
-    }
-     .prototype-grid-2 {
-      padding: 0rem 1.5rem 20rem;
-      display: grid;
-      grid-template-columns: 35% 1fr 45%;
-      gap: 1.5rem;
-    }
-
-    .panels-grid-1 {
-      padding: 2rem 1.5rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    .cook-grid-1 {
-      padding: 2rem 1.5rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 0.5rem;
-    }
-
-    .bubbub-grid-1 {
-      padding: 2rem 1.5rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      gap: 0.5rem;
     }
 
     /* LAYERED IMAGE WRAPPER */
@@ -621,7 +513,7 @@
 
     /* CONSTRUCTION */
     .construction-section {
-      padding: 35rem 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
@@ -630,14 +522,14 @@
 
     /* BEAM GRID */
     .beam-grid {
-      padding: 15rem 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr;
     }
 
     /* PRODUCTION */
     .production-section {
-      padding: 1.5rem 1.5rem 10rem;
+      padding: 0.5rem 1.5rem 10rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
@@ -649,30 +541,31 @@
       position: relative;
     }
 
-   .process-lines-inner::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: var(--line-top, 0px);
-  height: var(--line-height, 0px);
-  transform: translateX(-50%);
-  width: 1px;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 0;
-}
+    .process-lines-inner::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: var(--line-top, 0px);
+      height: var(--line-height, 0px);
+      transform: translateX(-50%);
+      width: 1px;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 0;
+    }
+
     .process-line::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 1px solid var(--black);
-  z-index: 2;
-}
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--black);
+      z-index: 2;
+    }
 
     .process-lines-inner {
       position: relative;
@@ -697,7 +590,7 @@
 
     /* PROTOTYPE SPLIT */
     .prototype-section {
-      padding: 15rem 1.5rem 10rem;
+      padding: 0.5rem 1.5rem 10rem;
       display: grid;
       grid-template-columns: 1.6fr 1fr 1.6fr;
       gap: 1.5rem;
@@ -710,23 +603,16 @@
 
     /* PROPOSAL */
     .proposal-section {
-      padding: 1.5rem 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
       align-items: start;
     }
 
-    .proposal-grid {
-      padding: 2rem 1.5rem 20rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
     /* CONTACT */
     .contact-section {
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 1.5rem 1rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
@@ -735,7 +621,7 @@
 
     /* ACKNOWLEDGEMENTS */
     .acknowledgements-section {
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 1.5rem 1rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
@@ -905,10 +791,6 @@
       aspect-ratio: 3/4;
     }
 
-      .img-block.evolution {
-      aspect-ratio: 5/3;
-    }
-
     .img-caption {
       font-family: 'Azeret Mono', monospace;
       font-size: 0.75rem;
@@ -944,6 +826,238 @@
     .reveal.visible {
       opacity: 1;
       transform: none;
+    }
+
+    /* ─── INDIVIDUAL SECTION SPACERS ─────────────────────────────────────────
+       Naming convention: spacing before a section lives on that section.
+       Each class = 0.5rem top + custom bottom.
+    ──────────────────────────────────────────────────────────────────────── */
+
+    /* video-trailer: no extra top (video-section already has margin: 0.5rem 0) */
+
+    /* evolution heading block */
+    .evolution-heading {
+      padding: 0.5rem 1.5rem 0;
+    }
+
+    /* evolution-grid-v top already 0.5rem set above */
+
+    /* the big poem / video decay section: keep its own 100rem padding */
+
+    /* spacer before materialization (replaces old 10rem inside video-decay) */
+    .spacer-before-materialization { padding-top: 0; } /* already inside video-decay */
+
+    /* spacer before materials-stat */
+    .spacer-before-stat {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before gradient diagram section */
+    .spacer-gradient-diagram {
+      padding: 0.5rem 0 20rem;
+    }
+
+    /* spacer before mad diagram */
+    .spacer-mad-diagram {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before bubbub */
+    .spacer-bubbub {
+      padding: 0.5rem 0 0;
+    }
+
+    /* bubbub caption row */
+    .bubbub-caption-row {
+      padding: 0.5rem 1.5rem 0;
+    }
+
+    /* spacer before panel full/closeup */
+    .spacer-panel-photos {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before bending video */
+    .spacer-bending {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before closec */
+    .spacer-closec {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before closea */
+    .spacer-closea {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before closeb */
+    .spacer-closeb {
+      padding: 0.5rem 0 10rem;
+    }
+
+    /* spacer before construction section (replaces 35rem padding-top) */
+    .spacer-before-construction {
+      padding: 0.5rem 0 35rem;
+    }
+
+    /* spacer before boneglue grid */
+    .spacer-boneglue-grid {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before beam diagram */
+    .spacer-beam-diagram {
+      padding: 0.5rem 0 15rem;
+    }
+
+    /* spacer before riesel grid */
+    .spacer-riesel-grid {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before beam wrap */
+    .spacer-beam-wrap {
+      padding: 0.5rem 0 20rem;
+    }
+
+    /* spacer before production section */
+    .spacer-before-production {
+      padding: 0.5rem 0 30rem;
+    }
+
+    /* spacer before prototype section */
+    .spacer-before-prototype {
+      padding: 0.5rem 0 15rem;
+    }
+
+    /* spacer before panel+closeup grid (prototype) */
+    .spacer-prototype-photos {
+      padding: 0.5rem 0 20rem;
+    }
+
+    /* spacer before proposal grid */
+    .spacer-proposal-grid {
+      padding: 0.5rem 0 0;
+    }
+
+    /* proposal-grid bottom */
+    .proposal-grid {
+      padding: 0.5rem 1.5rem 20rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* spacer before flexiganz fullwidth */
+    .spacer-flexiganz {
+      padding: 0.5rem 0 10rem;
+    }
+
+    /* spacer before contact */
+    .spacer-before-contact {
+      padding: 0.5rem 0 0;
+    }
+
+    /* spacer before acknowledgements */
+    .spacer-before-ack {
+      padding: 0.5rem 0 0;
+    }
+
+    /* ─── SECTION-SPECIFIC GRID WRAPPERS ─────────────────────────────────── */
+
+    .panels-grid-2 {
+      padding: 0.5rem 1.5rem 10rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* center-column wrapper: 1fr / content / 1fr */
+    .fullwidth-half {
+      padding: 0.5rem 1.5rem 10rem;
+      display: grid;
+      grid-template-columns: 1fr 50% 1fr;
+      gap: 1.5rem;
+    }
+
+    .prototype-grid-2 {
+      padding: 0rem 1.5rem 0rem;
+      display: grid;
+      grid-template-columns: 35% 1fr 45%;
+      gap: 1.5rem;
+    }
+
+    .panels-grid-1 {
+      padding: 0.5rem 1.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .cook-grid-1 {
+      padding: 0.5rem 1.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .bubbub-grid-1 {
+      padding: 0.5rem 1.5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    /* ─── MAGNIFIER LENS ─────────────────────────────────────────────────── */
+    .zoom-wrap {
+      position: relative;
+      display: block;
+      cursor: none;
+      overflow: hidden;
+    }
+
+    .zoom-wrap img {
+      display: block;
+      width: 100%;
+    }
+
+    .zoom-lens {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 1.5px solid var(--medium);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      pointer-events: none;
+      display: none;
+      overflow: hidden;
+      z-index: 10;
+      transform: translate(-50%, -50%);
+    }
+
+    .zoom-lens img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .zoom-wrap:hover .zoom-lens {
+      display: block;
+    }
+
+    /* ─── BEAM WRAP LAYOUT ───────────────────────────────────────────────── */
+    .beam-wrap-grid {
+      padding: 0rem 1.5rem 0rem;
+      display: grid;
+      grid-template-columns: 35% 1fr 45%;
+      gap: 1.5rem;
+      align-items: end; /* text aligns to bottom */
+    }
+
+    .beam-wrap-caption {
+      text-align: left;
     }
 
     @media (max-width: 900px) {
@@ -985,12 +1099,6 @@
       .prototype-section {
         grid-template-columns: 1fr;
         padding: 1.5rem;
-      }
-      .evolution-grid {
-        grid-template-columns: 1fr;
-      }
-      .evolution-arrow {
-        display: none;
       }
     }
   </style>
@@ -1067,54 +1175,52 @@
       integrated systems.</p>
   </section>
 
-  <!-- EVOLUTION -->
-  <div class="evolution reveal">
+  <!-- EVOLUTION HEADING -->
+  <div class="evolution-heading reveal">
     <span class="stat-number3">evolution</span>
   </div>
 
-  <!-- EVOLUTION COMPARISON GRID: vertical (3 top → 3 bottom) -->
-<div class="evolution-grid-v reveal">
-  <div class="evolution-v-row">
-    <div>
-      <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+  <!-- EVOLUTION GRID: wing / skizze2 / skizze1 → ansicht / wing / skizze2 -->
+  <div class="evolution-grid-v reveal">
+    <div class="evolution-v-row">
+      <div>
+        <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/skizze1.png" class="img-block landscape" style="object-fit: cover;">
+      </div>
     </div>
-    <div>
-      <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+    <div class="evolution-v-arrows">
+      <div class="evolution-arrow-v">
+        <div class="evolution-arrow-v-line"></div>
+        <span class="evolution-arrow-label">structural logic</span>
+      </div>
+      <div class="evolution-arrow-v">
+        <div class="evolution-arrow-v-line"></div>
+        <span class="evolution-arrow-label">panelization</span>
+      </div>
+      <div class="evolution-arrow-v">
+        <div class="evolution-arrow-v-line"></div>
+        <span class="evolution-arrow-label">form</span>
+      </div>
     </div>
-    <div>
-      <img src="images/skizze1.png" class="img-block landscape" style="object-fit: cover;">
+    <div class="evolution-v-row">
+      <div>
+        <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+      </div>
     </div>
   </div>
 
-  <div class="evolution-v-arrows">
-    <div class="evolution-arrow-v">
-      <div class="evolution-arrow-v-line"></div>
-      <span class="evolution-arrow-label">structural logic</span>
-    </div>
-    <div class="evolution-arrow-v">
-      <div class="evolution-arrow-v-line"></div>
-      <span class="evolution-arrow-label">panelization</span>
-    </div>
-    <div class="evolution-arrow-v">
-      <div class="evolution-arrow-v-line"></div>
-      <span class="evolution-arrow-label">form</span>
-    </div>
-  </div>
-
-  <div class="evolution-v-row">
-    <div>
-      <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
-    </div>
-  </div>
-</div>
-
-  <!-- VIDEO DECAY: grow.mp4 / poem -->
+  <!-- VIDEO DECAY / POEM -->
   <div class="video-decay-background">
     <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="videos/transition.mp4"></video>
     <div class="video-decay-content">
@@ -1156,9 +1262,11 @@
   </section>
 
   <!-- MATERIALS STAT -->
-  <div class="materials-stat">
-    <span class="stat-number3">7 (+1)</span>
-    <span class="stat-number3">fully biodegradable Materials</span>
+  <div class="spacer-before-stat">
+    <div class="materials-stat">
+      <span class="stat-number3">7 (+1)</span>
+      <span class="stat-number3">fully biodegradable Materials</span>
+    </div>
   </div>
 
   <!-- ACCORDION: materials -->
@@ -1166,7 +1274,7 @@
     <div class="accordion-item" id="acc-textiles">
       <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
         <span class="accordion-index"></span>
-        <span class="accordion-title muted">Wool</span>
+        <span class="accordion-title">Wool</span>
         <span class="accordion-arrow"></span>
       </button>
       <div class="accordion-body">
@@ -1290,7 +1398,7 @@
     <div class="accordion-item" id="acc-boneglue">
       <button class="accordion-trigger" onclick="toggleAccordion('acc-boneglue')">
         <span class="accordion-index">beam</span>
-        <span class="accordion-title muted">Boneglue</span>
+        <span class="accordion-title">Boneglue</span>
         <span class="accordion-arrow"></span>
       </button>
       <div class="accordion-body">
@@ -1304,17 +1412,16 @@
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- VIDEO: material preparation -->
+  <!-- VIDEO: Flexi_76 – material preparation -->
   <div class="video-section reveal">
     <video class="bg-video" muted loop playsinline preload="auto">
       <source src="videos/Flexi_76.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- cooking GRID  -->
+  <!-- COOKING GRID: cook1–cook7 -->
   <div class="cook-grid-1 reveal">
     <div>
       <img src="images/cook1.jpg" class="img-block tall" style="object-fit: cover;">
@@ -1333,259 +1440,244 @@
       <p class="img-caption">adding filler a - caco3</p>
     </div>
     <div>
-      <img src="cook5.jpg" class="img-block tall" style="object-fit: cover;">
+      <img src="images/cook5.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">adding filler b - wood</p>
     </div>
     <div>
-      <img src="cook6.jpg" class="img-block tall" style="object-fit: cover;">
+      <img src="images/cook6.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">optional: adding glycerol</p>
     </div>
     <div>
-      <img src="cook7.jpg" class="img-block tall" style="object-fit: cover;">
+      <img src="images/cook7.jpg" class="img-block tall" style="object-fit: cover;">
       <p class="img-caption">dipping</p>
     </div>
   </div>
-  
-  <!-- PANELS GRID: differentiated material matrix diagram -->
-   <div style="padding: 20rem 0;">
-  <div class="panels-grid-1 reveal">
-    <div>
-      <img src="images/gradient.png" class="img-block gradient" style="object-fit: cover;">
-      <p class="img-caption">differentiated material matrix</p>
-      <p class="img-caption-sub">varying densities, thicknesses, and composite mixtures can be strategically 
-      distributed according to structural, spatial, and environmental requirements</p>
-    </div>
-  </div>
 
-  <!-- PANELS GRID: panel MAD DIAGRAM with gradient.png overlay at 0.5 opacity -->
-  <div class="panels-grid-1 reveal">
-    <div>
-      <div class="img-layered">
-        <img src="images/ansicht.png" class="img-block diagram" style="object-fit: cover;">
-        <img src="images/gradient.png" class="overlay" alt="">
-      </div>
-      <p class="img-caption">panel MAD DIAGRAM</p>
-      <p class="img-caption-sub">diagram on top shows that x and y and z and so on and 
-      diagram on top shows that x and y and z and so on and diagram on top shows that x and y and z and so on</p>
-    </div>
-  </div>
-  
-  <!-- bubbub GRID  -->
-  <div class="bubbub-grid-1 reveal">
-    <div>
-      <img src="images/bub1.png" class="img-block tall" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/bub2.png" class="img-block tall" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/bub3.png" class="img-block tall" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/bub4.png" class="img-block tall" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/bub5.png" class="img-block tall" style="object-fit: cover;">
-    </div>
-  </div>
-    
+  <!-- GRADIENT DIAGRAM: gradient.png -->
+  <div class="spacer-gradient-diagram">
+    <div class="panels-grid-1 reveal">
       <div>
-     <p class="img-caption">DIFFERENTIATED PROPERTIES</p>
-      <p class="img-caption-sub">panels in lower part of the structure are flexible due to addition of glycerol to the material matrix.
-      these panels can adjust to the ground and adapt to different surroundings.</p>
-    </div>
-  
-  <!-- PANELS GRID: panel full + closeup -->
-  <div class="panels-grid-2 reveal">
-    <div>
-      <img src="images/panelfull.jpg" class="img-block landscape" style="object-fit: cover;">
-      <p class="img-caption">panel 450x300mm</p>
-    </div>
-    <div>
-      <img src="images/panelcloseup.jpg" class="img-block landscape" style="object-fit: cover;">
-      <p class="img-caption">PANEL closeup 80x60mm</p>
-    </div>
-  </div>
-     
-       <!-- bending gif -->
-  <div class="fullwidth-half-1 reveal">
-    <div>
-      
-    </div>
-    <div>
-    <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block;">
-        <source src="videos/bending.mp4" type="video/mp4">
-      </video>
-    </div>
-     <div>
-      
+        <img src="images/gradient.png" class="img-block gradient" style="object-fit: cover;">
+        <p class="img-caption">differentiated material matrix</p>
+        <p class="img-caption-sub">varying densities, thicknesses, and composite mixtures can be strategically
+        distributed according to structural, spatial, and environmental requirements</p>
+      </div>
     </div>
   </div>
 
-            <!-- PANELS GRID: panel full + closeup -->
-  <div class="fullwidth-half-1 reveal">
-    <div>
-      
-    </div>
-    <div>
-      <img src="images/closec.png" class="img-block landscape" style="object-fit: cover;">
-    </div>
-     <div>
-      
-    </div>
-  </div>
-
-         <!-- PANELS GRID: panel full + closeup -->
-  <div class="fullwidth-half-1 reveal">
-    <div>
-     
-    </div>
-    <div>
-      <img src="images/closea.png" class="img-block landscape" style="object-fit: cover;">
-    </div>
-     <div>
-     
+  <!-- MAD DIAGRAM: ansicht.png + gradient.png overlay -->
+  <div class="spacer-mad-diagram">
+    <div class="panels-grid-1 reveal">
+      <div>
+        <div class="img-layered">
+          <img src="images/ansicht.png" class="img-block diagram" style="object-fit: cover;">
+          <img src="images/gradient.png" class="overlay" alt="">
+        </div>
+        <p class="img-caption">panel MAD DIAGRAM</p>
+        <p class="img-caption-sub">diagram on top shows that x and y and z and so on and
+        diagram on top shows that x and y and z and so on and diagram on top shows that x and y and z and so on</p>
+      </div>
     </div>
   </div>
 
-              <!-- PANELS GRID: panel full + closeup -->
-  <div class="fullwidth-half-1 reveal">
-    <div>
-     
+  <!-- BUBBUB GRID: bub1–bub5 -->
+  <div class="spacer-bubbub">
+    <div class="bubbub-grid-1 reveal">
+      <div><img src="images/bub1.png" class="img-block tall" style="object-fit: cover;"></div>
+      <div><img src="images/bub2.png" class="img-block tall" style="object-fit: cover;"></div>
+      <div><img src="images/bub3.png" class="img-block tall" style="object-fit: cover;"></div>
+      <div><img src="images/bub4.png" class="img-block tall" style="object-fit: cover;"></div>
+      <div><img src="images/bub5.png" class="img-block tall" style="object-fit: cover;"></div>
     </div>
-    <div>
-      <img src="images/closeb.png" class="img-block landscape" style="object-fit: cover;">
+    <!-- caption: same layout as panels-grid-1 / mad diagram -->
+    <div class="panels-grid-1">
+      <div>
+        <p class="img-caption">DIFFERENTIATED PROPERTIES</p>
+        <p class="img-caption-sub">panels in lower part of the structure are flexible due to addition of glycerol to the material matrix.
+        these panels can adjust to the ground and adapt to different surroundings.</p>
+      </div>
     </div>
-     <div>
-     
+  </div>
+
+  <!-- PANEL FULL + CLOSEUP: panelfull / panelcloseup -->
+  <div class="spacer-panel-photos">
+    <div class="panels-grid-2 reveal">
+      <div>
+        <img src="images/panelfull.jpg" class="img-block landscape" style="object-fit: cover;">
+        <p class="img-caption">panel 450x300mm</p>
+      </div>
+      <div>
+        <img src="images/panelcloseup.jpg" class="img-block landscape" style="object-fit: cover;">
+        <p class="img-caption">PANEL closeup 80x60mm</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO: bending.mp4 -->
+  <div class="spacer-bending">
+    <div class="fullwidth-half reveal">
+      <div></div>
+      <div>
+        <video autoplay muted loop playsinline preload="auto"
+          style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block;">
+          <source src="videos/bending.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- IMAGE: closec.png -->
+  <div class="spacer-closec">
+    <div class="fullwidth-half reveal">
+      <div></div>
+      <div>
+        <div class="zoom-wrap" data-src="images/closec.png">
+          <img src="images/closec.png" class="img-block landscape" style="object-fit: cover;">
+          <div class="zoom-lens"><img src="images/closec.png" alt=""></div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- IMAGE: closea.png -->
+  <div class="spacer-closea">
+    <div class="fullwidth-half reveal">
+      <div></div>
+      <div>
+        <div class="zoom-wrap" data-src="images/closea.png">
+          <img src="images/closea.png" class="img-block landscape" style="object-fit: cover;">
+          <div class="zoom-lens"><img src="images/closea.png" alt=""></div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- IMAGE: closeb.png -->
+  <div class="spacer-closeb">
+    <div class="fullwidth-half reveal">
+      <div></div>
+      <div>
+        <div class="zoom-wrap" data-src="images/closeb.png">
+          <img src="images/closeb.png" class="img-block landscape" style="object-fit: cover;">
+          <div class="zoom-lens"><img src="images/closeb.png" alt=""></div>
+        </div>
+      </div>
+      <div></div>
     </div>
   </div>
 
   <!-- CONSTRUCTION -->
-  <section class="construction-section reveal" id="construction">
-    <div>
-      <p class="body-text"> </p>
-    </div>
-    <div>
-      <p class="section-heading2">CONSTRUCTION</p>
-    </div>
-    <div>
-      <p class="body-text">Our proposal aims to investigate skeletal construction methods through
-      a lightweight shell-like structure made from wool and bone glue. Using digitally informed
-      form-finding processes, the project explores how natural fibers and biodegradable binders
-      can create self-supporting architectural forms with minimal material use. The wool is shaped
-      and stiffened through layers of bone glue, producing a semi-rigid membrane that adapts into
-      a curved, load-bearing shell structure.</p>
-      <p class="body-text">Inspired by biological growth and anatomical frameworks,
-      the pavilion emphasizes material efficiency, fragility, and tactility. Over time, the organic
-      materials respond to humidity, tension, and environmental conditions, allowing the structure to
-      subtly deform and evolve while questioning conventional distinctions between textile, sculpture,
-      and architecture.</p>
-    </div>
-  </section>
-
-  <!-- GRID: beam far / close / dipping video -->
-  <div class="img-grid-3 reveal">
-    <div>
-      <img src="images/bonegluepetrilarge.jpg" class="img-block landscape" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/boneglue3.jpg" class="img-block landscape" style="object-fit: cover;">
-    </div>
-    <div>
-      <img src="images/boneglue4.jpg" class="img-block landscape" style="object-fit: cover;">
-    </div>
+  <div class="spacer-before-construction">
+    <section class="construction-section reveal" id="construction">
+      <div>
+        <p class="body-text"> </p>
+      </div>
+      <div>
+        <p class="section-heading2">CONSTRUCTION</p>
+      </div>
+      <div>
+        <p class="body-text">Our proposal aims to investigate skeletal construction methods through
+        a lightweight shell-like structure made from wool and bone glue. Using digitally informed
+        form-finding processes, the project explores how natural fibers and biodegradable binders
+        can create self-supporting architectural forms with minimal material use. The wool is shaped
+        and stiffened through layers of bone glue, producing a semi-rigid membrane that adapts into
+        a curved, load-bearing shell structure.</p>
+        <p class="body-text">Inspired by biological growth and anatomical frameworks,
+        the pavilion emphasizes material efficiency, fragility, and tactility. Over time, the organic
+        materials respond to humidity, tension, and environmental conditions, allowing the structure to
+        subtly deform and evolve while questioning conventional distinctions between textile, sculpture,
+        and architecture.</p>
+      </div>
+    </section>
   </div>
 
-        <!-- BEAM DIAGRAM -->
-  <div class="beam-grid reveal">
-    <div>
-      <img src="images/beamlayer.jpg" class="img-block gradient" style="object-fit: cover;">
-      <p class="img-caption">beam structural fibre layup</p>
-    </div>
-  </div>
-
-<!-- GRID: beam far / close / dipping video -->
-  <div class="img-grid-3 reveal">
-    
-       <div>
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
-        <source src="videos/riesel.mp4" type="video/mp4">
-      </video>
-    </div>
-    
-    <div>
-      <p class="img-caption">boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up 
-        boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue 
-        cook-up boneglue cook-up boneglue cook-up boneglue cook-up</p>
-    </div>
-    
-    <div>
-        <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
-        <source src="videos/Flexi_99.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
- <!-- beam wrap -->
-<div style="padding: 20rem 0;">
-  <div class="prototype-grid-2 reveal">
-    
-    <div>
-      <img src="images/wrap.png" class="img-block tall" style="object-fit: cover;">
-    </div>
-    
-    <div>
-      <div style="text-align: left">
-      <p class="img-caption">top: initial coating</p>
-      <p class="img-caption">left: connecting structural parts</p>
-        <p class="img-caption">wool and boneglue and coats and shoes and scarf and summer
-        and winter and wool and sheep and all that stuff.</p>
+  <!-- BONEGLUE GRID: bonegluepetrilarge / boneglue3 / boneglue4 -->
+  <div class="spacer-boneglue-grid">
+    <div class="img-grid-3 reveal">
+      <div>
+        <img src="images/bonegluepetrilarge.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/boneglue3.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/boneglue4.jpg" class="img-block landscape" style="object-fit: cover;">
       </div>
     </div>
-      
-    <div>
-      <img src="images/wrap2.png" class="img-block landscape" style="object-fit: cover;">
-    </div>
-      
   </div>
-</div>
+
+  <!-- BEAM DIAGRAM: beamlayer.jpg -->
+  <div class="spacer-beam-diagram">
+    <div class="beam-grid reveal">
+      <div>
+        <img src="images/beamlayer.jpg" class="img-block gradient" style="object-fit: cover;">
+        <p class="img-caption">beam structural fibre layup</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIESEL / CAPTION / Flexi_99 GRID -->
+  <div class="spacer-riesel-grid">
+    <div class="img-grid-3 reveal">
+      <div>
+        <video autoplay muted loop playsinline preload="auto"
+          style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
+          <source src="videos/riesel.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <p class="img-caption">boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up
+          boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue
+          cook-up boneglue cook-up boneglue cook-up boneglue cook-up</p>
+      </div>
+      <div>
+        <video autoplay muted loop playsinline preload="auto"
+          style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
+          <source src="videos/Flexi_99.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAM WRAP: wrap.png / caption / wrap2.png -->
+  <div class="spacer-beam-wrap">
+    <div class="beam-wrap-grid reveal">
+      <div>
+        <img src="images/wrap.png" class="img-block tall" style="object-fit: cover;">
+      </div>
+      <div class="beam-wrap-caption">
+        <p class="img-caption" style="text-align:left;">top: initial coating</p>
+        <p class="img-caption" style="text-align:left;">left: connecting structural parts</p>
+        <p class="img-caption" style="text-align:left;">wool and boneglue and coats and shoes and scarf and summer
+        and winter and wool and sheep and all that stuff.</p>
+      </div>
+      <div>
+        <img src="images/wrap2.png" class="img-block landscape" style="object-fit: cover;">
+      </div>
+    </div>
+  </div>
 
   <!-- PRODUCTION -->
-  <div style="padding: 30rem 0 0;"></div>
-  <section class="production-section reveal" id="production">
-     <div>
-      <p class="section-heading2">PRODUCTION</p>
-    </div>
-    <div>
-      <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that
-        flexi and flexi flexi can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and
-        flexi flexi (flexi-of-flexi, flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi
-        and flexi within the final flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi
-        flexi to changing flexi flexi.</p>
-       <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their
-        flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based
-        flexi is utilized as a flexi flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
-    </div> 
-  </section>
+  <div class="spacer-before-production">
+    <section class="production-section reveal" id="production">
+      <div>
+        <p class="section-heading2">PRODUCTION</p>
+      </div>
+      <div>
+        <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that
+          flexi and flexi flexi can be directly informed by flexi flexi (flexi and flexi), flexi flexi (flexi, flexi, and flexi flexi), and
+          flexi flexi (flexi-of-flexi, flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi
+          and flexi within the final flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi
+          flexi to changing flexi flexi.</p>
+        <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their
+          flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based
+          flexi is utilized as a flexi flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
+      </div>
+    </section>
+  </div>
 
   <!-- PROCESS LINES -->
   <div class="process-lines-wrapper">
@@ -1657,41 +1749,36 @@
   </div>
 
   <!-- PROTOTYPE 1.0 -->
-  <div class="prototype-section reveal">
-    <div class="prototype-text">
-      <h2 class="section-heading"><em>PROTOTYPE 1.0</em></h2>
-      <p class="body-text">panels M 1:2, substitute construction (gypsum)</p>
-      <p class="body-text">during an earlier stage of the project (02/26) a small number of panels
-      has been produced to verify intended properties of the final material mix and to verify assembly logic. </p>
-    </div>
-    <div>
-    </div>
-    <div>
-      <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
+  <div class="spacer-before-prototype">
+    <div class="prototype-section reveal">
+      <div class="prototype-text">
+        <h2 class="section-heading"><em>PROTOTYPE 1.0</em></h2>
+        <p class="body-text">panels M 1:2, substitute construction (gypsum)</p>
+        <p class="body-text">during an earlier stage of the project (02/26) a small number of panels
+        has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
+      </div>
+      <div></div>
+      <div>
+        <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
+      </div>
     </div>
   </div>
 
- <!-- panel + panel closeup grid -->
-<div style="padding: 20rem 0;">
-  <div class="prototype-grid-2 reveal">
-    
-    <div>
-      <img src="images/sidehand.png" class="img-block tall" style="object-fit: cover;">
-    </div>
-    
-    <div>
-      <div style="text-align: left">
-      <p class="img-caption">top: closeup panel</p>
-      <p class="img-caption">left: full panel</p>
+  <!-- PANEL + CLOSEUP GRID: sidehand / scar -->
+  <div class="spacer-prototype-photos">
+    <div class="prototype-grid-2 reveal">
+      <div>
+        <img src="images/sidehand.png" class="img-block tall" style="object-fit: cover;">
+      </div>
+      <div style="text-align: left;">
+        <p class="img-caption" style="text-align:left;">top: closeup panel</p>
+        <p class="img-caption" style="text-align:left;">left: full panel</p>
+      </div>
+      <div>
+        <img src="images/scar.png" class="img-block landscape" style="object-fit: cover;">
       </div>
     </div>
-      
-    <div>
-      <img src="images/scar.png" class="img-block landscape" style="object-fit: cover;">
-    </div>
-      
   </div>
-</div>
 
   <!-- PROPOSAL -->
   <section class="proposal-section reveal" id="proposal">
@@ -1712,46 +1799,50 @@
     </div>
   </section>
 
-  <!-- PROPOSAL GRID: birth / old -->
-  <div class="proposal-grid reveal">
-    <div>
-      <img src="images/c.jpeg" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">birth</p>
-    </div>
-    <div>
-      <img src="images/3.png" class="img-block tall" style="object-fit: cover;">
-      <p class="img-caption">old</p>
+  <!-- PROPOSAL GRID: c.jpeg (birth) / 3.png (old) -->
+  <div class="spacer-proposal-grid">
+    <div class="proposal-grid reveal">
+      <div>
+        <img src="images/c.jpeg" class="img-block tall" style="object-fit: cover;">
+        <p class="img-caption">birth</p>
+      </div>
+      <div>
+        <img src="images/3.png" class="img-block tall" style="object-fit: cover;">
+        <p class="img-caption">old</p>
+      </div>
     </div>
   </div>
 
-    <!-- FULLWIDTH: flexiganz -->
-  <div style="padding: 10rem 0;">
-    <div class="full-img-wrap reveal">
-      <img src="images/flexiganz.png" style="width:100%; display:block; object-fit:cover;">
+  <!-- FULLWIDTH: flexiganz.png -->
+  <div class="spacer-flexiganz">
+    <div style="overflow: hidden; margin: 3rem 0 0;">
+      <img src="images/flexiganz.png" style="width:100%; display:block; object-fit:cover;" class="reveal">
     </div>
   </div>
 
   <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <div>
-      <p class="section-heading">contact</p>
-    </div>
-    <div>
-      <p class="body-text">send us a <a href="mailto:flexi@sexy.at">mail</a> to get more
-        information about upcoming projects, possible collaborations and all questions you might have
-        encounter during your visit. and get in touch get in touch get in touch get in touch get in touch
-        get in touch get in touch get in touch get in touch get in touch get in touch</p>
-      <p class="body-text">you can touch it <a href="https://www.tuwien.at/">here</a>, visit it <a
-          href="https://www.tuwien.at/">there</a> and touch it touch it touch it touch it touch it touch it touch it
-        touch it touch it touch it touch it touch it touch it</p>
-      <p class="body-text">if you want to learn more about the ongoing research project flexible mold, <a
-          href="https://kunst2.tuwien.ac.at/flexible-mold">visit here</a>. there you can
-        find more info on this and that and yes.</p>
-    </div>
-  </section>
+  <div class="spacer-before-contact">
+    <section class="contact-section" id="contact">
+      <div>
+        <p class="section-heading">contact</p>
+      </div>
+      <div>
+        <p class="body-text">send us a <a href="mailto:flexi@sexy.at">mail</a> to get more
+          information about upcoming projects, possible collaborations and all questions you might have
+          encounter during your visit. and get in touch get in touch get in touch get in touch get in touch
+          get in touch get in touch get in touch get in touch get in touch get in touch</p>
+        <p class="body-text">you can touch it <a href="https://www.tuwien.at/">here</a>, visit it <a
+            href="https://www.tuwien.at/">there</a> and touch it touch it touch it touch it touch it touch it touch it
+          touch it touch it touch it touch it touch it touch it</p>
+        <p class="body-text">if you want to learn more about the ongoing research project flexible mold, <a
+            href="https://kunst2.tuwien.ac.at/flexible-mold">visit here</a>. there you can
+          find more info on this and that and yes.</p>
+      </div>
+    </section>
+  </div>
 
   <!-- ACKNOWLEDGEMENTS -->
-  <div style="padding: 5rem 0 0;">
+  <div class="spacer-before-ack">
     <section class="acknowledgements-section">
       <div>
         <p class="section-heading">acknowledgements</p>
@@ -1795,7 +1886,7 @@
         const video = entry.target.querySelector('video');
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          if (video) video.play().catch(() => { });
+          if (video) video.play().catch(() => {});
         } else {
           if (video) video.pause();
         }
@@ -1808,7 +1899,6 @@
       const nav = document.getElementById('main-nav');
       let lastScrollY = window.scrollY;
       let ticking = false;
-
       window.addEventListener('scroll', () => {
         if (!ticking) {
           requestAnimationFrame(() => {
@@ -1839,10 +1929,8 @@
       const section = document.querySelector('.video-decay-background');
       const video = document.getElementById('scrollAnim');
       if (!section || !video) return;
-
       video.pause();
       video.addEventListener('play', () => video.pause());
-
       function updateVideoDecay() {
         const rect = section.getBoundingClientRect();
         const vh = window.innerHeight;
@@ -1865,7 +1953,6 @@
           video.currentTime = progress * video.duration;
         }
       }
-
       video.style.transition = 'none';
       video.load();
       video.addEventListener('loadedmetadata', () => { video.currentTime = 0; updateVideoDecay(); });
@@ -1873,25 +1960,59 @@
       updateVideoDecay();
     })();
 
-    // Process line: von Mitte erstem bis Mitte letztem process-line
+    // Process line: vertical center line from first to last
     function updateProcessLine() {
       const inner = document.querySelector('.process-lines-inner');
       const lines = document.querySelectorAll('.process-line');
       if (!inner || lines.length === 0) return;
-
       const parentRect = inner.getBoundingClientRect();
       const firstRect = lines[0].getBoundingClientRect();
       const lastRect = lines[lines.length - 1].getBoundingClientRect();
-
       const top = firstRect.top - parentRect.top + firstRect.height / 2;
       const bottom = lastRect.top - parentRect.top + lastRect.height / 2;
-
       inner.style.setProperty('--line-top', top + 'px');
       inner.style.setProperty('--line-height', (bottom - top) + 'px');
     }
-
     window.addEventListener('load', updateProcessLine);
     window.addEventListener('resize', updateProcessLine);
+
+    // Magnifier lens: closea, closeb, closec
+    const ZOOM = 2.5;
+    const LENS_R = 80; // radius in px
+
+    document.querySelectorAll('.zoom-wrap').forEach(wrap => {
+      const lens = wrap.querySelector('.zoom-lens');
+      const lensImg = lens.querySelector('img');
+
+      wrap.addEventListener('mouseenter', () => {
+        // set lens image size once we know wrap dimensions
+        const w = wrap.offsetWidth;
+        const h = wrap.querySelector('img').offsetHeight;
+        lensImg.style.width = (w * ZOOM) + 'px';
+        lensImg.style.height = (h * ZOOM) + 'px';
+      });
+
+      wrap.addEventListener('mousemove', (e) => {
+        const rect = wrap.getBoundingClientRect();
+        const baseImg = wrap.querySelector('img:not(.zoom-lens img)');
+        const imgH = baseImg.offsetHeight;
+        const w = wrap.offsetWidth;
+
+        // cursor position relative to wrap
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // position lens center on cursor
+        lens.style.left = x + 'px';
+        lens.style.top = y + 'px';
+
+        // offset background image inside lens so the zoomed area aligns
+        const bgX = -(x * ZOOM - LENS_R);
+        const bgY = -(y * ZOOM - LENS_R);
+        lensImg.style.left = bgX + 'px';
+        lensImg.style.top = bgY + 'px';
+      });
+    });
   </script>
 
 </body>
