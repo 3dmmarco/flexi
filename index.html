@@ -177,7 +177,7 @@
 
     /* EVOLUTION VERTICAL GRID */
     .evolution-grid-v {
-      padding: 0.5rem 10rem 10rem;
+      padding: 0.5rem 1.5rem 10rem;
     }
 
     .evolution-v-row {
@@ -513,7 +513,7 @@
 
     /* CONSTRUCTION */
     .construction-section {
-      padding: 0.5rem 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
@@ -522,14 +522,14 @@
 
     /* BEAM GRID */
     .beam-grid {
-      padding: 0.5rem 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1fr;
     }
 
     /* PRODUCTION */
     .production-section {
-      padding: 0.5rem 1.5rem 10rem;
+      padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
@@ -576,7 +576,7 @@
       position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding: 3rem 1.5rem 1.5rem;
+      padding: 3rem 1.5rem 0.5rem;
       gap: 3rem;
       align-items: center;
     }
@@ -590,7 +590,7 @@
 
     /* PROTOTYPE SPLIT */
     .prototype-section {
-      padding: 0.5rem 1.5rem 10rem;
+      padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1.6fr 1fr 1.6fr;
       gap: 1.5rem;
@@ -603,7 +603,7 @@
 
     /* PROPOSAL */
     .proposal-section {
-      padding: 0.5rem 1.5rem 1.5rem;
+      padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
@@ -612,7 +612,7 @@
 
     /* CONTACT */
     .contact-section {
-      padding: 0.5rem 1.5rem 1rem;
+      padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
@@ -621,7 +621,7 @@
 
     /* ACKNOWLEDGEMENTS */
     .acknowledgements-section {
-      padding: 0.5rem 1.5rem 1rem;
+      padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
@@ -779,6 +779,10 @@
       aspect-ratio: 4/3;
     }
 
+      .img-block.evolution {
+      aspect-ratio: 5/3;
+    }
+
     .img-block.diagram {
       aspect-ratio: 6/3;
     }
@@ -864,7 +868,7 @@
 
     /* spacer before bubbub */
     .spacer-bubbub {
-      padding: 0.5rem 0 0;
+      padding: 0.5rem 0 15rem;
     }
 
     /* bubbub caption row */
@@ -899,22 +903,22 @@
 
     /* spacer before construction section (replaces 35rem padding-top) */
     .spacer-before-construction {
-      padding: 0.5rem 0 35rem;
+      padding: 0.5rem 0 0.5rem;
     }
 
     /* spacer before boneglue grid */
     .spacer-boneglue-grid {
-      padding: 0.5rem 0 0;
+      padding: 0.5rem 0 25rem;
     }
 
     /* spacer before beam diagram */
     .spacer-beam-diagram {
-      padding: 0.5rem 0 15rem;
+      padding: 0.5rem 0 0.5rem;
     }
 
     /* spacer before riesel grid */
     .spacer-riesel-grid {
-      padding: 0.5rem 0 0;
+      padding: 0.5rem 0 25rem;
     }
 
     /* spacer before beam wrap */
@@ -924,7 +928,7 @@
 
     /* spacer before production section */
     .spacer-before-production {
-      padding: 0.5rem 0 30rem;
+      padding: 0.5rem 0 0.5rem;
     }
 
     /* spacer before prototype section */
@@ -1024,10 +1028,10 @@
 
     .zoom-lens {
       position: absolute;
-      width: 160px;
-      height: 160px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      border: 1.5px solid var(--medium);
+      border: 0px solid var(--dark);
       box-shadow: 0 4px 24px rgba(0,0,0,0.18);
       pointer-events: none;
       display: none;
@@ -1184,13 +1188,13 @@
   <div class="evolution-grid-v reveal">
     <div class="evolution-v-row">
       <div>
-        <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+        <img src="images/wing.jpg" class="img-block evolution" style="object-fit: cover;">
       </div>
       <div>
-        <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+        <img src="images/skizze2.png" class="img-block evolution" style="object-fit: cover;">
       </div>
       <div>
-        <img src="images/skizze1.png" class="img-block landscape" style="object-fit: cover;">
+        <img src="images/skizze1.png" class="img-block evolution" style="object-fit: cover;">
       </div>
     </div>
     <div class="evolution-v-arrows">
@@ -1209,13 +1213,13 @@
     </div>
     <div class="evolution-v-row">
       <div>
-        <img src="images/ansicht.png" class="img-block landscape" style="object-fit: cover;">
+        <img src="images/ansicht.png" class="img-block evolution" style="object-fit: cover;">
       </div>
       <div>
-        <img src="images/wing.jpg" class="img-block landscape" style="object-fit: cover;">
+        <img src="images/wing.jpg" class="img-block evolution" style="object-fit: cover;">
       </div>
       <div>
-        <img src="images/skizze2.png" class="img-block landscape" style="object-fit: cover;">
+        <img src="images/skizze2.png" class="img-block evolution" style="object-fit: cover;">
       </div>
     </div>
   </div>
