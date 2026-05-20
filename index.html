@@ -18,7 +18,7 @@
       margin: 0;
       padding: 0;
     }
-
+    
     a {
       color: var(--medium);
       font-style: italic;
@@ -322,7 +322,7 @@
 
     /* INTRODUCTION */
     .intro-section {
-      padding: 0.5rem 1.5rem 1rem;
+      padding: 0.5rem 1.5rem 15rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
@@ -522,7 +522,7 @@
 
     /* BEAM GRID */
     .beam-grid {
-      padding: 0.5rem 1.5rem 0.5rem;
+      padding: 0.5rem 1.5rem 15rem;
       display: grid;
       grid-template-columns: 1fr;
     }
@@ -532,13 +532,14 @@
       padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 3rem;
       align-items: start;
     }
 
     /* PROCESS LINES */
     .process-lines-wrapper {
       position: relative;
+      padding: 0.5rem 0rem 20rem;
     }
 
     .process-lines-inner::before {
@@ -903,7 +904,7 @@
 
     /* spacer before construction section (replaces 35rem padding-top) */
     .spacer-before-construction {
-      padding: 0.5rem 0 0.5rem;
+      padding: 20rem 0 0.5rem;
     }
 
     /* spacer before boneglue grid */
@@ -948,7 +949,7 @@
 
     /* proposal-grid bottom */
     .proposal-grid {
-      padding: 0.5rem 1.5rem 20rem;
+      padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
@@ -982,7 +983,14 @@
     .fullwidth-half {
       padding: 0.5rem 1.5rem 10rem;
       display: grid;
-      grid-template-columns: 1fr 50% 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+       .fullwidth-full {
+      padding: 0.5rem 1.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 1.5rem;
     }
 
@@ -991,6 +999,7 @@
       display: grid;
       grid-template-columns: 35% 1fr 45%;
       gap: 1.5rem;
+       align-items: end;
     }
 
      .prototype-grid-3 {
@@ -1001,13 +1010,13 @@
     }
 
     .panels-grid-1 {
-      padding: 0.5rem 1.5rem 2rem;
+      padding: 0.5rem 1.5rem 10rem;
       display: grid;
       grid-template-columns: 1fr;
     }
 
     .cook-grid-1 {
-      padding: 0.5rem 1.5rem 2rem;
+      padding: 0.5rem 1.5rem 20rem;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       gap: 0.5rem;
@@ -1163,9 +1172,9 @@
   <!-- VIDEO TRAILER -->
   <div class="video-section reveal" id="intro">
     <video class="bg-video" muted loop playsinline preload="auto">
-      <source src="videos/Flexi_104.mp4" type="video/mp4">
+      <source src="videos/trailer.mp4" type="video/mp4">
     </video>
-    <p class="video-caption">PROJECT TRAILER - crochet, cook, dip, assemble</p>
+    <p class="video-caption">PROJECT TRAILER</p>
   </div>
 
   <!-- INTRODUCTION -->
@@ -1482,12 +1491,27 @@
       <div>
         <div class="img-layered">
           <img src="images/ansicht.png" class="img-block diagram" style="object-fit: cover;">
-          <img src="images/gradient.png" class="overlay" alt="">
+          <img src="images/_gradient.jpg" class="overlay" alt="">
+          <img src="images/closea.png" class="overlay" alt="">
         </div>
         <p class="img-caption">panel MAD DIAGRAM</p>
         <p class="img-caption-sub">diagram on top shows that x and y and z and so on and
         diagram on top shows that x and y and z and so on and diagram on top shows that x and y and z and so on</p>
       </div>
+    </div>
+  </div>
+
+    <!-- VIDEO: bending.mp4 -->
+  <div class="spacer-bending">
+    <div class="fullwidth-full reveal">
+      <div></div>
+      <div>
+        <video autoplay muted loop playsinline preload="auto"
+          style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block;">
+          <source src="videos/bending.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div></div>
     </div>
   </div>
 
@@ -1510,36 +1534,39 @@
     </div>
   </div>
 
-  <!-- PANEL FULL + CLOSEUP: panelfull / panelcloseup -->
-  <div class="spacer-panel-photos">
-    <div class="panels-grid-2 reveal">
-      <div>
-        <img src="images/panelfull.jpg" class="img-block landscape" style="object-fit: cover;">
-        <p class="img-caption">panel 450x300mm</p>
-      </div>
-      <div>
-        <img src="images/panelcloseup.jpg" class="img-block landscape" style="object-fit: cover;">
-        <p class="img-caption">PANEL closeup 80x60mm</p>
-      </div>
-    </div>
-  </div>
 
-  <!-- VIDEO: bending.mp4 -->
-  <div class="spacer-bending">
+
+ <!-- IMAGE: closea.png -->
+  <div class="spacer-closea">
     <div class="fullwidth-half reveal">
       <div></div>
       <div>
-        <video autoplay muted loop playsinline preload="auto"
-          style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block;">
-          <source src="videos/bending.mp4" type="video/mp4">
-        </video>
+        <div class="zoom-wrap" data-src="images/panelcloseup.jpg">
+          <img src="images/panelcloseup.jpg" class="img-block landscape" style="object-fit: cover;">
+          <div class="zoom-lens"><img src="images/panelcloseup.jpg" alt=""></div>
+        </div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <!-- IMAGE: closec.png -->
-  <div class="spacer-closec">
+  <!-- IMAGE: closeb.png -->
+  <div class="spacer-closeb">
+    <div class="fullwidth-half reveal">
+      <div>
+        <div class="zoom-wrap" data-src="images/closeb.png">
+          <img src="images/closeb.png" class="img-block landscape" style="object-fit: cover;">
+          <div class="zoom-lens"><img src="images/closeb.png" alt=""></div>
+      </div>
+      <div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+ <!-- IMAGE: closea.png -->
+  <div class="spacer-closea">
     <div class="fullwidth-half reveal">
       <div></div>
       <div>
@@ -1552,33 +1579,7 @@
     </div>
   </div>
 
-  <!-- IMAGE: closea.png -->
-  <div class="spacer-closea">
-    <div class="fullwidth-half reveal">
-      <div></div>
-      <div>
-        <div class="zoom-wrap" data-src="images/closea.png">
-          <img src="images/closea.png" class="img-block landscape" style="object-fit: cover;">
-          <div class="zoom-lens"><img src="images/closea.png" alt=""></div>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  </div>
 
-  <!-- IMAGE: closeb.png -->
-  <div class="spacer-closeb">
-    <div class="fullwidth-half reveal">
-      <div></div>
-      <div>
-        <div class="zoom-wrap" data-src="images/closeb.png">
-          <img src="images/closeb.png" class="img-block landscape" style="object-fit: cover;">
-          <div class="zoom-lens"><img src="images/closeb.png" alt=""></div>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  </div>
 
   <!-- CONSTRUCTION -->
   <div class="spacer-before-construction">
@@ -1620,35 +1621,34 @@
     </div>
   </div>
 
+  <!-- VIDEO: Flexi_99 – boneglue cookup -->
+  <div class="video-section reveal">
+    <video class="bg-video" muted loop playsinline preload="auto">
+      <source src="videos/Flexi_99.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <!-- BEAM DIAGRAM: beamlayer.jpg -->
   <div class="spacer-beam-diagram">
     <div class="beam-grid reveal">
       <div>
-        <img src="images/beamlayer.jpg" class="img-block gradient" style="object-fit: cover;">
+        <img src="images/_beamlayer.jpg" class="img-block gradient" style="object-fit: cover;">
         <p class="img-caption">beam structural fibre layup</p>
       </div>
     </div>
   </div>
 
-  <!-- RIESEL / CAPTION / Flexi_99 GRID -->
-  <div class="spacer-riesel-grid">
-    <div class="img-grid-3 reveal">
+  <!-- MAD DIAGRAM: ansicht.png + gradient.png overlay -->
+  <div class="spacer-mad-diagram">
+    <div class="panels-grid-1 reveal">
       <div>
-        <video autoplay muted loop playsinline preload="auto"
-          style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
-          <source src="videos/riesel.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div>
-        <p class="img-caption">boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up
-          boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue cook-up boneglue
-          cook-up boneglue cook-up boneglue cook-up boneglue cook-up</p>
-      </div>
-      <div>
-        <video autoplay muted loop playsinline preload="auto"
-          style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
-          <source src="videos/Flexi_99.mp4" type="video/mp4">
-        </video>
+        <div class="img-layered">
+          <img src="images/_beamlayer.jpg" class="img-block diagram" style="object-fit: cover;">
+          <img src="images/_gradient.jpg" class="overlay" alt="">
+        </div>
+        <p class="img-caption">panel MAD DIAGRAM</p>
+        <p class="img-caption-sub">diagram on top shows that x and y and z and so on and
+        diagram on top shows that x and y and z and so on and diagram on top shows that x and y and z and so on</p>
       </div>
     </div>
   </div>
@@ -1683,9 +1683,6 @@
           flexi flexi (flexi-of-flexi, flexi flexi, and flexi flexi). Each flexi in the flexi contains a unique flexi of flexi flexi whose flexi, flexi
           and flexi within the final flexi are flexi flexi and flexi flexi in high flexi. This enables flexi over specific flexi flexi and flexi
           flexi to changing flexi flexi.</p>
-        <p class="body-text">In flexi to most flexi flexi, flexi included in this flexi will flexi to their flexi over their
-          flexi, flexi their flexi, flexi flexi and flexi in flexi to flexi in flexi, flexi, and flexi. Such flexi-based
-          flexi is utilized as a flexi flexi, one that is able to flexi, flexi the flexi of, and flexi to flexi flexi flexi.</p>
       </div>
     </section>
   </div>
@@ -1759,32 +1756,14 @@
     </div>
   </div>
 
-  <!-- PROTOTYPE 1.0 -->
-  <div class="spacer-before-prototype">
-    <div class="prototype-section reveal">
-      <div class="prototype-text">
-        <h2 class="section-heading"><em>PROTOTYPE 1.0</em></h2>
-        <p class="body-text">panels M 1:2, substitute construction (gypsum)</p>
-        <p class="body-text">during an earlier stage of the project (02/26) a small number of panels
-        has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
-      </div>
-      <div></div>
-      <div>
-        <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
-      </div>
-    </div>
-  </div>
-
   <!-- PANEL + CLOSEUP GRID: sidehand / scar -->
   <div class="spacer-prototype-photos">
     <div class="prototype-grid-2 reveal">
       <div>
-        <img src="images/sidehand.png" class="img-block tall" style="object-fit: cover;">
+        <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
       </div>
-      <div style="text-align: left;">
-        <p class="img-caption" style="text-align:left;">top: closeup panel</p>
-        <p class="img-caption" style="text-align:left;">left: full panel</p>
-      </div>
+        <p class="img-caption" style="text-align:justify; hyphens: auto;">during an earlier stage of the project (02/26) a small number of panels 
+          has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
       <div>
         <img src="images/scar.png" class="img-block landscape" style="object-fit: cover;">
       </div>
@@ -1798,7 +1777,7 @@
         <img src="images/wrap.png" class="img-block tall" style="object-fit: cover;">
       </div>
     <div
-     <p class="img-caption" style="text-align:left;">beamnpanel</p>
+     <p class="img-caption" style="text-align:left;"></p>
       </div>
       <div>
         <img src="images/sidehandx.png" class="img-block tall" style="object-fit: cover;">
@@ -1839,11 +1818,9 @@
     </div>
   </div>
 
-  <!-- FULLWIDTH: flexiganz.png -->
-  <div class="spacer-flexiganz">
-    <div style="overflow: hidden; margin: 3rem 0 0;">
-      <img src="images/flexiganz.png" style="width:100%; display:block; object-fit:cover;" class="reveal">
-    </div>
+    <!-- LOADING GRID -->
+  <div style="padding:0.5rem 1.5rem 15rem;">
+    <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(40,1fr);gap:clamp(0.5px,0.1vw,2px);"></div>
   </div>
 
   <!-- CONTACT -->
@@ -2001,6 +1978,37 @@
     }
     window.addEventListener('load', updateProcessLine);
     window.addEventListener('resize', updateProcessLine);
+
+// loading grid
+    (function(){
+      const grid = document.getElementById('flexi-grid');
+      const style = document.createElement('style');
+      style.textContent = '@keyframes ld-spin{to{transform:rotate(360deg);}}';
+      document.head.appendChild(style);
+      const label = 'panelproduction';
+for(let i = 0; i < 320; i++){
+  const sq = document.createElement('div');
+  sq.style.cssText = 'aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;';
+  if(i < label.length){
+    sq.style.cssText += 'background:var(--medium);';
+    sq.style.fontFamily = "'Hanken Grotesk', sans-serif";
+    sq.style.fontSize = 'clamp(4px, 0.9vw, 11px)';
+    sq.style.fontWeight = '400';
+    sq.style.color = '#fff';
+    sq.textContent = label[i].toUpperCase();
+  } else if(i === 89){
+    sq.style.cssText += 'border:1.5px solid var(--medium);';
+    const sp = document.createElement('div');
+    sp.style.cssText = 'width:55%;height:55%;border-radius:50%;border:1.5px solid transparent;border-top-color:var(--medium);animation:ld-spin 0.7s linear infinite;';
+    sq.appendChild(sp);
+  } else if(i < 89){
+    sq.style.cssText += 'background:var(--medium);';
+  } else {
+    sq.style.cssText += 'border:1.5px solid var(--medium);';
+  }
+  grid.appendChild(sq);
+}
+    })();
 
     // Magnifier lens: closea, closeb, closec
     const ZOOM = 2.5;
