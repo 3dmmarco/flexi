@@ -747,19 +747,19 @@
 
     .body-text-poem-right {
       font-family: 'Azeret Mono', monospace;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 100;
       line-height: 1.6;
-      color: var(--white);
-      text-align: right;
+      color: var(--black);
+      text-align: left;
     }
 
     .body-text-poem-left {
       font-family: 'Azeret Mono', monospace;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 100;
       line-height: 1.6;
-      color: var(--white);
+      color: var(--black);
       text-align: left;
     }
 
@@ -983,7 +983,7 @@
     .fullwidth-half {
       padding: 0.5rem 1.5rem 10rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 1.5rem;
     }
 
@@ -1044,8 +1044,8 @@
 
     .zoom-lens {
       position: absolute;
-      width: 200px;
-      height: 200px;
+      width: 275px;
+      height: 275px;
       border-radius: 50%;
       border: 0px solid var(--dark);
       box-shadow: 0 4px 24px rgba(0,0,0,0.18);
@@ -1197,7 +1197,7 @@
 
   <!-- EVOLUTION HEADING -->
   <div class="evolution-heading reveal">
-    <span class="stat-number3">evolution</span>
+    <span class="stat-number3"></span>
   </div>
 
   <!-- EVOLUTION GRID: wing / skizze2 / skizze1 → ansicht / wing / skizze2 -->
@@ -1213,32 +1213,8 @@
         <img src="images/skizze1.png" class="img-block evolution" style="object-fit: cover;">
       </div>
     </div>
-    <div class="evolution-v-arrows">
-      <div class="evolution-arrow-v">
-        <div class="evolution-arrow-v-line"></div>
-        <span class="evolution-arrow-label">structural logic</span>
-      </div>
-      <div class="evolution-arrow-v">
-        <div class="evolution-arrow-v-line"></div>
-        <span class="evolution-arrow-label">panelization</span>
-      </div>
-      <div class="evolution-arrow-v">
-        <div class="evolution-arrow-v-line"></div>
-        <span class="evolution-arrow-label">form</span>
-      </div>
-    </div>
-    <div class="evolution-v-row">
-      <div>
-        <img src="images/ansicht.png" class="img-block evolution" style="object-fit: cover;">
-      </div>
-      <div>
-        <img src="images/wing.jpg" class="img-block evolution" style="object-fit: cover;">
-      </div>
-      <div>
-        <img src="images/skizze2.png" class="img-block evolution" style="object-fit: cover;">
-      </div>
-    </div>
   </div>
+ 
 
   <!-- VIDEO DECAY / POEM -->
   <div class="video-decay-background">
@@ -1515,21 +1491,6 @@
           <source src="videos/bending.mp4" type="video/mp4">
         </video>
       </div>
-      <div></div>
-    </div>
-  </div>
-
-  <!-- BUBBUB GRID: bub1–bub5 -->
-  <div class="spacer-bubbub">
-    <div class="bubbub-grid-1 reveal">
-      <div><img src="images/bub1.png" class="img-block tall" style="object-fit: cover;"></div>
-      <div><img src="images/bub2.png" class="img-block tall" style="object-fit: cover;"></div>
-      <div><img src="images/bub3.png" class="img-block tall" style="object-fit: cover;"></div>
-      <div><img src="images/bub4.png" class="img-block tall" style="object-fit: cover;"></div>
-      <div><img src="images/bub5.png" class="img-block tall" style="object-fit: cover;"></div>
-    </div>
-    <!-- caption: same layout as panels-grid-1 / mad diagram -->
-    <div class="panels-grid-1">
       <div>
         <p class="img-caption">DIFFERENTIATED PROPERTIES</p>
         <p class="img-caption-sub">panels in lower part of the structure are flexible due to addition of glycerol to the material matrix.
@@ -1539,50 +1500,19 @@
   </div>
 
 
-
  <!-- IMAGE: closea.png -->
   <div class="spacer-closea">
     <div class="fullwidth-half reveal">
       <div></div>
       <div>
-        <div class="zoom-wrap" data-src="images/panelcloseup.jpg">
-          <img src="images/panelcloseup.jpg" class="img-block landscape" style="object-fit: cover;">
-          <div class="zoom-lens"><img src="images/panelcloseup.jpg" alt=""></div>
+        <div class="zoom-wrap" data-src="images/_closeup.jpg">
+          <img src="images/_closeupscaled.jpg" style="object-fit: cover;">
+          <div class="zoom-lens"><img src="images/_closeup.jpg" alt=""></div>
         </div>
       </div>
       <div></div>
     </div>
   </div>
-
-  <!-- IMAGE: closeb.png -->
-  <div class="spacer-closeb">
-    <div class="fullwidth-half reveal">
-      <div>
-        <div class="zoom-wrap" data-src="images/closeb.png">
-          <img src="images/closeb.png" class="img-block landscape" style="object-fit: cover;">
-          <div class="zoom-lens"><img src="images/closeb.png" alt=""></div>
-      </div>
-      <div>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
- <!-- IMAGE: closea.png -->
-  <div class="spacer-closea">
-    <div class="fullwidth-half reveal">
-      <div></div>
-      <div>
-        <div class="zoom-wrap" data-src="images/closec.png">
-          <img src="images/closec.png" class="img-block landscape" style="object-fit: cover;">
-          <div class="zoom-lens"><img src="images/closec.png" alt=""></div>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
 
 
   <!-- CONSTRUCTION -->
@@ -1774,21 +1704,6 @@
     </div>
   </div>
 
-    <!-- PANEL + CLOSEUP GRID: sidehand / scar -->
-  <div class="spacer-prototype-photos">
-    <div class="prototype-grid-3 reveal">
-      <div>
-        <img src="images/wrap.png" class="img-block tall" style="object-fit: cover;">
-      </div>
-    <div
-     <p class="img-caption" style="text-align:left;"></p>
-      </div>
-      <div>
-        <img src="images/sidehandx.png" class="img-block tall" style="object-fit: cover;">
-      </div>
-    </div>
-  </div>
-
   <!-- PROPOSAL -->
   <section class="proposal-section reveal" id="proposal">
     <div>
@@ -1824,7 +1739,7 @@
 
     <!-- LOADING GRID -->
   <div style="padding:0.5rem 1.5rem 15rem;">
-    <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(40,1fr);gap:clamp(0.5px,0.1vw,2px);"></div>
+    <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(89,1fr);gap:clamp(0px,0vw,2px);"></div>
   </div>
 
   <!-- CONTACT -->
@@ -1990,9 +1905,9 @@
       style.textContent = '@keyframes ld-spin{to{transform:rotate(360deg);}}';
       document.head.appendChild(style);
       const label = 'panelproduction';
-for(let i = 0; i < 320; i++){
+for(let i = 0; i < 89; i++){
   const sq = document.createElement('div');
-  sq.style.cssText = 'aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;';
+  sq.style.cssText = 'aspect-ratio:3/5;border-radius:1px;display:flex;align-items:center;justify-content:center;';
   if(i < label.length){
     sq.style.cssText += 'background:var(--medium);';
     sq.style.fontFamily = "'Hanken Grotesk', sans-serif";
@@ -2003,19 +1918,19 @@ for(let i = 0; i < 320; i++){
   } else if(i === 89){
     sq.style.cssText += 'border:1.5px solid var(--medium);';
     const sp = document.createElement('div');
-    sp.style.cssText = 'width:55%;height:55%;border-radius:50%;border:1.5px solid transparent;border-top-color:var(--medium);animation:ld-spin 0.7s linear infinite;';
+    sp.style.cssText = 'width:55%;height:55%;border-radius:50%;border:1px solid transparent;border-top-color:var(--dark);animation:ld-spin 0.7s linear infinite;';
     sq.appendChild(sp);
-  } else if(i < 89){
+  } else if(i < 34){
     sq.style.cssText += 'background:var(--medium);';
   } else {
-    sq.style.cssText += 'border:1.5px solid var(--medium);';
+    sq.style.cssText += 'border:1px solid var(--dark);';
   }
   grid.appendChild(sq);
 }
     })();
 
     // Magnifier lens: closea, closeb, closec
-    const ZOOM = 2.5;
+    const ZOOM = 3;
     const LENS_R = 80; // radius in px
 
     document.querySelectorAll('.zoom-wrap').forEach(wrap => {
