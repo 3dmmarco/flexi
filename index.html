@@ -1393,7 +1393,7 @@
       <div></div>
       <div>
         <div class="zoom-wrap" data-src="images/_closeup.jpg">
-          <img src="images/_closeupscaled.jpg" style="object-fit: cover;">
+          <img src="images/_closeupscaled.jpg" style="width:100%; display:block; object-fit: cover;">
           <div class="zoom-lens"><img src="images/_closeup.jpg" alt=""></div>
         </div>
       </div>
@@ -1920,7 +1920,7 @@
       wrap.addEventListener('mouseenter', () => {
         const w = wrap.offsetWidth;
         lensImg.style.width = (w * ZOOM) + 'px';
-        lensImg.style.height = (wrap.querySelector('img:not(.zoom-lens img)').offsetHeight * ZOOM) + 'px';
+       lensImg.style.height = (wrap.querySelector('img:not([class])').offsetHeight * ZOOM) + 'px';
       });
 
       wrap.addEventListener('mousemove', (e) => {
