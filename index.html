@@ -1715,6 +1715,27 @@
     <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(89,1fr);gap:0;"></div>
   </div>
 
+
+<div style="position:relative; width:100%;">
+  <img id="panel-a" src="images/panelsa.png" style="width:100%; display:block;">
+  <img id="panel-b" src="images/panelsb.png" style="width:100%; display:block; position:absolute; inset:0; opacity:0;">
+</div>
+
+<script>
+  (function(){
+    const a = document.getElementById('panel-a');
+    const b = document.getElementById('panel-b');
+    setInterval(() => {
+      const aVisible = a.style.opacity !== '0';
+      a.style.transition = 'opacity 0.3s';
+      b.style.transition = 'opacity 0.3s';
+      a.style.opacity = aVisible ? '0' : '1';
+      b.style.opacity = aVisible ? '1' : '0';
+    }, 1000);
+  })();
+</script>
+  
+
   <!-- CONTACT -->
   <div class="spacer-before-contact">
     <section class="contact-section" id="contact">
