@@ -1617,11 +1617,6 @@
     </div>
   </div>
 
-  <!-- LOADING GRID -->
-  <div style="padding:0.5rem 1.5rem 15rem;">
-    <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(89,1fr);gap:0;"></div>
-  </div>
-
   <!-- LOADING IMAGE -->
   <div style="padding: 0 0 10rem;">
     <div style="display:grid; grid-template-columns:1fr 1fr; height:100vh;">
@@ -1773,29 +1768,6 @@
       video.addEventListener('loadedmetadata', () => { video.currentTime = 0; updateVideoDecay(); });
       window.addEventListener('scroll', () => { requestAnimationFrame(updateVideoDecay); }, { passive: true });
       updateVideoDecay();
-    })();
-
-    // Loading grid
-    (function () {
-      const grid = document.getElementById('flexi-grid');
-      const label = 'panelproduction';
-      const total = 89;
-      const filledCount = label.length;
-      for (let i = 0; i < total; i++) {
-        const sq = document.createElement('div');
-        sq.className = 'flexi-grid-cell';
-        if (i < filledCount) {
-          sq.classList.add('filled');
-          sq.style.fontFamily = "'Hanken Grotesk', sans-serif";
-          sq.style.fontSize = 'clamp(4px, 0.9vw, 11px)';
-          sq.style.fontWeight = '400';
-          sq.style.color = '#fff';
-          sq.textContent = label[i].toUpperCase();
-        } else if (i === filledCount) {
-          sq.classList.add('loader');
-        }
-        grid.appendChild(sq);
-      }
     })();
 
     // Loading image cycle
