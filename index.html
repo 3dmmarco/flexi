@@ -197,24 +197,6 @@
       gap: 1.5rem;
     }
 
-    .evolution-arrow-v-line::before {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 40px;
-      background: var(--medium);
-    }
-
-    .evolution-arrow-v-line::after {
-      content: '∨';
-      font-family: 'Azeret Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: var(--medium);
-      line-height: 1;
-      margin-top: -2px;
-    }
-
     /* VIDEO SECTION */
     .video-section {
       position: relative;
@@ -309,10 +291,6 @@
       align-items: start;
     }
 
-    .evolution-heading {
-      padding: 0.5rem 1.5rem 0;
-    }
-
     /* VIDEO DECAY BACKGROUND */
     .video-decay-background {
       position: relative;
@@ -350,14 +328,6 @@
 
     /* MATERIALS STAT */
     .materials-stat {
-      padding: 0.5rem 1.5rem 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0rem;
-      align-items: start;
-    }
-
-    .production-pipeline {
       padding: 0.5rem 1.5rem 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -537,10 +507,6 @@
       align-items: baseline;
     }
 
-    .prototype-text {
-      text-align: left;
-    }
-
     /* PROPOSAL */
     .proposal-section {
       padding: 0.5rem 1.5rem 0.5rem;
@@ -674,16 +640,6 @@
       margin-top: 0.4em;
     }
 
-    .body-text-right {
-      font-family: 'Hanken Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: var(--black);
-      text-align: right;
-      hyphens: auto;
-    }
-
     .body-text-poem-right {
       font-family: 'Azeret Mono', monospace;
       font-size: 1.4rem;
@@ -776,7 +732,6 @@
     .spacer-before-stat { padding: 0.5rem 0 0; }
     .spacer-gradient-diagram { padding: 0.5rem 0 20rem; }
     .spacer-mad-diagram { padding: 0.5rem 0 0; }
-    .spacer-panel-photos { padding: 0.5rem 0 0; }
     .spacer-bending { padding: 0.5rem 0 0; }
     .spacer-closea { padding: 0.5rem 0 0; }
     .spacer-before-construction { padding: 20rem 0 0.5rem; }
@@ -784,10 +739,8 @@
     .spacer-beam-diagram { padding: 0.5rem 0 0.5rem; }
     .spacer-beam-wrap { padding: 0.5rem 0 20rem; }
     .spacer-before-production { padding: 30rem 0 0.5rem; }
-    .spacer-before-prototype { padding: 0.5rem 0 15rem; }
     .spacer-prototype-photos { padding: 0.5rem 0 20rem; }
     .spacer-proposal-grid { padding: 0.5rem 0 0; }
-    .spacer-flexiganz { padding: 0.5rem 0 10rem; }
     .spacer-before-contact { padding: 0.5rem 0 0; }
     .spacer-before-ack { padding: 0.5rem 0 0; }
 
@@ -819,13 +772,6 @@
       grid-template-columns: 35% 1fr 45%;
       gap: 1.5rem;
       align-items: end;
-    }
-
-    .prototype-grid-3 {
-      padding: 0rem 1.5rem 0rem;
-      display: grid;
-      grid-template-columns: 35% 1fr 35%;
-      gap: 1.5rem;
     }
 
     .panels-grid-1 {
@@ -889,37 +835,6 @@
 
     .beam-wrap-caption {
       text-align: left;
-    }
-
-    /* LOADING GRID */
-    @keyframes grid-sweep {
-      0%   { background-position: -100% 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    .flexi-grid-cell {
-      aspect-ratio: 3/5;
-      border-radius: 1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid var(--black);
-    }
-
-    .flexi-grid-cell.filled {
-      background: var(--medium);
-    }
-
-    .flexi-grid-cell.loader {
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        var(--medium) 40%,
-        var(--medium) 60%,
-        transparent 100%
-      );
-      background-size: 200% 100%;
-      animation: grid-sweep 2s linear infinite;
     }
 
     @media (max-width: 900px) {
@@ -1420,14 +1335,6 @@
           flexi to changing flexi flexi.</p>
       </div>
     </section>
-  </div>
-
-  <!-- production pipeline heading -->
-  <div class="spacer-before-stat">
-    <div class="production-pipeline">
-      <span class="stat-number3"></span>
-      <span class="stat-number3">pipeline</span>
-    </div>
   </div>
 
   <!-- PROCESS ACCORDION -->
