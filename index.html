@@ -1716,22 +1716,29 @@
   </div>
 
 
-<div style="position:relative; width:100%;">
-  <img id="panel-a" src="images/loadingaa.png" style="width:100%; display:block;">
-  <img id="panel-b" src="images/loadingbb.png" style="width:100%; display:block; position:absolute; inset:0; opacity:0;">
+<div style="display:grid; grid-template-columns:1fr 1fr; height:100vh;">
+  <div style="position:relative;">
+    <img src="images/loadingaa.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;">
+    <img id="loading-bb" src="images/loadingbb.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0; opacity:0;">
+  </div>
+  <div style="display:flex; align-items:flex-end; padding:1.5rem;">
+    <p class="img-caption" style="text-align:left;">.. currently cooking up a project</p>
+  </div>
 </div>
 
 <script>
   (function(){
-    const a = document.getElementById('panel-a');
-    const b = document.getElementById('panel-b');
-    setInterval(() => {
-      const aVisible = a.style.opacity !== '0';
-      a.style.transition = 'opacity 0.5s';
-      b.style.transition = 'opacity 0.1s';
-      a.style.opacity = aVisible ? '0' : '1';
-      b.style.opacity = aVisible ? '1' : '0';
-    }, 1000);
+    const bb = document.getElementById('loading-bb');
+    function cycle(){
+      bb.style.transition = 'opacity 1.5s ease';
+      bb.style.opacity = '1';
+      setTimeout(() => {
+        bb.style.transition = 'none';
+        bb.style.opacity = '0';
+        setTimeout(cycle, 500);
+      }, 1500);
+    }
+    cycle();
   })();
 </script>
   
