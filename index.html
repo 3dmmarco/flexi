@@ -1908,31 +1908,31 @@
         grid.appendChild(sq);
       }
     })();
+// Magnifier lens
+const ZOOM = 3;
+const LENS_R = 275;
 
-    // Magnifier lens
-    const ZOOM = 3;
-    const LENS_R = 80;
+document.querySelectorAll('.zoom-wrap').forEach(wrap => {
+  const lens = wrap.querySelector('.zoom-lens');
+  const lensImg = lens.querySelector('img');
 
-    document.querySelectorAll('.zoom-wrap').forEach(wrap => {
-      const lens = wrap.querySelector('.zoom-lens');
-      const lensImg = lens.querySelector('img');
+  wrap.addEventListener('mouseenter', () => {
+    const w = wrap.offsetWidth;
+    const h = wrap.querySelector('img:not([class])').offsetHeight;
+    lensImg.style.width = (w * ZOOM) + 'px';
+    lensImg.style.height = (h * ZOOM) + 'px';
+  });
 
-      wrap.addEventListener('mouseenter', () => {
-        const w = wrap.offsetWidth;
-        lensImg.style.width = (w * ZOOM) + 'px';
-       lensImg.style.height = (wrap.querySelector('img:not([class])').offsetHeight * ZOOM) + 'px';
-      });
-
-      wrap.addEventListener('mousemove', (e) => {
-        const rect = wrap.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        lens.style.left = x + 'px';
-        lens.style.top = y + 'px';
-        lensImg.style.left = -(x * ZOOM - LENS_R) + 'px';
-        lensImg.style.top = -(y * ZOOM - LENS_R) + 'px';
-      });
-    });
+  wrap.addEventListener('mousemove', (e) => {
+    const rect = wrap.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    lens.style.left = x + 'px';
+    lens.style.top = y + 'px';
+    lensImg.style.left = -(x * ZOOM - LENS_R) + 'px';
+    lensImg.style.top = -(y * ZOOM - LENS_R) + 'px';
+  });
+});
   </script>
 
 </body>
