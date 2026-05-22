@@ -1717,8 +1717,8 @@
 
 
 <div style="position:relative; width:100%;">
-  <img id="panel-a" src="images/panelsa.png" style="width:100%; display:block;">
-  <img id="panel-b" src="images/panelsb.png" style="width:100%; display:block; position:absolute; inset:0; opacity:0;">
+  <img id="panel-a" src="images/loadingaa.png" style="width:100%; display:block;">
+  <img id="panel-b" src="images/loadingbb.png" style="width:100%; display:block; position:absolute; inset:0; opacity:0;">
 </div>
 
 <script>
@@ -1727,8 +1727,8 @@
     const b = document.getElementById('panel-b');
     setInterval(() => {
       const aVisible = a.style.opacity !== '0';
-      a.style.transition = 'opacity 0.3s';
-      b.style.transition = 'opacity 0.3s';
+      a.style.transition = 'opacity 0.5s';
+      b.style.transition = 'opacity 0.1s';
       a.style.opacity = aVisible ? '0' : '1';
       b.style.opacity = aVisible ? '1' : '0';
     }, 1000);
