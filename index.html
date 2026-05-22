@@ -113,33 +113,45 @@
       overflow: hidden;
     }
 
-    .hero-bg {
+    .hero-video-bg {
       position: absolute;
       inset: 0;
-      background: var(--white);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       z-index: 0;
+    }
+
+    /* dark overlay so text remains readable */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hero-label {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       font-family: 'Azeret Mono', monospace;
       font-size: 0.975rem;
       font-weight: 300;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--medium);
+      color: rgba(255,255,255,0.7);
       margin-bottom: 1.5rem;
     }
 
     .hero h1 {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       font-size: clamp(4rem, 10vw, 9rem);
       font-weight: 100;
       line-height: 0.9;
       letter-spacing: -0.02em;
-      color: var(--black);
+      color: var(--white);
       margin-bottom: 0.5rem;
     }
 
@@ -156,12 +168,12 @@
       position: absolute;
       bottom: 2rem;
       right: 3rem;
-      z-index: 1;
+      z-index: 2;
       font-family: 'Azeret Mono', monospace;
       font-size: 0.6rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--medium);
+      color: rgba(255,255,255,0.6);
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -172,7 +184,7 @@
       display: block;
       width: 40px;
       height: 1px;
-      background: var(--medium);
+      background: rgba(255,255,255,0.6);
     }
 
     /* EVOLUTION VERTICAL GRID */
@@ -184,26 +196,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
-    }
-
-    .evolution-v-arrows {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
-      padding: 0.75rem 0;
-    }
-
-    .evolution-arrow-v {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .evolution-arrow-v-line {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .evolution-arrow-v-line::before {
@@ -222,17 +214,6 @@
       color: var(--medium);
       line-height: 1;
       margin-top: -2px;
-    }
-
-    .evolution-arrow-label {
-      font-family: 'Azeret Mono', monospace;
-      font-size: 0.55rem;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--medium);
-      text-align: center;
-      white-space: nowrap;
     }
 
     /* VIDEO SECTION */
@@ -294,10 +275,10 @@
 
     /* META BLOCK */
     .meta-section {
-      padding: 0.5rem 1.5rem 1.5rem;
+      padding: 1.5rem 1.5rem 20rem;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
       align-items: start;
     }
 
@@ -338,7 +319,7 @@
     .video-decay-background {
       position: relative;
       width: 100%;
-      padding: 100rem 1.5rem;
+      padding: 50rem 1.5rem;
       overflow: visible;
       z-index: 1;
     }
@@ -378,6 +359,14 @@
       align-items: start;
     }
 
+     .production-pipeline {
+      padding: 0.5rem 1.5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0rem;
+      align-items: start;
+    }
+
     /* ACCORDION */
     .accordion-section {
       background: var(--white);
@@ -393,9 +382,9 @@
       background: var(--white);
       border: none;
       cursor: pointer;
-      padding: 0.2rem 0;
+      padding: 0.1rem 0;
       display: grid;
-      grid-template-columns: 50% 6.5% 43.5%;
+      grid-template-columns: 50% 1fr 100px;
       align-items: center;
       text-align: left;
     }
@@ -529,64 +518,17 @@
 
     /* PRODUCTION */
     .production-section {
-      padding: 0.5rem 1.5rem 0.5rem;
+      padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 0rem;
       align-items: start;
     }
 
-    /* PROCESS LINES */
-    .process-lines-wrapper {
-      position: relative;
-      padding: 0.5rem 0rem 20rem;
-    }
-
-    .process-lines-inner::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: var(--line-top, 0px);
-      height: var(--line-height, 0px);
-      transform: translateX(-50%);
-      width: 1px;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 0;
-    }
-
-    .process-line::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
+    /* PROCESS LINES — now accordion-style */
+    .process-accordion-section {
       background: var(--white);
-      border: 1px solid var(--black);
-      z-index: 2;
-    }
-
-    .process-lines-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .process-line {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 3rem 1.5rem 0.5rem;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .process-line img {
-      width: 100%;
-      aspect-ratio: 16/6;
-      object-fit: cover;
-      display: block;
+      padding: 0.5rem 1.5rem 15rem;
     }
 
     /* PROTOTYPE SPLIT */
@@ -780,7 +722,7 @@
       aspect-ratio: 4/3;
     }
 
-      .img-block.evolution {
+    .img-block.evolution {
       aspect-ratio: 3/3;
     }
 
@@ -833,121 +775,68 @@
       transform: none;
     }
 
-    /* ─── INDIVIDUAL SECTION SPACERS ─────────────────────────────────────────
-       Naming convention: spacing before a section lives on that section.
-       Each class = 0.5rem top + custom bottom.
-    ──────────────────────────────────────────────────────────────────────── */
+    /* ─── INDIVIDUAL SECTION SPACERS ───────────────────────────────────── */
 
-    /* video-trailer: no extra top (video-section already has margin: 0.5rem 0) */
-
-    /* evolution heading block */
     .evolution-heading {
       padding: 0.5rem 1.5rem 0;
     }
 
-    /* evolution-grid-v top already 0.5rem set above */
-
-    /* the big poem / video decay section: keep its own 100rem padding */
-
-    /* spacer before materialization (replaces old 10rem inside video-decay) */
-    .spacer-before-materialization { padding-top: 0; } /* already inside video-decay */
-
-    /* spacer before materials-stat */
     .spacer-before-stat {
       padding: 0.5rem 0 0;
     }
 
-    /* spacer before gradient diagram section */
     .spacer-gradient-diagram {
       padding: 0.5rem 0 20rem;
     }
 
-    /* spacer before mad diagram */
     .spacer-mad-diagram {
       padding: 0.5rem 0 0;
     }
 
-    /* spacer before bubbub */
-    .spacer-bubbub {
-      padding: 0.5rem 0 15rem;
-    }
-
-    /* bubbub caption row */
-    .bubbub-caption-row {
-      padding: 0.5rem 1.5rem 0;
-    }
-
-    /* spacer before panel full/closeup */
     .spacer-panel-photos {
       padding: 0.5rem 0 0;
     }
 
-    /* spacer before bending video */
     .spacer-bending {
       padding: 0.5rem 0 0;
     }
 
-    /* spacer before closec */
-    .spacer-closec {
-      padding: 0.5rem 0 0;
-    }
-
-    /* spacer before closea */
     .spacer-closea {
       padding: 0.5rem 0 0;
     }
 
-    /* spacer before closeb */
-    .spacer-closeb {
-      padding: 0.5rem 0 10rem;
-    }
-
-    /* spacer before construction section (replaces 35rem padding-top) */
     .spacer-before-construction {
       padding: 20rem 0 0.5rem;
     }
 
-    /* spacer before boneglue grid */
     .spacer-boneglue-grid {
       padding: 0.5rem 0 25rem;
     }
 
-    /* spacer before beam diagram */
     .spacer-beam-diagram {
       padding: 0.5rem 0 0.5rem;
     }
 
-    /* spacer before riesel grid */
-    .spacer-riesel-grid {
-      padding: 0.5rem 0 25rem;
-    }
-
-    /* spacer before beam wrap */
     .spacer-beam-wrap {
       padding: 0.5rem 0 20rem;
     }
 
-    /* spacer before production section */
     .spacer-before-production {
-      padding: 0.5rem 0 0.5rem;
+      padding: 30rem 0 0.5rem;
     }
 
-    /* spacer before prototype section */
     .spacer-before-prototype {
       padding: 0.5rem 0 15rem;
     }
 
-    /* spacer before panel+closeup grid (prototype) */
     .spacer-prototype-photos {
       padding: 0.5rem 0 20rem;
     }
 
-    /* spacer before proposal grid */
     .spacer-proposal-grid {
       padding: 0.5rem 0 0;
     }
 
-    /* proposal-grid bottom */
     .proposal-grid {
       padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
@@ -955,31 +844,20 @@
       gap: 1.5rem;
     }
 
-    /* spacer before flexiganz fullwidth */
     .spacer-flexiganz {
       padding: 0.5rem 0 10rem;
     }
 
-    /* spacer before contact */
     .spacer-before-contact {
       padding: 0.5rem 0 0;
     }
 
-    /* spacer before acknowledgements */
     .spacer-before-ack {
       padding: 0.5rem 0 0;
     }
 
-    /* ─── SECTION-SPECIFIC GRID WRAPPERS ─────────────────────────────────── */
+    /* ─── SECTION-SPECIFIC GRID WRAPPERS ─────────────────────────────── */
 
-    .panels-grid-2 {
-      padding: 0.5rem 1.5rem 10rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    /* center-column wrapper: 1fr / content / 1fr */
     .fullwidth-half {
       padding: 0.5rem 1.5rem 10rem;
       display: grid;
@@ -987,7 +865,7 @@
       gap: 1.5rem;
     }
 
-       .fullwidth-full {
+    .fullwidth-full {
       padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
       grid-template-columns: 1fr;
@@ -999,10 +877,10 @@
       display: grid;
       grid-template-columns: 35% 1fr 45%;
       gap: 1.5rem;
-       align-items: end;
+      align-items: end;
     }
 
-     .prototype-grid-3 {
+    .prototype-grid-3 {
       padding: 0rem 1.5rem 0rem;
       display: grid;
       grid-template-columns: 35% 1fr 35%;
@@ -1022,14 +900,7 @@
       gap: 1.5rem;
     }
 
-    .bubbub-grid-1 {
-      padding: 0.5rem 1.5rem 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      gap: 0.5rem;
-    }
-
-    /* ─── MAGNIFIER LENS ─────────────────────────────────────────────────── */
+    /* ─── ZOOM WRAP ─────────────────────────────────────── */
     .zoom-wrap {
       position: relative;
       display: block;
@@ -1067,17 +938,49 @@
       display: block;
     }
 
-    /* ─── BEAM WRAP LAYOUT ───────────────────────────────────────────────── */
+    /* ─── BEAM WRAP LAYOUT ───────────────────────────────────────────── */
     .beam-wrap-grid {
       padding: 0rem 1.5rem 0rem;
       display: grid;
       grid-template-columns: 35% 1fr 45%;
       gap: 1.5rem;
-      align-items: end; /* text aligns to bottom */
+      align-items: end;
     }
 
     .beam-wrap-caption {
       text-align: left;
+    }
+
+    /* ─── LOADING GRID ───────────────────────────────────────────────── */
+    /* sweep animation for the loader cell */
+    @keyframes grid-sweep {
+      0%   { background-position: -100% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .flexi-grid-cell {
+      aspect-ratio: 3/5;
+      border-radius: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--black);
+    }
+
+    .flexi-grid-cell.filled {
+      background: var(--medium);
+    }
+
+    .flexi-grid-cell.loader {
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--medium) 40%,
+        var(--medium) 60%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      animation: grid-sweep 2s linear infinite;
     }
 
     @media (max-width: 900px) {
@@ -1139,10 +1042,11 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO: full-screen video background -->
   <section class="hero">
-    <img src="images/_top.png" class="hero-bg"
-      style="position: absolute; top: 0; left: 0; height: 100%; width: 130%; object-fit: scale-down; object-position: left center; transform: translateX(20%) translateY(0%);">
+    <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
+      <source src="videos/trailer.mp4" type="video/mp4">
+    </video>
     <p class="hero-label">Project</p>
     <h1>FLEXI<br><em>NAME</em></h1>
     <span class="hero-scroll-hint">Scroll</span>
@@ -1156,12 +1060,9 @@
       <p class="meta-value">Mayer, Marco</p>
     </div>
     <div class="meta-item">
-      <span class="meta-label">Year</span>
-      <p class="meta-value">2025 – ongoing</p>
-    </div>
-    <div class="meta-item">
       <span class="meta-label">Location</span>
       <p class="meta-value">Room 264/2, Vienna, Austria</p>
+       <p class="meta-value">2025 – ongoing</p>
     </div>
     <div class="meta-item">
       <span class="meta-label">Topics</span>
@@ -1169,16 +1070,9 @@
     </div>
   </div>
 
-  <!-- VIDEO TRAILER -->
-  <div class="video-section reveal" id="intro">
-    <video class="bg-video" muted loop playsinline preload="auto">
-      <source src="videos/trailer.mp4" type="video/mp4">
-    </video>
-    <p class="video-caption">PROJECT TRAILER</p>
-  </div>
 
   <!-- INTRODUCTION -->
-  <section class="intro-section reveal">
+  <section class="intro-section reveal" id="intro">
     <div>
       <p class="section-heading">introduction</p>
     </div>
@@ -1195,8 +1089,7 @@
       integrated systems.</p>
   </section>
 
-
-  <!-- EVOLUTION GRID: wing / skizze2 / skizze1 → ansicht / wing / skizze2 -->
+  <!-- EVOLUTION GRID -->
   <div class="evolution-grid-v reveal">
     <div class="evolution-v-row">
       <div>
@@ -1210,9 +1103,8 @@
       </div>
     </div>
   </div>
- 
 
-  <!-- VIDEO DECAY / POEM -->
+  <!-- VIDEO DECAY / POEM — padding halved to 50rem -->
   <div class="video-decay-background">
     <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="videos/transition.mp4"></video>
     <div class="video-decay-content">
@@ -1406,14 +1298,14 @@
     </div>
   </div>
 
-  <!-- VIDEO: Flexi_76 – material preparation -->
+  <!-- VIDEO: Flexi_76 -->
   <div class="video-section reveal">
     <video class="bg-video" muted loop playsinline preload="auto">
       <source src="videos/Flexi_76.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- COOKING GRID: cook1–cook7 -->
+  <!-- COOKING GRID -->
   <div class="cook-grid-1 reveal">
     <div>
       <img src="images/cook1.jpg" class="img-block landscape" style="object-fit: cover;">
@@ -1443,13 +1335,13 @@
       <img src="images/cook7.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">dipping</p>
     </div>
-     <div>
+    <div>
       <img src="images/cook8.jpg" class="img-block landscape" style="object-fit: cover;">
       <p class="img-caption">drying</p>
     </div>
   </div>
 
-  <!-- GRADIENT DIAGRAM: gradient.png -->
+  <!-- GRADIENT DIAGRAM -->
   <div class="spacer-gradient-diagram">
     <div class="panels-grid-1 reveal">
       <div>
@@ -1461,7 +1353,7 @@
     </div>
   </div>
 
-  <!-- MAD DIAGRAM: ansicht.png + gradient.png overlay -->
+  <!-- MAD DIAGRAM -->
   <div class="spacer-mad-diagram">
     <div class="panels-grid-1 reveal">
       <div>
@@ -1477,7 +1369,7 @@
     </div>
   </div>
 
-    <!-- VIDEO: bending.mp4 -->
+  <!-- VIDEO: bending.mp4 -->
   <div class="spacer-bending">
     <div class="fullwidth-full reveal">
       <div></div>
@@ -1495,8 +1387,7 @@
     </div>
   </div>
 
-
- <!-- IMAGE: closea.png -->
+  <!-- IMAGE: closeup —  via .zoom-wrap transform -->
   <div class="spacer-closea">
     <div class="fullwidth-half reveal">
       <div></div>
@@ -1509,7 +1400,6 @@
       <div></div>
     </div>
   </div>
-
 
   <!-- CONSTRUCTION -->
   <div class="spacer-before-construction">
@@ -1536,7 +1426,7 @@
     </section>
   </div>
 
-  <!-- BONEGLUE GRID: bonegluepetrilarge / boneglue3 / boneglue4 -->
+  <!-- BONEGLUE GRID -->
   <div class="spacer-boneglue-grid">
     <div class="img-grid-3 reveal">
       <div>
@@ -1551,14 +1441,21 @@
     </div>
   </div>
 
-  <!-- VIDEO: Flexi_99 – boneglue cookup -->
-  <div class="video-section reveal">
+<!-- VIDEO: Flexi_99 + Flexi_107 -->
+<div style="padding: 0.5rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+  <div class="video-section reveal" margin: 0;">
     <video class="bg-video" muted loop playsinline preload="auto">
       <source src="videos/Flexi_99.mp4" type="video/mp4">
     </video>
   </div>
+  <div class="video-section reveal" margin: 0;">
+    <video class="bg-video" muted loop playsinline preload="auto">
+      <source src="videos/Flexi_107.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
 
-  <!-- BEAM DIAGRAM: beamlayer.jpg -->
+  <!-- BEAM DIAGRAM -->
   <div class="spacer-beam-diagram">
     <div class="beam-grid reveal">
       <div>
@@ -1568,7 +1465,7 @@
     </div>
   </div>
 
-  <!-- MAD DIAGRAM: ansicht.png + gradient.png overlay -->
+  <!-- MAD DIAGRAM beam -->
   <div class="spacer-mad-diagram">
     <div class="panels-grid-1 reveal">
       <div>
@@ -1583,7 +1480,7 @@
     </div>
   </div>
 
-  <!-- BEAM WRAP: wrap.png / caption / wrap2.png -->
+  <!-- BEAM WRAP -->
   <div class="spacer-beam-wrap">
     <div class="beam-wrap-grid reveal">
       <div>
@@ -1601,19 +1498,12 @@
     </div>
   </div>
 
-  <!-- VIDEO: Flexi_107 – boneglue bending -->
-  <div class="video-section reveal">
-    <video class="bg-video" muted loop playsinline preload="auto">
-      <source src="videos/Flexi_107.mp4" type="video/mp4">
-    </video>
-  </div>
-
 
   <!-- PRODUCTION -->
   <div class="spacer-before-production">
     <section class="production-section reveal" id="production">
       <div>
-        <p class="section-heading2">PRODUCTION</p>
+        <p class="section-heading">PRODUCTION</p>
       </div>
       <div>
         <p class="body-text">In Flexi I we focused on flexi flexi of a flexi flexi for flexi flexi flexi. We showed that
@@ -1625,83 +1515,162 @@
     </section>
   </div>
 
-  <!-- PROCESS LINES -->
-  <div class="process-lines-wrapper">
-    <div class="process-lines-inner">
-      <div class="process-line">
-        <img src="images/formwork.PNG">
-        <div>
-          <p class="section-heading3">panel formwork</p>
-          <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-      </div>
-      <div class="process-line">
-        <div>
-          <p class="section-heading4">textile base</p>
-          <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <img src="images/knitmachine.jpg">
-      </div>
-      <div class="process-line">
-        <img src="images/materialcook.PNG">
-        <div>
-          <p class="section-heading3">material cooking</p>
-          <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-      </div>
-      <div class="process-line">
-        <div>
-          <p class="section-heading4">controlled drying</p>
-          <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <img src="images/drying.PNG">
-      </div>
-      <div class="process-line">
-        <img src="images/assemble.PNG">
-        <div>
-          <p class="section-heading3">assembly (panels)</p>
-          <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-      </div>
-      <div class="process-line">
-        <div>
-          <p class="section-heading4">beam preproduction</p>
-          <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <img src="images/beampre.PNG">
-      </div>
-      <div class="process-line">
-        <img src="images/adaptive.PNG">
-        <div>
-          <p class="section-heading3">adaptive forming beam</p>
-          <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-      </div>
-      <div class="process-line">
-        <div>
-          <p class="section-heading4">reinforcement - installation</p>
-          <p class="body-text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-        <img src="images/reinforce.PNG">
-      </div>
-      <div class="process-line">
-        <img src="images/e.jpeg">
-        <div>
-          <p class="section-heading3">decay</p>
-          <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-        </div>
-      </div>
+    <!-- production pipeline heading-->
+  <div class="spacer-before-stat">
+    <div class="production-pipeline">
+      <span class="stat-number3"></span>
+      <span class="stat-number3">pipeline</span>
     </div>
   </div>
 
-  <!-- PANEL + CLOSEUP GRID: sidehand / scar -->
+  <!-- PROCESS ACCORDION — same structure as materials accordion above -->
+  <div class="accordion-section process-accordion-section reveal">
+
+    <div class="accordion-item" id="proc-formwork">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-formwork')">
+        <span class="accordion-index"></span>
+        <span class="accordion-title">panel formwork</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/formwork.PNG" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-textile">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-textile')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">textile base panel</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/knitmachine.jpg" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-cooking">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-cooking')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">material matrix cookup</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/materialcook.PNG" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-drying">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-drying')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">controlled drying process</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/drying.PNG" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-assembly">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-assembly')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">panel assembly</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/assemble.PNG" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-beampre">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-beampre')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">beam structure</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/beampre.PNG" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-adaptive">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-adaptive')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">adaptive forming beam</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/adaptive.PNG" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-reinforce">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-reinforce')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">on site reinforcement – installation</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/reinforce.PNG" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item" id="proc-decay">
+      <button class="accordion-trigger" onclick="toggleAccordion('proc-decay')">
+       <span class="accordion-index"></span>
+        <span class="accordion-title">decay</span>
+        <span class="accordion-arrow"></span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <img src="images/e.jpeg" class="accordion-img" style="object-fit:cover;">
+          <p></p>
+          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PANEL + CLOSEUP GRID -->
   <div class="spacer-prototype-photos">
     <div class="prototype-grid-2 reveal">
       <div>
         <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
       </div>
-        <p class="img-caption" style="text-align:justify; hyphens: auto;">during an earlier stage of the project (02/26) a small number of panels 
-          has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
+      <p class="img-caption" style="text-align:justify; hyphens: auto;">during an earlier stage of the project (02/26) a small number of panels 
+        has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
       <div>
         <img src="images/scar.png" class="img-block landscape" style="object-fit: cover;">
       </div>
@@ -1727,7 +1696,7 @@
     </div>
   </section>
 
-  <!-- PROPOSAL GRID: c.jpeg (birth) / 3.png (old) -->
+  <!-- PROPOSAL GRID -->
   <div class="spacer-proposal-grid">
     <div class="proposal-grid reveal">
       <div>
@@ -1741,9 +1710,9 @@
     </div>
   </div>
 
-    <!-- LOADING GRID -->
+  <!-- LOADING GRID — connected rectangles, black outline, medium fill, first empty = looping loader -->
   <div style="padding:0.5rem 1.5rem 15rem;">
-    <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(89,1fr);gap:clamp(0px,0vw,2px);"></div>
+    <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(89,1fr);gap:0;"></div>
   </div>
 
   <!-- CONTACT -->
@@ -1842,7 +1811,7 @@
       }, { passive: true });
     })();
 
-    // Accordion
+    // Accordion (shared by materials + process sections)
     function toggleAccordion(id) {
       const item = document.getElementById(id);
       const isOpen = item.classList.contains('open');
@@ -1886,88 +1855,58 @@
       updateVideoDecay();
     })();
 
-    // Process line: vertical center line from first to last
-    function updateProcessLine() {
-      const inner = document.querySelector('.process-lines-inner');
-      const lines = document.querySelectorAll('.process-line');
-      if (!inner || lines.length === 0) return;
-      const parentRect = inner.getBoundingClientRect();
-      const firstRect = lines[0].getBoundingClientRect();
-      const lastRect = lines[lines.length - 1].getBoundingClientRect();
-      const top = firstRect.top - parentRect.top + firstRect.height / 2;
-      const bottom = lastRect.top - parentRect.top + lastRect.height / 2;
-      inner.style.setProperty('--line-top', top + 'px');
-      inner.style.setProperty('--line-height', (bottom - top) + 'px');
-    }
-    window.addEventListener('load', updateProcessLine);
-    window.addEventListener('resize', updateProcessLine);
-
-// loading grid
-    (function(){
+    // Loading grid: connected cells, black outline, medium fill
+    // First unfilled cell = looping progress sweep animation
+    (function () {
       const grid = document.getElementById('flexi-grid');
-      const style = document.createElement('style');
-      style.textContent = '@keyframes ld-spin{to{transform:rotate(360deg);}}';
-      document.head.appendChild(style);
       const label = 'panelproduction';
-for(let i = 0; i < 89; i++){
-  const sq = document.createElement('div');
-  sq.style.cssText = 'aspect-ratio:3/5;border-radius:1px;display:flex;align-items:center;justify-content:center;';
-  if(i < label.length){
-    sq.style.cssText += 'background:var(--medium);';
-    sq.style.fontFamily = "'Hanken Grotesk', sans-serif";
-    sq.style.fontSize = 'clamp(4px, 0.9vw, 11px)';
-    sq.style.fontWeight = '400';
-    sq.style.color = '#fff';
-    sq.textContent = label[i].toUpperCase();
-  } else if(i === 89){
-    sq.style.cssText += 'border:1.5px solid var(--medium);';
-    const sp = document.createElement('div');
-    sp.style.cssText = 'width:55%;height:55%;border-radius:50%;border:1px solid transparent;border-top-color:var(--dark);animation:ld-spin 0.7s linear infinite;';
-    sq.appendChild(sp);
-  } else if(i < 34){
-    sq.style.cssText += 'background:var(--medium);';
-  } else {
-    sq.style.cssText += 'border:1px solid var(--dark);';
-  }
-  grid.appendChild(sq);
-}
+      const total = 89;
+      const filledCount = label.length; // 15 filled with letters + color
+
+      for (let i = 0; i < total; i++) {
+        const sq = document.createElement('div');
+        sq.className = 'flexi-grid-cell';
+
+        if (i < filledCount) {
+          // letter cells — filled with medium background
+          sq.classList.add('filled');
+          sq.style.fontFamily = "'Hanken Grotesk', sans-serif";
+          sq.style.fontSize = 'clamp(4px, 0.9vw, 11px)';
+          sq.style.fontWeight = '400';
+          sq.style.color = '#fff';
+          sq.textContent = label[i].toUpperCase();
+        } else if (i === filledCount) {
+          // first empty cell — animated loader sweep
+          sq.classList.add('loader');
+        }
+        // remaining cells: just border, no fill (default .flexi-grid-cell)
+
+        grid.appendChild(sq);
+      }
     })();
 
-    // Magnifier lens: closea, closeb, closec
+    // Magnifier lens
     const ZOOM = 3;
-    const LENS_R = 80; // radius in px
+    const LENS_R = 80;
 
     document.querySelectorAll('.zoom-wrap').forEach(wrap => {
       const lens = wrap.querySelector('.zoom-lens');
       const lensImg = lens.querySelector('img');
 
       wrap.addEventListener('mouseenter', () => {
-        // set lens image size once we know wrap dimensions
         const w = wrap.offsetWidth;
-        const h = wrap.querySelector('img').offsetHeight;
         lensImg.style.width = (w * ZOOM) + 'px';
-        lensImg.style.height = (h * ZOOM) + 'px';
+        lensImg.style.height = (wrap.querySelector('img:not(.zoom-lens img)').offsetHeight * ZOOM) + 'px';
       });
 
       wrap.addEventListener('mousemove', (e) => {
         const rect = wrap.getBoundingClientRect();
-        const baseImg = wrap.querySelector('img:not(.zoom-lens img)');
-        const imgH = baseImg.offsetHeight;
-        const w = wrap.offsetWidth;
-
-        // cursor position relative to wrap
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
-        // position lens center on cursor
         lens.style.left = x + 'px';
         lens.style.top = y + 'px';
-
-        // offset background image inside lens so the zoomed area aligns
-        const bgX = -(x * ZOOM - LENS_R);
-        const bgY = -(y * ZOOM - LENS_R);
-        lensImg.style.left = bgX + 'px';
-        lensImg.style.top = bgY + 'px';
+        lensImg.style.left = -(x * ZOOM - LENS_R) + 'px';
+        lensImg.style.top = -(y * ZOOM - LENS_R) + 'px';
       });
     });
   </script>
