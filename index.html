@@ -1924,29 +1924,41 @@
     })();
 // Magnifier lens
 const ZOOM = 3;
-const LENS_R = 137.5;
+    const LENS_R = 80; // radius in px
 
-document.querySelectorAll('.zoom-wrap').forEach(wrap => {
-  const lens = wrap.querySelector('.zoom-lens');
-  const lensImg = lens.querySelector('img');
+    document.querySelectorAll('.zoom-wrap').forEach(wrap => {
+      const lens = wrap.querySelector('.zoom-lens');
+      const lensImg = lens.querySelector('img');
 
-  wrap.addEventListener('mouseenter', () => {
-    const w = wrap.offsetWidth;
-    const h = wrap.querySelector('img:not([class])').offsetHeight;
-    lensImg.style.width = (w * ZOOM) + 'px';
-    lensImg.style.height = (h * ZOOM) + 'px';
-  });
+      wrap.addEventListener('mouseenter', () => {
+        // set lens image size once we know wrap dimensions
+        const w = wrap.offsetWidth;
+        const h = wrap.querySelector('img').offsetHeight;
+        lensImg.style.width = (w * ZOOM) + 'px';
+        lensImg.style.height = (h * ZOOM) + 'px';
+      });
 
-  wrap.addEventListener('mousemove', (e) => {
-    const rect = wrap.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    lens.style.left = x + 'px';
-    lens.style.top = y + 'px';
-    lensImg.style.left = -(x * ZOOM - LENS_R) + 'px';
-    lensImg.style.top = -(y * ZOOM - LENS_R) + 'px';
-  });
-});
+      wrap.addEventListener('mousemove', (e) => {
+        const rect = wrap.getBoundingClientRect();
+        const baseImg = wrap.querySelector('img:not(.zoom-lens img)');
+        const imgH = baseImg.offsetHeight;
+        const w = wrap.offsetWidth;
+
+        // cursor position relative to wrap
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // position lens center on cursor
+        lens.style.left = x + 'px';
+        lens.style.top = y + 'px';
+
+        // offset background image inside lens so the zoomed area aligns
+        const bgX = -(x * ZOOM - LENS_R);
+        const bgY = -(y * ZOOM - LENS_R);
+        lensImg.style.left = bgX + 'px';
+        lensImg.style.top = bgY + 'px';
+      });
+    });
   </script>
 
 </body>
