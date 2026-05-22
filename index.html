@@ -122,7 +122,6 @@
       z-index: 0;
     }
 
-    /* dark overlay so text remains readable */
     .hero::after {
       content: '';
       position: absolute;
@@ -310,7 +309,6 @@
       align-items: start;
     }
 
-    /* EVOLUTION HEADING */
     .evolution-heading {
       padding: 0.5rem 1.5rem 0;
     }
@@ -359,7 +357,7 @@
       align-items: start;
     }
 
-     .production-pipeline {
+    .production-pipeline {
       padding: 0.5rem 1.5rem 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -525,7 +523,6 @@
       align-items: start;
     }
 
-    /* PROCESS LINES — now accordion-style */
     .process-accordion-section {
       background: var(--white);
       padding: 0.5rem 1.5rem 15rem;
@@ -775,67 +772,24 @@
       transform: none;
     }
 
-    /* ─── INDIVIDUAL SECTION SPACERS ───────────────────────────────────── */
-
-    .evolution-heading {
-      padding: 0.5rem 1.5rem 0;
-    }
-
-    .spacer-before-stat {
-      padding: 0.5rem 0 0;
-    }
-
-    .spacer-gradient-diagram {
-      padding: 0.5rem 0 20rem;
-    }
-
-    .spacer-mad-diagram {
-      padding: 0.5rem 0 0;
-    }
-
-    .spacer-panel-photos {
-      padding: 0.5rem 0 0;
-    }
-
-    .spacer-bending {
-      padding: 0.5rem 0 0;
-    }
-
-    .spacer-closea {
-      padding: 0.5rem 0 0;
-    }
-
-    .spacer-before-construction {
-      padding: 20rem 0 0.5rem;
-    }
-
-    .spacer-boneglue-grid {
-      padding: 0.5rem 0 25rem;
-    }
-
-    .spacer-beam-diagram {
-      padding: 0.5rem 0 0.5rem;
-    }
-
-    .spacer-beam-wrap {
-      padding: 0.5rem 0 20rem;
-    }
-
-    .spacer-before-production {
-      padding: 30rem 0 0.5rem;
-    }
-
-    .spacer-before-prototype {
-      padding: 0.5rem 0 15rem;
-    }
-
-    .spacer-prototype-photos {
-      padding: 0.5rem 0 20rem;
-    }
-
-    .spacer-proposal-grid {
-      padding: 0.5rem 0 0;
-    }
+    /* SPACERS */
+    .spacer-before-stat { padding: 0.5rem 0 0; }
+    .spacer-gradient-diagram { padding: 0.5rem 0 20rem; }
+    .spacer-mad-diagram { padding: 0.5rem 0 0; }
+    .spacer-panel-photos { padding: 0.5rem 0 0; }
+    .spacer-bending { padding: 0.5rem 0 0; }
+    .spacer-closea { padding: 0.5rem 0 0; }
+    .spacer-before-construction { padding: 20rem 0 0.5rem; }
+    .spacer-boneglue-grid { padding: 0.5rem 0 25rem; }
+    .spacer-beam-diagram { padding: 0.5rem 0 0.5rem; }
+    .spacer-beam-wrap { padding: 0.5rem 0 20rem; }
+    .spacer-before-production { padding: 30rem 0 0.5rem; }
+    .spacer-before-prototype { padding: 0.5rem 0 15rem; }
+    .spacer-prototype-photos { padding: 0.5rem 0 20rem; }
+    .spacer-proposal-grid { padding: 0.5rem 0 0; }
+    .spacer-flexiganz { padding: 0.5rem 0 10rem; }
+    .spacer-before-contact { padding: 0.5rem 0 0; }
+    .spacer-before-ack { padding: 0.5rem 0 0; }
 
     .proposal-grid {
       padding: 0.5rem 1.5rem 1.5rem;
@@ -844,20 +798,7 @@
       gap: 1.5rem;
     }
 
-    .spacer-flexiganz {
-      padding: 0.5rem 0 10rem;
-    }
-
-    .spacer-before-contact {
-      padding: 0.5rem 0 0;
-    }
-
-    .spacer-before-ack {
-      padding: 0.5rem 0 0;
-    }
-
-    /* ─── SECTION-SPECIFIC GRID WRAPPERS ─────────────────────────────── */
-
+    /* GRID WRAPPERS */
     .fullwidth-half {
       padding: 0.5rem 1.5rem 10rem;
       display: grid;
@@ -900,7 +841,7 @@
       gap: 1.5rem;
     }
 
-    /* ─── ZOOM WRAP ─────────────────────────────────────── */
+    /* ZOOM WRAP — transform removed, JS handles centering */
     .zoom-wrap {
       position: relative;
       display: block;
@@ -924,7 +865,6 @@
       display: none;
       overflow: hidden;
       z-index: 10;
-      transform: translate(-50%, -50%);
     }
 
     .zoom-lens img {
@@ -938,7 +878,7 @@
       display: block;
     }
 
-    /* ─── BEAM WRAP LAYOUT ───────────────────────────────────────────── */
+    /* BEAM WRAP LAYOUT */
     .beam-wrap-grid {
       padding: 0rem 1.5rem 0rem;
       display: grid;
@@ -951,8 +891,7 @@
       text-align: left;
     }
 
-    /* ─── LOADING GRID ───────────────────────────────────────────────── */
-    /* sweep animation for the loader cell */
+    /* LOADING GRID */
     @keyframes grid-sweep {
       0%   { background-position: -100% 0; }
       100% { background-position: 200% 0; }
@@ -984,45 +923,15 @@
     }
 
     @media (max-width: 900px) {
-      nav {
-        padding: 1.25rem 1.5rem;
-      }
-      nav .nav-links {
-        display: none;
-      }
-      .hero {
-        padding: 0 1.5rem 1.5rem;
-      }
-      .hero h1 {
-        font-size: clamp(3rem, 12vw, 5rem);
-      }
-      .meta-section {
-        grid-template-columns: 1fr 1fr;
-        padding: 1.5rem 1.5rem;
-        gap: 2rem;
-      }
-      .intro-section,
-      .materialization-section,
-      .contact-section,
-      .acknowledgements-section {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
-      }
-      .construction-section,
-      .production-section {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
-      }
-      .img-grid-3 {
-        grid-template-columns: 1fr 1fr;
-        padding: 0 1.5rem;
-      }
-      .panels-grid-2,
-      .proposal-grid,
-      .prototype-section {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
-      }
+      nav { padding: 1.25rem 1.5rem; }
+      nav .nav-links { display: none; }
+      .hero { padding: 0 1.5rem 1.5rem; }
+      .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
+      .meta-section { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.5rem; gap: 2rem; }
+      .intro-section, .materialization-section, .contact-section, .acknowledgements-section { grid-template-columns: 1fr; padding: 1.5rem; }
+      .construction-section, .production-section { grid-template-columns: 1fr; padding: 1.5rem; }
+      .img-grid-3 { grid-template-columns: 1fr 1fr; padding: 0 1.5rem; }
+      .panels-grid-2, .proposal-grid, .prototype-section { grid-template-columns: 1fr; padding: 1.5rem; }
     }
   </style>
 </head>
@@ -1042,7 +951,7 @@
     </ul>
   </nav>
 
-  <!-- HERO: full-screen video background -->
+  <!-- HERO -->
   <section class="hero">
     <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
       <source src="videos/trailer.mp4" type="video/mp4">
@@ -1062,14 +971,13 @@
     <div class="meta-item">
       <span class="meta-label">Location</span>
       <p class="meta-value">Room 264/2, Vienna, Austria</p>
-       <p class="meta-value">2025 – ongoing</p>
+      <p class="meta-value">2025 – ongoing</p>
     </div>
     <div class="meta-item">
       <span class="meta-label">Topics</span>
       <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Life Cycle</p>
     </div>
   </div>
-
 
   <!-- INTRODUCTION -->
   <section class="intro-section reveal" id="intro">
@@ -1104,7 +1012,7 @@
     </div>
   </div>
 
-  <!-- VIDEO DECAY / POEM — padding halved to 50rem -->
+  <!-- VIDEO DECAY / POEM -->
   <div class="video-decay-background">
     <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="videos/transition.mp4"></video>
     <div class="video-decay-content">
@@ -1387,27 +1295,13 @@
     </div>
   </div>
 
-  <!-- IMAGE: closeup —  via .zoom-wrap transform -->
+  <!-- IMAGE: closeup via zoom-wrap -->
   <div class="spacer-closea">
     <div class="fullwidth-half reveal">
       <div></div>
       <div>
         <div class="zoom-wrap" data-src="images/_closeup.jpg">
           <img src="images/_closeupscaled.jpg" style="width:100%; display:block; object-fit: cover;">
-          <div class="zoom-lens"><img src="images/_closeup.jpg" alt=""></div>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-   <!-- IMAGE: closeup -->
-  <div class="spacer-closea">
-    <div class="fullwidth-half reveal">
-      <div></div>
-      <div>
-        <div class="zoom-wrap" data-src="images/_closeup.jpg">
-          <img src="images/_closeupscaled.jpg" style="object-fit: cover;">
           <div class="zoom-lens"><img src="images/_closeup.jpg" alt=""></div>
         </div>
       </div>
@@ -1455,19 +1349,19 @@
     </div>
   </div>
 
-<!-- VIDEO: Flexi_99 + Flexi_107 -->
-<div style="padding: 0.5rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-  <div class="video-section reveal" margin: 0;">
-    <video class="bg-video" muted loop playsinline preload="auto">
-      <source src="videos/Flexi_99.mp4" type="video/mp4">
-    </video>
+  <!-- VIDEO: Flexi_99 + Flexi_107 nebeneinander -->
+  <div style="padding: 0.5rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+    <div class="video-section reveal" style="margin: 0;">
+      <video class="bg-video" muted loop playsinline preload="auto">
+        <source src="videos/Flexi_99.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-section reveal" style="margin: 0;">
+      <video class="bg-video" muted loop playsinline preload="auto">
+        <source src="videos/Flexi_107.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
-  <div class="video-section reveal" margin: 0;">
-    <video class="bg-video" muted loop playsinline preload="auto">
-      <source src="videos/Flexi_107.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
 
   <!-- BEAM DIAGRAM -->
   <div class="spacer-beam-diagram">
@@ -1512,7 +1406,6 @@
     </div>
   </div>
 
-
   <!-- PRODUCTION -->
   <div class="spacer-before-production">
     <section class="production-section reveal" id="production">
@@ -1529,7 +1422,7 @@
     </section>
   </div>
 
-    <!-- production pipeline heading-->
+  <!-- production pipeline heading -->
   <div class="spacer-before-stat">
     <div class="production-pipeline">
       <span class="stat-number3"></span>
@@ -1537,7 +1430,7 @@
     </div>
   </div>
 
-  <!-- PROCESS ACCORDION — same structure as materials accordion above -->
+  <!-- PROCESS ACCORDION -->
   <div class="accordion-section process-accordion-section reveal">
 
     <div class="accordion-item" id="proc-formwork">
@@ -1557,7 +1450,7 @@
 
     <div class="accordion-item" id="proc-textile">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-textile')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">textile base panel</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1572,7 +1465,7 @@
 
     <div class="accordion-item" id="proc-cooking">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-cooking')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">material matrix cookup</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1587,7 +1480,7 @@
 
     <div class="accordion-item" id="proc-drying">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-drying')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">controlled drying process</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1602,7 +1495,7 @@
 
     <div class="accordion-item" id="proc-assembly">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-assembly')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">panel assembly</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1617,7 +1510,7 @@
 
     <div class="accordion-item" id="proc-beampre">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-beampre')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">beam structure</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1632,7 +1525,7 @@
 
     <div class="accordion-item" id="proc-adaptive">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-adaptive')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">adaptive forming beam</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1647,7 +1540,7 @@
 
     <div class="accordion-item" id="proc-reinforce">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-reinforce')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">on site reinforcement – installation</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1662,7 +1555,7 @@
 
     <div class="accordion-item" id="proc-decay">
       <button class="accordion-trigger" onclick="toggleAccordion('proc-decay')">
-       <span class="accordion-index"></span>
+        <span class="accordion-index"></span>
         <span class="accordion-title">decay</span>
         <span class="accordion-arrow"></span>
       </button>
@@ -1723,35 +1616,24 @@
       </div>
     </div>
   </div>
-  
-<div style="padding: 0 0 10rem;">
-<div style="display:grid; grid-template-columns:1fr 1fr; height:100vh;">
-  <div style="position:relative;">
-    <img src="images/loadingaa.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;">
-    <img id="loading-bb" src="images/loadingcc.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0; opacity:0;">
-  </div>
-  <div style="display:flex; align-items:flex-end; padding:1.5rem;">
-    <p class="img-caption" style="text-align:left;">.. currently cooking up a project</p>
-  </div>
-</div>
+
+  <!-- LOADING GRID -->
+  <div style="padding:0.5rem 1.5rem 15rem;">
+    <div id="flexi-grid" style="display:grid;grid-template-columns:repeat(89,1fr);gap:0;"></div>
   </div>
 
-<script>
-  (function(){
-    const bb = document.getElementById('loading-bb');
-    function cycle(){
-      bb.style.transition = 'opacity 1.5s ease';
-      bb.style.opacity = '1';
-      setTimeout(() => {
-        bb.style.transition = 'none';
-        bb.style.opacity = '0';
-        setTimeout(cycle, 500);
-      }, 1500);
-    }
-    cycle();
-  })();
-</script>
-  
+  <!-- LOADING IMAGE -->
+  <div style="padding: 0 0 10rem;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; height:100vh;">
+      <div style="position:relative;">
+        <img src="images/loadingaa.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;">
+        <img id="loading-bb" src="images/loadingcc.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0; opacity:0;">
+      </div>
+      <div style="display:flex; align-items:flex-end; padding:1.5rem;">
+        <p class="img-caption" style="text-align:left;">.. currently cooking up a project</p>
+      </div>
+    </div>
+  </div>
 
   <!-- CONTACT -->
   <div class="spacer-before-contact">
@@ -1849,7 +1731,7 @@
       }, { passive: true });
     })();
 
-    // Accordion (shared by materials + process sections)
+    // Accordion
     function toggleAccordion(id) {
       const item = document.getElementById(id);
       const isOpen = item.classList.contains('open');
@@ -1893,20 +1775,16 @@
       updateVideoDecay();
     })();
 
-    // Loading grid: connected cells, black outline, medium fill
-    // First unfilled cell = looping progress sweep animation
+    // Loading grid
     (function () {
       const grid = document.getElementById('flexi-grid');
       const label = 'panelproduction';
       const total = 89;
-      const filledCount = label.length; // 15 filled with letters + color
-
+      const filledCount = label.length;
       for (let i = 0; i < total; i++) {
         const sq = document.createElement('div');
         sq.className = 'flexi-grid-cell';
-
         if (i < filledCount) {
-          // letter cells — filled with medium background
           sq.classList.add('filled');
           sq.style.fontFamily = "'Hanken Grotesk', sans-serif";
           sq.style.fontSize = 'clamp(4px, 0.9vw, 11px)';
@@ -1914,49 +1792,50 @@
           sq.style.color = '#fff';
           sq.textContent = label[i].toUpperCase();
         } else if (i === filledCount) {
-          // first empty cell — animated loader sweep
           sq.classList.add('loader');
         }
-        // remaining cells: just border, no fill (default .flexi-grid-cell)
-
         grid.appendChild(sq);
       }
     })();
-// Magnifier lens
-const ZOOM = 3;
-    const LENS_R = 80; // radius in px
+
+    // Loading image cycle
+    (function () {
+      const bb = document.getElementById('loading-bb');
+      function cycle() {
+        bb.style.transition = 'opacity 1.5s ease';
+        bb.style.opacity = '1';
+        setTimeout(() => {
+          bb.style.transition = 'none';
+          bb.style.opacity = '0';
+          setTimeout(cycle, 500);
+        }, 1500);
+      }
+      cycle();
+    })();
+
+    // Magnifier lens — transform removed from CSS, JS handles centering
+    const ZOOM = 3;
+    const LENS_HALF = 137.5; // half of 275px lens diameter
 
     document.querySelectorAll('.zoom-wrap').forEach(wrap => {
       const lens = wrap.querySelector('.zoom-lens');
       const lensImg = lens.querySelector('img');
 
       wrap.addEventListener('mouseenter', () => {
-        // set lens image size once we know wrap dimensions
         const w = wrap.offsetWidth;
-        const h = wrap.querySelector('img').offsetHeight;
+        const h = wrap.querySelector('img:not([class])').offsetHeight;
         lensImg.style.width = (w * ZOOM) + 'px';
         lensImg.style.height = (h * ZOOM) + 'px';
       });
 
       wrap.addEventListener('mousemove', (e) => {
         const rect = wrap.getBoundingClientRect();
-        const baseImg = wrap.querySelector('img:not(.zoom-lens img)');
-        const imgH = baseImg.offsetHeight;
-        const w = wrap.offsetWidth;
-
-        // cursor position relative to wrap
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
-        // position lens center on cursor
-        lens.style.left = x + 'px';
-        lens.style.top = y + 'px';
-
-        // offset background image inside lens so the zoomed area aligns
-        const bgX = -(x * ZOOM - LENS_R);
-        const bgY = -(y * ZOOM - LENS_R);
-        lensImg.style.left = bgX + 'px';
-        lensImg.style.top = bgY + 'px';
+        lens.style.left = (x - LENS_HALF) + 'px';
+        lens.style.top = (y - LENS_HALF) + 'px';
+        lensImg.style.left = -(x * ZOOM - LENS_HALF) + 'px';
+        lensImg.style.top = -(y * ZOOM - LENS_HALF) + 'px';
       });
     });
   </script>
