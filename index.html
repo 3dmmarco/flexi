@@ -256,7 +256,7 @@
 
     /* META BLOCK */
     .meta-section {
-      padding: 1.5rem 1.5rem 20rem;
+      padding: 1.5rem 1.5rem 10rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
@@ -730,17 +730,18 @@
 
     /* SPACERS */
     .spacer-before-stat { padding: 0.5rem 0 0; }
-    .spacer-gradient-diagram { padding: 0.5rem 0 20rem; }
+    .spacer-gradient-diagram { padding: 0.5rem 0 5rem; }
     .spacer-mad-diagram { padding: 0.5rem 0 0; }
     .spacer-bending { padding: 0.5rem 0 0; }
     .spacer-closea { padding: 0.5rem 0 0; }
     .spacer-before-construction { padding: 20rem 0 0.5rem; }
-    .spacer-boneglue-grid { padding: 0.5rem 0 25rem; }
+    .spacer-boneglue-grid { padding: 0.5rem 0 15rem; }
     .spacer-beam-diagram { padding: 0.5rem 0 0.5rem; }
     .spacer-beam-wrap { padding: 0.5rem 0 20rem; }
-    .spacer-before-production { padding: 30rem 0 0.5rem; }
+    .spacer-before-production { padding: 10rem 0 0.5rem; }
     .spacer-prototype-photos { padding: 0.5rem 0 20rem; }
     .spacer-proposal-grid { padding: 0.5rem 0 0; }
+    .spacer-loading { padding: 0.5rem 0 5rem; }
     .spacer-before-contact { padding: 0.5rem 0 0; }
     .spacer-before-ack { padding: 0.5rem 0 0; }
 
@@ -1222,17 +1223,16 @@
   <!-- VIDEO: bending.mp4 -->
   <div class="spacer-bending">
     <div class="fullwidth-full reveal">
-      <div></div>
+      <div>
+        <p class="img-caption">DIFFERENTIATED PROPERTIES</p>
+        <p class="img-caption-sub">panels in lower part of the structure are flexible due to addition of glycerol to the material 
+          matrix and therefore adaptable to the ground and different surroundings.</p>
+      </div>
       <div>
         <video autoplay muted loop playsinline preload="auto"
           style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block;">
           <source src="videos/bending.mp4" type="video/mp4">
         </video>
-      </div>
-      <div>
-        <p class="img-caption">DIFFERENTIATED PROPERTIES</p>
-        <p class="img-caption-sub">panels in lower part of the structure are flexible due to addition of glycerol to the material matrix.
-        these panels can adjust to the ground and adapt to different surroundings.</p>
       </div>
     </div>
   </div>
@@ -1552,7 +1552,7 @@
   </div>
 
   <!-- LOADING IMAGE -->
-  <div style="padding: 0 0 10rem;">
+  <div class="spacer-loading">
     <div style="display:grid; grid-template-columns:1fr 1fr; height:100vh;">
       <div style="position:relative;">
         <img src="images/loadingaa.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;">
