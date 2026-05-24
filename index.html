@@ -46,7 +46,7 @@
       overflow-x: hidden;
     }
 
-    /* NAV */
+    /* ─── NAV ─────────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0;
@@ -101,7 +101,7 @@
       color: var(--black);
     }
 
-    /* HERO */
+    /* ─── HERO ────────────────────────────────────────── */
     .hero {
       width: 100%;
       min-height: 100vh;
@@ -186,18 +186,36 @@
       background: rgba(255,255,255,0.6);
     }
 
-    /* EVOLUTION VERTICAL GRID */
-    .evolution-grid-v {
-      padding: 0.5rem 1.5rem 1.5rem;
+    /* ─── VIDEO BLOCK (replaces .video-section for inline use) ── */
+    /* tall and landscape variants match .img-block dimensions      */
+    .video-block {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      display: block;
+      background: var(--light);
     }
 
-    .evolution-v-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
+    .video-block.tall {
+      aspect-ratio: 3/4;
     }
 
-    /* VIDEO SECTION */
+    .video-block.landscape {
+      aspect-ratio: 4/3;
+    }
+
+    .video-block video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      /* cover: fill shorter axis, clip longer axis */
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ─── VIDEO SECTION (full-bleed, scroll-triggered) ── */
     .video-section {
       position: relative;
       overflow: hidden;
@@ -254,7 +272,7 @@
       }
     }
 
-    /* META BLOCK */
+    /* ─── META ────────────────────────────────────────── */
     .meta-section {
       padding: 1.5rem 1.5rem 10rem;
       display: grid;
@@ -282,7 +300,7 @@
       line-height: 1.5;
     }
 
-    /* INTRODUCTION */
+    /* ─── INTRODUCTION ────────────────────────────────── */
     .intro-section {
       padding: 0.5rem 1.5rem 5rem;
       display: grid;
@@ -291,7 +309,7 @@
       align-items: start;
     }
 
-    /* VIDEO DECAY BACKGROUND */
+    /* ─── VIDEO DECAY BACKGROUND ──────────────────────── */
     .video-decay-background {
       position: relative;
       width: 100%;
@@ -317,7 +335,7 @@
       z-index: 1;
     }
 
-    /* MATERIALIZATION */
+    /* ─── MATERIALIZATION ─────────────────────────────── */
     .materialization-section {
       padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
@@ -326,7 +344,7 @@
       align-items: start;
     }
 
-    /* MATERIALS STAT */
+    /* ─── MATERIALS STAT ──────────────────────────────── */
     .materials-stat {
       padding: 0.5rem 1.5rem 0;
       display: grid;
@@ -335,7 +353,7 @@
       align-items: start;
     }
 
-    /* ACCORDION */
+    /* ─── ACCORDION ───────────────────────────────────── */
     .accordion-section {
       background: var(--white);
       padding: 0.5rem 1.5rem 1.5rem;
@@ -440,7 +458,7 @@
       text-align: justify;
     }
 
-    /* IMAGE GRIDS */
+    /* ─── IMAGE GRIDS ─────────────────────────────────── */
     .img-grid-3 {
       padding: 0 1.5rem;
       display: grid;
@@ -448,7 +466,7 @@
       gap: 1.5rem;
     }
 
-    /* LAYERED IMAGE WRAPPER */
+    /* ─── LAYERED IMAGE WRAPPER ───────────────────────── */
     .img-layered {
       position: relative;
       width: 100%;
@@ -468,7 +486,7 @@
       opacity: 0.5;
     }
 
-    /* CONSTRUCTION */
+    /* ─── CONSTRUCTION ────────────────────────────────── */
     .construction-section {
       padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
@@ -477,14 +495,14 @@
       align-items: start;
     }
 
-    /* BEAM GRID */
+    /* ─── BEAM GRID ───────────────────────────────────── */
     .beam-grid {
       padding: 0.5rem 1.5rem 15rem;
       display: grid;
       grid-template-columns: 1fr;
     }
 
-    /* PRODUCTION */
+    /* ─── PRODUCTION ──────────────────────────────────── */
     .production-section {
       padding: 0.5rem 1.5rem 1.5rem;
       display: grid;
@@ -498,7 +516,7 @@
       padding: 0.5rem 1.5rem 15rem;
     }
 
-    /* PROTOTYPE SPLIT */
+    /* ─── PROTOTYPE SPLIT ─────────────────────────────── */
     .prototype-section {
       padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
@@ -507,7 +525,7 @@
       align-items: baseline;
     }
 
-    /* PROPOSAL */
+    /* ─── PROPOSAL ────────────────────────────────────── */
     .proposal-section {
       padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
@@ -516,7 +534,7 @@
       align-items: start;
     }
 
-    /* CONTACT */
+    /* ─── CONTACT ─────────────────────────────────────── */
     .contact-section {
       padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
@@ -525,7 +543,7 @@
       align-items: start;
     }
 
-    /* ACKNOWLEDGEMENTS */
+    /* ─── ACKNOWLEDGEMENTS ────────────────────────────── */
     .acknowledgements-section {
       padding: 0.5rem 1.5rem 0.5rem;
       display: grid;
@@ -534,7 +552,7 @@
       align-items: start;
     }
 
-    /* OUTRO + FOOTER */
+    /* ─── OUTRO + FOOTER ──────────────────────────────── */
     .outro-wrap {
       position: relative;
       width: 100%;
@@ -575,7 +593,7 @@
       color: var(--black);
     }
 
-    /* TYPOGRAPHY CLASSES */
+    /* ─── TYPOGRAPHY ──────────────────────────────────── */
     .section-heading {
       font-family: 'Hanken Grotesk', sans-serif;
       font-size: 3rem;
@@ -716,7 +734,7 @@
       margin-left: auto;
     }
 
-    /* FADE-IN ANIMATIONS */
+    /* ─── FADE-IN ANIMATIONS ──────────────────────────── */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -728,31 +746,39 @@
       transform: none;
     }
 
-    /* SPACERS */
-    .spacer-before-stat { padding: 0.5rem 0 0; }
-    .spacer-gradient-diagram { padding: 0.5rem 0 5rem; }
-    .spacer-mad-diagram { padding: 0.5rem 0 0; }
-    .spacer-bending { padding: 0.5rem 0 0; }
-    .spacer-closea { padding: 0.5rem 0 0; }
-    .spacer-before-construction { padding: 20rem 0 0.5rem; }
-    .spacer-boneglue-grid { padding: 0.5rem 0 7.5rem; }
-    .spacer-beam-diagram { padding: 0.5rem 0 0.5rem; }
-    .spacer-beam-wrap { padding: 0.5rem 0 20rem; }
-    .spacer-before-production { padding: 10rem 0 0.5rem; }
-    .spacer-prototype-photos { padding: 0.5rem 0 20rem; }
-    .spacer-proposal-grid { padding: 0.5rem 0 0; }
-    .spacer-loading { padding: 0.5rem 0 5rem; }
-    .spacer-before-contact { padding: 0.5rem 0 0; }
-    .spacer-before-ack { padding: 0.5rem 0 0; }
+    /* ─── SPACERS ─────────────────────────────────────── */
+    /* Each block has its own spacer class for independent padding control */
+    .sp-meta            { padding: 0; }
+    .sp-intro           { padding: 0; }
+    .sp-evolution       { padding: 0.5rem 0 0; }
+    .sp-poem            { padding: 0; }
+    .sp-materialization { padding: 0; }
+    .sp-mat-stat        { padding: 0; }
+    .sp-accordion       { padding: 0; }
+    .sp-panels-stat     { padding: 0; }
+    .sp-gradient-diagram{ padding: 0.5rem 0 5rem; }
+    .sp-mad-diagram     { padding: 0.5rem 0 0; }
+    .sp-panel-cookflip  { padding: 0.5rem 0 20rem; }
+    .sp-closeup         { padding: 0.5rem 0 0; }
+    .sp-panel-cookfwd   { padding: 0.5rem 0 20rem; }
+    .sp-bending         { padding: 0.5rem 0 0; }
+    .sp-construction    { padding: 20rem 0 0.5rem; }
+    .sp-boneglue-grid   { padding: 0.5rem 0 7.5rem; }
+    .sp-beam-mad-diagram{ padding: 0.5rem 0 0; }
+    .sp-boneglue-vid    { padding: 0.5rem 0 20rem; }
+    .sp-beam-diagram    { padding: 0.5rem 0 0.5rem; }
+    .sp-beam-wrap       { padding: 0.5rem 0 20rem; }
+    .sp-production      { padding: 10rem 0 0.5rem; }
+    .sp-proc-accordion  { padding: 0; }
+    .sp-proto-stat      { padding: 0; }
+    .sp-proto-photos    { padding: 0.5rem 0 20rem; }
+    .sp-proposal        { padding: 0; }
+    .sp-proposal-grid   { padding: 0.5rem 0 0; }
+    .sp-loading         { padding: 0.5rem 0 5rem; }
+    .sp-contact         { padding: 0.5rem 0 0; }
+    .sp-ack             { padding: 0.5rem 0 0; }
 
-    .proposal-grid {
-      padding: 0.5rem 1.5rem 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    /* GRID WRAPPERS */
+    /* ─── GRID WRAPPERS ───────────────────────────────── */
     .fullwidth-half {
       padding: 0.5rem 1.5rem 10rem;
       display: grid;
@@ -775,7 +801,7 @@
       align-items: end;
     }
 
-     .cooking-grid-vid {
+    .cooking-grid-vid {
       padding: 0.5rem 1.5rem 0rem;
       display: grid;
       grid-template-columns: 35% 1fr 45%;
@@ -791,14 +817,13 @@
       align-items: end;
     }
 
-     .boneglue-grid-vid {
+    .boneglue-grid-vid {
       padding: 15rem 1.5rem 0rem;
       display: grid;
       grid-template-columns: 35% 1fr 45%;
       gap: 1.5rem;
       align-items: end;
     }
-
 
     .panels-grid-1 {
       padding: 0.5rem 1.5rem 10rem;
@@ -813,7 +838,17 @@
       gap: 1rem;
     }
 
-    /* ZOOM WRAP — transform removed, JS handles centering */
+    .evolution-grid-v {
+      padding: 0.5rem 1.5rem 1.5rem;
+    }
+
+    .evolution-v-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* ─── ZOOM WRAP ───────────────────────────────────── */
     .zoom-wrap {
       position: relative;
       display: block;
@@ -850,7 +885,7 @@
       display: block;
     }
 
-    /* BEAM WRAP LAYOUT */
+    /* ─── BEAM WRAP LAYOUT ────────────────────────────── */
     .beam-wrap-grid {
       padding: 0rem 1.5rem 0rem;
       display: grid;
@@ -863,6 +898,14 @@
       text-align: left;
     }
 
+    .proposal-grid {
+      padding: 0.5rem 1.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 1.25rem 1.5rem; }
       nav .nav-links { display: none; }
@@ -903,99 +946,109 @@
   </section>
 
   <!-- META -->
-  <div class="meta-section reveal">
-    <div class="meta-item">
-      <span class="meta-label">Research Team</span>
-      <p class="meta-value">Herberth, Liliane</p>
-      <p class="meta-value">Mayer, Marco</p>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">Location</span>
-      <p class="meta-value">Room 264/2, Vienna, Austria</p>
-      <p class="meta-value">2025 – ongoing</p>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">Project Topics</span>
-      <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Life Cycle</p>
+  <div class="sp-meta">
+    <div class="meta-section reveal">
+      <div class="meta-item">
+        <span class="meta-label">Research Team</span>
+        <p class="meta-value">Herberth, Liliane</p>
+        <p class="meta-value">Mayer, Marco</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Location</span>
+        <p class="meta-value">Room 264/2, Vienna, Austria</p>
+        <p class="meta-value">2025 – ongoing</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Project Topics</span>
+        <p class="meta-value">Bioplastics, Digital Design, Digital Production, Degradability, Panelization, Material Life Cycle</p>
+      </div>
     </div>
   </div>
 
   <!-- INTRODUCTION -->
-  <section class="intro-section reveal" id="intro">
-    <div>
-      <p class="section-heading">introduction</p>
-    </div>
-    <div>
-      <p class="body-text">Our proposal aims to explore biodegradable architectural shell structures through
-      digital fabrication, skeletal construction, and differentiated material systems. Using parametric
-      form-finding methods, the project combines natural fibers, bone glue, mycelium, bio-resins, and other
-      compostable materials to create lightweight, self-supporting forms that gradually transform over time.</p>
-    </div>
-    <p class="body-text">Material composition is strategically distributed according to structural and environmental
-      requirements, producing a responsive material matrix rather than a uniform construction. By embracing
-      weathering, deformation, and decay as part of the design process, the project questions permanence in
-      architecture and investigates how digitally fabricated structures can exist as temporary, ecologically
-      integrated systems.</p>
-  </section>
+  <div class="sp-intro">
+    <section class="intro-section reveal" id="intro">
+      <div>
+        <p class="section-heading">introduction</p>
+      </div>
+      <div>
+        <p class="body-text">Our proposal aims to explore biodegradable architectural shell structures through
+        digital fabrication, skeletal construction, and differentiated material systems. Using parametric
+        form-finding methods, the project combines natural fibers, bone glue, mycelium, bio-resins, and other
+        compostable materials to create lightweight, self-supporting forms that gradually transform over time.</p>
+      </div>
+      <p class="body-text">Material composition is strategically distributed according to structural and environmental
+        requirements, producing a responsive material matrix rather than a uniform construction. By embracing
+        weathering, deformation, and decay as part of the design process, the project questions permanence in
+        architecture and investigates how digitally fabricated structures can exist as temporary, ecologically
+        integrated systems.</p>
+    </section>
+  </div>
 
   <!-- EVOLUTION GRID -->
-  <div class="evolution-grid-v reveal">
-    <div class="evolution-v-row">
-      <div>
-        <img src="images/wing.jpg" class="img-block evolution" style="object-fit: cover;">
-      </div>
-      <div>
-        <img src="images/skizze2.png" class="img-block evolution" style="object-fit: cover;">
-      </div>
-      <div>
-        <img src="images/skizze1.png" class="img-block evolution" style="object-fit: cover;">
+  <div class="sp-evolution">
+    <div class="evolution-grid-v reveal">
+      <div class="evolution-v-row">
+        <div>
+          <img src="images/wing.jpg" class="img-block evolution" style="object-fit: cover;">
+        </div>
+        <div>
+          <img src="images/skizze2.png" class="img-block evolution" style="object-fit: cover;">
+        </div>
+        <div>
+          <img src="images/skizze1.png" class="img-block evolution" style="object-fit: cover;">
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- VIDEO DECAY / POEM -->
-  <div class="video-decay-background">
-    <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="videos/transition.mp4"></video>
-    <div class="video-decay-content">
-      <div class="body-cols">
-        <p class="body-text-poem-right"> As if the ground itself has begun to stretch, </p>
-        <p class="body-text-poem-left"> a spine leans into the air transforming into a wing. </p>
-        <p class="body-text-poem-right"> It feels like the peak of a movement, </p>
-        <p class="body-text-poem-left"> a muscle contracting, </p>
-        <p class="body-text-poem-right"> a weave like muscle fibers drawn close together, </p>
-        <p class="body-text-poem-left"> holding tension just before release. </p>
-        <p class="body-text-poem-right"> Closer to the ground the forms surrender to gravity, </p>
-        <p class="body-text-poem-left"> soft as a limb at rest. </p>
-        <p class="body-text-poem-right"> The wing wraps around, </p>
-        <p class="body-text-poem-left"> not enclosing, </p>
-        <p class="body-text-poem-right"> simply leaning close. </p>
-        <p class="body-text-poem-left"> Standing within the arc of a living gesture, </p>
-        <p class="body-text-poem-right"> a body learning to lift itself from the earth. </p>
+  <!-- POEM / VIDEO DECAY -->
+  <div class="sp-poem">
+    <div class="video-decay-background">
+      <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="videos/transition.mp4"></video>
+      <div class="video-decay-content">
+        <div class="body-cols">
+          <p class="body-text-poem-right"> As if the ground itself has begun to stretch, </p>
+          <p class="body-text-poem-left"> a spine leans into the air transforming into a wing. </p>
+          <p class="body-text-poem-right"> It feels like the peak of a movement, </p>
+          <p class="body-text-poem-left"> a muscle contracting, </p>
+          <p class="body-text-poem-right"> a weave like muscle fibers drawn close together, </p>
+          <p class="body-text-poem-left"> holding tension just before release. </p>
+          <p class="body-text-poem-right"> Closer to the ground the forms surrender to gravity, </p>
+          <p class="body-text-poem-left"> soft as a limb at rest. </p>
+          <p class="body-text-poem-right"> The wing wraps around, </p>
+          <p class="body-text-poem-left"> not enclosing, </p>
+          <p class="body-text-poem-right"> simply leaning close. </p>
+          <p class="body-text-poem-left"> Standing within the arc of a living gesture, </p>
+          <p class="body-text-poem-right"> a body learning to lift itself from the earth. </p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- MATERIALIZATION -->
-  <section class="materialization-section reveal" id="material">
-    <div>
-      <p class="section-heading">MATERIALIZATION</p>
-    </div>
-    <div>
-      <p class="body-text">Our proposal aims to explore materialization through the development of
-      fully biodegradable, bio-based materials and differentiated material matrixes within an architectural
-      shell structure. Using digital design and fabrication methods, the project investigates how varying
-      densities, thicknesses, and composite mixtures can be strategically distributed according to structural,
-      spatial, and environmental requirements.</p>
-      <p class="body-text">Combining materials such as natural fibers, bio-resins, starch-based composites, and organic binders,
-      the structure becomes a gradient system rather than a uniform construction. The proposal emphasizes
-      localized material performance, reducing waste while allowing the pavilion to remain fully compostable
-      at the end of its lifecycle. In doing so, the project examines how digital fabrication can support
-      adaptive, ecologically responsive forms of material organization.</p>
-    </div>
-  </section>
+  <div class="sp-materialization">
+    <section class="materialization-section reveal" id="material">
+      <div>
+        <p class="section-heading">MATERIALIZATION</p>
+      </div>
+      <div>
+        <p class="body-text">Our proposal aims to explore materialization through the development of
+        fully biodegradable, bio-based materials and differentiated material matrixes within an architectural
+        shell structure. Using digital design and fabrication methods, the project investigates how varying
+        densities, thicknesses, and composite mixtures can be strategically distributed according to structural,
+        spatial, and environmental requirements.</p>
+        <p class="body-text">Combining materials such as natural fibers, bio-resins, starch-based composites, and organic binders,
+        the structure becomes a gradient system rather than a uniform construction. The proposal emphasizes
+        localized material performance, reducing waste while allowing the pavilion to remain fully compostable
+        at the end of its lifecycle. In doing so, the project examines how digital fabrication can support
+        adaptive, ecologically responsive forms of material organization.</p>
+      </div>
+    </section>
+  </div>
 
   <!-- MATERIALS STAT -->
-  <div class="spacer-before-stat">
+  <div class="sp-mat-stat">
     <div class="materials-stat">
       <span class="stat-number3">7 (+1)</span>
       <span class="stat-number3">fully biodegradable Materials</span>
@@ -1003,159 +1056,161 @@
   </div>
 
   <!-- ACCORDION: materials -->
-  <div class="accordion-section reveal">
-    <div class="accordion-item" id="acc-textiles">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">Wool</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_wool.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="sp-accordion">
+    <div class="accordion-section reveal">
+      <div class="accordion-item" id="acc-textiles">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">Wool</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_wool.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="acc-water">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-water')">
-        <span class="accordion-index">panel</span>
-        <span class="accordion-title">Water</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_water.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="accordion-item" id="acc-water">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-water')">
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Water</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_water.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="acc-gelatine">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-gelatine')">
-        <span class="accordion-index">panel</span>
-        <span class="accordion-title">Gelatine</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_gelatine.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="accordion-item" id="acc-gelatine">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-gelatine')">
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Gelatine</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_gelatine.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="acc-xanthan">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-xanthan')">
-        <span class="accordion-index">panel</span>
-        <span class="accordion-title">Xanthan</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_xanthan.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="accordion-item" id="acc-xanthan">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-xanthan')">
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Xanthan</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_xanthan.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="acc-caco3">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-caco3')">
-        <span class="accordion-index">panel</span>
-        <span class="accordion-title">CaCO3</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_calcium.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="accordion-item" id="acc-caco3">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-caco3')">
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">CaCO3</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_calcium.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="acc-wood">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-wood')">
-        <span class="accordion-index">panel</span>
-        <span class="accordion-title">Wood</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_wood.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Sawdust and woodchips that originated as a wasteproduct during building frames for
-            panel-production was reused as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
+      <div class="accordion-item" id="acc-wood">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-wood')">
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Wood</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_wood.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Sawdust and woodchips that originated as a wasteproduct during building frames for
+              panel-production was reused as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="acc-glycerol">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-glycerol')">
-        <span class="accordion-index">panel</span>
-        <span class="accordion-title">glycerol</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_glycerol.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Glycerol serves as a plasticiser, making the material more resistant to breaking
-            and providing the possibility to adjust flexibility of the material. Lower parts are very flexible due to more share of
-            glycerol within the material matrix, parts further up are stiff with only a minimal amount to prevent breaking and deformation during
-            the drying process.</p>
+      <div class="accordion-item" id="acc-glycerol">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-glycerol')">
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">glycerol</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_glycerol.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Glycerol serves as a plasticiser, making the material more resistant to breaking
+              and providing the possibility to adjust flexibility of the material. Lower parts are very flexible due to more share of
+              glycerol within the material matrix, parts further up are stiff with only a minimal amount to prevent breaking and deformation during
+              the drying process.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="acc-boneglue">
-      <button class="accordion-trigger" onclick="toggleAccordion('acc-boneglue')">
-        <span class="accordion-index">beam</span>
-        <span class="accordion-title">Boneglue</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/_boneglue.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="accordion-item" id="acc-boneglue">
+        <button class="accordion-trigger" onclick="toggleAccordion('acc-boneglue')">
+          <span class="accordion-index">beam</span>
+          <span class="accordion-title">Boneglue</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_boneglue.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-    <!-- MATERIALS STAT -->
-  <div class="spacer-before-stat">
+  <!-- PANELS STAT -->
+  <div class="sp-panels-stat">
     <div class="materials-stat">
       <span class="stat-number3">panels</span>
     </div>
   </div>
 
-   <!-- GRADIENT DIAGRAM -->
-  <div class="spacer-gradient-diagram">
+  <!-- GRADIENT DIAGRAM -->
+  <div class="sp-gradient-diagram">
     <div class="panels-grid-1 reveal">
       <div>
         <img src="images/_gradient.jpg" class="img-block gradient" style="object-fit: cover;">
@@ -1167,7 +1222,7 @@
   </div>
 
   <!-- MAD DIAGRAM -->
-  <div class="spacer-mad-diagram">
+  <div class="sp-mad-diagram">
     <div class="panels-grid-1 reveal">
       <div>
         <div class="img-layered">
@@ -1182,25 +1237,25 @@
     </div>
   </div>
 
-   <!-- PANEL + CLOSEUP GRID -->
-  <div class="spacer-prototype-photos">
+  <!-- PANEL COOKFLIP: video tall + caption + image tall -->
+  <div class="sp-panel-cookflip">
     <div class="cooking-grid-flip reveal">
-      <div class="video-section reveal" margin: 0;">
-    <video class="bg-video" muted loop playsinline preload="auto">
-      <source src="videos/Flexi_76.mp4" type="video/mp4">
-    </video>
-  </div>
+      <div class="video-block tall">
+        <video muted loop playsinline preload="auto" data-autovid>
+          <source src="videos/Flexi_76.mp4" type="video/mp4">
+        </video>
+      </div>
       <p class="img-caption" style="text-align:justify; hyphens: auto;">during an earlier stage of the project (02/26) 
-      a small number of panels 
+        a small number of panels 
         has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
-  <div>
+      <div>
         <img src="images/cook5.jpg" class="img-block tall" style="object-fit: cover;">
       </div>
     </div>
   </div>
 
-    <!-- IMAGE: closeup via zoom-wrap -->
-  <div class="spacer-closea">
+  <!-- CLOSEUP zoom-wrap -->
+  <div class="sp-closeup">
     <div class="fullwidth-half reveal">
       <div></div>
       <div>
@@ -1213,21 +1268,21 @@
     </div>
   </div>
 
-     <!-- PANEL + CLOSEUP GRID -->
-  <div class="spacer-prototype-photos">
+  <!-- PANEL COOKFWD: image tall + spacer + image landscape -->
+  <div class="sp-panel-cookfwd">
     <div class="cooking-grid-vid reveal">
-     <div>
+      <div>
         <img src="images/sidehand.png" class="img-block tall" style="object-fit: cover;">
       </div>
       <div></div>
-       <div>
+      <div>
         <img src="images/cook6.jpg" class="img-block landscape" style="object-fit: cover;">
       </div>
     </div>
   </div>
 
-  <!-- VIDEO: bending.mp4 -->
-  <div class="spacer-bending">
+  <!-- BENDING VIDEO -->
+  <div class="sp-bending">
     <div class="fullwidth-full reveal">
       <div>
         <p class="img-caption">DIFFERENTIATED PROPERTIES</p>
@@ -1244,7 +1299,7 @@
   </div>
 
   <!-- CONSTRUCTION -->
-  <div class="spacer-before-construction">
+  <div class="sp-construction">
     <section class="construction-section reveal" id="construction">
       <div>
         <p class="body-text"> </p>
@@ -1269,7 +1324,7 @@
   </div>
 
   <!-- BONEGLUE GRID -->
-  <div class="spacer-boneglue-grid">
+  <div class="sp-boneglue-grid">
     <div class="img-grid-3 reveal">
       <div>
         <img src="images/bonegluepetrilarge.jpg" class="img-block landscape" style="object-fit: cover;">
@@ -1282,9 +1337,9 @@
       </div>
     </div>
   </div>
-  
-  <!-- BEAM DIAGRAM -->
-  <div class="spacer-mad-diagram">
+
+  <!-- BEAM MAD DIAGRAM -->
+  <div class="sp-beam-mad-diagram">
     <div class="panels-grid-1 reveal">
       <div>
         <div class="img-layered">
@@ -1298,24 +1353,24 @@
     </div>
   </div>
 
-     <!-- PANEL + CLOSEUP GRID -->
-  <div class="spacer-prototype-photos">
+  <!-- BONEGLUE VID: video landscape + caption + image landscape -->
+  <div class="sp-boneglue-vid">
     <div class="cooking-grid-vid reveal">
-      <div class="video-section reveal" margin: 0;">
-    <video class="bg-video" muted loop playsinline preload="auto">
-      <source src="videos/Flexi_99.mp4" type="video/mp4">
-    </video>
-  </div>
+      <div class="video-block landscape">
+        <video muted loop playsinline preload="auto" data-autovid>
+          <source src="videos/Flexi_99.mp4" type="video/mp4">
+        </video>
+      </div>
       <p class="img-caption" style="text-align:justify; hyphens: auto;">boneglue cookup and dipping and cooling and hardening until 
       halfway to form to panel.</p>
-  <div>
+      <div>
         <img src="images/wrap2.png" class="img-block landscape" style="object-fit: cover;">
       </div>
     </div>
   </div>
 
   <!-- BEAM DIAGRAM -->
-  <div class="spacer-beam-diagram">
+  <div class="sp-beam-diagram">
     <div class="beam-grid reveal">
       <div>
         <img src="images/_beamlayer.jpg" class="img-block gradient" style="object-fit: cover;">
@@ -1324,9 +1379,8 @@
     </div>
   </div>
 
-
-  <!-- BEAM WRAP -->
-  <div class="spacer-beam-wrap">
+  <!-- BEAM WRAP: image tall + caption + video tall -->
+  <div class="sp-beam-wrap">
     <div class="beam-wrap-grid reveal">
       <div>
         <img src="images/wrap.png" class="img-block tall" style="object-fit: cover;">
@@ -1337,16 +1391,16 @@
         <p class="img-caption" style="text-align:left;">wool and boneglue and coats and shoes and scarf and summer
         and winter and wool and sheep and all that stuff.</p>
       </div>
-       <div class="video-section reveal" style="margin: 0;">
-      <video class="bg-video" muted loop playsinline preload="auto">
-        <source src="videos/Flexi_107.mp4" type="video/mp4">
-      </video>
-    </div>
+      <div class="video-block tall">
+        <video muted loop playsinline preload="auto" data-autovid>
+          <source src="videos/Flexi_107.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 
   <!-- PRODUCTION -->
-  <div class="spacer-before-production">
+  <div class="sp-production">
     <section class="production-section reveal" id="production">
       <div>
         <p class="section-heading">PRODUCTION</p>
@@ -1362,153 +1416,155 @@
   </div>
 
   <!-- PROCESS ACCORDION -->
-  <div class="accordion-section process-accordion-section reveal">
+  <div class="sp-proc-accordion">
+    <div class="accordion-section process-accordion-section reveal">
 
-    <div class="accordion-item" id="proc-formwork">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-formwork')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">panel formwork</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/formwork.PNG" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-formwork">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-formwork')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">panel formwork</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/formwork.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-textile">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-textile')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">textile base panel</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/knitmachine.jpg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-textile">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-textile')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">textile base panel</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/knitmachine.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-cooking">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-cooking')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">material matrix cookup</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/materialcook.PNG" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-cooking">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-cooking')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">material matrix cookup</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/materialcook.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-drying">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-drying')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">controlled drying process</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/drying.PNG" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-drying">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-drying')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">controlled drying process</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/drying.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-assembly">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-assembly')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">panel assembly</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/assemble.PNG" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-assembly">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-assembly')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">panel assembly</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/assemble.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-beampre">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-beampre')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">beam structure</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/beampre.PNG" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-beampre">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-beampre')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">beam structure</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/beampre.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-adaptive">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-adaptive')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">adaptive forming beam</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/adaptive.PNG" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-adaptive">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-adaptive')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">adaptive forming beam</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/adaptive.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-reinforce">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-reinforce')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">on site reinforcement – installation</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/reinforce.PNG" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-reinforce">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-reinforce')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">on site reinforcement – installation</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/reinforce.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="accordion-item" id="proc-decay">
-      <button class="accordion-trigger" onclick="toggleAccordion('proc-decay')">
-        <span class="accordion-index"></span>
-        <span class="accordion-title">decay</span>
-        <span class="accordion-arrow"></span>
-      </button>
-      <div class="accordion-body">
-        <div class="accordion-inner">
-          <img src="images/e.jpeg" class="accordion-img" style="object-fit:cover;">
-          <p></p>
-          <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="accordion-item" id="proc-decay">
+        <button class="accordion-trigger" onclick="toggleAccordion('proc-decay')">
+          <span class="accordion-index"></span>
+          <span class="accordion-title">decay</span>
+          <span class="accordion-arrow"></span>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/e.jpeg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-      <!-- MATERIALS STAT -->
-  <div class="spacer-before-stat">
+  <!-- PROTOTYPE STAT -->
+  <div class="sp-proto-stat">
     <div class="materials-stat">
       <span class="stat-number3">prototype</span>
     </div>
   </div>
 
-  <!-- PANEL + CLOSEUP GRID -->
-  <div class="spacer-prototype-photos">
+  <!-- PROTOTYPE PHOTOS -->
+  <div class="sp-proto-photos">
     <div class="prototype-grid-2 reveal">
       <div>
         <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
@@ -1522,26 +1578,28 @@
   </div>
 
   <!-- PROPOSAL -->
-  <section class="proposal-section reveal" id="proposal">
-    <div>
-      <p class="section-heading">PROPOSAL</p>
-    </div>
-    <div>
-      <p class="body-text">Our proposal aims to explore the relationship between digital fabrication,
-        biodegradability, and temporal transformation through a sculptural architectural pavilion. Using
-        parametric design methods and biodegradable materials such as mycelium, hemp fiber, bioplastics,
-        and untreated wood, the structure is designed to gradually wither and decompose through exposure
-        to weather and biological processes.</p>
-      <p class="body-text">Rather than resisting decay, the project embraces deterioration
-        as an active part of the work, allowing the pavilion to evolve over time. Initially appearing as a
-        precise digitally fabricated form, it slowly transforms into an organic and unstable structure,
-        questioning conventional ideas of permanence, material value, and sustainability in contemporary
-        architecture and sculpture.</p>
-    </div>
-  </section>
+  <div class="sp-proposal">
+    <section class="proposal-section reveal" id="proposal">
+      <div>
+        <p class="section-heading">PROPOSAL</p>
+      </div>
+      <div>
+        <p class="body-text">Our proposal aims to explore the relationship between digital fabrication,
+          biodegradability, and temporal transformation through a sculptural architectural pavilion. Using
+          parametric design methods and biodegradable materials such as mycelium, hemp fiber, bioplastics,
+          and untreated wood, the structure is designed to gradually wither and decompose through exposure
+          to weather and biological processes.</p>
+        <p class="body-text">Rather than resisting decay, the project embraces deterioration
+          as an active part of the work, allowing the pavilion to evolve over time. Initially appearing as a
+          precise digitally fabricated form, it slowly transforms into an organic and unstable structure,
+          questioning conventional ideas of permanence, material value, and sustainability in contemporary
+          architecture and sculpture.</p>
+      </div>
+    </section>
+  </div>
 
   <!-- PROPOSAL GRID -->
-  <div class="spacer-proposal-grid">
+  <div class="sp-proposal-grid">
     <div class="proposal-grid reveal">
       <div>
         <img src="images/c.jpeg" class="img-block tall" style="object-fit: cover;">
@@ -1555,7 +1613,7 @@
   </div>
 
   <!-- LOADING IMAGE -->
-  <div class="spacer-loading">
+  <div class="sp-loading">
     <div style="display:grid; grid-template-columns:1fr 1fr; height:110vh;">
       <div style="position:relative;">
         <img src="images/loadingaa.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;">
@@ -1568,7 +1626,7 @@
   </div>
 
   <!-- CONTACT -->
-  <div class="spacer-before-contact">
+  <div class="sp-contact">
     <section class="contact-section" id="contact">
       <div>
         <p class="section-heading">contact</p>
@@ -1589,7 +1647,7 @@
   </div>
 
   <!-- ACKNOWLEDGEMENTS -->
-  <div class="spacer-before-ack">
+  <div class="sp-ack">
     <section class="acknowledgements-section">
       <div>
         <p class="section-heading">acknowledgements</p>
@@ -1615,7 +1673,7 @@
   </div>
 
   <script>
-    // Scroll reveal
+    // ── Scroll reveal ────────────────────────────────────
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1627,7 +1685,20 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Video: play/pause on scroll
+    // ── Video-block: play/pause on scroll (data-autovid) ─
+    const vidBlockObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target.querySelector('video[data-autovid]') || entry.target;
+        if (entry.isIntersecting) {
+          if (video && video.tagName === 'VIDEO') video.play().catch(() => {});
+        } else {
+          if (video && video.tagName === 'VIDEO') video.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    document.querySelectorAll('.video-block').forEach(b => vidBlockObserver.observe(b));
+
+    // ── Legacy .video-section: play/pause on scroll ──────
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target.querySelector('video');
@@ -1641,7 +1712,7 @@
     }, { threshold: 0.3 });
     document.querySelectorAll('.video-section').forEach(s => videoObserver.observe(s));
 
-    // Hide/show nav on scroll direction
+    // ── Hide/show nav on scroll direction ────────────────
     (function () {
       const nav = document.getElementById('main-nav');
       let lastScrollY = window.scrollY;
@@ -1663,7 +1734,7 @@
       }, { passive: true });
     })();
 
-    // Accordion
+    // ── Accordion ────────────────────────────────────────
     function toggleAccordion(id) {
       const item = document.getElementById(id);
       const isOpen = item.classList.contains('open');
@@ -1671,7 +1742,7 @@
       if (!isOpen) item.classList.add('open');
     }
 
-    // Video Decay Background: scroll-driven frame scrubbing
+    // ── Video Decay Background: scroll-driven scrubbing ──
     (function () {
       const section = document.querySelector('.video-decay-background');
       const video = document.getElementById('scrollAnim');
@@ -1707,7 +1778,7 @@
       updateVideoDecay();
     })();
 
-    // Loading image cycle
+    // ── Loading image cycle ───────────────────────────────
     (function () {
       const bb = document.getElementById('loading-bb');
       function cycle() {
@@ -1722,9 +1793,9 @@
       cycle();
     })();
 
-    // Magnifier lens — transform removed from CSS, JS handles centering
+    // ── Magnifier lens ────────────────────────────────────
     const ZOOM = 3;
-    const LENS_HALF = 137.5; // half of 275px lens diameter
+    const LENS_HALF = 137.5;
 
     document.querySelectorAll('.zoom-wrap').forEach(wrap => {
       const lens = wrap.querySelector('.zoom-lens');
