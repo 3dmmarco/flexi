@@ -1621,8 +1621,12 @@
     </div>
   </div>
 
+  <!-- CONTACT + ACK + FOOTER als ein Block mit Bild-Hintergrund -->
+<div style="position: relative;">
+  <img src="images/_footer.png" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: bottom; z-index: 0;">
+  
   <!-- CONTACT -->
-  <div class="sp-contact">
+  <div class="sp-contact" style="position: relative; z-index: 1;">
     <section class="contact-section" id="contact">
       <div>
         <p class="section-heading">contact</p>
@@ -1631,16 +1635,16 @@
         <p class="body-text">send us a <a href="mailto:flexi@sexy.at">mail</a> to get more
           information about upcoming projects, possible collaborations and all questions you might have
           encounter during your visit.</p>
-        <p class="body-text">you can touch it <a href="https://www.tuwien.at/">here</a>, visit it <a
+        <p class="body-text">you can touch it <a href="https://www.tuwien.at/">here</a>, visit it 
             href="https://www.tuwien.at/">there</a> and touch it touch it touch it</p>
-        <p class="body-text">if you want to learn more about the ongoing research project flexible mold, <a
+        <p class="body-text">if you want to learn more about the ongoing research project flexible mold, 
             href="https://kunst2.tuwien.ac.at/flexible-mold">visit here</a>. </p>
       </div>
     </section>
   </div>
 
   <!-- ACKNOWLEDGEMENTS -->
-  <div class="sp-ack">
+  <div class="sp-ack" style="position: relative; z-index: 1;">
     <section class="acknowledgements-section">
       <div>
         <p class="section-heading">acknowledgements</p>
@@ -1649,25 +1653,24 @@
         <p class="body-text">We would like to sincerely thank our lecturers, scientists, and university assistants at TU Wien
           who supported the realization of this project through their guidance, technical 
           expertise, and assistance throughout the development.</p>
-      <br><br>
+        <br><br>
         <p class="body-text"><a href="https://www.annapoell.com/">Anna Theresa Pöll</a>, Univ.Lektor Dipl.-Ing.in</p>
         <p class="body-text"> Florian Rist, Senior Scientist Arch. Dipl.-Ing.</p>
         <p class="body-text"> Marco Palma, Univ.Ass. Dott. mag.</p>
-      <br><br>
+        <br><br>
         <p class="body-text">Special thanks to the photographer for documenting the project.</p>
         <p class="body-text"> Photos and Videos by <a href="https://paulsebesta.com/">Paul Sebesta</a></p> 
       </div>
     </section>
   </div>
 
-  <!-- OUTRO + FOOTER -->
-  <div class="outro-wrap">
-    <img src="images/_boneoutros.png">
-    <footer>
-      <span class="footer-logo">Flexi Studio</span>
-      <span class="footer-copy">© 2026 — All rights reserved</span>
-    </footer>
-  </div>
+  <!-- FOOTER -->
+  <footer style="position: relative; z-index: 1;">
+    <span class="footer-logo">Flexi Studio</span>
+    <span class="footer-copy">© 2026 — All rights reserved</span>
+  </footer>
+</div>
+ 
 
   <script>
     // ── Scroll reveal ────────────────────────────────────
