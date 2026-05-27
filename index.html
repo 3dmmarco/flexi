@@ -569,7 +569,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 0.5rem 1.5rem;
+      padding: 15rem 1.5rem 0.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -889,8 +889,7 @@
 
 <body>
 
-
-
+  <!-- NAV -->
   <nav id="main-nav">
     <a href="#" class="nav-logo">Flexi Studio</a>
     <ul class="nav-links">
@@ -903,6 +902,7 @@
     </ul>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
       <source src="videos/trailer.mp4" type="video/mp4">
@@ -912,6 +912,7 @@
     <span class="hero-scroll-hint">Scroll</span>
   </section>
 
+  <!-- META -->
   <div class="sp-meta">
     <div class="meta-section reveal">
       <div class="meta-item">
@@ -931,26 +932,47 @@
     </div>
   </div>
 
+  <!-- INTRODUCTION -->
   <div class="sp-intro">
     <section class="intro-section reveal" id="intro">
-      <div><p class="section-heading">introduction</p></div>
       <div>
-        <p class="body-text">Our project explores biodegradable architectural shell structures as temporary, ecologically integrated systems. Combining experimental form-finding methods, digital fabrication, and skeletal construction, the project investigates how lightweight structures can emerge from bio-based and compostable materials. Working primarily with animal-derived waste materials and by-products such as wool, gelantin and bone glue, the research explores how these composites can generate temporary spatial structures situated between object, experiment, and architecture.</p>
+        <p class="section-heading">introduction</p>
       </div>
-      <p class="body-text">Experimental form-finding processes play a crucial role in translating the material behavior, structural performance, and spatial characteristics of these composites into shell geometries. Rather than resisting transformation, the project embraces deformation and decay as integral aspects of the lifecycle. Material composition is strategically distributed according to structural requirements, creating differentiated material systems that evolve over time and eventually reintegrate into natural ecological cycles.</p>
+      <div>
+        <p class="body-text">Our project explores biodegradable architectural shell structures as temporary, 
+          ecologically integrated systems. Combining experimental form-finding methods, digital fabrication, and 
+          skeletal construction, the project investigates how lightweight structures can emerge from 
+          bio-based and compostable materials.
+         Working primarily with animal-derived waste materials and by-products such as wool, gelantin and bone glue, 
+        the research explores how these composites can generate temporary spatial structures situated between object, 
+        experiment, and architecture.</p>
+      </div>
+      <p class="body-text">Experimental form-finding processes play a crucial role in translating the material behavior, 
+        structural performance, and spatial characteristics of these composites into shell geometries. Rather than resisting 
+        transformation, the project embraces deformation and decay as integral aspects of the lifecycle. Material composition 
+        is strategically distributed according to structural requirements, creating differentiated material 
+        systems that evolve over time and eventually reintegrate into natural ecological cycles.</p>
     </section>
   </div>
 
+  <!-- EVOLUTION GRID -->
   <div class="sp-evolution">
     <div class="evolution-grid-v reveal">
       <div class="evolution-v-row">
-        <div><img src="images/wing.jpg" class="img-block evolution" style="object-fit:cover;"></div>
-        <div><img src="images/skizze2.png" class="img-block evolution" style="object-fit:cover;"></div>
-        <div><img src="images/skizze1.png" class="img-block evolution" style="object-fit:cover;"></div>
+        <div>
+          <img src="images/wing.jpg" class="img-block evolution" style="object-fit: cover;">
+        </div>
+        <div>
+          <img src="images/skizze2.png" class="img-block evolution" style="object-fit: cover;">
+        </div>
+        <div>
+          <img src="images/skizze1.png" class="img-block evolution" style="object-fit: cover;">
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- POEM / VIDEO DECAY -->
   <div class="sp-poem">
     <div class="video-decay-background">
       <video id="scrollAnim" class="video-decay-bg" muted playsinline preload="auto" src="videos/transition.mp4"></video>
@@ -974,16 +996,29 @@
     </div>
   </div>
 
+  <!-- MATERIALIZATION -->
   <div class="sp-materialization">
     <section class="materialization-section reveal" id="material">
-      <div><p class="section-heading">MATERIALIZATION</p></div>
       <div>
-        <p class="body-text">Our proposal investigates materialization through the development of fully biodegradable, bio-based composites and differentiated material matrices within an architectural shell structure. The project explores how varying densities, thicknesses, fiber orientations, and composite mixtures can be strategically distributed according to structural and spatial requirements.</p>
-        <p class="body-text">Combining wool, bone glue, wood, and organic binders, the structure operates as a graded material system rather than a homogeneous construction. This localized approach enables specific material performances across the shell while maintaining full compostability at the end of the structure's lifecycle. The project therefore examines how digital fabrication can support adaptive and materially efficient forms of architectural organization.</p>
+        <p class="section-heading">MATERIALIZATION</p>
+      </div>
+      <div>
+        <p class="body-text">Our proposal investigates materialization through the development of fully biodegradable, 
+          bio-based composites and differentiated material matrices within an architectural shell structure. 
+          The project explores how varying densities, 
+          thicknesses, fiber orientations, and composite mixtures can be strategically distributed according 
+          to structural and spatial requirements.</p>
+        <p class="body-text">Combining wool, bone glue, wood, and organic binders, the structure operates as 
+          a graded material system rather than a homogeneous construction. This localized approach enables 
+          specific material performances across the shell while maintaining full 
+          compostability at the end of the structure’s lifecycle. The project therefore examines how 
+          digital fabrication can support adaptive and materially 
+          efficient forms of architectural organization.</p>
       </div>
     </section>
   </div>
 
+  <!-- MATERIALS STAT -->
   <div class="sp-mat-stat">
     <div class="materials-stat">
       <span class="stat-number3">7 (+1)</span>
@@ -991,92 +1026,172 @@
     </div>
   </div>
 
+  <!-- ACCORDION: materials -->
   <div class="sp-accordion">
     <div class="accordion-section reveal">
       <div class="accordion-item" id="acc-textiles">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-textiles')">
-          <span class="accordion-index"></span><span class="accordion-title">Wool</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">Wool</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_wool.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Wool yarn acts as an absorptive fiber matrix within the composite system, allowing the applied materials to penetrate and bind to the fibrous structure. Used as a crocheted substructure, the wool forms the base layer of both the panels and the spine elements. In this role, it functions as reinforcement, providing the necessary tensile strength to stabilize the structure and prevent cracking, breaking, or tearing within the composite material.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_wool.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Wool yarn acts as an absorptive fiber matrix within the composite system, 
+              allowing the applied materials to penetrate and bind to the fibrous structure. Used as a crocheted substructure, 
+              the wool forms the base layer of both the panels and the spine elements. In this role, it functions as reinforcement, 
+              providing the necessary tensile strength to stabilize the structure and prevent cracking, breaking, or 
+              tearing within the composite material.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="acc-water">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-water')">
-          <span class="accordion-index">panel</span><span class="accordion-title">Water</span><span class="accordion-arrow"></span>
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Water</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_water.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Water plays a crucial role in the preparation of the gelatin mixture used for the panels. During the soaking process, it hydrates the gelatin, allowing the protein structure to swell and dissolve evenly during heating. Water directly influences the viscosity, flexibility, and drying behavior of the composite, shaping the final material properties of the panels.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_water.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Water plays a crucial role in the preparation of the gelatin mixture used 
+              for the panels. During the soaking process, it hydrates the gelatin, allowing the protein 
+              structure to swell and dissolve evenly during heating.
+               Water directly influences the viscosity, flexibility, and drying behavior 
+              of the composite, shaping the final material properties of the panels.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="acc-gelatine">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-gelatine')">
-          <span class="accordion-index">panel</span><span class="accordion-title">Gelatine</span><span class="accordion-arrow"></span>
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Gelatine</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_gelatine.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Gelatin functions as the primary binding agent within the panel system. Derived from animal-based collagen, it binds and stiffens the wool reinforcement while contributing to the panels' surface texture, translucency, and structural behavior. Depending on its concentration and water content, the gelatin influences the flexibility, brittleness, and shrinkage of the material. Due to its sensitivity to humidity and temperature, the panels remain environmentally responsive and gradually transform over time.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_gelatine.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Gelatin functions as the primary binding agent within the panel system. 
+              Derived from animal-based collagen, it binds and stiffens the wool reinforcement while 
+              contributing to the panels’ surface texture, translucency, and structural behavior. 
+              Depending on its concentration and water content, the gelatin influences the flexibility, 
+              brittleness, and shrinkage of the material. Due to its sensitivity to humidity and temperature, 
+              the panels remain environmentally responsive and gradually transform over time.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="acc-xanthan">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-xanthan')">
-          <span class="accordion-index">panel</span><span class="accordion-title">Xanthan</span><span class="accordion-arrow"></span>
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Xanthan</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_xanthan.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Xanthan gum functions as a natural thickening and stabilizing agent within the composite mixture. When combined with water, it increases viscosity and improves the distribution of the material components, preventing separation during application and drying.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_xanthan.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Xanthan gum functions as a natural thickening and stabilizing agent 
+              within the composite mixture. When combined with water, it increases viscosity and improves 
+              the distribution of the material components, preventing separation during application and drying. 
+              </p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="acc-caco3">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-caco3')">
-          <span class="accordion-index">panel</span><span class="accordion-title">CaCO3</span><span class="accordion-arrow"></span>
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">CaCO3</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_calcium.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Calcium carbonate is used as a filler component within the panel system. Due to its higher density compared to the wood-based filler, it increases the weight, rigidity, and compactness of the composite in specific zones. Its distribution creates a gradient across the panels, resulting in variations in both coloration and density.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_calcium.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Calcium carbonate is used as a filler component within the 
+              panel system. Due to its higher density compared to the wood-based filler, it increases the weight, 
+              rigidity, and compactness of the composite in specific zones. Its distribution creates 
+              a gradient across the panels, resulting in variations in both 
+              coloration and density.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="acc-wood">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-wood')">
-          <span class="accordion-index">panel</span><span class="accordion-title">Wood</span><span class="accordion-arrow"></span>
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">Wood</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_wood.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Sawdust and woodchips that originated as a wasteproduct during building frames for panel-production was reused as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_wood.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Sawdust and woodchips that originated as a wasteproduct during building frames for
+              panel-production was reused as a filler material, providing additional reinforcement and serving as a natural pigment.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="acc-glycerol">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-glycerol')">
-          <span class="accordion-index">panel</span><span class="accordion-title">glycerol</span><span class="accordion-arrow"></span>
+          <span class="accordion-index">panel</span>
+          <span class="accordion-title">glycerol</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_glycerol.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Glycerol serves as a plasticiser, making the material more resistant to breaking and providing the possibility to adjust flexibility of the material. Lower parts are very flexible due to more share of glycerol within the material matrix, parts further up are stiff with only a minimal amount to prevent breaking and deformation during the drying process.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_glycerol.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Glycerol serves as a plasticiser, making the material more resistant to breaking
+              and providing the possibility to adjust flexibility of the material. Lower parts are very flexible due to more share of
+              glycerol within the material matrix, parts further up are stiff with only a minimal amount to prevent breaking and deformation during
+              the drying process.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="acc-boneglue">
         <button class="accordion-trigger" onclick="toggleAccordion('acc-boneglue')">
-          <span class="accordion-index">beam</span><span class="accordion-title">Boneglue</span><span class="accordion-arrow"></span>
+          <span class="accordion-index">beam</span>
+          <span class="accordion-title">Boneglue</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/_boneglue.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Bone glue is a natural adhesive derived from animal-based collagen. When heated with water, it becomes a viscous binding medium used to dip and coat the wool fibers. During drying, it solidifies and locks the fibrous structure into a lightweight but stable composite. Its mechanical behavior is sensitive to humidity and temperature, shifting between flexibility and brittleness over time.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/_boneglue.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Bone glue is a natural adhesive derived from animal-based collagen. 
+              When heated with water, it becomes a viscous binding medium used to dip and coat the wool fibers. 
+              During drying, it solidifies and locks the fibrous structure into a lightweight but stable composite. 
+              Its mechanical behavior is sensitive to humidity and temperature, shifting between flexibility 
+              and brittleness over time.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- PANELS STAT -->
   <div class="sp-panels-stat">
-    <div class="materials-stat"><span class="stat-number3">panels</span></div>
+    <div class="materials-stat">
+      <span class="stat-number3">panels</span>
+    </div>
   </div>
 
+    <!-- MAD DIAGRAM -->
   <div class="sp-mad-diagram">
     <div class="panels-grid-1 reveal">
       <div>
         <div class="img-layered">
-          <img src="images/ansicht.png" class="img-block diagram" style="object-fit:cover;">
+          <img src="images/ansicht.png" class="img-block diagram" style="object-fit: cover;">
           <img src="images/_gradient.jpg" class="overlay" alt="">
         </div>
         <p class="img-caption">placeholder panel DIAGRAM</p>
@@ -1085,16 +1200,19 @@
     </div>
   </div>
 
+  <!-- GRADIENT DIAGRAM -->
   <div class="sp-gradient-diagram">
     <div class="panels-grid-1 reveal">
       <div>
-        <img src="images/_gradient.jpg" class="img-block gradient" style="object-fit:cover;">
+        <img src="images/_gradient.jpg" class="img-block gradient" style="object-fit: cover;">
         <p class="img-caption">differentiated material matrix</p>
-        <p class="img-caption-sub">varying densities, thicknesses, and composite mixtures can be strategically distributed according to structural and spatial requirements</p>
+        <p class="img-caption-sub">varying densities, thicknesses, and composite mixtures can be strategically
+        distributed according to structural and spatial requirements</p>
       </div>
     </div>
   </div>
 
+  <!-- PANEL COOKFLIP: video tall + caption + image tall -->
   <div class="sp-panel-cookflip">
     <div class="cooking-grid-flip reveal">
       <div class="video-block landscape">
@@ -1102,17 +1220,21 @@
           <source src="videos/Flexi_76.mp4" type="video/mp4">
         </video>
       </div>
-      <p class="img-caption" style="text-align:justify;hyphens:auto;">cook dip placeholder text cook dip placeholder text cook dip placeholder text</p>
-      <div><img src="images/cook5.jpg" class="img-block tall" style="object-fit:cover;"></div>
+      <p class="img-caption" style="text-align:justify; hyphens: auto;">cook dip placeholder text cook dip 
+        placeholder text cook dip placeholder text</p>
+      <div>
+        <img src="images/cook5.jpg" class="img-block tall" style="object-fit: cover;">
+      </div>
     </div>
   </div>
 
+  <!-- CLOSEUP zoom-wrap -->
   <div class="sp-closeup">
     <div class="fullwidth-half reveal">
       <div></div>
       <div>
         <div class="zoom-wrap" data-src="images/_closeup.jpg">
-          <img src="images/_closeupscaled.jpg" style="width:100%;display:block;object-fit:cover;">
+          <img src="images/_closeupscaled.jpg" style="width:100%; display:block; object-fit: cover;">
           <div class="zoom-lens"><img src="images/_closeup.jpg" alt=""></div>
         </div>
       </div>
@@ -1120,52 +1242,79 @@
     </div>
   </div>
 
+  <!-- PANEL COOKFWD -->
   <div class="sp-panel-cookfwd">
     <div class="cooking-grid-vid reveal">
-      <div><img src="images/sidehand.png" class="img-block tall" style="object-fit:cover;"></div>
+      <div>
+        <img src="images/sidehand.png" class="img-block tall" style="object-fit: cover;">
+      </div>
       <div></div>
-      <div><img src="images/cook6.jpg" class="img-block landscape" style="object-fit:cover;"></div>
+      <div>
+        <img src="images/cook6.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
     </div>
   </div>
 
+  <!-- BENDING VIDEO -->
   <div class="sp-bending">
     <div class="fullwidth-full reveal">
       <div>
         <p class="img-caption">DIFFERENTIATED PROPERTIES</p>
-        <p class="img-caption-sub">panels in lower part of the structure are flexible due to addition of glycerol to the material matrix and therefore adaptable to the ground and different surroundings.</p>
+        <p class="img-caption-sub">panels in lower part of the structure are flexible due to addition of glycerol to the material 
+          matrix and therefore adaptable to the ground and different surroundings.</p>
       </div>
       <div>
-        <video autoplay muted loop playsinline preload="auto" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;">
+        <video autoplay muted loop playsinline preload="auto"
+          style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block;">
           <source src="videos/bending.mp4" type="video/mp4">
         </video>
       </div>
     </div>
   </div>
 
+  <!-- CONSTRUCTION -->
   <div class="sp-construction">
     <section class="construction-section reveal" id="construction">
-      <div><p class="body-text"> </p></div>
-      <div><p class="section-heading2">CONSTRUCTION</p></div>
       <div>
-        <p class="body-text">The beam construction system combines wool yarn and bone glue into a layered composite assembly. The construction is developed through successive coating and curing stages, with each layer contributing distinct structural properties. Rather than functioning as a pre-defined component, the system operates as a form-adaptive element whose geometry is directly derived from the curvature of the pre-stitched shell structure.</p>
-        <p class="body-text">The so-called spine is carefully dimensioned according to its load-bearing requirements and is gradually thickened through the addition of successive layers. Each layer increases stiffness and structural capacity while maintaining continuity with the underlying fibrous structure.</p>
+        <p class="body-text"> </p>
+      </div>
+      <div>
+        <p class="section-heading2">CONSTRUCTION</p>
+      </div>
+      <div>
+        <p class="body-text">The beam construction system combines wool yarn and bone glue into a layered composite assembly. 
+          The construction is developed through successive coating and curing stages, with each layer contributing distinct 
+          structural properties. Rather than functioning as a pre-defined component, the system operates as a form-adaptive 
+          element whose geometry is directly derived from the curvature of the pre-stitched shell structure.</p>
+        <p class="body-text">  The so-called spine is carefully dimensioned according to its load-bearing requirements 
+          and is gradually thickened through the addition of successive layers. Each layer increases stiffness 
+          and structural capacity while maintaining continuity with the underlying fibrous structure.
+      </p>
       </div>
     </section>
   </div>
 
+  <!-- BONEGLUE GRID -->
   <div class="sp-boneglue-grid">
     <div class="img-grid-3 reveal">
-      <div><img src="images/bonegluepetrilarge.jpg" class="img-block landscape" style="object-fit:cover;"></div>
-      <div><img src="images/boneglue3.jpg" class="img-block landscape" style="object-fit:cover;"></div>
-      <div><img src="images/boneglue4.jpg" class="img-block landscape" style="object-fit:cover;"></div>
+      <div>
+        <img src="images/bonegluepetrilarge.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/boneglue3.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
+      <div>
+        <img src="images/boneglue4.jpg" class="img-block landscape" style="object-fit: cover;">
+      </div>
     </div>
   </div>
 
+  <!-- BEAM MAD DIAGRAM -->
   <div class="sp-beam-mad-diagram">
     <div class="panels-grid-1 reveal">
       <div>
         <div class="img-layered">
-          <img src="images/_beamlayer.jpg" class="img-block diagram" style="object-fit:cover;">
+          <img src="images/_beamlayer.jpg" class="img-block diagram" style="object-fit: cover;">
           <img src="images/_gradient.jpg" class="overlay" alt="">
           <img src="images/adaptive.PNG" class="overlay" alt="">
         </div>
@@ -1175,6 +1324,7 @@
     </div>
   </div>
 
+  <!-- BONEGLUE VID: video landscape + caption + image landscape -->
   <div class="sp-boneglue-vid">
     <div class="cooking-grid-vid reveal">
       <div class="video-block tall">
@@ -1182,25 +1332,33 @@
           <source src="videos/Flexi_99.mp4" type="video/mp4">
         </video>
       </div>
-      <p class="img-caption" style="text-align:justify;hyphens:auto;">boneglue cookup placeholder text boneglue cookup placeholder text</p>
-      <div><img src="images/wrap2.png" class="img-block landscape" style="object-fit:cover;"></div>
+      <p class="img-caption" style="text-align:justify; hyphens: auto;">boneglue cookup placeholder text boneglue 
+        cookup placeholder text</p>
+      <div>
+        <img src="images/wrap2.png" class="img-block landscape" style="object-fit: cover;">
+      </div>
     </div>
   </div>
 
+  <!-- BEAM DIAGRAM -->
   <div class="sp-beam-diagram">
     <div class="beam-grid reveal">
       <div>
-        <img src="images/_beamlayer.jpg" class="img-block gradient" style="object-fit:cover;">
+        <img src="images/_beamlayer.jpg" class="img-block gradient" style="object-fit: cover;">
         <p class="img-caption">beam structural fibre layup</p>
       </div>
     </div>
   </div>
 
+  <!-- BEAM WRAP: image tall + caption + video tall -->
   <div class="sp-beam-wrap">
     <div class="beam-wrap-grid reveal">
-      <div><img src="images/wrap.png" class="img-block tall" style="object-fit:cover;"></div>
+      <div>
+        <img src="images/wrap.png" class="img-block tall" style="object-fit: cover;">
+      </div>
       <div class="beam-wrap-caption">
-        <p class="img-caption" style="text-align:left;">successive adaptive layering process. furthermore serving as a seamless connection of parts to produce a homogeneous structural beam.</p>
+        <p class="img-caption" style="text-align:left;">successive adaptive layering process. furthermore serving as a 
+          seamless connection of parts to produce a homogeneous structural beam.</p>
       </div>
       <div class="video-block landscape">
         <video muted loop playsinline preload="auto" data-autovid>
@@ -1210,142 +1368,256 @@
     </div>
   </div>
 
+  <!-- PRODUCTION -->
   <div class="sp-production">
     <section class="production-section reveal" id="production">
-      <div><p class="section-heading">PRODUCTION</p></div>
       <div>
-        <p class="body-text">The production process is based on a carefully composed pipeline, calibrated to the material behavior of the system. It consists of four main stages: formwork fabrication, panel casting, shell assembly, and beam integration. Each step is defined by the interaction between material properties and fabrication constraints, ensuring that geometry and performance emerge from the behavior of the composites. Gelatin-based panels are cast in reusable gypsum formworks produced on a vacuum membrane (TU Vienna) and dried within the mold to ensure geometric precision. The panels are then stitched into a continuous shell, followed by the application of the beam system, which is adapted to the final geometry as the primary structural spine.</p>
+        <p class="section-heading">PRODUCTION</p>
+      </div>
+      <div>
+        <p class="body-text">The production process is based on a carefully composed pipeline, calibrated 
+          to the material behavior of the system. It consists of four main stages: formwork fabrication, panel casting, 
+          shell assembly, and beam integration. Each step is defined by the interaction between material properties 
+          and fabrication constraints, ensuring that geometry and performance emerge from the behavior of the 
+          composites.
+          Gelatin-based panels are cast in reusable gypsum formworks produced 
+          on a vacuum membrane (TU Vienna) and dried within the mold to ensure geometric precision. 
+          The panels are then stitched into a continuous shell, followed by the application 
+          of the beam system, which is adapted to the final geometry as the primary structural spine.</p>
       </div>
     </section>
   </div>
 
+  <!-- PROCESS ACCORDION -->
   <div class="sp-proc-accordion">
     <div class="accordion-section process-accordion-section reveal">
+
       <div class="accordion-item" id="proc-formwork">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-formwork')">
-          <span class="accordion-index"></span><span class="accordion-title">panel formwork</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">panel formwork</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/formwork.PNG" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">The panel formwork defines the geometry for each element and is produced in gypsum on a silicone membrane using a vacuum forming process developed at the Technical University of Vienna. The system allows for reusable molds.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/formwork.PNG" class="accordion-img" style="object-fit:cover;">
+             <p></p>
+            <p class="accordion-lorem">The panel formwork defines the geometry for each element 
+              and is produced in gypsum on a silicone membrane using a vacuum forming process developed at the Technical University of Vienna. 
+              The system allows for reusable molds.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-textile">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-textile')">
-          <span class="accordion-index"></span><span class="accordion-title">textile base panel</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">textile base panel</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/knitmachine.jpg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">The textile base panels are produced from wool yarn using both hand crochet and machine-assisted crochet techniques. The crocheted structures form the primary fibrous substrate of the system and are characterized by differences in yarn thickness and crochet density. This allows for differentiated behavior, influencing tensile strength and material absorption capacity across the panels.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/knitmachine.jpg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">The textile base panels are produced from wool yarn using both hand crochet 
+              and machine-assisted crochet techniques. 
+              The crocheted structures form the primary fibrous substrate of the system and are characterized 
+              by differences in yarn thickness and crochet density. This allows for 
+              differentiated behavior, influencing tensile strength and material 
+              absorption capacity across the panels.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-cooking">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-cooking')">
-          <span class="accordion-index"></span><span class="accordion-title">material matrix cookup</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">material matrix cookup</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/materialcook.PNG" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Each material matrix is calculated and adjusted according to the required gradient between stiff and flexible panel zones. Due to this variability, the mixing process is highly sensitive and requires careful regulation of temperature and material ratios. The crocheted textile base panels are manually dipped into the prepared matrix and carefully applied onto the formwork, ensuring controlled impregnation and precise alignment with the geometry.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/materialcook.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Each material matrix is 
+              calculated and adjusted according to the required gradient between 
+              stiff and flexible panel zones. Due to this variability, the mixing process is highly 
+              sensitive and requires careful regulation of temperature and material ratios. 
+              The crocheted textile base panels are manually dipped into the prepared 
+              matrix and carefully applied onto the formwork, ensuring controlled impregnation 
+              and precise alignment with the geometry.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-drying">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-drying')">
-          <span class="accordion-index"></span><span class="accordion-title">controlled drying process</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">controlled drying process</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/drying.PNG" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">The drying process is closely monitored. Careful regulation of temperature and humidity play a critical role in determining deformation, the final geometry of the panel and its performance.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/drying.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">The drying process is closely monitored. Careful regulation of temperature and humidity play a critical role 
+              in determining deformation, the final geometry of the panel and its performance.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-assembly">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-assembly')">
-          <span class="accordion-index"></span><span class="accordion-title">panel assembly</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">panel assembly</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/assemble.PNG" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Individual panels are assembled into a continuous surface through stitching. This process establishes structural continuity while maintaining the logic of the system, gradually forming a coherent shell geometry.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/assemble.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Individual panels are assembled into a continuous surface through stitching. 
+              This process establishes structural continuity while maintaining the logic of the system, 
+              gradually forming a coherent shell geometry.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-beampre">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-beampre')">
-          <span class="accordion-index"></span><span class="accordion-title">beam structure</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">beam structure</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/beampre.PNG" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">Wool yarn impregnated with bone glue is pre-produced to a curing stage in which the material remains flexible but already partially stabilized. In this state, the spine elements can still be bent and aligned to the geometry of the panel structure, while gradually developing their final structural rigidity through continued hardening.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/beampre.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">Wool yarn impregnated with bone glue is pre-produced to a curing stage 
+              in which the material remains flexible but already partially stabilized. In this state, the spine
+              elements can still be bent and aligned to the geometry of the panel structure, while gradually developing 
+              their final structural rigidity through continued hardening.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-adaptive">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-adaptive')">
-          <span class="accordion-index"></span><span class="accordion-title">adaptive forming beam</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">adaptive forming beam</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/adaptive.PNG" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">The spine is developed through a application process, where the fibrous system is gradually built up.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/adaptive.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">The spine is developed through a application process, where the fibrous 
+              system is gradually built up. .</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-reinforce">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-reinforce')">
-          <span class="accordion-index"></span><span class="accordion-title">on site reinforcement – installation</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">on site reinforcement – installation</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/reinforce.PNG" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">The shell structure and beam components are prefabricated in units that allow for transport and handling on site. Final assembly takes place in situ. During installation the final coating layer is applied to the spine elements, locking the system into its final form.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/reinforce.PNG" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">The shell structure and beam components are prefabricated in
+              units that allow for transport and handling on site. Final assembly takes place in situ. 
+              During installation the final coating layer is 
+              applied to the spine elements, locking the system into its final form.</p>
+          </div>
+        </div>
       </div>
+
       <div class="accordion-item" id="proc-decay">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-decay')">
-          <span class="accordion-index"></span><span class="accordion-title">decay</span><span class="accordion-arrow"></span>
+          <span class="accordion-index"></span>
+          <span class="accordion-title">decay</span>
+          <span class="accordion-arrow"></span>
         </button>
-        <div class="accordion-body"><div class="accordion-inner">
-          <img src="images/e.jpeg" class="accordion-img" style="object-fit:cover;"><p></p>
-          <p class="accordion-lorem">The final phase acknowledges the temporal behavior of the material system. All components are biodegradable and designed to gradually transform, degrade, and reintegrate slowly into natural cycles over time.</p>
-        </div></div>
+        <div class="accordion-body">
+          <div class="accordion-inner">
+            <img src="images/e.jpeg" class="accordion-img" style="object-fit:cover;">
+            <p></p>
+            <p class="accordion-lorem">The final phase acknowledges the temporal behavior of the 
+              material system. All components are biodegradable and designed to gradually transform, 
+              degrade, and reintegrate slowly into natural cycles over time.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- PROTOTYPE STAT -->
   <div class="sp-proto-stat">
-    <div class="materials-stat"><span class="stat-number3">prototype</span></div>
-  </div>
-
-  <div class="sp-proto-photos">
-    <div class="prototype-grid-2 reveal">
-      <div><img src="images/prototype.png" class="img-block tall" style="object-fit:cover;"></div>
-      <p class="img-caption" style="text-align:justify;hyphens:auto;">during an earlier stage of the project (02/26) a small number of panels has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
-      <div><img src="images/scar.png" class="img-block landscape" style="object-fit:cover;"></div>
+    <div class="materials-stat">
+      <span class="stat-number3">prototype</span>
     </div>
   </div>
 
+  <!-- PROTOTYPE PHOTOS -->
+  <div class="sp-proto-photos">
+    <div class="prototype-grid-2 reveal">
+      <div>
+        <img src="images/prototype.png" class="img-block tall" style="object-fit: cover;">
+      </div>
+      <p class="img-caption" style="text-align:justify; hyphens: auto;">during an earlier stage of the project (02/26) a small number of panels 
+        has been produced to verify intended properties of the final material mix and to verify assembly logic.</p>
+      <div>
+        <img src="images/scar.png" class="img-block landscape" style="object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPOSAL -->
   <div class="sp-proposal">
     <section class="proposal-section reveal" id="proposal">
-      <div><p class="section-heading">PROPOSAL</p></div>
       <div>
-        <p class="body-text">Our proposal investigates biodegradable shell structures as temporary spatial assemblies situated between object, sculpture, and architecture. The project develops a semi-enclosed pavilion structure whose material logic remains visible through its construction, texture, and articulation. The structure is designed to be experienced through proximity, touch, smell, and visual perception.</p>
-        <p class="body-text">Rather than functioning as a permanent building, the proposal exists as a temporary and materially expressive system intended to be assembled, disassembled, transported, and reinstalled in different contexts. The structure is understood as an object in motion, whose entire lifecycle remains visible and experienceable over time. Its aging, deformation, and gradual transformation are considered integral aspects of the project rather than signs of failure. Although fully biodegradable, the decomposition process occurs slowly, allowing the structure to persist for an extended period before eventually reintegrating into natural material cycles as compost.</p>
+        <p class="section-heading">PROPOSAL</p>
+      </div>
+      <div>
+        <p class="body-text">Our proposal investigates biodegradable shell structures as temporary spatial 
+          assemblies situated between object, sculpture, and architecture. The project develops a semi-enclosed pavilion structure whose material 
+          logic remains visible through its construction, texture, and articulation. The structure is designed to 
+          be experienced through proximity, touch, smell, 
+          and visual perception. </p>
+        <p class="body-text"> Rather than functioning as a permanent building, 
+          the proposal exists as a temporary and materially expressive system intended to be assembled, disassembled, 
+          transported, and reinstalled in different contexts. The structure is understood as an object in motion, whose 
+          entire lifecycle remains visible and experienceable over time. Its aging, deformation, and gradual transformation 
+          are considered integral aspects of the project rather than signs of failure. Although fully biodegradable, the 
+          decomposition process occurs slowly, allowing the structure to persist for an extended period before 
+          eventually reintegrating into natural material cycles as compost.</p>
       </div>
     </section>
   </div>
 
+  <!-- PROPOSAL GRID -->
   <div class="sp-proposal-grid">
     <div class="proposal-grid reveal">
       <div>
-        <img src="images/_before.png" class="img-block proposal" style="object-fit:cover;">
+        <img src="images/_before.png" class="img-block proposal" style="object-fit: cover;">
         <p class="img-caption">placeholder picture initial object</p>
-      </div>
+        </div>
       <div>
-        <img src="images/_after.png" class="img-block proposal" style="object-fit:cover;">
+        <img src="images/_after.png" class="img-block proposal" style="object-fit: cover;">
         <p class="img-caption">placeholder picture decomposition</p>
       </div>
     </div>
   </div>
 
-  <!-- LOADING: min-height so image is never clipped at bottom -->
+  <!-- LOADING IMAGE -->
   <div class="sp-loading">
     <div style="display:grid; grid-template-columns:1fr 1fr; min-height:110vh;">
-      <div style="position:relative; min-height:110vh;">
-        <img src="images/loadingaa.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0; object-position:top;">
-        <img id="loading-bb" src="images/loadingcc.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0; object-position:top; opacity:0;">
+      <div style="position:relative;">
+        <img src="images/loadingaa.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;">
+        <img id="loading-bb" src="images/loadingcc.png" style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0; opacity:0;">
       </div>
       <div style="display:flex; align-items:flex-end; padding:1.5rem;">
         <p class="img-caption" style="text-align:left;">.. currently cooking up a project / in production</p>
@@ -1353,98 +1625,120 @@
     </div>
   </div>
 
-  <!-- CONTACT + ACK + FOOTER with footer image background -->
-  <div style="position:relative;">
-    <!-- _footer.png: 70% height, shifted 100px upward, top-anchored -->
-    <img src="images/_footer.png" style="
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 70%;
-      object-fit: cover;
-      object-position: top;
-      transform: translateY(-100px);
-      z-index: 0;
-    ">
-
-    <div class="sp-contact" style="position:relative; z-index:1;">
-      <section class="contact-section" id="contact">
-        <div><p class="section-heading">contact</p></div>
-        <div>
-          <p class="body-text">send us a <a href="mailto:flexi@sexy.at">mail</a> to get more information about upcoming projects, possible collaborations and all questions you might have encounter during your visit.</p>
-          <p class="body-text">you can touch it <a href="https://www.tuwien.at/">here</a>, visit it <a href="https://www.tuwien.at/">there</a> and touch it touch it touch it</p>
-          <p class="body-text">learn more about the ongoing research project <a href="https://kunst2.tuwien.ac.at/flexible-mold/">flexible mold</a>.</p>
-        </div>
-      </section>
-    </div>
-
-    <div class="sp-ack" style="position:relative; z-index:1;">
-      <section class="acknowledgements-section">
-        <div><p class="section-heading">acknowledgements</p></div>
-        <div>
-          <p class="body-text">We would like to sincerely thank our lecturers, scientists, and university assistants at TU Wien who supported the realization of this project through their guidance, technical expertise, and assistance throughout the development.</p>
-          <br><br>
-          <p class="body-text"><a href="https://www.annapoell.com/">Anna Theresa Pöll</a>, Univ.Lektor Dipl.-Ing.in</p>
-          <p class="body-text">Florian Rist, Senior Scientist Arch. Dipl.-Ing.</p>
-          <p class="body-text">Marco Palma, Univ.Ass. Dott. mag.</p>
-          <br><br>
-          <p class="body-text">Special thanks to the photographer for documenting the project.</p>
-          <p class="body-text">Photos and Videos by <a href="https://paulsebesta.com/">Paul Sebesta</a></p>
-        </div>
-      </section>
-    </div>
-
-    <!-- Footer: 50rem padding-top to push it down -->
-    <footer style="position:relative; z-index:1; padding-top:50rem;">
-      <span class="footer-logo">Flexi Studio</span>
-      <span class="footer-copy">© 2026 — All rights reserved</span>
-    </footer>
+<!-- CONTACT + ACK + FOOTER als ein Block mit Bild-Hintergrund -->
+<div style="position: relative;">
+  <img src="images/_footer.png" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 70%; object-fit: cover; object-position: top; z-index: 0; transform:translateY(-100px); ">
+  
+  <!-- CONTACT -->
+  <div class="sp-contact" style="position: relative; z-index: 1;">
+    <section class="contact-section" id="contact">
+      <div>
+        <p class="section-heading">contact</p>
+      </div>
+      <div>
+        <p class="body-text">send us a <a href="mailto:flexi@sexy.at">mail</a> to get more
+          information about upcoming projects, possible collaborations and all questions you might have
+          encounter during your visit.</p>
+        <p class="body-text">you can touch it <a href="https://www.tuwien.at/">here</a>, visit it 
+            <a href="https://www.tuwien.at/">there</a> and touch it touch it touch it</p>
+        <p class="body-text">learn more about the ongoing research 
+          project <a href="https://kunst2.tuwien.ac.at/flexible-mold/">flexible mold</a>. </p>
+      </div>
+    </section>
   </div>
 
+  <!-- ACKNOWLEDGEMENTS -->
+  <div class="sp-ack" style="position: relative; z-index: 1;">
+    <section class="acknowledgements-section">
+      <div>
+        <p class="section-heading">acknowledgements</p>
+      </div>
+      <div>
+        <p class="body-text">We would like to sincerely thank our lecturers, scientists, and university assistants at TU Wien
+          who supported the realization of this project through their guidance, technical 
+          expertise, and assistance throughout the development.</p>
+        <br><br>
+        <p class="body-text"><a href="https://www.annapoell.com/">Anna Theresa Pöll</a>, Univ.Lektor Dipl.-Ing.in</p>
+        <p class="body-text"> Florian Rist, Senior Scientist Arch. Dipl.-Ing.</p>
+        <p class="body-text"> Marco Palma, Univ.Ass. Dott. mag.</p>
+        <br><br>
+        <p class="body-text">Special thanks to the photographer for documenting the project.</p>
+        <p class="body-text"> Photos and Videos by <a href="https://paulsebesta.com/">Paul Sebesta</a></p> 
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="position: relative; z-index: 1; padding-top: 5rem;">
+    <span class="footer-logo">Flexi Studio</span>
+    <span class="footer-copy">© 2026 — All rights reserved</span>
+  </footer>
+</div>
+ 
+
   <script>
+    // ── Scroll reveal ────────────────────────────────────
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
+    // ── Video-block: play/pause on scroll (data-autovid) ─
     const vidBlockObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target.querySelector('video[data-autovid]') || entry.target;
-        if (entry.isIntersecting) { if (video && video.tagName === 'VIDEO') video.play().catch(() => {}); }
-        else { if (video && video.tagName === 'VIDEO') video.pause(); }
+        if (entry.isIntersecting) {
+          if (video && video.tagName === 'VIDEO') video.play().catch(() => {});
+        } else {
+          if (video && video.tagName === 'VIDEO') video.pause();
+        }
       });
     }, { threshold: 0.25 });
     document.querySelectorAll('.video-block').forEach(b => vidBlockObserver.observe(b));
 
+    // ── Legacy .video-section: play/pause on scroll ──────
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target.querySelector('video');
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); if (video) video.play().catch(() => {}); }
-        else { if (video) video.pause(); }
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (video) video.play().catch(() => {});
+        } else {
+          if (video) video.pause();
+        }
       });
     }, { threshold: 0.3 });
     document.querySelectorAll('.video-section').forEach(s => videoObserver.observe(s));
 
+    // ── Hide/show nav on scroll direction ────────────────
     (function () {
       const nav = document.getElementById('main-nav');
-      let lastScrollY = window.scrollY, ticking = false;
+      let lastScrollY = window.scrollY;
+      let ticking = false;
       window.addEventListener('scroll', () => {
         if (!ticking) {
           requestAnimationFrame(() => {
             const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && currentScrollY > 80) nav.classList.add('nav-hidden');
-            else nav.classList.remove('nav-hidden');
-            lastScrollY = currentScrollY; ticking = false;
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+              nav.classList.add('nav-hidden');
+            } else {
+              nav.classList.remove('nav-hidden');
+            }
+            lastScrollY = currentScrollY;
+            ticking = false;
           });
           ticking = true;
         }
       }, { passive: true });
     })();
 
+    // ── Accordion ────────────────────────────────────────
     function toggleAccordion(id) {
       const item = document.getElementById(id);
       const isOpen = item.classList.contains('open');
@@ -1452,6 +1746,7 @@
       if (!isOpen) item.classList.add('open');
     }
 
+    // ── Video Decay Background: scroll-driven scrubbing ──
     (function () {
       const section = document.querySelector('.video-decay-background');
       const video = document.getElementById('scrollAnim');
@@ -1459,12 +1754,20 @@
       video.pause();
       video.addEventListener('play', () => video.pause());
       function updateVideoDecay() {
-        const rect = section.getBoundingClientRect(), vh = window.innerHeight;
-        const fadeInStart = vh * 0.85, fadeInEnd = vh * 0.5, fadeOutStart = vh * 0.25, fadeOutEnd = vh * 0.05;
+        const rect = section.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const fadeInStart = vh * 0.85;
+        const fadeInEnd = vh * 0.5;
+        const fadeOutStart = vh * 0.25;
+        const fadeOutEnd = vh * 0.05;
         let opacity = 0;
-        if (rect.top <= fadeInEnd && rect.bottom >= fadeOutStart) opacity = 1;
-        else if (rect.top > fadeInEnd && rect.top <= fadeInStart) opacity = 1 - (rect.top - fadeInEnd) / (fadeInStart - fadeInEnd);
-        else if (rect.bottom < fadeOutStart && rect.bottom >= fadeOutEnd) opacity = (rect.bottom - fadeOutEnd) / (fadeOutStart - fadeOutEnd);
+        if (rect.top <= fadeInEnd && rect.bottom >= fadeOutStart) {
+          opacity = 1;
+        } else if (rect.top > fadeInEnd && rect.top <= fadeInStart) {
+          opacity = 1 - (rect.top - fadeInEnd) / (fadeInStart - fadeInEnd);
+        } else if (rect.bottom < fadeOutStart && rect.bottom >= fadeOutEnd) {
+          opacity = (rect.bottom - fadeOutEnd) / (fadeOutStart - fadeOutEnd);
+        }
         opacity = Math.max(0, Math.min(1, opacity));
         video.style.opacity = opacity * 0.75;
         if (video.duration && opacity > 0) {
@@ -1479,33 +1782,47 @@
       updateVideoDecay();
     })();
 
+    // ── Loading image cycle ───────────────────────────────
     (function () {
       const bb = document.getElementById('loading-bb');
       function cycle() {
-        bb.style.transition = 'opacity 1.5s ease'; bb.style.opacity = '1';
-        setTimeout(() => { bb.style.transition = 'none'; bb.style.opacity = '0'; setTimeout(cycle, 500); }, 1500);
+        bb.style.transition = 'opacity 1.5s ease';
+        bb.style.opacity = '1';
+        setTimeout(() => {
+          bb.style.transition = 'none';
+          bb.style.opacity = '0';
+          setTimeout(cycle, 500);
+        }, 1500);
       }
       cycle();
     })();
 
-    const ZOOM = 3, LENS_HALF = 137.5;
+    // ── Magnifier lens ────────────────────────────────────
+    const ZOOM = 3;
+    const LENS_HALF = 137.5;
+
     document.querySelectorAll('.zoom-wrap').forEach(wrap => {
-      const lens = wrap.querySelector('.zoom-lens'), lensImg = lens.querySelector('img');
+      const lens = wrap.querySelector('.zoom-lens');
+      const lensImg = lens.querySelector('img');
+
       wrap.addEventListener('mouseenter', () => {
-        const w = wrap.offsetWidth, h = wrap.querySelector('img:not([class])').offsetHeight;
-        lensImg.style.width = (w * ZOOM) + 'px'; lensImg.style.height = (h * ZOOM) + 'px';
+        const w = wrap.offsetWidth;
+        const h = wrap.querySelector('img:not([class])').offsetHeight;
+        lensImg.style.width = (w * ZOOM) + 'px';
+        lensImg.style.height = (h * ZOOM) + 'px';
       });
+
       wrap.addEventListener('mousemove', (e) => {
-        const rect = wrap.getBoundingClientRect(), x = e.clientX - rect.left, y = e.clientY - rect.top;
-        lens.style.left = (x - LENS_HALF) + 'px'; lens.style.top = (y - LENS_HALF) + 'px';
-        lensImg.style.left = -(x * ZOOM - LENS_HALF) + 'px'; lensImg.style.top = -(y * ZOOM - LENS_HALF) + 'px';
+        const rect = wrap.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        lens.style.left = (x - LENS_HALF) + 'px';
+        lens.style.top = (y - LENS_HALF) + 'px';
+        lensImg.style.left = -(x * ZOOM - LENS_HALF) + 'px';
+        lensImg.style.top = -(y * ZOOM - LENS_HALF) + 'px';
       });
     });
   </script>
-</body>
-</html>
-
-  
 
 </body>
 </html>
