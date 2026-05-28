@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — Flexi Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;300;400&family=Hanken+Grotesk:wght@100;300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/_favicon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #000000; --white: #ffffff; --dark: rgb(90,85,80); --medium: rgb(183,163,146); --light: rgb(234,219,192); }
+    body { background: var(--white); color: var(--black); font-family: 'Hanken Grotesk', sans-serif; font-weight: 300; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--medium); font-style: italic; text-decoration: none; }
+    a:hover { color: var(--black); }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+    }
+    .nav-logo {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-decoration: none;
+    }
+    .nav-logo:hover { color: var(--black); }
+    .nav-back {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-decoration: none;
+    }
+    .nav-back:hover { color: var(--black); }
+
+    main {
+      flex: 1;
+      padding: 6rem 1.5rem 10rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .page-heading {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .impressum-content { display: flex; flex-direction: column; gap: 2rem; }
+
+    .impressum-block {}
+    .impressum-label {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .impressum-text {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--medium);
+      line-height: 1.7;
+    }
+    .impressum-text a {
+      color: var(--medium);
+      font-style: italic;
+    }
+    .impressum-text a:hover { color: var(--black); }
+
+    footer {
+      padding: 0.5rem 1.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .footer-copy {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--black);
+    }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; padding: 4rem 1.5rem 6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Flexi Studio</a>
+    <a href="index.html" class="nav-back">← zurück</a>
+  </nav>
+
+  <main>
+    <div>
+      <p class="page-heading">Impressum</p>
+    </div>
+
+    <div class="impressum-content">
+
+      <div class="impressum-block">
+        <span class="impressum-label">Projektverantwortliche</span>
+        <p class="impressum-text">
+          Herberth, Liliane<br>
+          Mayer, Marco
+        </p>
+      </div>
+
+      <div class="impressum-block">
+        <span class="impressum-label">Institution</span>
+        <p class="impressum-text">
+          Technische Universität Wien<br>
+          Institut für Architektur und Entwerfen<br>
+          Karlsplatz 13, 1040 Wien, Österreich
+        </p>
+      </div>
+
+      <div class="impressum-block">
+        <span class="impressum-label">Kontakt</span>
+        <p class="impressum-text">
+          <a href="mailto:flexi@sexy.at">flexi@sexy.at</a>
+        </p>
+      </div>
+
+      <div class="impressum-block">
+        <span class="impressum-label">Haftungsausschluss</span>
+        <p class="impressum-text">
+          Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. 
+          Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird keine Gewähr übernommen. 
+          Für externe Links wird keine Haftung übernommen; für deren Inhalte sind ausschließlich 
+          die jeweiligen Betreiber verantwortlich.
+        </p>
+      </div>
+
+      <div class="impressum-block">
+        <span class="impressum-label">Urheberrecht</span>
+        <p class="impressum-text">
+          Alle Inhalte, Texte, Bilder und Videos dieser Website unterliegen dem Urheberrecht. 
+          Fotos und Videos: <a href="https://paulsebesta.com/">Paul Sebesta</a>. 
+          Eine Verwendung ohne ausdrückliche Genehmigung ist nicht gestattet.
+        </p>
+      </div>
+
+      <div class="impressum-block">
+        <span class="impressum-label">Stand</span>
+        <p class="impressum-text">Wien, 2026</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-logo">Flexi Studio</span>
+    <span class="footer-copy">© 2026</span>
+  </footer>
+
+</body>
+</html>
