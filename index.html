@@ -738,7 +738,7 @@
     .sp-mat-stat        { padding: 0; }
     .sp-accordion       { padding: 0 0 1.5rem; }
     .sp-panels-stat     { padding: 0; }
-    .sp-gradient-diagram{ padding: 0.5rem 0 5rem; }
+    .sp-gradient-diagram{ padding: 0.5rem 0 0rem; }
     .sp-mad-diagram     { padding: 0.5rem 0 0; }
     .sp-panel-cookflip  { padding: 0.5rem 0 15rem; }
     .sp-closeup         { padding: 0.5rem 0 0; }
@@ -800,7 +800,7 @@
     }
 
     .panels-grid-1 {
-      padding: 0.5rem 1.5rem 10rem;
+      padding: 0.5rem 1.5rem 5rem;
       display: grid;
       grid-template-columns: 1fr;
     }
@@ -1861,8 +1861,8 @@
       function updateVideoDecay() {
         const rect = section.getBoundingClientRect();
         const vh = window.innerHeight;
-        const fadeInStart = vh * 0.85;
-        const fadeInEnd = vh * 0.5;
+        const fadeInStart = vh * 0.5;
+        const fadeInEnd = vh * 0.15;
         const fadeOutStart = vh * 0.25;
         const fadeOutEnd = vh * 0.05;
         let opacity = 0;
