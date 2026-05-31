@@ -869,17 +869,131 @@
     }
 
     /* ─── RESPONSIVE ──────────────────────────────────── */
-    @media (max-width: 900px) {
-      nav { padding: 1.25rem 1.5rem; }
-      nav .nav-links { display: none; }
-      .hero { padding: 0 1.5rem 1.5rem; }
-      .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
-      .meta-section { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.5rem; gap: 2rem; }
-      .intro-section, .materialization-section, .contact-section, .acknowledgements-section { grid-template-columns: 1fr; padding: 1.5rem; }
-      .construction-section, .production-section { grid-template-columns: 1fr; padding: 1.5rem; }
-      .img-grid-3 { grid-template-columns: 1fr 1fr; padding: 0 1.5rem; }
-      .panels-grid-2, .proposal-grid, .prototype-section { grid-template-columns: 1fr; padding: 1.5rem; }
-    }
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+
+  /* NAV */
+  nav { padding: 1.25rem 1rem; }
+  nav .nav-links { display: none; }
+
+  /* HERO */
+  .hero { padding: 0 1rem 2rem; }
+  .hero h1 { font-size: clamp(3rem, 12vw, 5rem); }
+  .hero-label { font-size: 0.75rem; }
+
+  /* GLOBAL PADDING RESET */
+  .meta-section,
+  .intro-section,
+  .materialization-section,
+  .construction-section,
+  .production-section,
+  .proposal-section,
+  .contact-section,
+  .acknowledgements-section,
+  .accordion-section,
+  .process-accordion-section,
+  .img-grid-3,
+  .panels-grid-1,
+  .evolution-grid-v,
+  .fullwidth-half,
+  .fullwidth-full,
+  .beam-grid,
+  .proposal-grid,
+  .materials-stat {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* SINGLE COLUMN LAYOUTS */
+  .meta-section { grid-template-columns: 1fr; gap: 1.5rem; padding-bottom: 4rem; }
+  .intro-section { grid-template-columns: 1fr; gap: 1rem; }
+  .materialization-section { grid-template-columns: 1fr; gap: 1rem; }
+  .construction-section { grid-template-columns: 1fr; gap: 1rem; }
+  .production-section { grid-template-columns: 1fr; gap: 1rem; }
+  .proposal-section { grid-template-columns: 1fr; gap: 1rem; }
+  .contact-section { grid-template-columns: 1fr; gap: 1rem; }
+  .acknowledgements-section { grid-template-columns: 1fr; gap: 1rem; }
+  .proposal-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .img-grid-3 { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* CONSTRUCTION: hide empty first col */
+  .construction-section > div:first-child { display: none; }
+
+  /* COOKING / BEAM GRIDS → single column */
+  .cooking-grid-vid,
+  .cooking-grid-flip,
+  .beam-wrap-grid,
+  .prototype-grid-2 {
+    grid-template-columns: 1fr;
+    padding: 0.5rem 1rem 0;
+    gap: 1rem;
+  }
+
+  /* hide empty spacer cols inside these grids */
+  .cooking-grid-vid > div:empty,
+  .cooking-grid-flip > div:empty,
+  .beam-wrap-grid > div:empty,
+  .prototype-grid-2 > p { display: none; }
+
+  /* EVOLUTION ROW → single column */
+  .evolution-v-row { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* MATERIALS STAT */
+  .materials-stat { grid-template-columns: 1fr; gap: 0; }
+
+  /* ACCORDION */
+  .accordion-trigger { grid-template-columns: 40px 1fr 40px; }
+  .accordion-index { display: none; }
+  .accordion-inner { grid-template-columns: 1fr; gap: 1rem; }
+  .accordion-img { aspect-ratio: 16/9; }
+
+  /* SECTION HEADINGS */
+  .section-heading,
+  .section-heading2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  /* STAT NUMBERS */
+  .stat-number3 { font-size: 1.4rem; }
+
+  /* POEM TEXT */
+  .body-text-poem-right,
+  .body-text-poem-left { font-size: 1rem; }
+
+  /* VIDEO DECAY */
+  .video-decay-background { padding: 10rem 1rem; }
+
+  /* CAPTION SUB */
+  .img-caption-sub { max-width: 100%; direction: ltr; text-align: left; }
+
+  /* SPACERS: reduzierte Abstände auf Mobile */
+  .sp-bending        { padding: 0.5rem 0 6rem; }
+  .sp-panel-cookflip { padding: 0.5rem 0 4rem; }
+  .sp-panel-cookfwd  { padding: 0.5rem 0 4rem; }
+  .sp-beam-wrap      { padding: 0.5rem 0 6rem; }
+  .sp-proto-photos   { padding: 0.5rem 0 6rem; }
+  .sp-boneglue-grid  { padding: 0.5rem 0 3rem; }
+  .sp-gradient-diagram { padding: 0.5rem 0 2rem; }
+  .sp-proc-accordion { padding: 0 0 3rem; }
+  .sp-loading        { padding: 0.5rem 0 3rem; }
+
+  /* LOADING BLOCK */
+  .sp-loading > div {
+    grid-template-columns: 1fr !important;
+    padding: 0 1rem !important;
+    gap: 1rem !important;
+  }
+
+  /* BEAM DIAGRAM */
+  .beam-grid { padding: 0.5rem 1rem 4rem; }
+
+  /* PANELS GRID */
+  .panels-grid-1 { padding: 0.5rem 1rem 3rem; }
+
+  /* FOOTER */
+  footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
   </style>
 </head>
 
