@@ -1861,10 +1861,10 @@
       function updateVideoDecay() {
         const rect = section.getBoundingClientRect();
         const vh = window.innerHeight;
-        const fadeInStart = vh * 0.5;
-        const fadeInEnd = vh * 0.15;
-        const fadeOutStart = vh * 0.25;
-        const fadeOutEnd = vh * 0.05;
+        const fadeInStart = vh * 0.55;
+        const fadeInEnd = vh * 0.2;
+        const fadeOutStart = vh * 0.3;
+        const fadeOutEnd = vh * 0.1;
         let opacity = 0;
         if (rect.top <= fadeInEnd && rect.bottom >= fadeOutStart) {
           opacity = 1;
