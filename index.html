@@ -756,6 +756,7 @@
     .sp-proto-photos    { padding: 0.5rem 0 20rem; }
     .sp-proposal        { padding: 0; }
     .sp-proposal-grid   { padding: 0.5rem 0 5rem; }
+    .sp-diagram-grid   { padding: 0.5rem 0 0; }
     .sp-loading         { padding: 0.5rem 0 5rem; }
     .sp-contact         { padding: 0.5rem 0 1.5rem; }
     .sp-ack             { padding: 0.5rem 0 0rem; }
@@ -872,6 +873,13 @@
       gap: 1.5rem;
     }
 
+       .diagram-grid {
+      padding: 0.5rem 1.5rem 0.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
 /* ─── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 900px) {
 
@@ -902,6 +910,7 @@
   .fullwidth-full,
   .beam-grid,
   .proposal-grid,
+  .diagram-grid,
   .materials-stat {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -917,6 +926,7 @@
  .contact-section { grid-template-columns: 1fr; gap: 1rem; }
 .acknowledgements-section { grid-template-columns: 1fr; gap: 1rem; padding: 0.5rem 1rem; }
   .proposal-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .diagram-grid { grid-template-columns: 1fr; gap: 1rem; }
   .img-grid-3 { grid-template-columns: 1fr; gap: 1rem; }
 
   /* CONSTRUCTION: hide empty first col */
@@ -1308,6 +1318,30 @@
     </div>
   </div>
 
+    <!-- material GRID -->
+  <div class="sp-diagram-grid">
+    <div class="diagram-grid reveal">
+      <div>
+        <img src="images/composition.png" class="img-block proposal" style="object-fit: cover;">
+        </div>
+      <div>
+        <img src="images/weight.png" class="img-block proposal" style="object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+    <!-- material GRID -->
+  <div class="sp-diagram-grid">
+    <div class="diagram-grid reveal">
+      <div>
+        <img src="images/flexdegree.png" class="img-block proposal" style="object-fit: cover;">
+        </div>
+      <div>
+        <img src="images/porosity.png" class="img-block proposal" style="object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
   <!-- GRADIENT DIAGRAM -->
   <div class="sp-gradient-diagram">
     <div class="panels-grid-1 reveal">
@@ -1319,6 +1353,7 @@
       </div>
     </div>
   </div>
+  
 
   <!-- PANEL COOKFLIP: video tall + caption + image tall -->
   <div class="sp-panel-cookflip">
