@@ -187,7 +187,6 @@
     }
 
     /* ─── VIDEO BLOCK (replaces .video-section for inline use) ── */
-    /* tall and landscape variants match .img-block dimensions      */
     .video-block {
       position: relative;
       width: 100%;
@@ -209,13 +208,12 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      /* cover: fill shorter axis, clip longer axis */
       object-fit: cover;
       object-position: center;
       display: block;
     }
 
-    /* ─── VIDEO SECTION (full-bleed, scroll-triggered) ── */
+    /* ─── VIDEO SECTION  ── */
     .video-section {
       position: relative;
       overflow: hidden;
@@ -1316,7 +1314,6 @@
     </div>
   </div>
 
-
     <!-- material GRID -->
   <div class="sp-diagram-grid">
     <div class="diagram-grid reveal">
@@ -1357,9 +1354,8 @@
       </div>
     </div>
   </div>
-  
 
-  <!-- PANEL COOKFLIP: video tall + caption + image tall -->
+  <!-- PANEL COOKFLIP -->
   <div class="sp-panel-cookflip">
     <div class="cooking-grid-flip reveal">
       <div class="video-block landscape">
@@ -1471,7 +1467,7 @@
   <p class="img-caption">PRODUCTION PHASES OF STRUCTURAL SPINE</p>
 </div>
 
-  <!-- BONEGLUE VID: video landscape + caption + image landscape -->
+  <!-- BONEGLUE VID -->
   <div class="sp-boneglue-vid">
     <div class="cooking-grid-vid reveal">
       <div class="video-block tall">
@@ -1537,7 +1533,6 @@
   <!-- PROCESS ACCORDION -->
   <div class="sp-proc-accordion">
     <div class="accordion-section process-accordion-section reveal">
-
       <div class="accordion-item" id="proc-formwork">
         <button class="accordion-trigger" onclick="toggleAccordion('proc-formwork')">
           <span class="accordion-index"></span>
